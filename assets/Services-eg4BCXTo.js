@@ -145,12 +145,12 @@ import{c as h,j as n,H as r,r as p,m as l,L as g,A as b}from"./vendor.js";import
                 leading-tight
                 max-w-3xl
                 mb-6
-              `,children:["Six ways we create"," ",n.jsx("span",{className:"text-amber-400",children:"real change."})]})}),n.jsx(t,{delay:.2,children:n.jsx("p",{className:`
+              `,children:["Seven core programs for"," ",n.jsx("span",{className:"text-amber-400",children:"lasting change."})]})}),n.jsx(t,{delay:.2,children:n.jsx("p",{className:`
                 text-white/70
                 text-xl
                 leading-relaxed
                 max-w-2xl
-              `,children:"Each program is designed around actual community need — verified, accountable, and built for lasting impact."})}),n.jsx(t,{delay:.3,children:n.jsx("div",{className:"flex flex-wrap gap-3 mt-10",children:c.map(e=>{const s=x[e.icon]??r;return n.jsxs("a",{href:`#${e.id}`,className:`
+              `,children:"Hill Organisation for People's Education runs 7 dedicated initiatives across Tuticorin and Tamil Nadu — providing food, shelter, education, and medical care with love and affection."})}),n.jsx(t,{delay:.3,children:n.jsx("div",{className:"flex flex-wrap gap-3 mt-10",children:c.map(e=>{const s=x[e.icon]??r;return n.jsxs("a",{href:`#${e.id}`,className:`
                       flex
                       items-center
                       gap-2

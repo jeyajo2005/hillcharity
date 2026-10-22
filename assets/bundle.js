@@ -360,7 +360,7 @@
         return o.now() - l;
       };
     }
-    var a2 = [], u2 = [], c = 1, f2 = null, d3 = 3, g5 = false, y3 = false, x3 = false, P3 = typeof setTimeout == "function" ? setTimeout : null, p2 = typeof clearTimeout == "function" ? clearTimeout : null, h = typeof setImmediate < "u" ? setImmediate : null;
+    var a2 = [], u2 = [], c = 1, f2 = null, d3 = 3, g5 = false, y2 = false, x3 = false, P3 = typeof setTimeout == "function" ? setTimeout : null, p2 = typeof clearTimeout == "function" ? clearTimeout : null, h = typeof setImmediate < "u" ? setImmediate : null;
     typeof navigator < "u" && navigator.scheduling !== void 0 && navigator.scheduling.isInputPending !== void 0 && navigator.scheduling.isInputPending.bind(navigator.scheduling);
     function m(N5) {
       for (var L2 = n(u2); L2 !== null; ) {
@@ -371,14 +371,14 @@
       }
     }
     function S3(N5) {
-      if (x3 = false, m(N5), !y3) if (n(a2) !== null) y3 = true, xi(C3);
+      if (x3 = false, m(N5), !y2) if (n(a2) !== null) y2 = true, xi(C3);
       else {
         var L2 = n(u2);
         L2 !== null && ee(S3, L2.startTime - N5);
       }
     }
     function C3(N5, L2) {
-      y3 = false, x3 && (x3 = false, p2(k4), k4 = -1), g5 = true;
+      y2 = false, x3 && (x3 = false, p2(k4), k4 = -1), g5 = true;
       var D2 = d3;
       try {
         for (m(L2), f2 = n(a2); f2 !== null && (!(f2.expirationTime > L2) || N5 && !re2()); ) {
@@ -439,7 +439,7 @@
     e.unstable_IdlePriority = 5, e.unstable_ImmediatePriority = 1, e.unstable_LowPriority = 4, e.unstable_NormalPriority = 3, e.unstable_Profiling = null, e.unstable_UserBlockingPriority = 2, e.unstable_cancelCallback = function(N5) {
       N5.callback = null;
     }, e.unstable_continueExecution = function() {
-      y3 || g5 || (y3 = true, xi(C3));
+      y2 || g5 || (y2 = true, xi(C3));
     }, e.unstable_forceFrameRate = function(N5) {
       0 > N5 || 125 < N5 ? console.error("forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported") : V2 = 0 < N5 ? Math.floor(1e3 / N5) : 5;
     }, e.unstable_getCurrentPriorityLevel = function() {
@@ -501,7 +501,7 @@
         default:
           ie2 = 5e3;
       }
-      return ie2 = D2 + ie2, N5 = { id: c++, callback: L2, priorityLevel: N5, startTime: D2, expirationTime: ie2, sortIndex: -1 }, D2 > X2 ? (N5.sortIndex = D2, t(u2, N5), n(a2) === null && N5 === n(u2) && (x3 ? (p2(k4), k4 = -1) : x3 = true, ee(S3, D2 - X2))) : (N5.sortIndex = ie2, t(a2, N5), y3 || g5 || (y3 = true, xi(C3))), N5;
+      return ie2 = D2 + ie2, N5 = { id: c++, callback: L2, priorityLevel: N5, startTime: D2, expirationTime: ie2, sortIndex: -1 }, D2 > X2 ? (N5.sortIndex = D2, t(u2, N5), n(a2) === null && N5 === n(u2) && (x3 ? (p2(k4), k4 = -1) : x3 = true, ee(S3, D2 - X2))) : (N5.sortIndex = ie2, t(a2, N5), y2 || g5 || (y2 = true, xi(C3))), N5;
     }, e.unstable_shouldYield = re2, e.unstable_wrapCallback = function(N5) {
       var L2 = d3;
       return function() {
@@ -2078,7 +2078,7 @@
       e: {
         var d3 = Rh.get(e);
         if (d3 !== void 0) {
-          var g5 = Ea, y3 = e;
+          var g5 = Ea, y2 = e;
           switch (e) {
             case "keypress":
               if (Gi(n) === 0) break e;
@@ -2087,10 +2087,10 @@
               g5 = Bv;
               break;
             case "focusin":
-              y3 = "focus", g5 = go;
+              y2 = "focus", g5 = go;
               break;
             case "focusout":
-              y3 = "blur", g5 = go;
+              y2 = "blur", g5 = go;
               break;
             case "beforeblur":
             case "afterblur":
@@ -2161,15 +2161,15 @@
             if (m.tag === 5 && S3 !== null && (m = S3, p2 !== null && (S3 = zr(h, p2), S3 != null && x3.push(Kr(h, S3, m)))), P3) break;
             h = h.return;
           }
-          0 < x3.length && (d3 = new g5(d3, y3, null, n, c), f2.push({ event: d3, listeners: x3 }));
+          0 < x3.length && (d3 = new g5(d3, y2, null, n, c), f2.push({ event: d3, listeners: x3 }));
         }
       }
       if (!(t & 7)) {
         e: {
-          if (d3 = e === "mouseover" || e === "pointerover", g5 = e === "mouseout" || e === "pointerout", d3 && n !== ul && (y3 = n.relatedTarget || n.fromElement) && (en(y3) || y3[pt])) break e;
-          if ((g5 || d3) && (d3 = c.window === c ? c : (d3 = c.ownerDocument) ? d3.defaultView || d3.parentWindow : window, g5 ? (y3 = n.relatedTarget || n.toElement, g5 = u2, y3 = y3 ? en(y3) : null, y3 !== null && (P3 = pn(y3), y3 !== P3 || y3.tag !== 5 && y3.tag !== 6) && (y3 = null)) : (g5 = null, y3 = u2), g5 !== y3)) {
-            if (x3 = rc, S3 = "onMouseLeave", p2 = "onMouseEnter", h = "mouse", (e === "pointerout" || e === "pointerover") && (x3 = sc, S3 = "onPointerLeave", p2 = "onPointerEnter", h = "pointer"), P3 = g5 == null ? d3 : Tn(g5), m = y3 == null ? d3 : Tn(y3), d3 = new x3(S3, h + "leave", g5, n, c), d3.target = P3, d3.relatedTarget = m, S3 = null, en(c) === u2 && (x3 = new x3(p2, h + "enter", y3, n, c), x3.target = m, x3.relatedTarget = P3, S3 = x3), P3 = S3, g5 && y3) t: {
-              for (x3 = g5, p2 = y3, h = 0, m = x3; m; m = xn(m)) h++;
+          if (d3 = e === "mouseover" || e === "pointerover", g5 = e === "mouseout" || e === "pointerout", d3 && n !== ul && (y2 = n.relatedTarget || n.fromElement) && (en(y2) || y2[pt])) break e;
+          if ((g5 || d3) && (d3 = c.window === c ? c : (d3 = c.ownerDocument) ? d3.defaultView || d3.parentWindow : window, g5 ? (y2 = n.relatedTarget || n.toElement, g5 = u2, y2 = y2 ? en(y2) : null, y2 !== null && (P3 = pn(y2), y2 !== P3 || y2.tag !== 5 && y2.tag !== 6) && (y2 = null)) : (g5 = null, y2 = u2), g5 !== y2)) {
+            if (x3 = rc, S3 = "onMouseLeave", p2 = "onMouseEnter", h = "mouse", (e === "pointerout" || e === "pointerover") && (x3 = sc, S3 = "onPointerLeave", p2 = "onPointerEnter", h = "pointer"), P3 = g5 == null ? d3 : Tn(g5), m = y2 == null ? d3 : Tn(y2), d3 = new x3(S3, h + "leave", g5, n, c), d3.target = P3, d3.relatedTarget = m, S3 = null, en(c) === u2 && (x3 = new x3(p2, h + "enter", y2, n, c), x3.target = m, x3.relatedTarget = P3, S3 = x3), P3 = S3, g5 && y2) t: {
+              for (x3 = g5, p2 = y2, h = 0, m = x3; m; m = xn(m)) h++;
               for (m = 0, S3 = p2; S3; S3 = xn(S3)) m++;
               for (; 0 < h - m; ) x3 = xn(x3), h--;
               for (; 0 < m - h; ) p2 = xn(p2), m--;
@@ -2180,7 +2180,7 @@
               x3 = null;
             }
             else x3 = null;
-            g5 !== null && gc(f2, d3, g5, x3, false), y3 !== null && P3 !== null && gc(f2, P3, y3, x3, true);
+            g5 !== null && gc(f2, d3, g5, x3, false), y2 !== null && P3 !== null && gc(f2, P3, y2, x3, true);
           }
         }
         e: {
@@ -2672,7 +2672,7 @@
       }
       return null;
     }
-    function y3(p2, h, m, S3) {
+    function y2(p2, h, m, S3) {
       for (var C3 = null, T3 = null, j3 = h, k4 = h = 0, V2 = null; j3 !== null && k4 < m.length; k4++) {
         j3.index > k4 ? (V2 = j3, j3 = null) : V2 = j3.sibling;
         var A5 = d3(p2, j3, m[k4], S3);
@@ -2758,7 +2758,7 @@
           case Pt:
             return T3 = m._init, P3(p2, h, T3(m._payload), S3);
         }
-        if (yr(m)) return y3(p2, h, m, S3);
+        if (yr(m)) return y2(p2, h, m, S3);
         if (lr(m)) return x3(p2, h, m, S3);
         Vi(p2, m);
       }
@@ -2871,19 +2871,19 @@
         if ((r & d3) === d3) {
           c !== null && (c = c.next = { eventTime: g5, lane: 0, tag: l.tag, payload: l.payload, callback: l.callback, next: null });
           e: {
-            var y3 = e, x3 = l;
+            var y2 = e, x3 = l;
             switch (d3 = t, g5 = n, x3.tag) {
               case 1:
-                if (y3 = x3.payload, typeof y3 == "function") {
-                  f2 = y3.call(g5, f2, d3);
+                if (y2 = x3.payload, typeof y2 == "function") {
+                  f2 = y2.call(g5, f2, d3);
                   break e;
                 }
-                f2 = y3;
+                f2 = y2;
                 break e;
               case 3:
-                y3.flags = y3.flags & -65537 | 128;
+                y2.flags = y2.flags & -65537 | 128;
               case 0:
-                if (y3 = x3.payload, d3 = typeof y3 == "function" ? y3.call(g5, f2, d3) : y3, d3 == null) break e;
+                if (y2 = x3.payload, d3 = typeof y2 == "function" ? y2.call(g5, f2, d3) : y2, d3 == null) break e;
                 f2 = K({}, f2, d3);
                 break e;
               case 2:
@@ -3472,8 +3472,8 @@ Error generating stack: ` + s.message + `
       o = t.stateNode, Bh(e, t), l = t.memoizedProps, u2 = t.type === t.elementType ? l : Ke(t.type, l), o.props = u2, f2 = t.pendingProps, d3 = o.context, a2 = n.contextType, typeof a2 == "object" && a2 !== null ? a2 = $e(a2) : (a2 = Te(n) ? an : ve.current, a2 = Hn(t, a2));
       var g5 = n.getDerivedStateFromProps;
       (c = typeof g5 == "function" || typeof o.getSnapshotBeforeUpdate == "function") || typeof o.UNSAFE_componentWillReceiveProps != "function" && typeof o.componentWillReceiveProps != "function" || (l !== f2 || d3 !== a2) && Mc(t, o, r, a2), Ct = false, d3 = t.memoizedState, o.state = d3, xs(t, r, o, i);
-      var y3 = t.memoizedState;
-      l !== f2 || d3 !== y3 || Ee.current || Ct ? (typeof g5 == "function" && (jl(t, n, g5, r), y3 = t.memoizedState), (u2 = Ct || Rc(t, n, u2, r, d3, y3, a2) || false) ? (c || typeof o.UNSAFE_componentWillUpdate != "function" && typeof o.componentWillUpdate != "function" || (typeof o.componentWillUpdate == "function" && o.componentWillUpdate(r, y3, a2), typeof o.UNSAFE_componentWillUpdate == "function" && o.UNSAFE_componentWillUpdate(r, y3, a2)), typeof o.componentDidUpdate == "function" && (t.flags |= 4), typeof o.getSnapshotBeforeUpdate == "function" && (t.flags |= 1024)) : (typeof o.componentDidUpdate != "function" || l === e.memoizedProps && d3 === e.memoizedState || (t.flags |= 4), typeof o.getSnapshotBeforeUpdate != "function" || l === e.memoizedProps && d3 === e.memoizedState || (t.flags |= 1024), t.memoizedProps = r, t.memoizedState = y3), o.props = r, o.state = y3, o.context = a2, r = u2) : (typeof o.componentDidUpdate != "function" || l === e.memoizedProps && d3 === e.memoizedState || (t.flags |= 4), typeof o.getSnapshotBeforeUpdate != "function" || l === e.memoizedProps && d3 === e.memoizedState || (t.flags |= 1024), r = false);
+      var y2 = t.memoizedState;
+      l !== f2 || d3 !== y2 || Ee.current || Ct ? (typeof g5 == "function" && (jl(t, n, g5, r), y2 = t.memoizedState), (u2 = Ct || Rc(t, n, u2, r, d3, y2, a2) || false) ? (c || typeof o.UNSAFE_componentWillUpdate != "function" && typeof o.componentWillUpdate != "function" || (typeof o.componentWillUpdate == "function" && o.componentWillUpdate(r, y2, a2), typeof o.UNSAFE_componentWillUpdate == "function" && o.UNSAFE_componentWillUpdate(r, y2, a2)), typeof o.componentDidUpdate == "function" && (t.flags |= 4), typeof o.getSnapshotBeforeUpdate == "function" && (t.flags |= 1024)) : (typeof o.componentDidUpdate != "function" || l === e.memoizedProps && d3 === e.memoizedState || (t.flags |= 4), typeof o.getSnapshotBeforeUpdate != "function" || l === e.memoizedProps && d3 === e.memoizedState || (t.flags |= 1024), t.memoizedProps = r, t.memoizedState = y2), o.props = r, o.state = y2, o.context = a2, r = u2) : (typeof o.componentDidUpdate != "function" || l === e.memoizedProps && d3 === e.memoizedState || (t.flags |= 4), typeof o.getSnapshotBeforeUpdate != "function" || l === e.memoizedProps && d3 === e.memoizedState || (t.flags |= 1024), r = false);
     }
     return Al(e, t, n, r, s, i);
   }
@@ -4061,15 +4061,15 @@ Error generating stack: ` + s.message + `
     else for (; R !== null; ) {
       t = R;
       try {
-        var y3 = t.alternate;
+        var y2 = t.alternate;
         if (t.flags & 1024) switch (t.tag) {
           case 0:
           case 11:
           case 15:
             break;
           case 1:
-            if (y3 !== null) {
-              var x3 = y3.memoizedProps, P3 = y3.memoizedState, p2 = t.stateNode, h = p2.getSnapshotBeforeUpdate(t.elementType === t.type ? x3 : Ke(t.type, x3), P3);
+            if (y2 !== null) {
+              var x3 = y2.memoizedProps, P3 = y2.memoizedState, p2 = t.stateNode, h = p2.getSnapshotBeforeUpdate(t.elementType === t.type ? x3 : Ke(t.type, x3), P3);
               p2.__reactInternalSnapshotBeforeUpdate = h;
             }
             break;
@@ -4094,7 +4094,7 @@ Error generating stack: ` + s.message + `
       }
       R = t.return;
     }
-    return y3 = zc, zc = false, y3;
+    return y2 = zc, zc = false, y2;
   }
   function Mr(e, t, n) {
     var r = t.updateQueue;
@@ -4357,11 +4357,11 @@ Error generating stack: ` + s.message + `
                   break;
                 case 1:
                   An(d3, d3.return);
-                  var y3 = d3.stateNode;
-                  if (typeof y3.componentWillUnmount == "function") {
+                  var y2 = d3.stateNode;
+                  if (typeof y2.componentWillUnmount == "function") {
                     r = d3, n = d3.return;
                     try {
-                      t = r, y3.props = t.memoizedProps, y3.state = t.memoizedState, y3.componentWillUnmount();
+                      t = r, y2.props = t.memoizedProps, y2.state = t.memoizedState, y2.componentWillUnmount();
                     } catch (x3) {
                       Q(r, n, x3);
                     }
@@ -4929,11 +4929,11 @@ Error generating stack: ` + s.message + `
             var g5 = Lc(o);
             if (g5 !== null) {
               g5.flags &= -257, Dc(g5, o, l, s, t), g5.mode & 1 && Ac(s, u2, t), t = g5, a2 = u2;
-              var y3 = t.updateQueue;
-              if (y3 === null) {
+              var y2 = t.updateQueue;
+              if (y2 === null) {
                 var x3 = /* @__PURE__ */ new Set();
                 x3.add(a2), t.updateQueue = x3;
-              } else y3.add(a2);
+              } else y2.add(a2);
               break e;
             } else {
               if (!(t & 1)) {
@@ -5110,11 +5110,11 @@ Error generating stack: ` + s.message + `
                     }
                   }
                 }
-                var y3 = s.alternate;
-                if (y3 !== null) {
-                  var x3 = y3.child;
+                var y2 = s.alternate;
+                if (y2 !== null) {
+                  var x3 = y2.child;
                   if (x3 !== null) {
-                    y3.child = null;
+                    y2.child = null;
                     do {
                       var P3 = x3.sibling;
                       x3.sibling = null, x3 = P3;
@@ -5831,7 +5831,7 @@ Error generating stack: ` + s.message + `
       let m = qc(h, u2), S3 = x3.createHref(h);
       o.replaceState(m, "", S3), s && a2 && a2({ action: l, location: x3.location, delta: 0 });
     }
-    function y3(P3) {
+    function y2(P3) {
       let p2 = i.location.origin !== "null" ? i.location.origin : i.location.href, h = typeof P3 == "string" ? P3 : Ns(P3);
       return h = h.replace(/ $/, "%20"), J(p2, "No window.location.(origin|href) available to create URL for href: " + h), new URL(h, p2);
     }
@@ -5846,8 +5846,8 @@ Error generating stack: ` + s.message + `
       };
     }, createHref(P3) {
       return t(i, P3);
-    }, createURL: y3, encodeLocation(P3) {
-      let p2 = y3(P3);
+    }, createURL: y2, encodeLocation(P3) {
+      let p2 = y2(P3);
       return { pathname: p2.pathname, search: p2.search, hash: p2.hash };
     }, push: d3, replace: g5, go(P3) {
       return o.go(P3);
@@ -5929,8 +5929,8 @@ Error generating stack: ` + s.message + `
         let x3 = l[f2] || "";
         o = s.slice(0, s.length - x3.length).replace(/(.)\/+$/, "$1");
       }
-      const y3 = l[f2];
-      return g5 && !y3 ? u2[d3] = void 0 : u2[d3] = (y3 || "").replace(/%2F/g, "/"), u2;
+      const y2 = l[f2];
+      return g5 && !y2 ? u2[d3] = void 0 : u2[d3] = (y2 || "").replace(/%2F/g, "/"), u2;
     }, {}), pathname: s, pathnameBase: o, pattern: e };
   }
   function v0(e, t, n) {
@@ -6093,7 +6093,7 @@ Error generating stack: ` + s.message + `
       let P3 = a2.replace(/^\//, "").split("/");
       g5 = "/" + d3.replace(/^\//, "").split("/").slice(P3.length).join("/");
     }
-    let y3 = i0(e, { pathname: g5 }), x3 = F0(y3 && y3.map((P3) => Object.assign({}, P3, { params: Object.assign({}, l, P3.params), pathname: Ot([a2, i.encodeLocation ? i.encodeLocation(P3.pathname).pathname : P3.pathname]), pathnameBase: P3.pathnameBase === "/" ? a2 : Ot([a2, i.encodeLocation ? i.encodeLocation(P3.pathnameBase).pathname : P3.pathnameBase]) })), s, n, r);
+    let y2 = i0(e, { pathname: g5 }), x3 = F0(y2 && y2.map((P3) => Object.assign({}, P3, { params: Object.assign({}, l, P3.params), pathname: Ot([a2, i.encodeLocation ? i.encodeLocation(P3.pathname).pathname : P3.pathname]), pathnameBase: P3.pathnameBase === "/" ? a2 : Ot([a2, i.encodeLocation ? i.encodeLocation(P3.pathnameBase).pathname : P3.pathnameBase]) })), s, n, r);
     return t && x3 ? w.createElement(Js.Provider, { value: { location: ti({ pathname: "/", search: "", hash: "", state: null, key: "default" }, c), navigationType: Nt.Pop } }, x3) : x3;
   }
   function V0() {
@@ -6140,19 +6140,19 @@ Error generating stack: ` + s.message + `
     if (n && r && r.v7_partialHydration) for (let c = 0; c < o.length; c++) {
       let f2 = o[c];
       if ((f2.route.HydrateFallback || f2.route.hydrateFallbackElement) && (u2 = c), f2.route.id) {
-        let { loaderData: d3, errors: g5 } = n, y3 = f2.route.loader && d3[f2.route.id] === void 0 && (!g5 || g5[f2.route.id] === void 0);
-        if (f2.route.lazy || y3) {
+        let { loaderData: d3, errors: g5 } = n, y2 = f2.route.loader && d3[f2.route.id] === void 0 && (!g5 || g5[f2.route.id] === void 0);
+        if (f2.route.lazy || y2) {
           a2 = true, u2 >= 0 ? o = o.slice(0, u2 + 1) : o = [o[0]];
           break;
         }
       }
     }
     return o.reduceRight((c, f2, d3) => {
-      let g5, y3 = false, x3 = null, P3 = null;
-      n && (g5 = l && f2.route.id ? l[f2.route.id] : void 0, x3 = f2.route.errorElement || _0, a2 && (u2 < 0 && d3 === 0 ? (b0("route-fallback"), y3 = true, P3 = null) : u2 === d3 && (y3 = true, P3 = f2.route.hydrateFallbackElement || null)));
+      let g5, y2 = false, x3 = null, P3 = null;
+      n && (g5 = l && f2.route.id ? l[f2.route.id] : void 0, x3 = f2.route.errorElement || _0, a2 && (u2 < 0 && d3 === 0 ? (b0("route-fallback"), y2 = true, P3 = null) : u2 === d3 && (y2 = true, P3 = f2.route.hydrateFallbackElement || null)));
       let p2 = t.concat(o.slice(0, d3 + 1)), h = () => {
         let m;
-        return g5 ? m = x3 : y3 ? m = P3 : f2.route.Component ? m = w.createElement(f2.route.Component, null) : f2.route.element ? m = f2.route.element : m = c, w.createElement(O0, { match: f2, routeContext: { outlet: c, matches: p2, isDataRoute: n != null }, children: m });
+        return g5 ? m = x3 : y2 ? m = P3 : f2.route.Component ? m = w.createElement(f2.route.Component, null) : f2.route.element ? m = f2.route.element : m = c, w.createElement(O0, { match: f2, routeContext: { outlet: c, matches: p2, isDataRoute: n != null }, children: m });
       };
       return n && (f2.route.ErrorBoundary || f2.route.errorElement || d3 === 0) ? w.createElement(I0, { location: n.location, revalidation: n.revalidation, component: x3, error: g5, children: h(), routeContext: { outlet: null, matches: p2, isDataRoute: true } }) : h();
     }, null);
@@ -6207,10 +6207,10 @@ Error generating stack: ` + s.message + `
     pi() && J(false);
     let a2 = t.replace(/^\/*/, "/"), u2 = w.useMemo(() => ({ basename: a2, navigator: s, static: o, future: ti({ v7_relativeSplatPath: false }, l) }), [a2, l, s, o]);
     typeof r == "string" && (r = rr(r));
-    let { pathname: c = "/", search: f2 = "", hash: d3 = "", state: g5 = null, key: y3 = "default" } = r, x3 = w.useMemo(() => {
+    let { pathname: c = "/", search: f2 = "", hash: d3 = "", state: g5 = null, key: y2 = "default" } = r, x3 = w.useMemo(() => {
       let P3 = iu(c, a2);
-      return P3 == null ? null : { location: { pathname: P3, search: f2, hash: d3, state: g5, key: y3 }, navigationType: i };
-    }, [a2, c, f2, d3, g5, y3, i]);
+      return P3 == null ? null : { location: { pathname: P3, search: f2, hash: d3, state: g5, key: y2 }, navigationType: i };
+    }, [a2, c, f2, d3, g5, y2, i]);
     return x3 == null ? null : w.createElement(mn.Provider, { value: u2 }, w.createElement(Js.Provider, { children: n, value: x3 }));
   }
   function G0(e) {
@@ -6277,8 +6277,8 @@ Error generating stack: ` + s.message + `
   var t1 = typeof window < "u" && typeof window.document < "u" && typeof window.document.createElement < "u";
   var n1 = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i;
   var lt = w.forwardRef(function(t, n) {
-    let { onClick: r, relative: i, reloadDocument: s, replace: o, state: l, target: a2, to: u2, preventScrollReset: c, viewTransition: f2 } = t, d3 = Q0(t, Z0), { basename: g5 } = w.useContext(mn), y3, x3 = false;
-    if (typeof u2 == "string" && n1.test(u2) && (y3 = u2, t1)) try {
+    let { onClick: r, relative: i, reloadDocument: s, replace: o, state: l, target: a2, to: u2, preventScrollReset: c, viewTransition: f2 } = t, d3 = Q0(t, Z0), { basename: g5 } = w.useContext(mn), y2, x3 = false;
+    if (typeof u2 == "string" && n1.test(u2) && (y2 = u2, t1)) try {
       let m = new URL(window.location.href), S3 = u2.startsWith("//") ? new URL(m.protocol + u2) : new URL(u2), C3 = iu(S3.pathname, g5);
       S3.origin === m.origin && C3 != null ? u2 = C3 + S3.search + S3.hash : x3 = true;
     } catch {
@@ -6287,7 +6287,7 @@ Error generating stack: ` + s.message + `
     function h(m) {
       r && r(m), m.defaultPrevented || p2(m);
     }
-    return w.createElement("a", Hl({}, d3, { href: y3 || P3, onClick: x3 || s ? r : h, ref: n, target: a2 }));
+    return w.createElement("a", Hl({}, d3, { href: y2 || P3, onClick: x3 || s ? r : h, ref: n, target: a2 }));
   });
   var sf;
   (function(e) {
@@ -6384,7 +6384,7 @@ Error generating stack: ` + s.message + `
   var uu = typeof window < "u";
   var Xp = uu ? w.useLayoutEffect : w.useEffect;
   var ni = ({ children: e, custom: t, initial: n = true, onExitComplete: r, presenceAffectsLayout: i = true, mode: s = "sync", propagate: o = false }) => {
-    const [l, a2] = Qp(o), u2 = w.useMemo(() => lf(e), [e]), c = o && !l ? [] : u2.map(zi), f2 = w.useRef(true), d3 = w.useRef(u2), g5 = lu(() => /* @__PURE__ */ new Map()), [y3, x3] = w.useState(u2), [P3, p2] = w.useState(u2);
+    const [l, a2] = Qp(o), u2 = w.useMemo(() => lf(e), [e]), c = o && !l ? [] : u2.map(zi), f2 = w.useRef(true), d3 = w.useRef(u2), g5 = lu(() => /* @__PURE__ */ new Map()), [y2, x3] = w.useState(u2), [P3, p2] = w.useState(u2);
     Xp(() => {
       f2.current = false, d3.current = u2;
       for (let S3 = 0; S3 < P3.length; S3++) {
@@ -6393,7 +6393,7 @@ Error generating stack: ` + s.message + `
       }
     }, [P3, c.length, c.join("-")]);
     const h = [];
-    if (u2 !== y3) {
+    if (u2 !== y2) {
       let S3 = [...u2];
       for (let C3 = 0; C3 < P3.length; C3++) {
         const T3 = P3[C3], j3 = zi(T3);
@@ -6457,12 +6457,12 @@ Error generating stack: ` + s.message + `
     const i = { delta: 0, timestamp: 0, isProcessing: false }, s = () => n = true, o = Bi.reduce((p2, h) => (p2[h] = u1(s), p2), {}), { read: l, resolveKeyframes: a2, update: u2, preRender: c, render: f2, postRender: d3 } = o, g5 = () => {
       const p2 = performance.now();
       n = false, i.delta = r ? 1e3 / 60 : Math.max(Math.min(p2 - i.timestamp, c1), 1), i.timestamp = p2, i.isProcessing = true, l.process(i), a2.process(i), u2.process(i), c.process(i), f2.process(i), d3.process(i), i.isProcessing = false, n && t && (r = false, e(g5));
-    }, y3 = () => {
+    }, y2 = () => {
       n = true, r = true, i.isProcessing || e(g5);
     };
     return { schedule: Bi.reduce((p2, h) => {
       const m = o[h];
-      return p2[h] = (S3, C3 = false, T3 = false) => (n || y3(), m.schedule(S3, C3, T3)), p2;
+      return p2[h] = (S3, C3 = false, T3 = false) => (n || y2(), m.schedule(S3, C3, T3)), p2;
     }, {}), cancel: (p2) => {
       for (let h = 0; h < Bi.length; h++) o[Bi[h]].cancel(p2);
     }, state: i, steps: o };
@@ -6546,13 +6546,13 @@ Error generating stack: ` + s.message + `
     r = r || a2.renderer, !f2.current && r && (f2.current = r(e, { visualState: t, parent: l, props: n, presenceContext: u2, blockInitialAnimation: u2 ? u2.initial === false : false, reducedMotionConfig: c }));
     const d3 = f2.current, g5 = w.useContext(nm);
     d3 && !d3.projection && i && (d3.type === "html" || d3.type === "svg") && P1(f2.current, n, i, g5);
-    const y3 = w.useRef(false);
+    const y2 = w.useRef(false);
     w.useInsertionEffect(() => {
-      d3 && y3.current && d3.update(n, u2);
+      d3 && y2.current && d3.update(n, u2);
     });
     const x3 = n[tm], P3 = w.useRef(!!x3 && !(!((s = window.MotionHandoffIsComplete) === null || s === void 0) && s.call(window, x3)) && ((o = window.MotionHasOptimisedAnimation) === null || o === void 0 ? void 0 : o.call(window, x3)));
     return Xp(() => {
-      d3 && (y3.current = true, window.MotionIsMounted = true, d3.updateFeatures(), pu.render(d3.render), P3.current && d3.animationState && d3.animationState.animateChanges());
+      d3 && (y2.current = true, window.MotionIsMounted = true, d3.updateFeatures(), pu.render(d3.render), P3.current && d3.animationState && d3.animationState.animateChanges());
     }), w.useEffect(() => {
       d3 && (!P3.current && d3.animationState && d3.animationState.animateChanges(), P3.current && (queueMicrotask(() => {
         var p2;
@@ -6572,13 +6572,13 @@ Error generating stack: ` + s.message + `
     e && f1(e);
     function l(u2, c) {
       let f2;
-      const d3 = { ...w.useContext(au), ...u2, layoutId: k1(u2) }, { isStatic: g5 } = d3, y3 = v1(u2), x3 = r(u2, g5);
+      const d3 = { ...w.useContext(au), ...u2, layoutId: k1(u2) }, { isStatic: g5 } = d3, y2 = v1(u2), x3 = r(u2, g5);
       if (!g5 && uu) {
         E1();
         const P3 = T1(d3);
-        f2 = P3.MeasureLayout, y3.visualElement = S1(i, x3, d3, t, P3.ProjectionNode);
+        f2 = P3.MeasureLayout, y2.visualElement = S1(i, x3, d3, t, P3.ProjectionNode);
       }
-      return v.jsxs(to.Provider, { value: y3, children: [f2 && y3.visualElement ? v.jsx(f2, { visualElement: y3.visualElement, ...d3 }) : null, n(i, u2, x1(x3, y3.visualElement, c), x3, g5, y3.visualElement)] });
+      return v.jsxs(to.Provider, { value: y2, children: [f2 && y2.visualElement ? v.jsx(f2, { visualElement: y2.visualElement, ...d3 }) : null, n(i, u2, x1(x3, y2.visualElement, c), x3, g5, y2.visualElement)] });
     }
     l.displayName = `motion.${typeof i == "string" ? i : `create(${(o = (s = i.displayName) !== null && s !== void 0 ? s : i.name) !== null && o !== void 0 ? o : ""})`}`;
     const a2 = w.forwardRef(l);
@@ -6646,9 +6646,9 @@ Error generating stack: ` + s.message + `
     if (f2 && typeof f2 != "boolean" && !no(f2)) {
       const d3 = Array.isArray(f2) ? f2 : [f2];
       for (let g5 = 0; g5 < d3.length; g5++) {
-        const y3 = gu(e, d3[g5]);
-        if (y3) {
-          const { transitionEnd: x3, transition: P3, ...p2 } = y3;
+        const y2 = gu(e, d3[g5]);
+        if (y2) {
+          const { transitionEnd: x3, transition: P3, ...p2 } = y2;
           for (const h in p2) {
             let m = p2[h];
             if (Array.isArray(m)) {
@@ -6749,8 +6749,8 @@ Error generating stack: ` + s.message + `
       return;
     }
     e.attrs = e.style, e.style = {};
-    const { attrs: d3, style: g5, dimensions: y3 } = e;
-    d3.transform && (y3 && (g5.transform = d3.transform), delete d3.transform), y3 && (i !== void 0 || s !== void 0 || g5.transform) && (g5.transformOrigin = b1(y3, i !== void 0 ? i : 0.5, s !== void 0 ? s : 0.5)), t !== void 0 && (d3.x = t), n !== void 0 && (d3.y = n), r !== void 0 && (d3.scale = r), o !== void 0 && W1(d3, o, l, a2, false);
+    const { attrs: d3, style: g5, dimensions: y2 } = e;
+    d3.transform && (y2 && (g5.transform = d3.transform), delete d3.transform), y2 && (i !== void 0 || s !== void 0 || g5.transform) && (g5.transformOrigin = b1(y2, i !== void 0 ? i : 0.5, s !== void 0 ? s : 0.5)), t !== void 0 && (d3.x = t), n !== void 0 && (d3.y = n), r !== void 0 && (d3.scale = r), o !== void 0 && W1(d3, o, l, a2, false);
   }
   var Su = () => ({ style: {}, transform: {}, transformOrigin: {}, vars: {} });
   var am = () => ({ ...Su(), attrs: {} });
@@ -7055,8 +7055,8 @@ Error generating stack: ` + s.message + `
       const a2 = l.currentTarget;
       if (!yf(l) || Pr.has(a2)) return;
       Pr.add(a2);
-      const u2 = t(l), c = (g5, y3) => {
-        window.removeEventListener("pointerup", f2), window.removeEventListener("pointercancel", d3), !(!yf(g5) || !Pr.has(a2)) && (Pr.delete(a2), typeof u2 == "function" && u2(g5, { success: y3 }));
+      const u2 = t(l), c = (g5, y2) => {
+        window.removeEventListener("pointerup", f2), window.removeEventListener("pointercancel", d3), !(!yf(g5) || !Pr.has(a2)) && (Pr.delete(a2), typeof u2 == "function" && u2(g5, { success: y2 }));
       }, f2 = (g5) => {
         c(g5, n.useGlobalTarget || Pm(a2, g5.target));
       }, d3 = (g5) => {
@@ -7633,11 +7633,11 @@ Error generating stack: ` + s.message + `
   function lw({ duration: e = G.duration, bounce: t = G.bounce, velocity: n = G.velocity, mass: r = G.mass }) {
     let i, s, o = 1 - t;
     o = vt(G.minDamping, G.maxDamping, o), e = vt(G.minDuration, G.maxDuration, dt(e)), o < 1 ? (i = (u2) => {
-      const c = u2 * o, f2 = c * e, d3 = c - n, g5 = ta(u2, o), y3 = Math.exp(-f2);
-      return Bo - d3 / g5 * y3;
+      const c = u2 * o, f2 = c * e, d3 = c - n, g5 = ta(u2, o), y2 = Math.exp(-f2);
+      return Bo - d3 / g5 * y2;
     }, s = (u2) => {
-      const f2 = u2 * o * e, d3 = f2 * n + n, g5 = Math.pow(o, 2) * Math.pow(u2, 2) * e, y3 = Math.exp(-f2), x3 = ta(Math.pow(u2, 2), o);
-      return (-i(u2) + Bo > 0 ? -1 : 1) * ((d3 - g5) * y3) / x3;
+      const f2 = u2 * o * e, d3 = f2 * n + n, g5 = Math.pow(o, 2) * Math.pow(u2, 2) * e, y2 = Math.exp(-f2), x3 = ta(Math.pow(u2, 2), o);
+      return (-i(u2) + Bo > 0 ? -1 : 1) * ((d3 - g5) * y2) / x3;
     }) : (i = (u2) => {
       const c = Math.exp(-u2 * e), f2 = (u2 - n) * e + 1;
       return -Bo + c * f2;
@@ -7680,21 +7680,21 @@ Error generating stack: ` + s.message + `
   function qm(e = G.visualDuration, t = G.bounce) {
     const n = typeof e != "object" ? { visualDuration: e, keyframes: [0, 1], bounce: t } : e;
     let { restSpeed: r, restDelta: i } = n;
-    const s = n.keyframes[0], o = n.keyframes[n.keyframes.length - 1], l = { done: false, value: s }, { stiffness: a2, damping: u2, mass: c, duration: f2, velocity: d3, isResolvedFromDuration: g5 } = dw({ ...n, velocity: -dt(n.velocity || 0) }), y3 = d3 || 0, x3 = u2 / (2 * Math.sqrt(a2 * c)), P3 = o - s, p2 = dt(Math.sqrt(a2 / c)), h = Math.abs(P3) < 5;
+    const s = n.keyframes[0], o = n.keyframes[n.keyframes.length - 1], l = { done: false, value: s }, { stiffness: a2, damping: u2, mass: c, duration: f2, velocity: d3, isResolvedFromDuration: g5 } = dw({ ...n, velocity: -dt(n.velocity || 0) }), y2 = d3 || 0, x3 = u2 / (2 * Math.sqrt(a2 * c)), P3 = o - s, p2 = dt(Math.sqrt(a2 / c)), h = Math.abs(P3) < 5;
     r || (r = h ? G.restSpeed.granular : G.restSpeed.default), i || (i = h ? G.restDelta.granular : G.restDelta.default);
     let m;
     if (x3 < 1) {
       const C3 = ta(p2, x3);
       m = (T3) => {
         const j3 = Math.exp(-x3 * p2 * T3);
-        return o - j3 * ((y3 + x3 * p2 * P3) / C3 * Math.sin(C3 * T3) + P3 * Math.cos(C3 * T3));
+        return o - j3 * ((y2 + x3 * p2 * P3) / C3 * Math.sin(C3 * T3) + P3 * Math.cos(C3 * T3));
       };
-    } else if (x3 === 1) m = (C3) => o - Math.exp(-p2 * C3) * (P3 + (y3 + p2 * P3) * C3);
+    } else if (x3 === 1) m = (C3) => o - Math.exp(-p2 * C3) * (P3 + (y2 + p2 * P3) * C3);
     else {
       const C3 = p2 * Math.sqrt(x3 * x3 - 1);
       m = (T3) => {
         const j3 = Math.exp(-x3 * p2 * T3), k4 = Math.min(C3 * T3, 300);
-        return o - j3 * ((y3 + x3 * p2 * P3) * Math.sinh(k4) + C3 * P3 * Math.cosh(k4)) / C3;
+        return o - j3 * ((y2 + x3 * p2 * P3) * Math.sinh(k4) + C3 * P3 * Math.cosh(k4)) / C3;
       };
     }
     const S3 = { calculatedDuration: g5 && f2 || null, next: (C3) => {
@@ -7702,7 +7702,7 @@ Error generating stack: ` + s.message + `
       if (g5) l.done = C3 >= f2;
       else {
         let j3 = 0;
-        x3 < 1 && (j3 = C3 === 0 ? ft(y3) : Zm(m, C3, T3));
+        x3 < 1 && (j3 = C3 === 0 ? ft(y2) : Zm(m, C3, T3));
         const k4 = Math.abs(j3) <= r, V2 = Math.abs(o - T3) <= i;
         l.done = k4 && V2;
       }
@@ -7714,7 +7714,7 @@ Error generating stack: ` + s.message + `
     return S3;
   }
   function Mf({ keyframes: e, velocity: t = 0, power: n = 0.8, timeConstant: r = 325, bounceDamping: i = 10, bounceStiffness: s = 500, modifyTarget: o, min: l, max: a2, restDelta: u2 = 0.5, restSpeed: c }) {
-    const f2 = e[0], d3 = { done: false, value: f2 }, g5 = (k4) => l !== void 0 && k4 < l || a2 !== void 0 && k4 > a2, y3 = (k4) => l === void 0 ? a2 : a2 === void 0 || Math.abs(l - k4) < Math.abs(a2 - k4) ? l : a2;
+    const f2 = e[0], d3 = { done: false, value: f2 }, g5 = (k4) => l !== void 0 && k4 < l || a2 !== void 0 && k4 > a2, y2 = (k4) => l === void 0 ? a2 : a2 === void 0 || Math.abs(l - k4) < Math.abs(a2 - k4) ? l : a2;
     let x3 = n * t;
     const P3 = f2 + x3, p2 = o === void 0 ? P3 : o(P3);
     p2 !== P3 && (x3 = p2 - f2);
@@ -7724,7 +7724,7 @@ Error generating stack: ` + s.message + `
     };
     let C3, T3;
     const j3 = (k4) => {
-      g5(d3.value) && (C3 = k4, T3 = qm({ keyframes: [d3.value, y3(d3.value)], velocity: Zm(m, k4, d3.value), damping: i, stiffness: s, restDelta: u2, restSpeed: c }));
+      g5(d3.value) && (C3 = k4, T3 = qm({ keyframes: [d3.value, y2(d3.value)], velocity: Zm(m, k4, d3.value), damping: i, stiffness: s, restDelta: u2, restSpeed: c }));
     };
     return j3(0), { calculatedDuration: null, next: (k4) => {
       let V2 = false;
@@ -7833,7 +7833,7 @@ Error generating stack: ` + s.message + `
       }
       const { finalKeyframe: i, generator: s, mirroredGenerator: o, mapPercentToKeyframes: l, keyframes: a2, calculatedDuration: u2, totalDuration: c, resolvedDuration: f2 } = r;
       if (this.startTime === null) return s.next(0);
-      const { delay: d3, repeat: g5, repeatType: y3, repeatDelay: x3, onUpdate: P3 } = this.options;
+      const { delay: d3, repeat: g5, repeatType: y2, repeatDelay: x3, onUpdate: P3 } = this.options;
       this.speed > 0 ? this.startTime = Math.min(this.startTime, t) : this.speed < 0 && (this.startTime = Math.min(t - c / this.speed, this.startTime)), n ? this.currentTime = t : this.holdTime !== null ? this.currentTime = this.holdTime : this.currentTime = Math.round(t - this.startTime) * this.speed;
       const p2 = this.currentTime - d3 * (this.speed >= 0 ? 1 : -1), h = this.speed >= 0 ? p2 < 0 : p2 > c;
       this.currentTime = Math.max(p2, 0), this.state === "finished" && this.holdTime === null && (this.currentTime = c);
@@ -7841,7 +7841,7 @@ Error generating stack: ` + s.message + `
       if (g5) {
         const k4 = Math.min(this.currentTime, c) / f2;
         let V2 = Math.floor(k4), A5 = k4 % 1;
-        !A5 && k4 >= 1 && (A5 = 1), A5 === 1 && V2--, V2 = Math.min(V2, g5 + 1), !!(V2 % 2) && (y3 === "reverse" ? (A5 = 1 - A5, x3 && (A5 -= x3 / f2)) : y3 === "mirror" && (S3 = o)), m = vt(0, 1, A5) * f2;
+        !A5 && k4 >= 1 && (A5 = 1), A5 === 1 && V2--, V2 = Math.min(V2, g5 + 1), !!(V2 % 2) && (y2 === "reverse" ? (A5 = 1 - A5, x3 && (A5 -= x3 / f2)) : y2 === "mirror" && (S3 = o)), m = vt(0, 1, A5) * f2;
       }
       const C3 = h ? { done: false, value: a2[0] } : S3.next(m);
       l && (C3.value = l(C3.value));
@@ -7942,7 +7942,7 @@ Error generating stack: ` + s.message + `
       let { duration: r = 300, times: i, ease: s, type: o, motionValue: l, name: a2, startTime: u2 } = this.options;
       if (!l.owner || !l.owner.current) return false;
       if (typeof s == "string" && As() && Lw(s) && (s = eg[s]), Mw(this.options)) {
-        const { onComplete: f2, onUpdate: d3, motionValue: g5, element: y3, ...x3 } = this.options, P3 = Aw(t, x3);
+        const { onComplete: f2, onUpdate: d3, motionValue: g5, element: y2, ...x3 } = this.options, P3 = Aw(t, x3);
         t = P3.keyframes, t.length === 1 && (t[1] = t[0]), r = P3.duration, i = P3.times, s = P3.ease, o = "keyframes";
       }
       const c = jw(l.owner.current, a2, t, { ...this.options, duration: r, times: i, ease: s });
@@ -8024,8 +8024,8 @@ Error generating stack: ` + s.message + `
       const { animation: n, keyframes: r, duration: i, type: s, ease: o, times: l } = t;
       if (n.playState === "idle" || n.playState === "finished") return;
       if (this.time) {
-        const { motionValue: u2, onUpdate: c, onComplete: f2, element: d3, ...g5 } = this.options, y3 = new Fu({ ...g5, keyframes: r, duration: i, type: s, ease: o, times: l, isGenerator: true }), x3 = ft(this.time);
-        u2.setWithVelocity(y3.sample(x3 - Vs).value, y3.sample(x3).value, Vs);
+        const { motionValue: u2, onUpdate: c, onComplete: f2, element: d3, ...g5 } = this.options, y2 = new Fu({ ...g5, keyframes: r, duration: i, type: s, ease: o, times: l, isGenerator: true }), x3 = ft(this.time);
+        u2.setWithVelocity(y2.sample(x3 - Vs).value, y2.sample(x3).value, Vs);
       }
       const { onStop: a2 } = this.options;
       a2 && a2(), this.cancel();
@@ -8084,16 +8084,16 @@ Error generating stack: ` + s.message + `
     for (const f2 in a2) {
       const d3 = e.getValue(f2, (s = e.latestValues[f2]) !== null && s !== void 0 ? s : null), g5 = a2[f2];
       if (g5 === void 0 || c && zw(c, f2)) continue;
-      const y3 = { delay: n, ...ku(o || {}, f2) };
+      const y2 = { delay: n, ...ku(o || {}, f2) };
       let x3 = false;
       if (window.MotionHandoffAnimation) {
         const p2 = Em(e);
         if (p2) {
           const h = window.MotionHandoffAnimation(p2, f2, U);
-          h !== null && (y3.startTime = h, x3 = true);
+          h !== null && (y2.startTime = h, x3 = true);
         }
       }
-      Xl(e, f2), d3.start(zu(f2, d3, g5, e.shouldReduceMotion && Cm.has(f2) ? { type: false } : y3, e, x3));
+      Xl(e, f2), d3.start(zu(f2, d3, g5, e.shouldReduceMotion && Cm.has(f2) ? { type: false } : y2, e, x3));
       const P3 = d3.animation;
       P3 && u2.push(P3);
     }
@@ -8166,8 +8166,8 @@ Error generating stack: ` + s.message + `
       var f2;
       const d3 = io(e, c, a2 === "exit" ? (f2 = e.presenceContext) === null || f2 === void 0 ? void 0 : f2.custom : void 0);
       if (d3) {
-        const { transition: g5, transitionEnd: y3, ...x3 } = d3;
-        u2 = { ...u2, ...x3, ...y3 };
+        const { transition: g5, transitionEnd: y2, ...x3 } = d3;
+        u2 = { ...u2, ...x3, ...y2 };
       }
       return u2;
     };
@@ -8176,14 +8176,14 @@ Error generating stack: ` + s.message + `
     }
     function o(a2) {
       const { props: u2 } = e, c = ng(e.parent) || {}, f2 = [], d3 = /* @__PURE__ */ new Set();
-      let g5 = {}, y3 = 1 / 0;
+      let g5 = {}, y2 = 1 / 0;
       for (let P3 = 0; P3 < Hw; P3++) {
         const p2 = bw[P3], h = n[p2], m = u2[p2] !== void 0 ? u2[p2] : c[p2], S3 = ri(m), C3 = p2 === a2 ? h.isActive : null;
-        C3 === false && (y3 = P3);
+        C3 === false && (y2 = P3);
         let T3 = m === c[p2] && m !== u2[p2] && S3;
         if (T3 && r && e.manuallyAnimateOnMount && (T3 = false), h.protectedKeys = { ...g5 }, !h.isActive && C3 === null || !m && !h.prevProp || no(m) || typeof m == "boolean") continue;
         const j3 = Qw(h.prevProp, m);
-        let k4 = j3 || p2 === a2 && h.isActive && !T3 && S3 || P3 > y3 && S3, V2 = false;
+        let k4 = j3 || p2 === a2 && h.isActive && !T3 && S3 || P3 > y2 && S3, V2 = false;
         const A5 = Array.isArray(m) ? m : [m];
         let re2 = A5.reduce(i(p2), {});
         C3 === false && (re2 = {});
@@ -8302,18 +8302,18 @@ Error generating stack: ` + s.message + `
         if (!(this.lastMoveEvent && this.lastMoveEventInfo)) return;
         const f2 = $o(this.lastMoveEventInfo, this.history), d3 = this.startEvent !== null, g5 = eS(f2.offset, { x: 0, y: 0 }) >= 3;
         if (!d3 && !g5) return;
-        const { point: y3 } = f2, { timestamp: x3 } = ae;
-        this.history.push({ ...y3, timestamp: x3 });
+        const { point: y2 } = f2, { timestamp: x3 } = ae;
+        this.history.push({ ...y2, timestamp: x3 });
         const { onStart: P3, onMove: p2 } = this.handlers;
         d3 || (P3 && P3(this.lastMoveEvent, f2), this.startEvent = this.lastMoveEvent), p2 && p2(this.lastMoveEvent, f2);
       }, this.handlePointerMove = (f2, d3) => {
         this.lastMoveEvent = f2, this.lastMoveEventInfo = Uo(d3, this.transformPagePoint), U.update(this.updatePoint, true);
       }, this.handlePointerUp = (f2, d3) => {
         this.end();
-        const { onEnd: g5, onSessionEnd: y3, resumeAnimation: x3 } = this.handlers;
+        const { onEnd: g5, onSessionEnd: y2, resumeAnimation: x3 } = this.handlers;
         if (this.dragSnapToOrigin && x3 && x3(), !(this.lastMoveEvent && this.lastMoveEventInfo)) return;
         const P3 = $o(f2.type === "pointercancel" ? this.lastMoveEventInfo : Uo(d3, this.transformPagePoint), this.history);
-        this.startEvent && g5 && g5(f2, P3), y3 && y3(f2, P3);
+        this.startEvent && g5 && g5(f2, P3), y2 && y2(f2, P3);
       }, !ju(t)) return;
       this.dragSnapToOrigin = s, this.handlers = n, this.transformPagePoint = r, this.contextWindow = i || window;
       const o = yi(t), l = Uo(o, this.transformPagePoint), { point: a2 } = l, { timestamp: u2 } = ae;
@@ -8509,7 +8509,7 @@ Error generating stack: ` + s.message + `
         const { dragSnapToOrigin: f2 } = this.getProps();
         f2 ? this.pauseAnimation() : this.stopAnimation(), n && this.snapToCursor(yi(c).point);
       }, s = (c, f2) => {
-        const { drag: d3, dragPropagation: g5, onDragStart: y3 } = this.getProps();
+        const { drag: d3, dragPropagation: g5, onDragStart: y2 } = this.getProps();
         if (d3 && !g5 && (this.openDragLock && this.openDragLock(), this.openDragLock = dx(d3), !this.openDragLock)) return;
         this.isDragging = true, this.currentDirection = null, this.resolveConstraints(), this.visualElement.projection && (this.visualElement.projection.isAnimationBlocked = true, this.visualElement.projection.target = void 0), Oe((P3) => {
           let p2 = this.getAxisMotionValue(P3).get() || 0;
@@ -8521,15 +8521,15 @@ Error generating stack: ` + s.message + `
             }
           }
           this.originPoint[P3] = p2;
-        }), y3 && U.postRender(() => y3(c, f2)), Xl(this.visualElement, "transform");
+        }), y2 && U.postRender(() => y2(c, f2)), Xl(this.visualElement, "transform");
         const { animationState: x3 } = this.visualElement;
         x3 && x3.setActive("whileDrag", true);
       }, o = (c, f2) => {
-        const { dragPropagation: d3, dragDirectionLock: g5, onDirectionLock: y3, onDrag: x3 } = this.getProps();
+        const { dragPropagation: d3, dragDirectionLock: g5, onDirectionLock: y2, onDrag: x3 } = this.getProps();
         if (!d3 && !this.openDragLock) return;
         const { offset: P3 } = f2;
         if (g5 && this.currentDirection === null) {
-          this.currentDirection = SS(P3), this.currentDirection !== null && y3 && y3(this.currentDirection);
+          this.currentDirection = SS(P3), this.currentDirection !== null && y2 && y2(this.currentDirection);
           return;
         }
         this.updateAxis("x", f2.point, P3), this.updateAxis("y", f2.point, P3), this.visualElement.render(), x3 && x3(c, f2);
@@ -8586,8 +8586,8 @@ Error generating stack: ` + s.message + `
         if (!$i(c, n, this.currentDirection)) return;
         let f2 = a2 && a2[c] || {};
         o && (f2 = { min: 0, max: 0 });
-        const d3 = i ? 200 : 1e6, g5 = i ? 40 : 1e7, y3 = { type: "inertia", velocity: r ? t[c] : 0, bounceStiffness: d3, bounceDamping: g5, timeConstant: 750, restDelta: 1, restSpeed: 10, ...s, ...f2 };
-        return this.startAxisValueAnimation(c, y3);
+        const d3 = i ? 200 : 1e6, g5 = i ? 40 : 1e7, y2 = { type: "inertia", velocity: r ? t[c] : 0, bounceStiffness: d3, bounceDamping: g5, timeConstant: 750, restDelta: 1, restSpeed: 10, ...s, ...f2 };
+        return this.startAxisValueAnimation(c, y2);
       });
       return Promise.all(u2).then(l);
     }
@@ -8923,8 +8923,8 @@ Error generating stack: ` + s.message + `
     let r = "";
     const i = e.x.translate / t.x, s = e.y.translate / t.y, o = (n == null ? void 0 : n.z) || 0;
     if ((i || s || o) && (r = `translate3d(${i}px, ${s}px, ${o}px) `), (t.x !== 1 || t.y !== 1) && (r += `scale(${1 / t.x}, ${1 / t.y}) `), n) {
-      const { transformPerspective: u2, rotate: c, rotateX: f2, rotateY: d3, skewX: g5, skewY: y3 } = n;
-      u2 && (r = `perspective(${u2}px) ${r}`), c && (r += `rotate(${c}deg) `), f2 && (r += `rotateX(${f2}deg) `), d3 && (r += `rotateY(${d3}deg) `), g5 && (r += `skewX(${g5}deg) `), y3 && (r += `skewY(${y3}deg) `);
+      const { transformPerspective: u2, rotate: c, rotateX: f2, rotateY: d3, skewX: g5, skewY: y2 } = n;
+      u2 && (r = `perspective(${u2}px) ${r}`), c && (r += `rotate(${c}deg) `), f2 && (r += `rotateX(${f2}deg) `), d3 && (r += `rotateY(${d3}deg) `), g5 && (r += `skewX(${g5}deg) `), y2 && (r += `skewY(${y2}deg) `);
     }
     const l = e.x.scale * t.x, a2 = e.y.scale * t.y;
     return (l !== 1 || a2 !== 1) && (r += `scale(${l}, ${a2})`), r || "none";
@@ -8983,18 +8983,18 @@ Error generating stack: ` + s.message + `
             this.root.updateBlockedByResize = true, f2 && f2(), f2 = AS(d3, 250), rs.hasAnimatedSinceResize && (rs.hasAnimatedSinceResize = false, this.nodes.forEach(hd));
           });
         }
-        a2 && this.root.registerSharedNode(a2, this), this.options.animate !== false && c && (a2 || u2) && this.addEventListener("didUpdate", ({ delta: f2, hasLayoutChanged: d3, hasRelativeTargetChanged: g5, layout: y3 }) => {
+        a2 && this.root.registerSharedNode(a2, this), this.options.animate !== false && c && (a2 || u2) && this.addEventListener("didUpdate", ({ delta: f2, hasLayoutChanged: d3, hasRelativeTargetChanged: g5, layout: y2 }) => {
           if (this.isTreeAnimationBlocked()) {
             this.target = void 0, this.relativeTarget = void 0;
             return;
           }
-          const x3 = this.options.transition || c.getDefaultTransition() || rP, { onLayoutAnimationStart: P3, onLayoutAnimationComplete: p2 } = c.getProps(), h = !this.targetLayout || !gg(this.targetLayout, y3) || g5, m = !d3 && g5;
+          const x3 = this.options.transition || c.getDefaultTransition() || rP, { onLayoutAnimationStart: P3, onLayoutAnimationComplete: p2 } = c.getProps(), h = !this.targetLayout || !gg(this.targetLayout, y2) || g5, m = !d3 && g5;
           if (this.options.layoutRoot || this.resumeFrom && this.resumeFrom.instance || m || d3 && (h || !this.currentAnimation)) {
             this.resumeFrom && (this.resumingFrom = this.resumeFrom, this.resumingFrom.resumingFrom = void 0), this.setAnimationOrigin(f2, m);
             const S3 = { ...ku(x3, "layout"), onPlay: P3, onComplete: p2 };
             (c.shouldReduceMotion || this.options.layoutRoot) && (S3.delay = 0, S3.type = false), this.startAnimation(S3);
           } else d3 || hd(this), this.isLead() && this.options.onExitComplete && this.options.onExitComplete();
-          this.targetLayout = y3;
+          this.targetLayout = y2;
         });
       }
       unmount() {
@@ -9180,12 +9180,12 @@ Error generating stack: ` + s.message + `
         Ie(this.layoutCorrected, this.layout.layoutBox);
         const d3 = this.treeScale.x, g5 = this.treeScale.y;
         vS(this.layoutCorrected, this.treeScale, this.path, a2), l.layout && !l.target && (this.treeScale.x !== 1 || this.treeScale.y !== 1) && (l.target = l.layout.layoutBox, l.targetWithTransforms = Y());
-        const { target: y3 } = l;
-        if (!y3) {
+        const { target: y2 } = l;
+        if (!y2) {
           this.prevProjectionDelta && (this.createProjectionDeltas(), this.scheduleRender());
           return;
         }
-        !this.projectionDelta || !this.prevProjectionDelta ? this.createProjectionDeltas() : (nd(this.prevProjectionDelta.x, this.projectionDelta.x), nd(this.prevProjectionDelta.y, this.projectionDelta.y)), _r(this.projectionDelta, this.layoutCorrected, y3, this.latestValues), (this.treeScale.x !== d3 || this.treeScale.y !== g5 || !cd(this.projectionDelta.x, this.prevProjectionDelta.x) || !cd(this.projectionDelta.y, this.prevProjectionDelta.y)) && (this.hasProjected = true, this.scheduleRender(), this.notifyListeners("projectionUpdate", y3)), Cr && Jt.recalculatedProjection++;
+        !this.projectionDelta || !this.prevProjectionDelta ? this.createProjectionDeltas() : (nd(this.prevProjectionDelta.x, this.projectionDelta.x), nd(this.prevProjectionDelta.y, this.projectionDelta.y)), _r(this.projectionDelta, this.layoutCorrected, y2, this.latestValues), (this.treeScale.x !== d3 || this.treeScale.y !== g5 || !cd(this.projectionDelta.x, this.prevProjectionDelta.x) || !cd(this.projectionDelta.y, this.prevProjectionDelta.y)) && (this.hasProjected = true, this.scheduleRender(), this.notifyListeners("projectionUpdate", y2)), Cr && Jt.recalculatedProjection++;
       }
       hide() {
         this.isVisible = false;
@@ -9207,7 +9207,7 @@ Error generating stack: ` + s.message + `
       setAnimationOrigin(o, l = false) {
         const a2 = this.snapshot, u2 = a2 ? a2.latestValues : {}, c = { ...this.latestValues }, f2 = _n();
         (!this.relativeParent || !this.relativeParent.options.layoutRoot) && (this.relativeTarget = this.relativeTargetOrigin = void 0), this.attemptToResolveRelativeTarget = !l;
-        const d3 = Y(), g5 = a2 ? a2.source : void 0, y3 = this.layout ? this.layout.source : void 0, x3 = g5 !== y3, P3 = this.getStack(), p2 = !P3 || P3.members.length <= 1, h = !!(x3 && !p2 && this.options.crossfade === true && !this.path.some(nP));
+        const d3 = Y(), g5 = a2 ? a2.source : void 0, y2 = this.layout ? this.layout.source : void 0, x3 = g5 !== y2, P3 = this.getStack(), p2 = !P3 || P3.members.length <= 1, h = !!(x3 && !p2 && this.options.crossfade === true && !this.path.some(nP));
         this.animationProgress = 0;
         let m;
         this.mixTargetDelta = (S3) => {
@@ -9303,8 +9303,8 @@ Error generating stack: ` + s.message + `
         }
         const d3 = f2.animationValues || f2.latestValues;
         this.applyTransformsToTarget(), u2.transform = US(this.projectionDeltaWithTransform, this.treeScale, d3), c && (u2.transform = c(d3, u2.transform));
-        const { x: g5, y: y3 } = this.projectionDelta;
-        u2.transformOrigin = `${g5.origin * 100}% ${y3.origin * 100}% 0`, f2.animationValues ? u2.opacity = f2 === this ? (a2 = (l = d3.opacity) !== null && l !== void 0 ? l : this.latestValues.opacity) !== null && a2 !== void 0 ? a2 : 1 : this.preserveOpacity ? this.latestValues.opacity : d3.opacityExit : u2.opacity = f2 === this ? d3.opacity !== void 0 ? d3.opacity : "" : d3.opacityExit !== void 0 ? d3.opacityExit : 0;
+        const { x: g5, y: y2 } = this.projectionDelta;
+        u2.transformOrigin = `${g5.origin * 100}% ${y2.origin * 100}% 0`, f2.animationValues ? u2.opacity = f2 === this ? (a2 = (l = d3.opacity) !== null && l !== void 0 ? l : this.latestValues.opacity) !== null && a2 !== void 0 ? a2 : 1 : this.preserveOpacity ? this.latestValues.opacity : d3.opacityExit : u2.opacity = f2 === this ? d3.opacity !== void 0 ? d3.opacity : "" : d3.opacityExit !== void 0 ? d3.opacityExit : 0;
         for (const x3 in Ms) {
           if (d3[x3] === void 0) continue;
           const { correct: P3, applyTo: p2 } = Ms[x3], h = u2.transform === "none" ? d3[x3] : P3(d3[x3], f2);
@@ -9352,10 +9352,10 @@ Error generating stack: ` + s.message + `
         if (f2 && !f2.resumeFrom) {
           const { snapshot: d3, layout: g5 } = f2;
           if (d3 && g5) {
-            const y3 = Y();
-            Ir(y3, n.layoutBox, d3.layoutBox);
+            const y2 = Y();
+            Ir(y2, n.layoutBox, d3.layoutBox);
             const x3 = Y();
-            Ir(x3, r, g5.layoutBox), gg(y3, x3) || (c = true), f2.options.layoutRoot && (e.relativeTarget = x3, e.relativeTargetOrigin = y3, e.relativeParent = f2);
+            Ir(x3, r, g5.layoutBox), gg(y2, x3) || (c = true), f2.options.layoutRoot && (e.relativeTarget = x3, e.relativeTargetOrigin = y2, e.relativeParent = f2);
           }
         }
       }
@@ -9586,8 +9586,8 @@ Error generating stack: ` + s.message + `
       this.onUpdate = c, this.latestValues = a2, this.baseTarget = { ...a2 }, this.initialValues = n.initial ? { ...a2 } : {}, this.renderState = u2, this.parent = t, this.props = n, this.presenceContext = r, this.depth = t ? t.depth + 1 : 0, this.reducedMotionConfig = i, this.options = l, this.blockInitialAnimation = !!s, this.isControllingVariants = ro(n), this.isVariantNode = em(n), this.isVariantNode && (this.variantChildren = /* @__PURE__ */ new Set()), this.manuallyAnimateOnMount = !!(t && t.current);
       const { willChange: f2, ...d3 } = this.scrapeMotionValuesFromProps(n, {}, this);
       for (const g5 in d3) {
-        const y3 = d3[g5];
-        a2[g5] !== void 0 && ge(y3) && y3.set(a2[g5], false);
+        const y2 = d3[g5];
+        a2[g5] !== void 0 && ge(y2) && y2.set(a2[g5], false);
       }
     }
     mount(t) {
@@ -9837,13 +9837,13 @@ Error generating stack: ` + s.message + `
       document.body.style.overflow = "";
     }), [n]);
     return v.jsxs(v.Fragment, { children: [v.jsx(Pe.header, { initial: { opacity: 0, y: -16 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.5, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }, className: `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${e ? "bg-white/95 backdrop-blur-md shadow-md py-2" : "bg-white/90 backdrop-blur-sm py-3 sm:py-4"} border-b border-blue-100`, children: v.jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: v.jsxs("div", { className: "flex items-center justify-between h-16 sm:h-20", children: [v.jsxs(lt, { to: "/", className: "flex items-center gap-3 group focus-visible:outline-none rounded-lg", "aria-label": "Hill Trust Ashram Home", children: [v.jsx("img", { src: "./assets/Logo.png", alt: "HILL TRUST ASHRAM", className: "h-14 sm:h-16 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-sm" })] }), v.jsx("nav", { className: "hidden md:flex items-center justify-center", children: v.jsx("div", { className: "spotlight-nav-pill flex items-center gap-1 px-5 py-2 rounded-full bg-white shadow-[0_4px_24px_rgba(37,99,235,0.08)] border border-blue-100", children: Cd.map((g5) => {
-      const y3 = c.pathname === g5.path;
-      return v.jsxs(lt, { to: g5.path, className: `relative px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase transition-all duration-200 ${y3 ? "text-[#2563EB] font-extrabold" : "text-[#1E3A8A] hover:text-[#2563EB]"}`, children: [g5.label, y3 && v.jsx(Pe.span, { layoutId: "nav-active-pill", className: "absolute -bottom-1 left-2 right-2 h-[3px] rounded-full bg-gradient-to-r from-[#2563EB] via-[#60A5FA] to-[#FBBF24] shadow-[0_2px_8px_rgba(37,99,235,0.5)]", transition: { type: "spring", stiffness: 400, damping: 30 } })] }, g5.path);
+      const y2 = c.pathname === g5.path;
+      return v.jsxs(lt, { to: g5.path, className: `relative px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase transition-all duration-200 ${y2 ? "text-[#2563EB] font-extrabold" : "text-[#1E3A8A] hover:text-[#2563EB]"}`, children: [g5.label, y2 && v.jsx(Pe.span, { layoutId: "nav-active-pill", className: "absolute -bottom-1 left-2 right-2 h-[3px] rounded-full bg-gradient-to-r from-[#2563EB] via-[#60A5FA] to-[#FBBF24] shadow-[0_2px_8px_rgba(37,99,235,0.5)]", transition: { type: "spring", stiffness: 400, damping: 30 } })] }, g5.path);
     }) }) }), v.jsxs("div", { className: "flex items-center gap-3", children: [v.jsx("div", { className: "hidden md:block", children: v.jsxs("button", { type: "button", onClick: () => s(true), className: "btn-gold-donate flex items-center gap-2 px-6 py-2.5 rounded-full font-extrabold text-xs sm:text-sm tracking-wider uppercase text-[#1E3A8A] shadow-[0_4px_16px_rgba(251,191,36,0.45)] bg-gradient-to-r from-[#FBBF24] to-[#F59E0B] hover:from-[#FCD34D] hover:to-[#FBBF24] hover:scale-105 active:scale-95 transition-all duration-300", children: [v.jsx("svg", { viewBox: "0 0 24 24", className: "w-4 h-4 fill-current", children: v.jsx("path", { d: "M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" }) }), "DONATE NOW"] }) }), v.jsx("button", { className: "md:hidden p-2 rounded-xl transition-all duration-300 text-[#1E3A8A] hover:bg-blue-50", onClick: () => r((g5) => !g5), "aria-label": n ? "Close menu" : "Open menu", "aria-expanded": n, children: v.jsx(ni, { mode: "wait", initial: false, children: n ? v.jsx(Pe.span, { initial: { rotate: -90, opacity: 0 }, animate: { rotate: 0, opacity: 1 }, exit: { rotate: 90, opacity: 0 }, transition: { duration: 0.2 }, style: { display: "block" }, children: v.jsx(ai, { className: "w-6 h-6" }) }, "close") : v.jsx(Pe.span, { initial: { rotate: 90, opacity: 0 }, animate: { rotate: 0, opacity: 1 }, exit: { rotate: -90, opacity: 0 }, transition: { duration: 0.2 }, style: { display: "block" }, children: v.jsx(HP, { className: "w-6 h-6" }) }, "menu") }) })] })] }) }) }), v.jsx(ZP, { isOpen: i, onClose: () => s(false), title: "Donate to Hill Trust Ashram", size: "md", children: v.jsxs("div", { className: "flex flex-col items-center gap-5 text-center", children: [v.jsx("div", { className: "w-16 h-16 rounded-full bg-gradient-to-br from-[#2563EB] to-[#FBBF24] text-white flex items-center justify-center shadow-[0_0_30px_rgba(37,99,235,0.35)]", children: v.jsx(Qo, { className: "w-7 h-7 text-white" }) }), v.jsx("p", { className: "text-sm text-slate-600 max-w-sm", children: "Scan the QR code below using any UPI app (GPay, PhonePe, Paytm) or use our bank details to complete your donation." }), v.jsx("div", { className: "rounded-3xl border-2 border-dashed border-[#FBBF24] p-4 bg-blue-50/60", children: v.jsx("img", { src: "https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=upi://pay?pa=9944704699@upi&pn=Hill%20Trust&cu=INR&am=1001", alt: "UPI QR Code", className: "mx-auto w-52 h-52 object-contain" }) }), v.jsxs("div", { className: "w-full grid grid-cols-1 gap-3", children: [v.jsx("button", { type: "button", className: "w-full py-3 px-6 rounded-full font-bold text-[#1E3A8A] bg-gradient-to-r from-[#FBBF24] to-[#F59E0B] hover:from-[#FCD34D] hover:to-[#FBBF24] shadow-md transition-all", onClick: () => s(false), children: "I Have Paid" }), v.jsx("button", { type: "button", className: "w-full py-3 px-6 rounded-full font-bold text-[#2563EB] border-2 border-[#2563EB] hover:bg-blue-50 transition-all", onClick: () => {
       navigator.clipboard.writeText("9944704699@upi");
-    }, children: "Copy UPI ID (9944704699@upi)" })] }), v.jsxs("p", { className: "text-xs text-slate-500", children: ["UPI ID: ", v.jsx("span", { className: "font-bold text-[#2563EB]", children: "9944704699@upi" }), v.jsx("br", {}), "Axis Bank A/C: 919010013069384 - IFSC: UTIB0002095"] })] }) }), v.jsx(ni, { children: n && v.jsxs(Pe.div, { initial: { opacity: 0, x: "100%" }, animate: { opacity: 1, x: 0 }, exit: { opacity: 0, x: "100%" }, transition: { duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }, className: "fixed inset-0 z-40 md:hidden", children: [v.jsx(Pe.div, { initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 }, className: "absolute inset-0 bg-[#172554]/60 backdrop-blur-sm", onClick: () => r(false) }), v.jsxs("div", { className: "absolute top-0 right-0 h-full w-[300px] bg-[#EFF6FF] shadow-2xl flex flex-col overflow-y-auto", children: [v.jsxs("div", { className: "flex items-center justify-between px-6 py-6 border-b border-blue-200/60 bg-white", children: [v.jsx(lt, { to: "/", className: "flex items-center gap-2", children: v.jsx("img", { src: "./assets/Logo.png", alt: "HILL TRUST ASHRAM", className: "h-12 w-auto object-contain" }) }), v.jsx("button", { onClick: () => r(false), className: "p-2 rounded-xl hover:bg-blue-100 text-[#1E3A8A]", "aria-label": "Close menu", children: v.jsx(ai, { className: "w-5 h-5" }) })] }), v.jsx("nav", { className: "flex-1 px-4 py-6 space-y-1", children: Cd.map((g5, y3) => {
+    }, children: "Copy UPI ID (9944704699@upi)" })] }), v.jsxs("p", { className: "text-xs text-slate-500", children: ["UPI ID: ", v.jsx("span", { className: "font-bold text-[#2563EB]", children: "9944704699@upi" }), v.jsx("br", {}), "Axis Bank A/C: 919010013069384 - IFSC: UTIB0002095"] })] }) }), v.jsx(ni, { children: n && v.jsxs(Pe.div, { initial: { opacity: 0, x: "100%" }, animate: { opacity: 1, x: 0 }, exit: { opacity: 0, x: "100%" }, transition: { duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }, className: "fixed inset-0 z-40 md:hidden", children: [v.jsx(Pe.div, { initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 }, className: "absolute inset-0 bg-[#172554]/60 backdrop-blur-sm", onClick: () => r(false) }), v.jsxs("div", { className: "absolute top-0 right-0 h-full w-[300px] bg-[#EFF6FF] shadow-2xl flex flex-col overflow-y-auto", children: [v.jsxs("div", { className: "flex items-center justify-between px-6 py-6 border-b border-blue-200/60 bg-white", children: [v.jsx(lt, { to: "/", className: "flex items-center gap-2", children: v.jsx("img", { src: "./assets/Logo.png", alt: "HILL TRUST ASHRAM", className: "h-12 w-auto object-contain" }) }), v.jsx("button", { onClick: () => r(false), className: "p-2 rounded-xl hover:bg-blue-100 text-[#1E3A8A]", "aria-label": "Close menu", children: v.jsx(ai, { className: "w-5 h-5" }) })] }), v.jsx("nav", { className: "flex-1 px-4 py-6 space-y-1", children: Cd.map((g5, y2) => {
       const x3 = c.pathname === g5.path;
-      return v.jsx(Pe.div, { initial: { opacity: 0, x: 20 }, animate: { opacity: 1, x: 0 }, transition: { delay: 0.05 + y3 * 0.06, duration: 0.3 }, children: v.jsxs(lt, { to: g5.path, className: `flex items-center justify-between px-4 py-3.5 rounded-2xl font-bold text-sm tracking-wider uppercase transition-all duration-200 ${x3 ? "bg-white text-[#2563EB] shadow-sm" : "text-[#1E3A8A] hover:bg-white/80 hover:text-[#2563EB]"}`, children: [g5.label, x3 && v.jsx("div", { className: "w-2 h-2 rounded-full bg-[#FBBF24]" })] }) }, g5.path);
+      return v.jsx(Pe.div, { initial: { opacity: 0, x: 20 }, animate: { opacity: 1, x: 0 }, transition: { delay: 0.05 + y2 * 0.06, duration: 0.3 }, children: v.jsxs(lt, { to: g5.path, className: `flex items-center justify-between px-4 py-3.5 rounded-2xl font-bold text-sm tracking-wider uppercase transition-all duration-200 ${x3 ? "bg-white text-[#2563EB] shadow-sm" : "text-[#1E3A8A] hover:bg-white/80 hover:text-[#2563EB]"}`, children: [g5.label, x3 && v.jsx("div", { className: "w-2 h-2 rounded-full bg-[#FBBF24]" })] }) }, g5.path);
     }) }), v.jsxs("div", { className: "px-4 pb-8 pt-4 border-t border-blue-200/60 space-y-3 bg-white", children: [v.jsx("button", { type: "button", className: "w-full py-3.5 px-6 rounded-full font-bold text-sm tracking-wider uppercase text-[#1E3A8A] shadow-lg bg-gradient-to-r from-[#FBBF24] to-[#F59E0B]", onClick: () => s(true), children: "DONATE NOW" }), v.jsx(lt, { to: "/contact", className: "block text-center w-full py-3 px-6 rounded-full font-bold text-sm text-[#2563EB] border-2 border-[#2563EB]/30 hover:bg-blue-50", children: "Get In Touch" })] })] })] }) })] });
   };
   var Xo = { organization: [{ label: "About Us", path: "/about" }, { label: "Our Mission", path: "/about#mission" }, { label: "Our Values", path: "/about#values" }, { label: "Impact Report", path: "/about#impact" }], services: [{ label: "Food Support", path: "/services#food" }, { label: "Education", path: "/services#education" }, { label: "Elderly Care", path: "/services#elderly" }, { label: "Emergency Relief", path: "/services#emergency" }], getInvolved: [{ label: "Volunteer", path: "/contact" }, { label: "Donate", path: "/contact" }, { label: "Become a Sponsor", path: "/contact" }, { label: "Partner With Us", path: "/contact" }] };
@@ -10173,12 +10173,172 @@ Error generating stack: ` + s.message + `
   var S2 = fe("ShieldAlert", [["path", { d: "M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z", key: "oel41y" }], ["path", { d: "M12 8v4", key: "1got3b" }], ["path", { d: "M12 16h.01", key: "1drbdi" }]]);
   var j2 = fe("Soup", [["path", { d: "M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z", key: "4rw317" }], ["path", { d: "M7 21h10", key: "1b0cd5" }], ["path", { d: "M19.5 12 22 6", key: "shfsr5" }], ["path", { d: "M16.25 3c.27.1.8.53.75 1.36-.06.83-.93 1.2-1 2.02-.05.78.34 1.24.73 1.62", key: "rpc6vp" }], ["path", { d: "M11.25 3c.27.1.8.53.74 1.36-.05.83-.93 1.2-.98 2.02-.06.78.33 1.24.72 1.62", key: "1lf63m" }], ["path", { d: "M6.25 3c.27.1.8.53.75 1.36-.06.83-.93 1.2-1 2.02-.05.78.34 1.24.74 1.62", key: "97tijn" }]]);
   var N2 = fe("Stethoscope", [["path", { d: "M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3", key: "10lez9" }], ["path", { d: "M8 15v1a6 6 0 0 0 6 6a6 6 0 0 0 6-6v-4", key: "ce9bce" }], ["circle", { cx: "20", cy: "10", r: "2", key: "ts1r5v" }]]);
-  var y2 = { story3: "./assets/p.png" };
-  var f = [{ value: 1e4, suffix: "+", label: "People Reached", sublabel: "Across Tamil Nadu" }, { value: 2500, suffix: "+", label: "Active Supporters", sublabel: "Volunteers & Donors" }, { value: 8e3, suffix: "+", label: "Support Kits", sublabel: "Distributed" }, { value: 150, suffix: "+", label: "Community Initiatives", sublabel: "Completed" }];
-  var M3 = [{ id: "food", icon: "Soup", title: "Food Support", description: "Ensuring no one in our community goes to bed hungry. We organise regular food drives, nutrition kits and hot meal programs for families and individuals in need.", provides: ["Weekly food kit distribution", "Hot meal programs for elderly", "Nutrition packs for children", "Emergency ration supplies", "Festival meal drives"], howToHelp: "Sponsor a meal drive, donate food supplies, or volunteer at distribution events.", image: "./assets/j.png", color: "from-amber-500/20 to-amber-600/10" }, { id: "education", icon: "GraduationCap", title: "Education Support", description: "We believe every child deserves access to quality education. From school supplies to tutoring programs, we bridge the gap between potential and opportunity.", provides: ["School supply kits", "After-school tutoring sessions", "Scholarship facilitation", "Digital literacy programs", "Vocational skill training"], howToHelp: "Sponsor a child's education, donate stationery, or volunteer as a tutor.", image: "./assets/k.png", color: "from-forest-500/20 to-forest-600/10" }, { id: "elderly", icon: "Heart", title: "Elderly Care", description: "Our elderly deserve dignity, companionship and comfort. We provide essential care support and ensure that no senior feels forgotten or alone.", provides: ["Regular home visits", "Essential supply delivery", "Healthcare coordination", "Companionship programs", "Emergency response for seniors"], howToHelp: "Volunteer for home visits, sponsor a care kit, or donate to our elderly fund.", image: "./assets/z.png", color: "from-amber-400/20 to-forest-400/10" }, { id: "medical", icon: "Stethoscope", title: "Medical Support", description: "Access to healthcare should not be a privilege. We connect underserved communities with medical resources, health camps and specialist referrals.", provides: ["Free health camp coordination", "Medicine distribution", "Specialist referral support", "Mental health awareness", "Maternal health programs"], howToHelp: "Sponsor a health camp, donate medicines, or volunteer as a healthcare professional.", image: "./assets/medical.png", color: "from-forest-600/20 to-forest-500/10" }, { id: "emergency", icon: "ShieldAlert", title: "Emergency Support", description: "When disaster strikes, our rapid response teams are ready. We provide immediate relief to communities affected by floods, fires and other emergencies.", provides: ["Emergency relief kits", "Flood & disaster response", "Temporary shelter support", "Crisis counselling", "Community recovery programs"], howToHelp: "Build our emergency fund, join our rapid response volunteer pool, or donate supplies.", image: "./assets/image.png", color: "from-charcoal-600/20 to-charcoal-500/10" }, { id: "community", icon: "Users", title: "Community Development", description: "Sustainable change begins at the community level. We work alongside local leaders to build self-reliant, thriving neighbourhoods for generations to come.", provides: ["Leadership development programs", "Micro-livelihood initiatives", "Environmental projects", "Women empowerment workshops", "Youth leadership camps"], howToHelp: "Partner with us for long-term initiatives, fund a community project, or join our board.", image: "./assets/community.png", color: "from-forest-400/20 to-amber-400/10" }];
-  var T2 = [{ id: "1", image: "./assets/community-help.png", category: "Elderly Care", name: "Meenakshi Ammal", title: "From isolation to community", excerpt: "At 78, Meenakshi lived alone in a small room in Chennai's old city. Regular visits from our volunteer team brought her not just supplies, but something she had missed for years \u2014 human connection.", impact: "Now part of our weekly community circle, surrounded by friends.", location: "Chennai, Tamil Nadu" }, { id: "2", image: "./assets/community-story.png", category: "Education Support", name: "Arjun, Age 14", title: "A textbook changed everything", excerpt: "When Arjun's father lost his job, school materials became a luxury. Our education kit \u2014 textbooks, stationery and a bag \u2014 meant he never had to miss a single class.", impact: "Scored district-top marks. Now mentors younger students.", location: "Madurai, Tamil Nadu" }, { id: "3", image: y2.story3, category: "Food Support", name: "The Rajan Family", title: "Dignity in every meal", excerpt: "During the monsoon floods of 2023, the Rajan family lost everything. Our emergency response team reached them within 24 hours with food, water and essential supplies.", impact: "Family stabilised. Two children back in school within a month.", location: "Thanjavur, Tamil Nadu" }];
-  var C2 = [{ id: "1", name: "Aarambh Foundation", tagline: "Beginning change together" }, { id: "2", name: "PeopleFirst", tagline: "People at the centre" }, { id: "3", name: "HopeWorks", tagline: "Building pathways to hope" }, { id: "4", name: "Namma Care", tagline: "Our community, our care" }, { id: "5", name: "GreenLife", tagline: "Sustainable futures" }, { id: "6", name: "Community One", tagline: "Stronger together" }];
-  var A2 = [{ icon: "TrendingUp", title: "Meaningful Impact", description: "Turn your organisation's support into visible, measurable community outcomes with full reporting and accountability." }, { icon: "Sparkles", title: "Brand Purpose", description: "Build an authentic connection between your organisation and society. Purpose-led brands inspire deeper loyalty." }, { icon: "BarChart3", title: "Transparency", description: "Every rupee is tracked, reported and verified. We keep impact clear, measurable and accountable \u2014 always." }, { icon: "Handshake", title: "Long-Term Partnership", description: "We don't just take donations. We build sustainable community initiatives together \u2014 as true partners." }];
+  var f = [
+    { value: 10, suffix: "+", label: "Years of Service", sublabel: "Serving Tuticorin Since 2014" },
+    { value: 7, suffix: " Core", label: "Active Programs", sublabel: "Children, Women & Seniors" },
+    { value: 25e3, suffix: "+", label: "Meals & Kits Given", sublabel: "Across Rural Tamil Nadu" },
+    { value: 100, suffix: "%", label: "Direct Transparency", sublabel: "Verified Charitable Trust" }
+  ];
+  var M3 = [
+    {
+      id: "women",
+      icon: "Users",
+      title: "Women Empowerment",
+      description: "Empowering underprivileged young women who excel in school but are forced into daily-wage labor due to economic hardship. We provide higher education sponsorships, vocational skill training, and financial independence.",
+      provides: [
+        "Higher education college sponsorships",
+        "Tailoring & vocational skills training",
+        "Self-help group guidance and empowerment",
+        "Financial literacy & confidence building",
+        "Career placement & mentorship"
+      ],
+      howToHelp: "Sponsor a girl student's college fee, donate sewing machines, or conduct skill training sessions.",
+      image: "./assets/mom.png",
+      color: "from-blue-600/20 to-amber-500/10"
+    },
+    {
+      id: "child",
+      icon: "GraduationCap",
+      title: "Child Development Centres",
+      description: "Child Development Centres are established in rural villages around Tuticorin to help rural kids develop their education, study habits, nutrition, and personality.",
+      provides: [
+        "Free evening study centres in rural villages",
+        "School bags, uniforms & notebook supplies",
+        "Nutritious evening snacks for growing children",
+        "Moral values & character development",
+        "Special tutoring in English, Science & Math"
+      ],
+      howToHelp: "Adopt a village development centre, donate books and study materials, or volunteer as a weekend teacher.",
+      image: "./assets/k.png",
+      color: "from-amber-400/20 to-blue-500/10"
+    },
+    {
+      id: "abandoned",
+      icon: "Heart",
+      title: "Abandoned Children Home",
+      description: "Hope Children Home provides loving shelter, complete nutrition, quality schooling, and medical care for abandoned and orphaned girl children in Tuticorin.",
+      provides: [
+        "Safe, clean residential shelter (Hope Children Home)",
+        "Full schooling and English-medium education",
+        "3 nutritious balanced meals daily & fruit diet",
+        "24/7 medical supervision & pediatric care",
+        "Family environment with love, joy and affection"
+      ],
+      howToHelp: "Sponsor a girl child at Rs. 1,000/- per month, celebrate birthdays with kids, or donate dry groceries.",
+      image: "./assets/p.png",
+      color: "from-blue-500/20 to-amber-400/10"
+    },
+    {
+      id: "aged",
+      icon: "Heart",
+      title: "Home for the Aged",
+      description: "Elderly destitute women who are abandoned by their children, homeless, or left on the streets to survive on their own are rescued, sheltered, and cared for with lifelong dignity.",
+      provides: [
+        "Comfortable shelter, beds & peaceful surroundings",
+        "Daily hot hygienic meals cooked with love",
+        "Special geriatric medical care & medicines",
+        "Doctor visits & health monitoring",
+        "Compassionate caregiving and emotional warmth"
+      ],
+      howToHelp: "Sponsor an elderly mother at Rs. 2,500/- per month, sponsor special meal days, or visit our ashram.",
+      image: "./assets/z.png",
+      color: "from-amber-500/20 to-blue-600/10"
+    },
+    {
+      id: "awareness",
+      icon: "Stethoscope",
+      title: "Awareness Programs",
+      description: "Grassroots community awareness drives on girl child education, child rights, prevention of child marriage, and women's physical & mental health across rural districts.",
+      provides: [
+        "Village campaigns against child marriage",
+        "Promotion of girl child school retention",
+        "Women's health, hygiene & wellness camps",
+        "Legal awareness & rights counseling",
+        "Mental health & adolescent counseling"
+      ],
+      howToHelp: "Partner with our outreach team, sponsor campaign banners & awareness literature, or volunteer.",
+      image: "./assets/medical.png",
+      color: "from-blue-600/20 to-blue-400/10"
+    },
+    {
+      id: "disaster",
+      icon: "ShieldAlert",
+      title: "Disaster Relief Program",
+      description: "Rapid response disaster relief support for communities affected by natural calamities, heavy monsoon floods, cyclones, and economic emergencies throughout Tamil Nadu.",
+      provides: [
+        "Emergency dry ration kits (rice, pulses, oil)",
+        "Temporary shelter materials & tarpaulins",
+        "Safe drinking water supply & chlorine tablets",
+        "Emergency medical kits and epidemic prevention",
+        "Livelihood rehabilitation support"
+      ],
+      howToHelp: "Contribute to our Disaster Relief Fund or donate emergency dry rations and relief materials.",
+      image: "./assets/image.png",
+      color: "from-amber-400/20 to-blue-600/10"
+    },
+    {
+      id: "feed",
+      icon: "Soup",
+      title: "Feed the Hungry",
+      description: "Collecting excess hygienic food from marriage halls, hotels, and caterers, as well as cooking fresh nutritious meals daily to feed poor, hungry, and homeless people in Tuticorin.",
+      provides: [
+        "Daily meal distribution to homeless and needy",
+        "Excess food rescue from banquet & wedding halls",
+        "Clean packaging & fast hygienic delivery",
+        "Sponsor meals for 100 people across town",
+        "Zero food waste mission in Tuticorin"
+      ],
+      howToHelp: "Sponsor Food for 100 People: Breakfast (Rs.3,500), Lunch (Rs.4,500), Dinner (Rs.3,500), or Full Day (Rs.11,500).",
+      image: "./assets/j.png",
+      color: "from-amber-500/20 to-amber-400/10"
+    }
+  ];
+  var T2 = [
+    {
+      id: "1",
+      image: "./assets/p.png",
+      category: "Abandoned Children Home",
+      name: "Hope Children Home",
+      title: "Shelter, education and a loving future",
+      excerpt: "Girl children who are abandoned by parents or relatives find a safe haven at Hope Children Home in Tuticorin, growing up with quality schooling, nutritious food, and affectionate care.",
+      impact: "Over 40+ girl children nurtured, educated, and supported into higher studies.",
+      location: "Tuticorin, Tamil Nadu"
+    },
+    {
+      id: "2",
+      image: "./assets/z.png",
+      category: "Home for Aged",
+      name: "Elderly Mothers Ashram",
+      title: "A peaceful, dignified home for rescued seniors",
+      excerpt: "Elderly women who were abandoned and left in the streets are given shelter, warm food, 24/7 medical supervision, and respect so their silver years are full of peace.",
+      impact: "30+ destitute grandmothers living with dignity, happiness, and medical support.",
+      location: "Bryant Nagar, Tuticorin"
+    },
+    {
+      id: "3",
+      image: "./assets/j.png",
+      category: "Feed the Hungry",
+      name: "Daily Meal Drives",
+      title: "No one sleeps hungry in our neighborhood",
+      excerpt: "Through our Feed the Hungry mission and excess food rescue, hot meals are packed and delivered to impoverished families, daily-wage laborers, and hospital bystanders.",
+      impact: "Thousands of meals distributed every month across Tuticorin and surrounding villages.",
+      location: "Tuticorin District, Tamil Nadu"
+    }
+  ];
+  var C2 = [
+    { id: "1", name: "Axis Bank (KTC Nagar)", tagline: "Official Trust Account (Indian Donors)" },
+    { id: "2", name: "State Bank of India", tagline: "FCRA / Foreign Donor Account" },
+    { id: "3", name: "Hope Children Home", tagline: "Orphaned Girl Children Facility" },
+    { id: "4", name: "Tuticorin Community", tagline: "10+ Years of Local Trust" },
+    { id: "5", name: "Feed The Hungry", tagline: "Zero Food Waste Mission" },
+    { id: "6", name: "Women Empowerment", tagline: "Girls Higher Education Fund" }
+  ];
+  var A2 = [
+    { icon: "TrendingUp", title: "Direct Local Impact", description: "Founded in 2014 by Mrs. Brinah Prabhakaran & Mr. Prem Prabhakaran, our initiatives directly transform lives on the ground in Tuticorin." },
+    { icon: "Sparkles", title: "Dignity & Love", description: "From abandoned girl children to homeless grandmothers, we provide personal care, affectionate attention, and a loving home." },
+    { icon: "BarChart3", title: "100% Transparency", description: "Every rupee is accounted for. Registered charitable trust with official Axis Bank & State Bank of India accounts and verified reports." },
+    { icon: "Handshake", title: "Grassroots Commitment", description: "We listen to village needs \u2014 education, food, shelter, healthcare, and emergency response when disasters strike." }
+  ];
   function b2(i, a2, t) {
     const [o, r] = w.useState(0);
     return w.useEffect(() => {
@@ -10192,11 +10352,30 @@ Error generating stack: ` + s.message + `
   }
   var x = ({ value: i, suffix: a2, label: t, sublabel: o, active: r, delay: l }) => {
     const s = b2(i, 2e3, r);
-    return v.jsxs(Pe.div, { initial: { opacity: 0, y: 32 }, animate: r ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.7, delay: l, ease: [0.25, 0.46, 0.45, 0.94] }, className: "text-center px-6", children: [v.jsxs("div", { className: "font-display font-bold text-5xl sm:text-6xl lg:text-7xl text-white font-counter tracking-tight leading-none mb-2", children: [s.toLocaleString(), v.jsx("span", { className: "text-amber-400", children: a2 })] }), v.jsx("div", { className: "text-white font-semibold text-lg mt-3", children: t }), o && v.jsx("div", { className: "text-white/50 text-sm mt-1", children: o })] });
+    return v.jsxs(Pe.div, { initial: { opacity: 0, y: 32 }, animate: r ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.7, delay: l, ease: [0.25, 0.46, 0.45, 0.94] }, className: "text-center px-6", children: [
+      v.jsxs("div", { className: "font-display font-bold text-5xl sm:text-6xl lg:text-7xl text-white font-counter tracking-tight leading-none mb-2", children: [s.toLocaleString(), v.jsx("span", { className: "text-amber-400", children: a2 })] }),
+      v.jsx("div", { className: "text-white font-semibold text-lg mt-3", children: t }),
+      o && v.jsx("div", { className: "text-white/50 text-sm mt-1", children: o })
+    ] });
   };
   var E3 = () => {
     const i = w.useRef(null), a2 = w2(i, { once: true, margin: "-100px" });
-    return v.jsxs("section", { ref: i, className: "relative py-24 lg:py-32 bg-forest-950 overflow-hidden", "aria-labelledby": "impact-heading", children: [v.jsx("div", { className: "absolute inset-0 opacity-5", children: v.jsx("div", { className: "w-full h-full", style: { backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "48px 48px" } }) }), v.jsx("div", { className: "absolute top-0 left-1/4 w-96 h-96 bg-forest-500/10 rounded-full blur-3xl" }), v.jsx("div", { className: "absolute bottom-0 right-1/4 w-96 h-96 bg-amber-500/8 rounded-full blur-3xl" }), v.jsxs("div", { className: "relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [v.jsxs(Pe.div, { initial: { opacity: 0, y: 24 }, animate: a2 ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.7 }, className: "text-center mb-20", children: [v.jsxs("div", { className: "inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] uppercase text-amber-400 mb-4", children: [v.jsx("div", { className: "w-5 h-px bg-amber-400" }), "Our Impact", v.jsx("div", { className: "w-5 h-px bg-amber-400" })] }), v.jsxs("h2", { id: "impact-heading", className: "font-display font-bold text-4xl sm:text-5xl text-white leading-tight", children: ["Together, we can create", " ", v.jsx("span", { className: "text-amber-400", children: "measurable impact." })] })] }), v.jsx("div", { className: "grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-4 divide-x-0 lg:divide-x divide-white/10", children: f.map((t, o) => v.jsx(x, { value: t.value, suffix: t.suffix, label: t.label, sublabel: t.sublabel, active: a2, delay: 0.2 + o * 0.12 }, t.label)) }), v.jsxs(Pe.div, { initial: { opacity: 0 }, animate: a2 ? { opacity: 1 } : {}, transition: { duration: 0.7, delay: 0.9 }, className: "text-center mt-20 space-y-1.5", children: [v.jsx("p", { className: "text-white/40 text-sm italic", children: '"\u0B92\u0BB0\u0BC1 \u0B9A\u0BBF\u0BB1\u0BBF\u0BAF \u0B89\u0BA4\u0BB5\u0BBF. \u0B92\u0BB0\u0BC1 \u0BAA\u0BC6\u0BB0\u0BBF\u0BAF \u0BAE\u0BBE\u0BB1\u0BCD\u0BB1\u0BAE\u0BCD."' }), v.jsx("p", { className: "text-white/25 text-xs", children: '"One small act of help. One big change."' })] })] })] });
+    return v.jsxs("section", { ref: i, className: "relative py-24 lg:py-32 bg-forest-950 overflow-hidden", "aria-labelledby": "impact-heading", children: [
+      v.jsx("div", { className: "absolute inset-0 opacity-5", children: v.jsx("div", { className: "w-full h-full", style: { backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "48px 48px" } }) }),
+      v.jsx("div", { className: "absolute top-0 left-1/4 w-96 h-96 bg-forest-500/10 rounded-full blur-3xl" }),
+      v.jsx("div", { className: "absolute bottom-0 right-1/4 w-96 h-96 bg-amber-500/8 rounded-full blur-3xl" }),
+      v.jsxs("div", { className: "relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
+        v.jsxs(Pe.div, { initial: { opacity: 0, y: 24 }, animate: a2 ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.7 }, className: "text-center mb-20", children: [
+          v.jsxs("div", { className: "inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] uppercase text-amber-400 mb-4", children: [v.jsx("div", { className: "w-5 h-px bg-amber-400" }), "Hill Charity Impact", v.jsx("div", { className: "w-5 h-px bg-amber-400" })] }),
+          v.jsxs("h2", { id: "impact-heading", className: "font-display font-bold text-4xl sm:text-5xl text-white leading-tight", children: ["Serving Tuticorin with", " ", v.jsx("span", { className: "text-amber-400", children: "Love & Hope." })] })
+        ] }),
+        v.jsx("div", { className: "grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-4 divide-x-0 lg:divide-x divide-white/10", children: f.map((t, o) => v.jsx(x, { value: t.value, suffix: t.suffix, label: t.label, sublabel: t.sublabel, active: a2, delay: 0.2 + o * 0.12 }, t.label)) }),
+        v.jsxs(Pe.div, { initial: { opacity: 0 }, animate: a2 ? { opacity: 1 } : {}, transition: { duration: 0.7, delay: 0.9 }, className: "text-center mt-20 space-y-1.5", children: [
+          v.jsx("p", { className: "text-white/60 text-base italic", children: '"\u0B89\u0BA4\u0BB5\u0BBF \u0B8E\u0BA9\u0BCD\u0BAA\u0BA4\u0BC1 \u0B92\u0BB0\u0BC1 \u0B9A\u0BC6\u0BAF\u0BB2\u0BCD \u0BAE\u0B9F\u0BCD\u0B9F\u0BC1\u0BAE\u0BCD \u0B85\u0BB2\u0BCD\u0BB2. \u0B92\u0BB0\u0BC1 \u0BA8\u0BAE\u0BCD\u0BAA\u0BBF\u0B95\u0BCD\u0B95\u0BC8."' }),
+          v.jsx("p", { className: "text-white/40 text-sm", children: '"Hill Organisation for People\u2019s Education \u2014 Tuticorin, Tamil Nadu"' })
+        ] })
+      ] })
+    ] });
   };
 
   // assets/Home-B5Mf3Si2.js
@@ -10208,8 +10387,8 @@ Error generating stack: ` + s.message + `
   var O2 = fe("Sparkles", [["path", { d: "M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z", key: "4pj2yx" }], ["path", { d: "M20 3v4", key: "1olli1" }], ["path", { d: "M22 5h-4", key: "1gvqau" }], ["path", { d: "M4 17v2", key: "vumght" }], ["path", { d: "M5 18H3", key: "zchphs" }]]);
   var p = fe("TrendingUp", [["polyline", { points: "22 7 13.5 15.5 8.5 10.5 2 17", key: "126l90" }], ["polyline", { points: "16 7 22 7 22 13", key: "kwv8wd" }]]);
   var _2 = () => v.jsxs("section", { className: "relative w-full overflow-hidden bg-slate-950 pt-16 sm:pt-20", "aria-label": "Hero section", children: [v.jsxs("div", { className: "relative w-full aspect-[3/2] max-h-[85vh] overflow-hidden mx-auto flex items-center justify-center", children: [v.jsx(Pe.img, { src: "./assets/hero-community.png", alt: "Hill Charity community support", initial: { opacity: 0, scale: 1.01 }, animate: { opacity: 1, scale: 1 }, transition: { duration: 0.8, ease: "easeOut" }, className: "w-full h-full object-cover object-top", loading: "eager", fetchPriority: "high" }), v.jsx("div", { className: "absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/5 pointer-events-none" })] })] });
-  var L = [{ number: "01", title: "Transparency", description: "Every contribution should have a clear purpose and visible impact. We publish detailed impact reports so you always know where support goes.", image: "./assets/community-story.png", icon: a }, { number: "02", title: "Reliability", description: "We connect support with real community needs through responsible, verified processes \u2014 ensuring help reaches those who need it most.", image: "./assets/medical.png", icon: V }, { number: "03", title: "Real Impact", description: "Every action is focused on creating meaningful change for real people. Not statistics \u2014 human lives, transformed.", image: "./assets/z.png", icon: A3 }];
-  var U2 = () => v.jsx("section", { className: "bg-white py-20 lg:py-28", children: v.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [v.jsxs("div", { className: "text-center mb-14 lg:mb-16", children: [v.jsxs("div", { className: "flex items-center justify-center gap-2 mb-5", children: [v.jsx("span", { className: "w-5 h-px bg-forest-600" }), v.jsx("span", { className: "text-xs font-bold tracking-[0.25em] uppercase text-forest-700", children: "Why We Exist" }), v.jsx("span", { className: "w-5 h-px bg-forest-600" })] }), v.jsxs("h2", { className: "font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-charcoal-900 leading-tight", children: ["Trust is where meaningful", v.jsx("br", {}), v.jsx("span", { className: "text-forest-600", children: "change begins." })] })] }), v.jsx("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-8", children: L.map((a2, n) => {
+  var L = [{ number: "01", title: "Hope Children Home", description: "Providing shelter, education, nutritious food, and affectionate care for abandoned and orphaned girl children in Tuticorin.", image: "./assets/p.png", icon: a }, { number: "02", title: "Home for the Aged", description: "Rescuing destitute elderly women abandoned by family and left in the streets, providing healthcare, dignity, and a loving home.", image: "./assets/z.png", icon: V }, { number: "03", title: "Feed the Hungry", description: "Rescuing excess banquet food and preparing fresh daily meals to ensure no one in our town goes to sleep hungry.", image: "./assets/j.png", icon: A3 }];
+  var U2 = () => v.jsx("section", { className: "bg-white py-20 lg:py-28", children: v.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [v.jsxs("div", { className: "text-center mb-14 lg:mb-16", children: [v.jsxs("div", { className: "flex items-center justify-center gap-2 mb-5", children: [v.jsx("span", { className: "w-5 h-px bg-forest-600" }), v.jsx("span", { className: "text-xs font-bold tracking-[0.25em] uppercase text-forest-700", children: "Why We Exist" }), v.jsx("span", { className: "w-5 h-px bg-forest-600" })] }), v.jsxs("h2", { className: "font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-charcoal-900 leading-tight", children: ["Love is where meaningful", v.jsx("br", {}), v.jsx("span", { className: "text-forest-600", children: "change begins." })] })] }), v.jsx("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-8", children: L.map((a2, n) => {
     const s = a2.icon;
     return v.jsxs(Pe.article, { initial: { opacity: 0, y: 30 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true, margin: "-80px" }, transition: { duration: 0.6, delay: n * 0.1 }, className: `
                   group
@@ -10264,7 +10443,7 @@ Error generating stack: ` + s.message + `
   }) })] }) });
   var $2 = () => {
     const a2 = w.useRef(null), n = w.useRef(null), s = w2(a2, { once: true, margin: "-100px" }), { scrollYProgress: l } = Oe2({ target: n, offset: ["start end", "end start"] }), i = Ie2(l, [0, 1], ["-8%", "8%"]);
-    return v.jsx("section", { ref: a2, className: "py-0 bg-cream-50 overflow-hidden", "aria-labelledby": "story-heading", children: v.jsx("div", { className: "max-w-7xl mx-auto", children: v.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-2 min-h-[600px]", children: [v.jsxs("div", { ref: n, className: "relative overflow-hidden min-h-[400px] lg:min-h-full", children: [v.jsx(Pe.div, { initial: { scaleX: 1 }, animate: s ? { scaleX: 0 } : { scaleX: 1 }, transition: { duration: 0.9, delay: 0.2, ease: [0.76, 0, 0.24, 1] }, style: { originX: 0 }, className: "absolute inset-0 z-10 bg-charcoal-900" }), v.jsx(Pe.div, { style: { y: i }, className: "absolute inset-0 scale-110", children: v.jsx("img", { src: "./assets/community-story.png", alt: "Volunteers helping people in the community", className: "w-full h-full object-cover object-center", loading: "lazy" }) }), v.jsx("div", { className: "absolute inset-0 bg-gradient-to-r from-transparent to-cream-50/30 z-20 hidden lg:block" }), v.jsx(Pe.div, { initial: { opacity: 0, y: 16 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.6, delay: 1.1 }, className: "absolute bottom-6 left-6 z-30 max-w-xs", children: v.jsxs("div", { className: "bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-premium border border-white/50", children: [v.jsx("p", { className: "text-forest-700 font-medium text-sm italic leading-relaxed", children: '"\u0B89\u0BA4\u0BB5\u0BBF \u0B8E\u0BA9\u0BCD\u0BAA\u0BA4\u0BC1 \u0B92\u0BB0\u0BC1 \u0B9A\u0BC6\u0BAF\u0BB2\u0BCD \u0BAE\u0B9F\u0BCD\u0B9F\u0BC1\u0BAE\u0BCD \u0B85\u0BB2\u0BCD\u0BB2. \u0B92\u0BB0\u0BC1 \u0BA8\u0BAE\u0BCD\u0BAA\u0BBF\u0B95\u0BCD\u0B95\u0BC8."' }), v.jsx("p", { className: "text-charcoal-400 text-xs mt-1.5", children: '"Support is not just an act. It is hope."' })] }) })] }), v.jsx("div", { className: "flex items-center px-8 sm:px-12 lg:px-16 py-16 lg:py-20 bg-cream-50", children: v.jsxs("div", { className: "max-w-lg", children: [v.jsx(Pe.div, { initial: { opacity: 0, x: 20 }, animate: s ? { opacity: 1, x: 0 } : {}, transition: { duration: 0.5, delay: 0.4 }, className: "label-tag mb-6", children: "Real People. Real Impact." }), v.jsxs(Pe.h2, { id: "story-heading", initial: { opacity: 0, y: 24 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.7, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }, className: "font-display font-bold text-4xl sm:text-5xl text-charcoal-900 leading-tight mb-6", children: ["Support is more than giving.", v.jsx("br", {}), v.jsx("span", { className: "text-forest-600", children: "It is showing someone they are not alone." })] }), v.jsx(Pe.p, { initial: { opacity: 0, y: 16 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.6, delay: 0.62 }, className: "text-charcoal-500 leading-relaxed text-base mb-8", children: "From food and essential supplies to education, elderly care and emergency support, every contribution can become a moment of hope \u2014 and a turning point in someone's life." }), v.jsx(Pe.div, { initial: { opacity: 0, y: 16 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.6, delay: 0.72 }, className: "flex gap-8 mb-10 py-6 border-y border-charcoal-100", children: [{ value: "6", label: "Active programs" }, { value: "50+", label: "Communities served" }, { value: "98%", label: "Impact tracked" }].map((r) => v.jsxs("div", { children: [v.jsx("div", { className: "font-display font-bold text-3xl text-charcoal-900", children: r.value }), v.jsx("div", { className: "text-charcoal-400 text-xs font-medium mt-0.5", children: r.label })] }, r.label)) }), v.jsx(Pe.div, { initial: { opacity: 0, y: 12 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.5, delay: 0.82 }, children: v.jsx(lt, { to: "/services", children: v.jsxs(Pe.button, { whileHover: { scale: 1.02, x: 4 }, whileTap: { scale: 0.97 }, className: "group flex items-center gap-3 text-forest-600 font-bold text-sm hover:text-forest-700 transition-colors", children: ["See How We Help", v.jsx("div", { className: "w-8 h-8 rounded-full bg-forest-100 group-hover:bg-forest-200 flex items-center justify-center transition-all duration-300 group-hover:translate-x-1", children: v.jsx(DP, { className: "w-4 h-4" }) })] }) }) })] }) })] }) }) });
+    return v.jsx("section", { ref: a2, className: "py-0 bg-cream-50 overflow-hidden", "aria-labelledby": "story-heading", children: v.jsx("div", { className: "max-w-7xl mx-auto", children: v.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-2 min-h-[600px]", children: [v.jsxs("div", { ref: n, className: "relative overflow-hidden min-h-[400px] lg:min-h-full", children: [v.jsx(Pe.div, { initial: { scaleX: 1 }, animate: s ? { scaleX: 0 } : { scaleX: 1 }, transition: { duration: 0.9, delay: 0.2, ease: [0.76, 0, 0.24, 1] }, style: { originX: 0 }, className: "absolute inset-0 z-10 bg-charcoal-900" }), v.jsx(Pe.div, { style: { y: i }, className: "absolute inset-0 scale-110", children: v.jsx("img", { src: "./assets/community-story.png", alt: "Volunteers helping people in the community", className: "w-full h-full object-cover object-center", loading: "lazy" }) }), v.jsx("div", { className: "absolute inset-0 bg-gradient-to-r from-transparent to-cream-50/30 z-20 hidden lg:block" }), v.jsx(Pe.div, { initial: { opacity: 0, y: 16 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.6, delay: 1.1 }, className: "absolute bottom-6 left-6 z-30 max-w-xs", children: v.jsxs("div", { className: "bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-premium border border-white/50", children: [v.jsx("p", { className: "text-forest-700 font-medium text-sm italic leading-relaxed", children: '"\u0B89\u0BA4\u0BB5\u0BBF \u0B8E\u0BA9\u0BCD\u0BAA\u0BA4\u0BC1 \u0B92\u0BB0\u0BC1 \u0B9A\u0BC6\u0BAF\u0BB2\u0BCD \u0BAE\u0B9F\u0BCD\u0B9F\u0BC1\u0BAE\u0BCD \u0B85\u0BB2\u0BCD\u0BB2. \u0B92\u0BB0\u0BC1 \u0BA8\u0BAE\u0BCD\u0BAA\u0BBF\u0B95\u0BCD\u0B95\u0BC8."' }), v.jsx("p", { className: "text-charcoal-400 text-xs mt-1.5", children: '"Support is not just an act. It is hope."' })] }) })] }), v.jsx("div", { className: "flex items-center px-8 sm:px-12 lg:px-16 py-16 lg:py-20 bg-cream-50", children: v.jsxs("div", { className: "max-w-lg", children: [v.jsx(Pe.div, { initial: { opacity: 0, x: 20 }, animate: s ? { opacity: 1, x: 0 } : {}, transition: { duration: 0.5, delay: 0.4 }, className: "label-tag mb-6", children: "Real People. Real Impact." }), v.jsxs(Pe.h2, { id: "story-heading", initial: { opacity: 0, y: 24 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.7, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }, className: "font-display font-bold text-4xl sm:text-5xl text-charcoal-900 leading-tight mb-6", children: ["Support is more than giving.", v.jsx("br", {}), v.jsx("span", { className: "text-forest-600", children: "It is showing someone they are not alone." })] }), v.jsx(Pe.p, { initial: { opacity: 0, y: 16 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.6, delay: 0.62 }, className: "text-charcoal-500 leading-relaxed text-base mb-8", children: "Hill Organisation for People's Education was established in 2014 by Mrs. Brinah Prabhakaran and Mr. Prem Prabhakaran in Tuticorin, running Hope Children Home for abandoned girls and a home for destitute elderly mothers with love and affection." }), v.jsx(Pe.div, { initial: { opacity: 0, y: 16 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.6, delay: 0.72 }, className: "flex gap-8 mb-10 py-6 border-y border-charcoal-100", children: [{ value: "10+", label: "Years in Tuticorin" }, { value: "7", label: "Core Programs" }, { value: "100%", label: "Direct Transparency" }].map((r) => v.jsxs("div", { children: [v.jsx("div", { className: "font-display font-bold text-3xl text-charcoal-900", children: r.value }), v.jsx("div", { className: "text-charcoal-400 text-xs font-medium mt-0.5", children: r.label })] }, r.label)) }), v.jsx(Pe.div, { initial: { opacity: 0, y: 12 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.5, delay: 0.82 }, children: v.jsx(lt, { to: "/services", children: v.jsxs(Pe.button, { whileHover: { scale: 1.02, x: 4 }, whileTap: { scale: 0.97 }, className: "group flex items-center gap-3 text-forest-600 font-bold text-sm hover:text-forest-700 transition-colors", children: ["Explore Our 7 Programs", v.jsx("div", { className: "w-8 h-8 rounded-full bg-forest-100 group-hover:bg-forest-200 flex items-center justify-center transition-all duration-300 group-hover:translate-x-1", children: v.jsx(DP, { className: "w-4 h-4" }) })] }) }) })] }) })] }) }) });
   };
   var g2 = [{ number: "01", icon: zP, title: "Understand the Need", description: "We listen to communities and understand what people actually need before taking action." }, { number: "02", icon: d, title: "Take Meaningful Action", description: "We connect supporters, volunteers and local communities to deliver practical, timely support." }, { number: "03", icon: p, title: "Create Lasting Impact", description: "Every initiative is tracked, measured and improved so support creates sustainable change." }];
   var B3 = () => {
@@ -10417,17 +10596,103 @@ Error generating stack: ` + s.message + `
   };
 
   // assets/About-DoJ-XgS1.js
-  var g4 = [{ title: "Radical Transparency", description: "Every rupee tracked, every impact measured, and every report kept clear and accountable.", icon: a }, { title: "Human Dignity", description: "Support should never feel like charity. We treat every person with respect, care and dignity.", icon: zP }, { title: "Community First", description: "Solutions are designed with communities, not for them. Local voices guide every decision.", icon: Re2 }];
-  var u = [{ year: "2014", title: "A Compassionate Beginning", text: "Mrs. Brinah Prabhakaran and Mr. Prem Prabhakaran established an orphanage and home for aged in Tuticorin." }, { year: "2017", title: "Child Development & Education", text: "Opened rural Child Development Centres to support underprivileged kids with tutoring and education." }, { year: "2020", title: "Disaster & Hunger Relief", text: "Launched 'Feed the Hungry' and COVID-19 relief missions distributing food to thousands of families." }, { year: "2026", title: "Empowering Communities", text: "Empowering hundreds of women, abandoned children, and elderly citizens across Tamil Nadu." }];
+  var g4 = [
+    { title: "Unconditional Love & Care", description: "Providing shelter, wholesome food, quality education, and medical care with maternal love and affection.", icon: a },
+    { title: "Dignity for Every Soul", description: "Rescuing abandoned girl children and elderly mothers so they live with honor, safety, and respect.", icon: zP },
+    { title: "100% Transparent Trust", description: "Every donation directly reaches the children, seniors, and hungry people with complete accountability.", icon: Re2 }
+  ];
+  var u = [
+    { year: "2014", title: "Founded in Tuticorin", text: "Mrs. Brinah Prabhakaran and Mr. Prem Prabhakaran established Hill Organisation for People's Education (Hill Charity), starting an orphanage and a home for aged in Tuticorin." },
+    { year: "2017", title: "Child Development Centres", text: "Opened evening study and development centres in rural villages to help underprivileged children excel in education and build strong character." },
+    { year: "2020", title: "Disaster Relief & Hunger Program", text: "Launched the 'Feed the Hungry' mission and extensive COVID-19 relief distribution, providing dry rations and hot meals across Tamil Nadu." },
+    { year: "Today", title: "10+ Years of Service", text: "Nurturing dozens of abandoned girl children into bright futures, sheltering elderly mothers, and serving daily hot meals with community support." }
+  ];
   var N3 = () => {
     const n = w.useRef(null), s = w2(n, { once: true, margin: "-80px" });
-    return v.jsxs("main", { className: "bg-white pt-16", children: [v.jsxs("section", { ref: n, className: "relative overflow-hidden bg-cream-50 py-20 lg:py-28", "aria-labelledby": "journey-heading", children: [v.jsx("div", { className: "absolute -top-32 -right-32 w-80 h-80 rounded-full bg-forest-100/40 blur-3xl pointer-events-none" }), v.jsx("div", { className: "absolute -bottom-32 -left-32 w-80 h-80 rounded-full bg-amber-100/40 blur-3xl pointer-events-none" }), v.jsx("div", { className: "absolute top-20 left-0 w-32 h-px bg-forest-200" }), v.jsx("div", { className: "absolute top-24 left-0 w-20 h-px bg-forest-300" }), v.jsx("div", { className: "absolute bottom-20 right-0 w-32 h-px bg-forest-200" }), v.jsx("div", { className: "absolute bottom-24 right-0 w-20 h-px bg-forest-300" }), v.jsxs("div", { className: "relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [v.jsx(Pe.div, { initial: { opacity: 0, y: 15 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.6 }, className: "flex justify-center", children: v.jsxs("div", { className: "label-tag mb-5", children: [v.jsx("span", { className: "w-5 h-px bg-forest-600" }), "Our Journey"] }) }), v.jsxs(Pe.h1, { id: "journey-heading", initial: { opacity: 0, y: 25 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.7, delay: 0.1 }, className: "text-center font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-charcoal-900 leading-tight", children: ["Thirty years of", " ", v.jsx("span", { className: "text-gradient-green", children: "building trust." })] }), v.jsxs(Pe.div, { initial: { opacity: 0, y: 35 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.8, delay: 0.25 }, className: "relative max-w-5xl mx-auto mt-14", children: [v.jsx("div", { className: "absolute -inset-3 rounded-[2rem] border border-forest-200/70 pointer-events-none" }), v.jsx("div", { className: "absolute -inset-6 rounded-[2.5rem] border border-charcoal-100/70 pointer-events-none" }), v.jsxs("div", { className: "relative bg-white rounded-[1.75rem] border border-charcoal-100 shadow-card overflow-hidden", children: [v.jsx("div", { className: "h-1.5 bg-gradient-to-r from-forest-600 via-forest-400 to-amber-400" }), v.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-[280px_1fr]", children: [v.jsxs("div", { className: "relative bg-forest-950 text-white p-8 sm:p-10 lg:p-12 flex flex-col justify-center overflow-hidden", children: [v.jsx("div", { className: "absolute -top-20 -right-20 w-48 h-48 rounded-full border border-white/10" }), v.jsx("div", { className: "absolute -bottom-20 -left-20 w-48 h-48 rounded-full border border-white/10" }), v.jsxs("div", { className: "relative z-10 flex items-center gap-2 mb-5", children: [v.jsx("span", { className: "w-8 h-px bg-amber-400" }), v.jsx("span", { className: "text-amber-400 text-xs font-bold tracking-[0.2em] uppercase", children: "Since 1994" })] }), v.jsxs("div", { className: "relative z-10", children: [v.jsx("div", { className: "font-display font-bold text-7xl sm:text-8xl leading-none text-white", children: "30" }), v.jsx("div", { className: "mt-2 text-forest-300 text-lg font-semibold tracking-wide", children: "YEARS" }), v.jsx("div", { className: "mt-5 h-px w-20 bg-white/20" }), v.jsx("p", { className: "mt-5 text-white/60 text-sm leading-relaxed", children: "Three decades of showing up, listening and turning promises into meaningful action." })] })] }), v.jsxs("div", { className: "p-8 sm:p-10 lg:p-12", children: [v.jsxs("div", { className: "flex items-start gap-4 mb-7", children: [v.jsx("div", { className: "w-12 h-12 shrink-0 rounded-2xl bg-forest-50 text-forest-600 flex items-center justify-center", children: v.jsx(d, { className: "w-6 h-6" }) }), v.jsx("div", { children: v.jsxs("h2", { className: "font-display font-bold text-2xl sm:text-3xl text-charcoal-900", children: ["Thirty years of trust,", v.jsxs("span", { className: "text-forest-600", children: [" ", "one community at a time."] })] }) })] }), v.jsx("p", { className: "text-charcoal-500 leading-relaxed text-base mb-5", children: "Hill Organisation for People's Education (Hill Charity) charitable trust was founded by Mrs. Brinah Prabhakaran and Mr. Prem Prabhakaran with a vision to support poor, orphan, abandoned children and elderly women throughout Tamil Nadu, South India." }), v.jsx("p", { className: "text-charcoal-500 leading-relaxed text-base", children: "In 2014, they established an orphanage (Hope Children Home) and a home for the aged in Tuticorin, providing food, shelter, education, and medical care with unconditional love and affection." }), v.jsxs("div", { className: "grid grid-cols-3 gap-4 mt-8 pt-7 border-t border-charcoal-100", children: [v.jsxs("div", { children: [v.jsx("div", { className: "font-display font-bold text-xl text-forest-700", children: "30+" }), v.jsx("div", { className: "text-xs text-charcoal-400 mt-1", children: "Years" })] }), v.jsxs("div", { children: [v.jsx("div", { className: "font-display font-bold text-xl text-forest-700", children: "10K+" }), v.jsx("div", { className: "text-xs text-charcoal-400 mt-1", children: "Lives Reached" })] }), v.jsxs("div", { children: [v.jsx("div", { className: "font-display font-bold text-xl text-forest-700", children: "100%" }), v.jsx("div", { className: "text-xs text-charcoal-400 mt-1", children: "Accountability" })] })] })] })] }), v.jsx("div", { className: "absolute bottom-0 left-10 right-10 h-px bg-gradient-to-r from-transparent via-forest-200 to-transparent" })] })] }), v.jsx(Pe.p, { initial: { opacity: 0 }, animate: s ? { opacity: 1 } : {}, transition: { duration: 0.7, delay: 0.45 }, className: "max-w-2xl mx-auto text-center text-charcoal-400 text-sm mt-12", children: "A journey built not just on years, but on people, relationships and communities that continue to inspire us." })] })] }), v.jsx("section", { className: "py-20 lg:py-28 bg-white", "aria-labelledby": "values-heading", children: v.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [v.jsx(g3, { children: v.jsxs("div", { className: "text-center", children: [v.jsxs("div", { className: "label-tag justify-center mb-4", children: [v.jsx("span", { className: "w-5 h-px bg-forest-600" }), "What We Stand For"] }), v.jsxs("h2", { id: "values-heading", className: "font-display font-bold text-4xl sm:text-5xl text-charcoal-900 leading-tight", children: ["Our values are not", " ", v.jsx("span", { className: "text-gradient-green", children: "statements on a wall." })] }), v.jsx("p", { className: "mt-4 text-charcoal-500", children: "They are the decisions we make every day, especially the hard ones." })] }) }), v.jsx("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-6 mt-14", children: g4.map((t, a2) => {
-      const l = t.icon;
-      return v.jsx(g3, { delay: a2 * 0.1, children: v.jsxs("div", { className: "group relative h-full bg-white rounded-3xl border border-charcoal-100 p-7 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-500 overflow-hidden", children: [v.jsx("div", { className: "absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-forest-300 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" }), v.jsx("div", { className: "w-12 h-12 rounded-2xl bg-forest-50 text-forest-600 flex items-center justify-center mb-5 group-hover:bg-forest-100 transition-colors", children: v.jsx(l, { className: "w-5 h-5" }) }), v.jsx("h3", { className: "font-display font-bold text-xl text-charcoal-900 mb-3", children: t.title }), v.jsx("p", { className: "text-charcoal-500 text-sm leading-relaxed", children: t.description })] }) }, t.title);
-    }) })] }) }), v.jsx("section", { className: "py-20 lg:py-28 bg-cream-50", children: v.jsxs("div", { className: "max-w-6xl mx-auto px-4 sm:px-6 lg:px-8", children: [v.jsx(g3, { children: v.jsxs("div", { className: "text-center mb-14", children: [v.jsxs("div", { className: "label-tag justify-center mb-4", children: [v.jsx("span", { className: "w-5 h-px bg-forest-600" }), "Our Story"] }), v.jsxs("h2", { className: "font-display font-bold text-4xl sm:text-5xl text-charcoal-900", children: ["A journey of", " ", v.jsx("span", { className: "text-gradient-green", children: "lasting change." })] })] }) }), v.jsxs("div", { className: "relative", children: [v.jsx("div", { className: "hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-forest-200" }), v.jsx("div", { className: "space-y-8 md:space-y-0", children: u.map((t, a2) => {
-      const l = a2 % 2 === 0;
-      return v.jsx(g3, { delay: a2 * 0.1, children: v.jsxs("div", { className: "relative md:grid md:grid-cols-2 md:gap-12 mb-10 last:mb-0", children: [v.jsx("div", { className: l ? "md:text-right" : "md:col-start-2", children: v.jsxs("div", { className: "bg-white rounded-3xl border border-charcoal-100 p-7 shadow-card", children: [v.jsx("div", { className: "text-forest-600 font-display font-bold text-2xl mb-2", children: t.year }), v.jsx("h3", { className: "font-display font-bold text-xl text-charcoal-900 mb-2", children: t.title }), v.jsx("p", { className: "text-charcoal-500 text-sm leading-relaxed", children: t.text })] }) }), v.jsx("div", { className: "hidden md:flex absolute left-1/2 -translate-x-1/2 top-8 w-4 h-4 rounded-full bg-forest-600 border-4 border-cream-50 shadow-sm" })] }) }, t.year);
-    }) })] })] }) }), v.jsx(Ne2, {})] });
+    return v.jsxs("main", { className: "bg-white pt-16", children: [
+      v.jsxs("section", { ref: n, className: "relative overflow-hidden bg-cream-50 py-20 lg:py-28", "aria-labelledby": "journey-heading", children: [
+        v.jsx("div", { className: "absolute -top-32 -right-32 w-80 h-80 rounded-full bg-forest-100/40 blur-3xl pointer-events-none" }),
+        v.jsx("div", { className: "absolute -bottom-32 -left-32 w-80 h-80 rounded-full bg-amber-100/40 blur-3xl pointer-events-none" }),
+        v.jsxs("div", { className: "relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
+          v.jsx(Pe.div, { initial: { opacity: 0, y: 15 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.6 }, className: "flex justify-center", children: v.jsxs("div", { className: "label-tag mb-5", children: [v.jsx("span", { className: "w-5 h-px bg-forest-600" }), "Our Profile"] }) }),
+          v.jsxs(Pe.h1, { id: "journey-heading", initial: { opacity: 0, y: 25 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.7, delay: 0.1 }, className: "text-center font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-charcoal-900 leading-tight", children: ["Hill Organisation for", " ", v.jsx("span", { className: "text-gradient-green", children: "People\u2019s Education." })] }),
+          v.jsx("p", { className: "mt-4 text-center text-charcoal-600 max-w-2xl mx-auto text-base sm:text-lg", children: "A charitable trust based in Tuticorin, Tamil Nadu, dedicated to poor, orphan, abandoned girl children and elderly women." }),
+          v.jsxs(Pe.div, { initial: { opacity: 0, y: 35 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.8, delay: 0.25 }, className: "relative max-w-5xl mx-auto mt-14", children: [
+            v.jsx("div", { className: "absolute -inset-3 rounded-[2rem] border border-forest-200/70 pointer-events-none" }),
+            v.jsx("div", { className: "absolute -inset-6 rounded-[2.5rem] border border-charcoal-100/70 pointer-events-none" }),
+            v.jsxs("div", { className: "relative bg-white rounded-[1.75rem] border border-charcoal-100 shadow-card overflow-hidden", children: [
+              v.jsx("div", { className: "h-1.5 bg-gradient-to-r from-forest-600 via-forest-400 to-amber-400" }),
+              v.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-[280px_1fr]", children: [
+                v.jsxs("div", { className: "relative bg-forest-950 text-white p-8 sm:p-10 lg:p-12 flex flex-col justify-center overflow-hidden", children: [
+                  v.jsx("div", { className: "absolute -top-20 -right-20 w-48 h-48 rounded-full border border-white/10" }),
+                  v.jsx("div", { className: "absolute -bottom-20 -left-20 w-48 h-48 rounded-full border border-white/10" }),
+                  v.jsxs("div", { className: "relative z-10 flex items-center gap-2 mb-5", children: [
+                    v.jsx("span", { className: "w-8 h-px bg-amber-400" }),
+                    v.jsx("span", { className: "text-amber-400 text-xs font-bold tracking-[0.2em] uppercase", children: "Since 2014" })
+                  ] }),
+                  v.jsxs("div", { className: "relative z-10", children: [
+                    v.jsx("div", { className: "font-display font-bold text-7xl sm:text-8xl leading-none text-white", children: "10+" }),
+                    v.jsx("div", { className: "mt-2 text-forest-300 text-lg font-semibold tracking-wide", children: "YEARS" }),
+                    v.jsx("div", { className: "mt-5 h-px w-20 bg-white/20" }),
+                    v.jsx("p", { className: "mt-5 text-white/60 text-sm leading-relaxed", children: "Founded in Tuticorin by Mrs. Brinah Prabhakaran & Mr. Prem Prabhakaran." })
+                  ] })
+                ] }),
+                v.jsxs("div", { className: "p-8 sm:p-10 lg:p-12", children: [
+                  v.jsxs("div", { className: "flex items-start gap-4 mb-7", children: [
+                    v.jsx("div", { className: "w-12 h-12 shrink-0 rounded-2xl bg-forest-50 text-forest-600 flex items-center justify-center", children: v.jsx(d, { className: "w-6 h-6" }) }),
+                    v.jsx("div", { children: v.jsxs("h2", { className: "font-display font-bold text-2xl sm:text-3xl text-charcoal-900", children: ["Transforming lives with love,", v.jsxs("span", { className: "text-forest-600", children: [" ", "food and education."] })] }) })
+                  ] }),
+                  v.jsx("p", { className: "text-charcoal-600 leading-relaxed text-base mb-4", children: "Hill Organisation for People\u2019s Education (Hill Charity) charitable trust in Tuticorin was created by Mrs. Brinah Prabhakaran and Mr. Prem Prabhakaran with a heartfelt vision to support poor, orphan, abandoned children and women throughout Tamil Nadu, South India." }),
+                  v.jsx("p", { className: "text-charcoal-600 leading-relaxed text-base mb-4", children: "In 2014, they started running an orphanage (Hope Children Home) and a home for the aged for abandoned girl children and elderly women in Tuticorin, providing wholesome food, shelter, education, and medical care with unconditional love and affection." }),
+                  v.jsx("p", { className: "text-charcoal-600 leading-relaxed text-base", children: "In many villages, young girls who excel in school are unable to continue higher education due to severe poverty and are forced to work for daily wages. Hill Charity provides educational sponsorships and vocational training to empower these girls and change their life trajectory." }),
+                  v.jsxs("div", { className: "grid grid-cols-3 gap-4 mt-8 pt-7 border-t border-charcoal-100", children: [
+                    v.jsxs("div", { children: [v.jsx("div", { className: "font-display font-bold text-xl text-forest-700", children: "2014" }), v.jsx("div", { className: "text-xs text-charcoal-400 mt-1", children: "Established" })] }),
+                    v.jsxs("div", { children: [v.jsx("div", { className: "font-display font-bold text-xl text-forest-700", children: "Tuticorin" }), v.jsx("div", { className: "text-xs text-charcoal-400 mt-1", children: "Headquarters" })] }),
+                    v.jsxs("div", { children: [v.jsx("div", { className: "font-display font-bold text-xl text-forest-700", children: "7 Core" }), v.jsx("div", { className: "text-xs text-charcoal-400 mt-1", children: "Programs" })] })
+                  ] })
+                ] })
+              ] })
+            ] })
+          ] })
+        ] })
+      ] }),
+      v.jsx("section", { className: "py-20 lg:py-28 bg-white", "aria-labelledby": "values-heading", children: v.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
+        v.jsx(g3, { children: v.jsxs("div", { className: "text-center", children: [
+          v.jsxs("div", { className: "label-tag justify-center mb-4", children: [v.jsx("span", { className: "w-5 h-px bg-forest-600" }), "Our Guiding Principles"] }),
+          v.jsxs("h2", { id: "values-heading", className: "font-display font-bold text-4xl sm:text-5xl text-charcoal-900 leading-tight", children: ["Why Hill Charity", " ", v.jsx("span", { className: "text-gradient-green", children: "was created." })] }),
+          v.jsx("p", { className: "mt-4 text-charcoal-500", children: "Founded with a pure commitment to serve the most vulnerable in our community." })
+        ] }) }),
+        v.jsx("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-6 mt-14", children: g4.map((t, a2) => {
+          const l = t.icon;
+          return v.jsx(g3, { delay: a2 * 0.1, children: v.jsxs("div", { className: "group relative h-full bg-white rounded-3xl border border-charcoal-100 p-7 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-500 overflow-hidden", children: [
+            v.jsx("div", { className: "w-12 h-12 rounded-2xl bg-forest-50 text-forest-600 flex items-center justify-center mb-5 group-hover:bg-forest-100 transition-colors", children: v.jsx(l, { className: "w-5 h-5" }) }),
+            v.jsx("h3", { className: "font-display font-bold text-xl text-charcoal-900 mb-3", children: t.title }),
+            v.jsx("p", { className: "text-charcoal-500 text-sm leading-relaxed", children: t.description })
+          ] }) }, t.title);
+        }) })
+      ] }) }),
+      v.jsx("section", { className: "py-20 lg:py-28 bg-cream-50", children: v.jsxs("div", { className: "max-w-6xl mx-auto px-4 sm:px-6 lg:px-8", children: [
+        v.jsx(g3, { children: v.jsxs("div", { className: "text-center mb-14", children: [
+          v.jsxs("div", { className: "label-tag justify-center mb-4", children: [v.jsx("span", { className: "w-5 h-px bg-forest-600" }), "Milestones"] }),
+          v.jsxs("h2", { className: "font-display font-bold text-4xl sm:text-5xl text-charcoal-900", children: ["Our Journey of", " ", v.jsx("span", { className: "text-gradient-green", children: "Service & Compassion." })] })
+        ] }) }),
+        v.jsxs("div", { className: "relative", children: [
+          v.jsx("div", { className: "hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-forest-200" }),
+          v.jsx("div", { className: "space-y-8 md:space-y-0", children: u.map((t, a2) => {
+            const l = a2 % 2 === 0;
+            return v.jsx(g3, { delay: a2 * 0.1, children: v.jsxs("div", { className: "relative md:grid md:grid-cols-2 md:gap-12 mb-10 last:mb-0", children: [
+              v.jsx("div", { className: l ? "md:text-right" : "md:col-start-2", children: v.jsxs("div", { className: "bg-white rounded-3xl border border-charcoal-100 p-7 shadow-card", children: [
+                v.jsx("div", { className: "text-forest-600 font-display font-bold text-2xl mb-2", children: t.year }),
+                v.jsx("h3", { className: "font-display font-bold text-xl text-charcoal-900 mb-2", children: t.title }),
+                v.jsx("p", { className: "text-charcoal-500 text-sm leading-relaxed", children: t.text })
+              ] }) }),
+              v.jsx("div", { className: "hidden md:flex absolute left-1/2 -translate-x-1/2 top-8 w-4 h-4 rounded-full bg-forest-600 border-4 border-cream-50 shadow-sm" })
+            ] }) }, t.year);
+          }) })
+        ] })
+      ] }) }),
+      v.jsx(Ne2, {})
+    ] });
   };
 
   // assets/Services-eg4BCXTo.js
@@ -10579,12 +10844,12 @@ Error generating stack: ` + s.message + `
                 leading-tight
                 max-w-3xl
                 mb-6
-              `, children: ["Six ways we create", " ", v.jsx("span", { className: "text-amber-400", children: "real change." })] }) }), v.jsx(g3, { delay: 0.2, children: v.jsx("p", { className: `
+              `, children: ["Seven core programs for", " ", v.jsx("span", { className: "text-amber-400", children: "lasting change." })] }) }), v.jsx(g3, { delay: 0.2, children: v.jsx("p", { className: `
                 text-white/70
                 text-xl
                 leading-relaxed
                 max-w-2xl
-              `, children: "Each program is designed around actual community need \u2014 verified, accountable, and built for lasting impact." }) }), v.jsx(g3, { delay: 0.3, children: v.jsx("div", { className: "flex flex-wrap gap-3 mt-10", children: M3.map((e) => {
+              `, children: "Hill Organisation for People's Education runs 7 dedicated initiatives across Tuticorin and Tamil Nadu \u2014 providing food, shelter, education, and medical care with love and affection." }) }), v.jsx(g3, { delay: 0.3, children: v.jsx("div", { className: "flex flex-wrap gap-3 mt-10", children: M3.map((e) => {
     const s = x2[e.icon] ?? zP;
     return v.jsxs("a", { href: `#${e.id}`, className: `
                       flex
@@ -10617,102 +10882,138 @@ Error generating stack: ` + s.message + `
         t(false);
       }, 4e3);
     };
-    return v.jsxs("main", { className: "min-h-screen bg-cream-50", children: [v.jsx("section", { className: "pt-32 pb-20 lg:pt-40 lg:pb-28", "aria-labelledby": "contact-heading", children: v.jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: v.jsxs("div", { className: "max-w-4xl mx-auto", children: [v.jsx(g3, { children: v.jsxs("div", { className: "text-center mb-12", children: [v.jsxs("div", { className: "label-tag justify-center mb-5", children: [v.jsx("span", { className: "w-5 h-px bg-forest-600" }), "Send Us a Message"] }), v.jsxs("h1", { id: "contact-heading", className: "font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-charcoal-900 leading-tight", children: ["We read every", " ", v.jsx("span", { className: "text-gradient-green", children: "single message." })] }), v.jsx("p", { className: "mt-5 text-charcoal-500 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto", children: "Get in touch with Hill Organisation for People's Education in Tuticorin. Call +91 9944704699, WhatsApp, or email hillorganization85@gmail.com." })] }) }), v.jsx(g3, { delay: 0.1, children: v.jsx(Pe.div, { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.7 }, className: "bg-white rounded-3xl border border-charcoal-100 shadow-card p-6 sm:p-8 lg:p-10", children: c ? v.jsxs("div", { className: "min-h-[400px] flex flex-col items-center justify-center text-center", children: [v.jsx("div", { className: "w-16 h-16 rounded-full bg-forest-50 flex items-center justify-center mb-6", children: v.jsx(VP, { className: "w-8 h-8 text-forest-600" }) }), v.jsx("h2", { className: "font-display font-bold text-3xl text-charcoal-900 mb-3", children: "Message Sent!" }), v.jsx("p", { className: "text-charcoal-500 max-w-md leading-relaxed", children: "Thank you for reaching out to Hill Charity. Our team will get back to you soon." })] }) : v.jsxs("form", { onSubmit: d3, className: "space-y-6", children: [v.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-6", children: [v.jsxs("div", { children: [v.jsxs("label", { htmlFor: "fullName", className: "block text-sm font-semibold text-charcoal-700 mb-2", children: ["Full Name", v.jsx("span", { className: "text-red-500 ml-1", children: "*" })] }), v.jsx("input", { id: "fullName", name: "fullName", type: "text", value: a2.fullName, onChange: n, required: true, placeholder: "Your full name", className: `
-                            w-full
-                            h-14
-                            px-4
-                            rounded-2xl
-                            border
-                            border-charcoal-200
-                            bg-white
-                            text-charcoal-800
-                            placeholder:text-charcoal-400
-                            outline-none
-                            transition-all
-                            duration-200
-                            focus:border-forest-500
-                            focus:ring-4
-                            focus:ring-forest-100
-                          ` })] }), v.jsxs("div", { children: [v.jsxs("label", { htmlFor: "email", className: "block text-sm font-semibold text-charcoal-700 mb-2", children: ["Email", v.jsx("span", { className: "text-red-500 ml-1", children: "*" })] }), v.jsx("input", { id: "email", name: "email", type: "email", value: a2.email, onChange: n, required: true, placeholder: "you@example.com", className: `
-                            w-full
-                            h-14
-                            px-4
-                            rounded-2xl
-                            border
-                            border-charcoal-200
-                            bg-white
-                            text-charcoal-800
-                            placeholder:text-charcoal-400
-                            outline-none
-                            transition-all
-                            duration-200
-                            focus:border-forest-500
-                            focus:ring-4
-                            focus:ring-forest-100
-                          ` })] })] }), v.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-6", children: [v.jsxs("div", { children: [v.jsx("label", { htmlFor: "phone", className: "block text-sm font-semibold text-charcoal-700 mb-2", children: "Phone" }), v.jsx("input", { id: "phone", name: "phone", type: "tel", value: a2.phone, onChange: n, placeholder: "+91 XXXXX XXXXX", className: `
-                            w-full
-                            h-14
-                            px-4
-                            rounded-2xl
-                            border
-                            border-charcoal-200
-                            bg-white
-                            text-charcoal-800
-                            placeholder:text-charcoal-400
-                            outline-none
-                            transition-all
-                            duration-200
-                            focus:border-forest-500
-                            focus:ring-4
-                            focus:ring-forest-100
-                          ` })] }), v.jsxs("div", { children: [v.jsx("label", { htmlFor: "subject", className: "block text-sm font-semibold text-charcoal-700 mb-2", children: "Subject" }), v.jsxs("select", { id: "subject", name: "subject", value: a2.subject, onChange: n, className: `
-                            w-full
-                            h-14
-                            px-4
-                            rounded-2xl
-                            border
-                            border-charcoal-200
-                            bg-white
-                            text-charcoal-700
-                            outline-none
-                            transition-all
-                            duration-200
-                            focus:border-forest-500
-                            focus:ring-4
-                            focus:ring-forest-100
-                          `, children: [v.jsx("option", { value: "", children: "Select a subject" }), v.jsx("option", { value: "volunteer", children: "I want to volunteer" }), v.jsx("option", { value: "donation", children: "I want to donate" }), v.jsx("option", { value: "sponsor", children: "Partnership / Sponsorship" }), v.jsx("option", { value: "program", children: "Program enquiry" }), v.jsx("option", { value: "general", children: "General enquiry" })] })] })] }), v.jsxs("div", { children: [v.jsxs("label", { htmlFor: "message", className: "block text-sm font-semibold text-charcoal-700 mb-2", children: ["Message", v.jsx("span", { className: "text-red-500 ml-1", children: "*" })] }), v.jsx("textarea", { id: "message", name: "message", value: a2.message, onChange: n, required: true, rows: 8, placeholder: "Tell us about yourself and how you'd like to get involved...", className: `
-                          w-full
-                          px-4
-                          py-4
-                          rounded-2xl
-                          border
-                          border-charcoal-200
-                          bg-white
-                          text-charcoal-800
-                          placeholder:text-charcoal-400
-                          outline-none
-                          resize-none
-                          transition-all
-                          duration-200
-                          focus:border-forest-500
-                          focus:ring-4
-                          focus:ring-forest-100
-                        ` })] }), v.jsxs(Pe.button, { type: "submit", whileHover: { scale: 1.01 }, whileTap: { scale: 0.98 }, className: `
-                        w-full
-                        h-14
-                        flex
-                        items-center
-                        justify-center
-                        gap-2
-                        bg-forest-600
-                        hover:bg-forest-700
-                        text-white
-                        font-bold
-                        rounded-full
-                        shadow-md
-                        transition-all
-                        duration-300
-                      `, children: ["Send Message", v.jsx(b3, { className: "w-4 h-4" })] })] }) }) })] }) }) }), v.jsx("section", { className: "py-16 bg-white border-t border-charcoal-100", children: v.jsx("div", { className: "max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center", children: v.jsxs(g3, { children: [v.jsxs("div", { className: "label-tag justify-center mb-4", children: [v.jsx("span", { className: "w-5 h-px bg-forest-600" }), "Hill Charity"] }), v.jsxs("h2", { className: "font-display font-bold text-3xl sm:text-4xl text-charcoal-900", children: ["Every conversation can", " ", v.jsx("span", { className: "text-gradient-green", children: "create change." })] }), v.jsx("p", { className: "mt-4 text-charcoal-500 max-w-xl mx-auto leading-relaxed", children: "Reach out to us and let's explore how we can make a meaningful difference together." })] }) }) })] });
+    return v.jsxs("main", { className: "min-h-screen bg-cream-50 pt-20", children: [
+      v.jsx("section", {
+        className: "pt-16 pb-12 lg:pt-20 lg:pb-16",
+        "aria-labelledby": "contact-heading",
+        children: v.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
+          v.jsx(g3, { children: v.jsxs("div", { className: "text-center mb-12", children: [
+            v.jsxs("div", { className: "label-tag justify-center mb-4", children: [v.jsx("span", { className: "w-5 h-px bg-forest-600" }), "Hill Charity \u2014 Tuticorin"] }),
+            v.jsxs("h1", { id: "contact-heading", className: "font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-charcoal-900 leading-tight", children: ["Get in Touch with", " ", v.jsx("span", { className: "text-gradient-green", children: "Hill Charity." })] }),
+            v.jsx("p", { className: "mt-4 text-charcoal-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto", children: "Hill Organisation for People's Education is based in Tuticorin, Tamil Nadu. Reach out to us for donations, volunteering, or sponsorships." })
+          ] }) }),
+          v.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-6 mb-12", children: [
+            v.jsxs("div", { className: "bg-white rounded-3xl p-7 border border-blue-100 shadow-card flex flex-col items-center text-center", children: [
+              v.jsx("div", { className: "w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-4 font-bold text-xl", children: "\u{1F4CD}" }),
+              v.jsx("h3", { className: "font-display font-bold text-lg text-charcoal-900 mb-2", children: "Our Address" }),
+              v.jsx("p", { className: "text-charcoal-600 text-sm leading-relaxed", children: "42N, Bryant Nagar 1st Street (East), Tuticorin - 628008, Tamil Nadu, South India." })
+            ] }),
+            v.jsxs("div", { className: "bg-white rounded-3xl p-7 border border-blue-100 shadow-card flex flex-col items-center text-center", children: [
+              v.jsx("div", { className: "w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-4 font-bold text-xl", children: "\u{1F4DE}" }),
+              v.jsx("h3", { className: "font-display font-bold text-lg text-charcoal-900 mb-2", children: "Phone & WhatsApp" }),
+              v.jsxs("p", { className: "text-charcoal-600 text-sm leading-relaxed", children: [
+                v.jsx("a", { href: "tel:+919944704699", className: "hover:text-blue-600 block font-semibold", children: "+91 9944704699" }),
+                v.jsx("a", { href: "tel:+919952020878", className: "hover:text-blue-600 block", children: "+91 9952020878" }),
+                v.jsx("a", { href: "https://wa.me/919944704699", target: "_blank", rel: "noreferrer", className: "inline-block mt-2 text-xs font-bold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full", children: "Chat on WhatsApp" })
+              ] })
+            ] }),
+            v.jsxs("div", { className: "bg-white rounded-3xl p-7 border border-blue-100 shadow-card flex flex-col items-center text-center", children: [
+              v.jsx("div", { className: "w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-4 font-bold text-xl", children: "\u2709\uFE0F" }),
+              v.jsx("h3", { className: "font-display font-bold text-lg text-charcoal-900 mb-2", children: "Email & Trust Info" }),
+              v.jsx("a", { href: "mailto:hillorganization85@gmail.com", className: "text-blue-600 font-semibold text-sm hover:underline block mb-2", children: "hillorganization85@gmail.com" }),
+              v.jsx("p", { className: "text-charcoal-500 text-xs", children: "Reg. Charitable Trust (Est. 2014, Tuticorin)" })
+            ] })
+          ] }),
+          v.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16", children: [
+            v.jsx("div", {
+              className: "lg:col-span-7",
+              children: v.jsx(Pe.div, {
+                initial: { opacity: 0, y: 20 },
+                animate: { opacity: 1, y: 0 },
+                transition: { duration: 0.7 },
+                className: "bg-white rounded-3xl border border-charcoal-100 shadow-card p-6 sm:p-8 lg:p-10",
+                children: c ? v.jsxs("div", { className: "min-h-[400px] flex flex-col items-center justify-center text-center", children: [
+                  v.jsx("div", { className: "w-16 h-16 rounded-full bg-forest-50 flex items-center justify-center mb-6", children: v.jsx(VP, { className: "w-8 h-8 text-forest-600" }) }),
+                  v.jsx("h2", { className: "font-display font-bold text-3xl text-charcoal-900 mb-3", children: "Message Sent!" }),
+                  v.jsx("p", { className: "text-charcoal-500 max-w-md leading-relaxed", children: "Thank you for reaching out to Hill Charity. Our team will get back to you shortly." })
+                ] }) : v.jsxs("form", { onSubmit: d3, className: "space-y-6", children: [
+                  v.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-6", children: [
+                    v.jsxs("div", { children: [
+                      v.jsxs("label", { htmlFor: "fullName", className: "block text-sm font-semibold text-charcoal-700 mb-2", children: ["Full Name", v.jsx("span", { className: "text-red-500 ml-1", children: "*" })] }),
+                      v.jsx("input", { id: "fullName", name: "fullName", type: "text", value: a2.fullName, onChange: n, required: true, placeholder: "Your full name", className: "w-full h-14 px-4 rounded-2xl border border-charcoal-200 bg-white text-charcoal-800 placeholder:text-charcoal-400 outline-none transition-all duration-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100" })
+                    ] }),
+                    v.jsxs("div", { children: [
+                      v.jsxs("label", { htmlFor: "email", className: "block text-sm font-semibold text-charcoal-700 mb-2", children: ["Email", v.jsx("span", { className: "text-red-500 ml-1", children: "*" })] }),
+                      v.jsx("input", { id: "email", name: "email", type: "email", value: a2.email, onChange: n, required: true, placeholder: "you@example.com", className: "w-full h-14 px-4 rounded-2xl border border-charcoal-200 bg-white text-charcoal-800 placeholder:text-charcoal-400 outline-none transition-all duration-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100" })
+                    ] })
+                  ] }),
+                  v.jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-6", children: [
+                    v.jsxs("div", { children: [
+                      v.jsx("label", { htmlFor: "phone", className: "block text-sm font-semibold text-charcoal-700 mb-2", children: "Phone / WhatsApp" }),
+                      v.jsx("input", { id: "phone", name: "phone", type: "tel", value: a2.phone, onChange: n, placeholder: "+91 XXXXX XXXXX", className: "w-full h-14 px-4 rounded-2xl border border-charcoal-200 bg-white text-charcoal-800 placeholder:text-charcoal-400 outline-none transition-all duration-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100" })
+                    ] }),
+                    v.jsxs("div", { children: [
+                      v.jsx("label", { htmlFor: "subject", className: "block text-sm font-semibold text-charcoal-700 mb-2", children: "Subject" }),
+                      v.jsxs("select", { id: "subject", name: "subject", value: a2.subject, onChange: n, className: "w-full h-14 px-4 rounded-2xl border border-charcoal-200 bg-white text-charcoal-700 outline-none transition-all duration-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100", children: [
+                        v.jsx("option", { value: "", children: "Select a subject" }),
+                        v.jsx("option", { value: "food", children: "Sponsor Food (100 People)" }),
+                        v.jsx("option", { value: "girl-child", children: "Sponsor a Girl Child (Rs.1000/mo)" }),
+                        v.jsx("option", { value: "elderly", children: "Sponsor an Elderly Mother (Rs.2500/mo)" }),
+                        v.jsx("option", { value: "donation", children: "General Donation" }),
+                        v.jsx("option", { value: "volunteer", children: "Volunteer with Us" }),
+                        v.jsx("option", { value: "general", children: "General Enquiry" })
+                      ] })
+                    ] })
+                  ] }),
+                  v.jsxs("div", { children: [
+                    v.jsxs("label", { htmlFor: "message", className: "block text-sm font-semibold text-charcoal-700 mb-2", children: ["Message", v.jsx("span", { className: "text-red-500 ml-1", children: "*" })] }),
+                    v.jsx("textarea", { id: "message", name: "message", value: a2.message, onChange: n, required: true, rows: 5, placeholder: "How can we help or how would you like to partner with Hill Charity?", className: "w-full px-4 py-4 rounded-2xl border border-charcoal-200 bg-white text-charcoal-800 placeholder:text-charcoal-400 outline-none resize-none transition-all duration-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-100" })
+                  ] }),
+                  v.jsxs(Pe.button, { type: "submit", whileHover: { scale: 1.01 }, whileTap: { scale: 0.98 }, className: "w-full h-14 flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full shadow-md transition-all duration-300", children: ["Send Message", v.jsx(b3, { className: "w-4 h-4" })] })
+                ] })
+              })
+            }),
+            v.jsxs("div", { className: "lg:col-span-5 space-y-6", children: [
+              v.jsxs("div", { className: "bg-white rounded-3xl p-6 sm:p-8 border border-amber-200 shadow-card bg-gradient-to-br from-white to-amber-50/40", children: [
+                v.jsxs("div", { className: "flex items-center gap-2 mb-4", children: [
+                  v.jsx("span", { className: "px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-wider", children: "Sponsorship Tiers" }),
+                  v.jsx("span", { className: "text-xs text-charcoal-400 font-medium", children: "Direct Impact" })
+                ] }),
+                v.jsx("h3", { className: "font-display font-bold text-xl text-charcoal-900 mb-4", children: "Sponsor Food & Care" }),
+                v.jsxs("ul", { className: "space-y-2.5 text-sm text-charcoal-700 mb-4", children: [
+                  v.jsxs("li", { className: "flex justify-between py-1.5 border-b border-amber-100", children: [v.jsx("span", { children: "Sponsor Breakfast (100 people)" }), v.jsx("span", { className: "font-bold text-amber-600", children: "Rs. 3,500/-" })] }),
+                  v.jsxs("li", { className: "flex justify-between py-1.5 border-b border-amber-100", children: [v.jsx("span", { children: "Sponsor Lunch (100 people)" }), v.jsx("span", { className: "font-bold text-amber-600", children: "Rs. 4,500/-" })] }),
+                  v.jsxs("li", { className: "flex justify-between py-1.5 border-b border-amber-100", children: [v.jsx("span", { children: "Sponsor Dinner (100 people)" }), v.jsx("span", { className: "font-bold text-amber-600", children: "Rs. 3,500/-" })] }),
+                  v.jsxs("li", { className: "flex justify-between py-1.5 border-b border-amber-100", children: [v.jsx("span", { children: "Full Day Food (100 people)" }), v.jsx("span", { className: "font-bold text-amber-600", children: "Rs. 11,500/-" })] }),
+                  v.jsxs("li", { className: "flex justify-between py-1.5 border-b border-amber-100", children: [v.jsx("span", { children: "Sponsor a Girl Child" }), v.jsx("span", { className: "font-bold text-blue-600", children: "Rs. 1,000 / mo" })] }),
+                  v.jsxs("li", { className: "flex justify-between py-1.5", children: [v.jsx("span", { children: "Sponsor an Elderly Mother" }), v.jsx("span", { className: "font-bold text-blue-600", children: "Rs. 2,500 / mo" })] })
+                ] })
+              ] }),
+              v.jsxs("div", { className: "bg-white rounded-3xl p-6 sm:p-8 border border-blue-100 shadow-card", children: [
+                v.jsx("h3", { className: "font-display font-bold text-xl text-charcoal-900 mb-4", children: "Bank Details for Donations" }),
+                v.jsxs("div", { className: "mb-5 p-4 rounded-2xl bg-blue-50/60 border border-blue-200/60 text-xs sm:text-sm space-y-1.5", children: [
+                  v.jsx("p", { className: "font-bold text-blue-800 uppercase tracking-wider text-xs", children: "Indian Donors (Axis Bank):" }),
+                  v.jsxs("p", { children: [v.jsx("span", { className: "text-charcoal-500", children: "Account Name: " }), v.jsx("b", { children: "Hill Organisation for Peoples Education" })] }),
+                  v.jsxs("p", { children: [v.jsx("span", { className: "text-charcoal-500", children: "Account No: " }), v.jsx("b", { className: "font-mono text-blue-700 font-bold", children: "919010013069384" })] }),
+                  v.jsxs("p", { children: [v.jsx("span", { className: "text-charcoal-500", children: "IFSC Code: " }), v.jsx("b", { className: "font-mono", children: "UTIB0002095" })] }),
+                  v.jsxs("p", { children: [v.jsx("span", { className: "text-charcoal-500", children: "Branch: " }), "KTC Nagar"] }),
+                  v.jsxs("p", { children: [v.jsx("span", { className: "text-charcoal-500", children: "UPI ID: " }), v.jsx("b", { className: "text-blue-700", children: "9944704699@upi" })] })
+                ] }),
+                v.jsxs("div", { className: "p-4 rounded-2xl bg-slate-50 border border-slate-200/80 text-xs sm:text-sm space-y-1.5", children: [
+                  v.jsx("p", { className: "font-bold text-slate-800 uppercase tracking-wider text-xs", children: "Foreign Donors (State Bank of India):" }),
+                  v.jsxs("p", { children: [v.jsx("span", { className: "text-charcoal-500", children: "Account Name: " }), v.jsx("b", { children: "Hill Organization for peoples education" })] }),
+                  v.jsxs("p", { children: [v.jsx("span", { className: "text-charcoal-500", children: "Account No: " }), v.jsx("b", { className: "font-mono font-bold", children: "40088305059" })] }),
+                  v.jsxs("p", { children: [v.jsx("span", { className: "text-charcoal-500", children: "IFSC Code: " }), v.jsx("b", { className: "font-mono", children: "SBIN0000691" })] }),
+                  v.jsxs("p", { children: [v.jsx("span", { className: "text-charcoal-500", children: "Swift Code: " }), v.jsx("b", { className: "font-mono", children: "SBININBB104" })] }),
+                  v.jsxs("p", { children: [v.jsx("span", { className: "text-charcoal-500", children: "Branch Code: " }), "00691"] })
+                ] })
+              ] })
+            ] })
+          ] })
+        ] })
+      }),
+      v.jsx("section", {
+        className: "py-16 bg-white border-t border-charcoal-100",
+        children: v.jsx("div", {
+          className: "max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center",
+          children: v.jsxs(g3, { children: [
+            v.jsxs("div", { className: "label-tag justify-center mb-4", children: [v.jsx("span", { className: "w-5 h-px bg-forest-600" }), "Hill Charity Trust"] }),
+            v.jsxs("h2", { className: "font-display font-bold text-3xl sm:text-4xl text-charcoal-900", children: ["Give a little &", " ", v.jsx("span", { className: "text-gradient-green", children: "change a lot." })] }),
+            v.jsx("p", { className: "mt-4 text-charcoal-500 max-w-xl mx-auto leading-relaxed", children: "Visit our ashram in Tuticorin, meet the children and mothers, and see the impact of your compassion first-hand." })
+          ] })
+        })
+      })
+    ] });
   };
 
   // assets/entry.js
