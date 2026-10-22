@@ -1,22 +1,16 @@
 import os
-import re
 import subprocess
-import shutil
 
-print("--- Starting Clean Single-React DAG Bundle Build ---")
-
-# Step 1: Ensure clean source
+# Read original
 with open("assets/index-Cv_3OM3M.original.js", "r", encoding="utf-8") as f:
     orig_text = f.read()
 
-# Step 2: Separate vendor.js from index-Cv_3OM3M.original.js
-# Cut at pos_oC = orig_text.find(',oC=w.lazy')
 pos_oC = orig_text.find(',oC=w.lazy')
-assert pos_oC != -1, "Could not find ,oC=w.lazy in index-Cv_3OM3M.original.js"
+assert pos_oC != -1
 
 vendor_code = orig_text[:pos_oC] + ";"
 
-# Fix vn() in vendor_code to support file:// protocol and hash navigation
+# Fix vn() for file://
 old_vn = 'function vn(){return pi()||J(!1),w.useContext(Js).location}'
 new_vn = (
     'function vn(){'
@@ -30,10 +24,10 @@ new_vn = (
     'return l'
     '}'
 )
-assert old_vn in vendor_code, "old_vn not found in vendor_code"
+assert old_vn in vendor_code
 vendor_code = vendor_code.replace(old_vn, new_vn)
 
-# Hash listener for file:// protocol
+# Hash listener
 hash_listener = (
     '\nif(typeof window!=="undefined"&&window.location.protocol==="file:"){\n'
     '  window.addEventListener("hashchange",function(){window.location.reload()});\n'
@@ -48,7 +42,6 @@ hash_listener = (
 )
 vendor_code += hash_listener
 
-# Export original exports + entry exports
 vendor_exports = (
     '\nexport{DP as A,VP as C,zP as H,lt as L,bP as M,Bt as a,ox as b,fe as c,ww as d,vt as e,'
     'U as f,ae as g,Xp as h,yw as i,v as j,si as k,au as l,Pe as m,Ne as n,wf as o,Zn as p,'
@@ -57,179 +50,81 @@ vendor_exports = (
 )
 vendor_code += vendor_exports
 
-# Image names to make relative
+# Relative images
 img_names = [
-    "hero-community.png",
-    "community-help.png",
-    "community-story.png",
-    "community.png",
-    "image.png",
-    "j.png",
-    "k.png",
-    "medical.png",
-    "mom.png",
-    "p.png",
-    "z.png",
-    "Logo.png"
+    "hero-community.png", "community-help.png", "community-story.png", "community.png",
+    "image.png", "j.png", "k.png", "medical.png", "mom.png", "p.png", "z.png", "Logo.png"
 ]
-# Helper to replace image paths cleanly
-def update_images(text):
-    for img in img_names:
-        # replace ./assets/ first to not double prefix, or match variations
-        text = text.replace(f'"./assets/{img}"', f'"__ASSET_IMG_{img}__"')
-        text = text.replace(f"'./assets/{img}'", f"'__ASSET_IMG_{img}__'")
-        text = text.replace(f"`./assets/{img}`", f"`__ASSET_IMG_{img}__`")
+for img in img_names:
+    vendor_code = vendor_code.replace(f'"./assets/{img}"', f'"./assets/{img}"')
+    vendor_code = vendor_code.replace(f'"/{img}"', f'"./assets/{img}"')
+    vendor_code = vendor_code.replace(f"'/{img}'", f"'./assets/{img}'")
+    vendor_code = vendor_code.replace(f"`/{img}`", f"`./assets/{img}`")
 
-        text = text.replace(f'"./{img}"', f'"./assets/{img}"')
-        text = text.replace(f"'./{img}'", f"'./assets/{img}'")
-        text = text.replace(f"`./{img}`", f"`./assets/{img}`")
+# Replace qP (Navbar) with Bright Blue (#2563EB) & Gold (#FBBF24)
+pos_qP = vendor_code.find('qP=')
+pos_end_qP = vendor_code.find(',Xo=', pos_qP)
+assert pos_qP != -1 and pos_end_qP != -1
 
-        text = text.replace(f'"/{img}"', f'"./assets/{img}"')
-        text = text.replace(f"'/{img}'", f"'./assets/{img}'")
-        text = text.replace(f"`/{img}`", f"`./assets/{img}`")
+new_qP = (
+    'qP=()=>{const[e,t]=w.useState(!1),[n,r]=w.useState(!1),[i,s]=w.useState(!1),c=vn();'
+    'w.useEffect(()=>{const g=()=>t(window.scrollY>40);return window.addEventListener("scroll",g,{passive:!0}),()=>window.removeEventListener("scroll",g)},[]);'
+    'w.useEffect(()=>{r(!1)},[c.pathname]);'
+    'w.useEffect(()=>(document.body.style.overflow=n?"hidden":"",()=>{document.body.style.overflow=""}),[n]);'
+    'return v.jsxs(v.Fragment,{children:['
+    'v.jsx(Pe.header,{initial:{opacity:0,y:-16},animate:{opacity:1,y:0},transition:{duration:.5,delay:.15,ease:[.25,.46,.45,.94]},className:`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${e?"bg-white/95 backdrop-blur-md shadow-md py-2":"bg-white/90 backdrop-blur-sm py-3 sm:py-4"} border-b border-blue-100`,children:'
+    'v.jsx("div",{className:"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",children:'
+    'v.jsxs("div",{className:"flex items-center justify-between h-16 sm:h-20",children:['
+    'v.jsxs(lt,{to:"/",className:"flex items-center gap-3 group focus-visible:outline-none rounded-lg","aria-label":"Hill Trust Ashram Home",children:['
+    'v.jsx("img",{src:"./assets/Logo.png",alt:"HILL TRUST ASHRAM",className:"h-14 sm:h-16 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-sm"})'
+    ']}),'
+    'v.jsx("nav",{className:"hidden md:flex items-center justify-center",children:'
+    'v.jsx("div",{className:"spotlight-nav-pill flex items-center gap-1 px-5 py-2 rounded-full bg-white shadow-[0_4px_24px_rgba(37,99,235,0.08)] border border-blue-100",children:'
+    'Cd.map(g=>{const y=c.pathname===g.path;return v.jsxs(lt,{to:g.path,className:`relative px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase transition-all duration-200 ${y?"text-[#2563EB] font-extrabold":"text-[#1E3A8A] hover:text-[#2563EB]"}`,children:[g.label,y&&v.jsx(Pe.span,{layoutId:"nav-active-pill",className:"absolute -bottom-1 left-2 right-2 h-[3px] rounded-full bg-gradient-to-r from-[#2563EB] via-[#60A5FA] to-[#FBBF24] shadow-[0_2px_8px_rgba(37,99,235,0.5)]",transition:{type:"spring",stiffness:400,damping:30}})]},g.path)})'
+    '})}),'
+    'v.jsxs("div",{className:"flex items-center gap-3",children:['
+    'v.jsx("div",{className:"hidden md:block",children:'
+    'v.jsxs("button",{type:"button",onClick:()=>s(!0),className:"btn-gold-donate flex items-center gap-2 px-6 py-2.5 rounded-full font-extrabold text-xs sm:text-sm tracking-wider uppercase text-[#1E3A8A] shadow-[0_4px_16px_rgba(251,191,36,0.45)] bg-gradient-to-r from-[#FBBF24] to-[#F59E0B] hover:from-[#FCD34D] hover:to-[#FBBF24] hover:scale-105 active:scale-95 transition-all duration-300",children:['
+    'v.jsx("svg",{viewBox:"0 0 24 24",className:"w-4 h-4 fill-current",children:v.jsx("path",{d:"M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"})}),'
+    '"DONATE NOW"]})'
+    '}),'
+    'v.jsx("button",{className:"md:hidden p-2 rounded-xl transition-all duration-300 text-[#1E3A8A] hover:bg-blue-50",onClick:()=>r(g=>!g),"aria-label":n?"Close menu":"Open menu","aria-expanded":n,children:v.jsx(ni,{mode:"wait",initial:!1,children:n?v.jsx(Pe.span,{initial:{rotate:-90,opacity:0},animate:{rotate:0,opacity:1},exit:{rotate:90,opacity:0},transition:{duration:.2},style:{display:"block"},children:v.jsx(ai,{className:"w-6 h-6"})},"close"):v.jsx(Pe.span,{initial:{rotate:90,opacity:0},animate:{rotate:0,opacity:1},exit:{rotate:-90,opacity:0},transition:{duration:.2},style:{display:"block"},children:v.jsx(HP,{className:"w-6 h-6"})},"menu")})})'
+    ']})'
+    ']})})}),'
+    'v.jsx(ZP,{isOpen:i,onClose:()=>s(!1),title:"Donate to Hill Trust Ashram",size:"md",children:v.jsxs("div",{className:"flex flex-col items-center gap-5 text-center",children:['
+    'v.jsx("div",{className:"w-16 h-16 rounded-full bg-gradient-to-br from-[#2563EB] to-[#FBBF24] text-white flex items-center justify-center shadow-[0_0_30px_rgba(37,99,235,0.35)]",children:v.jsx(Qo,{className:"w-7 h-7 text-white"})}),'
+    'v.jsx("p",{className:"text-sm text-slate-600 max-w-sm",children:"Scan the QR code below using any UPI app (GPay, PhonePe, Paytm) or use our bank details to complete your donation."}),'
+    'v.jsx("div",{className:"rounded-3xl border-2 border-dashed border-[#FBBF24] p-4 bg-blue-50/60",children:v.jsx("img",{src:"https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=upi://pay?pa=9944704699@upi&pn=Hill%20Trust&cu=INR&am=1001",alt:"UPI QR Code",className:"mx-auto w-52 h-52 object-contain"})}),'
+    'v.jsxs("div",{className:"w-full grid grid-cols-1 gap-3",children:['
+    'v.jsx("button",{type:"button",className:"w-full py-3 px-6 rounded-full font-bold text-[#1E3A8A] bg-gradient-to-r from-[#FBBF24] to-[#F59E0B] hover:from-[#FCD34D] hover:to-[#FBBF24] shadow-md transition-all",onClick:()=>s(!1),children:"I Have Paid"}),'
+    'v.jsx("button",{type:"button",className:"w-full py-3 px-6 rounded-full font-bold text-[#2563EB] border-2 border-[#2563EB] hover:bg-blue-50 transition-all",onClick:()=>{navigator.clipboard.writeText("9944704699@upi")},children:"Copy UPI ID (9944704699@upi)"})'
+    ']}),'
+    'v.jsxs("p",{className:"text-xs text-slate-500",children:["UPI ID: ",v.jsx("span",{className:"font-bold text-[#2563EB]",children:"9944704699@upi"}),v.jsx("br",{}),"Axis Bank A/C: 919010013069384 - IFSC: UTIB0002095"]})'
+    ']})}),'
+    'v.jsx(ni,{children:n&&v.jsxs(Pe.div,{initial:{opacity:0,x:"100%"},animate:{opacity:1,x:0},exit:{opacity:0,x:"100%"},transition:{duration:.35,ease:[.25,.46,.45,.94]},className:"fixed inset-0 z-40 md:hidden",children:['
+    'v.jsx(Pe.div,{initial:{opacity:0},animate:{opacity:1},exit:{opacity:0},className:"absolute inset-0 bg-[#172554]/60 backdrop-blur-sm",onClick:()=>r(!1)}),'
+    'v.jsxs("div",{className:"absolute top-0 right-0 h-full w-[300px] bg-[#EFF6FF] shadow-2xl flex flex-col overflow-y-auto",children:['
+    'v.jsxs("div",{className:"flex items-center justify-between px-6 py-6 border-b border-blue-200/60 bg-white",children:['
+    'v.jsx(lt,{to:"/",className:"flex items-center gap-2",children:v.jsx("img",{src:"./assets/Logo.png",alt:"HILL TRUST ASHRAM",className:"h-12 w-auto object-contain"})}),'
+    'v.jsx("button",{onClick:()=>r(!1),className:"p-2 rounded-xl hover:bg-blue-100 text-[#1E3A8A]","aria-label":"Close menu",children:v.jsx(ai,{className:"w-5 h-5"})})'
+    ']}),'
+    'v.jsx("nav",{className:"flex-1 px-4 py-6 space-y-1",children:Cd.map((g,y)=>{const x=c.pathname===g.path;return v.jsx(Pe.div,{initial:{opacity:0,x:20},animate:{opacity:1,x:0},transition:{delay:.05+y*.06,duration:.3},children:v.jsxs(lt,{to:g.path,className:`flex items-center justify-between px-4 py-3.5 rounded-2xl font-bold text-sm tracking-wider uppercase transition-all duration-200 ${x?"bg-white text-[#2563EB] shadow-sm":"text-[#1E3A8A] hover:bg-white/80 hover:text-[#2563EB]"}`,children:[g.label,x&&v.jsx("div",{className:"w-2 h-2 rounded-full bg-[#FBBF24]"})]})},g.path)})}),'
+    'v.jsxs("div",{className:"px-4 pb-8 pt-4 border-t border-blue-200/60 space-y-3 bg-white",children:['
+    'v.jsx("button",{type:"button",className:"w-full py-3.5 px-6 rounded-full font-bold text-sm tracking-wider uppercase text-[#1E3A8A] shadow-lg bg-gradient-to-r from-[#FBBF24] to-[#F59E0B]",onClick:()=>s(!0),children:"DONATE NOW"}),'
+    'v.jsx(lt,{to:"/contact",className:"block text-center w-full py-3 px-6 rounded-full font-bold text-sm text-[#2563EB] border-2 border-[#2563EB]/30 hover:bg-blue-50",children:"Get In Touch"})'
+    ']})'
+    ']})'
+    ']})})]})}'
+)
 
-        text = text.replace(f'"__ASSET_IMG_{img}__"', f'"./assets/{img}"')
-        text = text.replace(f"'__ASSET_IMG_{img}__'", f"'./assets/{img}'")
-        text = text.replace(f"`__ASSET_IMG_{img}__`", f"`./assets/{img}`")
-    return text
-
-vendor_code = update_images(vendor_code)
+vendor_code = vendor_code[:pos_qP] + new_qP + vendor_code[pos_end_qP:]
 
 with open("assets/vendor.js", "w", encoding="utf-8") as f:
     f.write(vendor_code)
-print("Created assets/vendor.js (size: " + str(len(vendor_code)) + " bytes)")
+print("Updated assets/vendor.js (size: " + str(len(vendor_code)) + " bytes)")
 
-# Step 3: Update all chunk files to import from ./vendor.js instead of ./index-Cv_3OM3M.js
-for fname in os.listdir("assets"):
-    if fname.endswith(".js") and fname not in ["bundle.js", "entry.js", "vendor.js", "index-Cv_3OM3M.original.js", "index-Cv_3OM3M.js"]:
-        fpath = os.path.join("assets", fname)
-        with open(fpath, "r", encoding="utf-8") as f:
-            content = f.read()
-        
-        orig = content
-        content = content.replace('"./index-Cv_3OM3M.js"', '"./vendor.js"')
-        content = content.replace("'./index-Cv_3OM3M.js'", "'./vendor.js'")
-        content = update_images(content)
-        
-        if content != orig:
-            with open(fpath, "w", encoding="utf-8") as f:
-                f.write(content)
-            print(f"Updated imports and image paths in {fname}")
-
-# Step 4: Create clean assets/entry.js
-entry_code = '''import { j as v, r as w, Pe, ni, G0, wn, da, e1, sC, qP, eC, Yo, vn } from "./vendor.js";
-import HomeRoute from "./Home-B5Mf3Si2.js";
-import AboutRoute from "./About-DoJ-XgS1.js";
-import ServicesRoute from "./Services-eg4BCXTo.js";
-import ContactRoute from "./Contact-pTe4Lhbh.js";
-
-const oC = HomeRoute;
-const lC = AboutRoute;
-const aC = ServicesRoute;
-const uC = ContactRoute;
-
-const cC = () => v.jsx("div", {
-  className: "min-h-screen flex items-center justify-center bg-white",
-  children: v.jsxs(Pe.div, {
-    animate: { opacity: [.4, 1, .4] },
-    transition: { repeat: Infinity, duration: 1.5, ease: "easeInOut" },
-    className: "flex flex-col items-center gap-4",
-    children: [
-      v.jsx("div", {
-        className: "w-10 h-10 bg-forest-600 rounded-xl flex items-center justify-center",
-        children: v.jsx("svg", {
-          viewBox: "0 0 24 24",
-          fill: "none",
-          className: "w-6 h-6",
-          children: v.jsx("path", {
-            d: "M12 2C8.686 2 6 4.686 6 8c0 2.122 1.065 3.99 2.693 5.115C5.435 14.374 3 17.463 3 21a1 1 0 001 1h16a1 1 0 001-1c0-3.537-2.435-6.626-5.693-7.885C16.935 11.99 18 10.122 18 8c0-3.314-2.686-6-6-6z",
-            fill: "white"
-          })
-        })
-      }),
-      v.jsx("span", {
-        className: "text-charcoal-400 text-sm font-medium",
-        children: "Loading..."
-      })
-    ]
-  })
-});
-
-const fC = () => {
-  const e = vn();
-  return v.jsx(ni, {
-    mode: "wait",
-    initial: false,
-    children: v.jsx(Pe.div, {
-      initial: { opacity: 0, y: 20 },
-      animate: { opacity: 1, y: 0 },
-      exit: { opacity: 0, y: -12 },
-      transition: { duration: .45, ease: [.25, .46, .45, .94] },
-      style: { willChange: "opacity, transform" },
-      children: v.jsx(w.Suspense, {
-        fallback: v.jsx(cC, {}),
-        children: v.jsxs(G0, {
-          location: e,
-          children: [
-            v.jsx(wn, { path: "/", element: v.jsx(oC, {}) }),
-            v.jsx(wn, { path: "/about", element: v.jsx(lC, {}) }),
-            v.jsx(wn, { path: "/services", element: v.jsx(aC, {}) }),
-            v.jsx(wn, { path: "/contact", element: v.jsx(uC, {}) }),
-            v.jsx(wn, {
-              path: "*",
-              element: (window.location.protocol === "file:" && (!window.location.hash || window.location.hash === "#" || window.location.hash === "#/"))
-                ? v.jsx(oC, {})
-                : v.jsxs("div", {
-                    className: "min-h-screen flex flex-col items-center justify-center gap-6 bg-white pt-20",
-                    children: [
-                      v.jsx("div", { className: "text-8xl font-display font-bold text-charcoal-100", children: "404" }),
-                      v.jsx("h1", { className: "text-2xl font-display font-bold text-charcoal-900", children: "Page not found" }),
-                      v.jsx("p", { className: "text-charcoal-500 max-w-sm text-center", children: "The page you're looking for doesn't exist. Let's get you back on track." }),
-                      v.jsx("a", { href: "/", className: "px-7 py-3.5 bg-forest-600 text-white font-bold rounded-full hover:bg-forest-700 transition-colors text-sm", children: "Back to Home" })
-                    ]
-                  })
-            })
-          ]
-        })
-      })
-    }, e.pathname)
-  });
-};
-
-const dC = () => {
-  const e = vn();
-  return da.useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "instant" });
-  }, [e.pathname]), null;
-};
-
-const hC = () => v.jsx(e1, {
-  children: v.jsxs(sC, {
-    children: [
-      v.jsx(dC, {}),
-      v.jsxs("div", {
-        className: "flex flex-col min-h-screen",
-        children: [
-          v.jsx(qP, {}),
-          v.jsx("div", { className: "flex-1", children: v.jsx(fC, {}) }),
-          v.jsx(eC, {})
-        ]
-      })
-    ]
-  })
-});
-
-Yo.createRoot(document.getElementById("root")).render(
-  v.jsx(da.StrictMode, { children: v.jsx(hC, {}) })
-);
-'''
-
-with open("assets/entry.js", "w", encoding="utf-8") as f:
-    f.write(entry_code)
-print("Created assets/entry.js")
-
-# Step 5: Bundle with esbuild
-print("Step 5: Running esbuild...")
+# Run esbuild
+print("Running esbuild...")
 res = subprocess.run(
     ["npx", "esbuild", "assets/entry.js", "--bundle", "--format=iife", "--outfile=assets/bundle.js"],
     capture_output=True,
@@ -238,12 +133,5 @@ res = subprocess.run(
 )
 print("esbuild stderr:", res.stderr)
 print("esbuild stdout:", res.stdout)
-
-with open("assets/bundle.js", "r", encoding="utf-8") as f:
-    b = f.read()
-
-print(f"Bundle size: {len(b):,} bytes")
-count = b.count("__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED")
-print(f"React secret internals count: {count} (must be 4)")
-'''
-'''
+assert res.returncode == 0, "esbuild failed!"
+print("=== SUCCESS: Bundle successfully compiled with esbuild! ===")
