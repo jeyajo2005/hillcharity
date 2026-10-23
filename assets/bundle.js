@@ -10535,8 +10535,86 @@ Error generating stack: ` + s.message + `
   ];
   var N3 = () => {
     const n = w.useRef(null), s = w2(n, { once: true, margin: "-80px" });
-    return v.jsxs("main", { className: "bg-white pt-16", children: [
-      v.jsxs("section", { ref: n, className: "relative overflow-hidden bg-cream-50 py-20 lg:py-28", "aria-labelledby": "journey-heading", children: [
+    return v.jsxs("main", { className: "bg-white pt-16 sm:pt-20", children: [
+      v.jsx("section", { id: "who-we-are", className: "who-we-are-section", children: v.jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: v.jsxs("div", { className: "who-we-are-wrap", children: [
+        v.jsxs("div", { className: "who-we-are-col-left", children: [
+          v.jsxs("div", { className: "label-tag mb-4", children: [
+            v.jsx("span", { className: "w-6 h-0.5 bg-sky-600 rounded-full" }),
+            v.jsx("span", { style: { color: "#0284c7" }, className: "text-xs font-bold uppercase tracking-wider", children: "Dedicated to Service Since 2014" })
+          ] }),
+          v.jsx("h1", { className: "font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-charcoal-900 tracking-tight uppercase mb-6 leading-tight", children: "WHO WE ARE" }),
+          v.jsx("p", { className: "text-charcoal-700 text-base sm:text-lg leading-relaxed font-normal mb-5", children: "Hill organisation for people's education (Hill) charitable trust is created by Mrs.Brinah Prabhakaran and Mr. Prem Prabhakaran with a vision to support poor, orphan, abandoned children and women throughout tamilnadu, south india." }),
+          v.jsx("p", { className: "text-charcoal-700 text-base sm:text-lg leading-relaxed font-normal mb-8", children: "In 2014 they started running an orphanage and a home for the aged for abandoned girl children and elderly women in tuticorin, providing food, shelter, education medical care with love and affection." }),
+          v.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 pt-6 border-t border-slate-100", children: [
+            v.jsxs("div", { className: "p-3.5 rounded-2xl bg-sky-50/70 border border-sky-100 text-center sm:text-left", children: [
+              v.jsx("div", { className: "font-display font-bold text-2xl text-sky-700", children: "2014" }),
+              v.jsx("div", { className: "text-xs text-charcoal-500 font-medium mt-0.5", children: "Year Founded" })
+            ] }),
+            v.jsxs("div", { className: "p-3.5 rounded-2xl bg-sky-50/70 border border-sky-100 text-center sm:text-left", children: [
+              v.jsx("div", { className: "font-display font-bold text-2xl text-sky-700", children: "Tuticorin" }),
+              v.jsx("div", { className: "text-xs text-charcoal-500 font-medium mt-0.5", children: "Headquarters" })
+            ] }),
+            v.jsxs("div", { className: "p-3.5 rounded-2xl bg-sky-50/70 border border-sky-100 text-center sm:text-left", children: [
+              v.jsx("div", { className: "font-display font-bold text-2xl text-sky-700", children: "100%" }),
+              v.jsx("div", { className: "text-xs text-charcoal-500 font-medium mt-0.5", children: "Direct Care" })
+            ] })
+          ] }),
+          v.jsxs("div", { className: "flex flex-wrap items-center gap-4", children: [
+            v.jsx("a", {
+              href: "#about-profile",
+              style: { backgroundColor: "#0284c7", color: "#ffffff" },
+              onClick: (ev2) => {
+                ev2.preventDefault();
+                const target = document.getElementById("about-profile");
+                if (target) target.scrollIntoView({ behavior: "smooth" });
+              },
+              className: "btn-read-story inline-flex items-center justify-center px-7 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer",
+              children: "Read Our Full Story"
+            }),
+            v.jsx("a", {
+              href: "#/contact",
+              style: { backgroundColor: "#f1f5f9", color: "#0f172a", border: "1px solid #cbd5e1" },
+              onClick: (ev2) => {
+                ev2.preventDefault();
+                window.location.hash = "#/contact";
+              },
+              className: "inline-flex items-center justify-center px-6 py-3 rounded-full font-bold text-sm transition-all duration-300 cursor-pointer hover:bg-slate-200",
+              children: "Contact Us"
+            })
+          ] })
+        ] }),
+        v.jsx("div", { className: "who-we-are-col-right", children: v.jsxs("div", { className: "founder-photo-box", children: [
+          v.jsxs("div", { className: "flex items-center justify-between px-2 pb-2.5", children: [
+            v.jsxs("span", { className: "inline-flex items-center gap-1.5 text-xs font-bold text-sky-800 uppercase tracking-wider", children: [
+              v.jsx("span", { className: "w-2 h-2 rounded-full bg-sky-500" }),
+              "Founders & Managing Trustees"
+            ] }),
+            v.jsx("span", { className: "text-[11px] font-semibold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md", children: "Est. 2014" })
+          ] }),
+          v.jsxs("div", { className: "founder-photo-img-wrap group", children: [
+            v.jsx("img", {
+              src: "./assets/founders.jpg",
+              onError: (ev2) => {
+                if (!ev2.target.dataset.fallback) {
+                  ev2.target.dataset.fallback = "1";
+                  ev2.target.src = "../assets/founders.jpg";
+                }
+              },
+              alt: "Founders Mrs. Brinah Prabhakaran & Mr. Prem Prabhakaran",
+              className: "founder-photo-img"
+            }),
+            v.jsxs("div", { className: "founder-photo-caption", children: [
+              v.jsx("h3", { className: "font-display font-bold text-lg text-white leading-snug", children: "Mrs. Brinah Prabhakaran & Mr. Prem Prabhakaran" }),
+              v.jsx("p", { className: "text-xs text-sky-200 font-medium mt-1 tracking-wide", children: "Founders of Hill Organisation for People's Education" })
+            ] })
+          ] }),
+          v.jsxs("div", { className: "mt-3 px-3 py-2 bg-sky-50/70 rounded-xl border border-sky-100/70 flex items-center justify-center gap-2 text-center", children: [
+            v.jsx("svg", { className: "w-4 h-4 text-sky-600 shrink-0", fill: "currentColor", viewBox: "0 0 20 20", children: v.jsx("path", { fillRule: "evenodd", d: "M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z", clipRule: "evenodd" }) }),
+            v.jsx("span", { className: "text-xs font-semibold text-sky-900", children: "Serving Tuticorin with Love & Affection Since 2014" })
+          ] })
+        ] }) })
+      ] }) }) }),
+      v.jsxs("section", { id: "about-profile", ref: n, className: "relative overflow-hidden bg-cream-50 py-20 lg:py-28", "aria-labelledby": "journey-heading", children: [
         v.jsx("div", { className: "absolute -top-32 -right-32 w-80 h-80 rounded-full bg-forest-100/40 blur-3xl pointer-events-none" }),
         v.jsx("div", { className: "absolute -bottom-32 -left-32 w-80 h-80 rounded-full bg-amber-100/40 blur-3xl pointer-events-none" }),
         v.jsxs("div", { className: "relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [

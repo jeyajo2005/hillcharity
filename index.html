@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/index-DQ1mV4_X.css">
-    <script defer src="./assets/bundle.js?v=1792751756"></script>
+    <script defer src="./assets/bundle.js?v=1792754400"></script>
     <style>
       /* ============================================================
          CRITICAL FIX: ULTRA-CRISP HIGH-CONTRAST TYPOGRAPHY & LETTER COLORS
@@ -211,6 +211,85 @@
         font-weight: 800 !important;
       }
 
+      /* WHO WE ARE (LEFT) & PHOTO BOX (RIGHT) */
+      .who-we-are-section {
+        padding-top: 4.5rem;
+        padding-bottom: 4rem;
+        background-color: #ffffff;
+        border-bottom: 1px solid #f1f5f9;
+      }
+      .who-we-are-wrap {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2.5rem !important;
+        align-items: center !important;
+        width: 100% !important;
+      }
+      @media (min-width: 1024px) {
+        .who-we-are-wrap {
+          flex-direction: row !important;
+          align-items: center !important;
+          justify-content: space-between !important;
+          gap: 3.5rem !important;
+        }
+        .who-we-are-col-left {
+          flex: 1 1 56% !important;
+          max-width: 58% !important;
+          text-align: left !important;
+        }
+        .who-we-are-col-right {
+          flex: 0 0 42% !important;
+          max-width: 440px !important;
+          width: 100% !important;
+        }
+      }
+      .founder-photo-box {
+        background: #ffffff !important;
+        border-radius: 1.5rem !important;
+        padding: 1rem !important;
+        box-shadow: 0 20px 40px -15px rgba(2, 132, 199, 0.18), 0 4px 12px rgba(15, 23, 42, 0.06) !important;
+        border: 2px solid #e0f2fe !important;
+        transition: all 0.35s ease !important;
+        position: relative !important;
+      }
+      .founder-photo-box:hover {
+        box-shadow: 0 25px 50px -12px rgba(2, 132, 199, 0.28), 0 8px 20px rgba(15, 23, 42, 0.08) !important;
+        transform: translateY(-3px) !important;
+        border-color: #38bdf8 !important;
+      }
+      .founder-photo-img-wrap {
+        position: relative !important;
+        border-radius: 1rem !important;
+        overflow: hidden !important;
+        background-color: #0f172a !important;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+      }
+      .founder-photo-img {
+        width: 100% !important;
+        height: 420px !important;
+        object-fit: cover !important;
+        object-position: top !important;
+        display: block !important;
+        transition: transform 0.5s ease !important;
+      }
+      @media (min-width: 640px) {
+        .founder-photo-img {
+          height: 480px !important;
+        }
+      }
+      .founder-photo-box:hover .founder-photo-img {
+        transform: scale(1.03) !important;
+      }
+      .founder-photo-caption {
+        position: absolute !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.6) 65%, transparent 100%) !important;
+        padding: 1.25rem 1rem 1rem !important;
+        text-align: center !important;
+        color: #ffffff !important;
+      }
 </style>
   </head>
   <body>
