@@ -29,7 +29,7 @@ const N=()=>{
           e.jsxs("div",{className:"relative bg-white rounded-[1.75rem] border border-charcoal-100 shadow-card overflow-hidden",children:[
             e.jsx("div",{className:"h-1.5 bg-gradient-to-r from-forest-600 via-forest-400 to-amber-400"}),
             e.jsxs("div",{className:"grid grid-cols-1 lg:grid-cols-[280px_1fr]",children:[
-              e.jsxs("div",{className:"relative bg-forest-950 text-white p-8 sm:p-10 lg:p-12 flex flex-col justify-center overflow-hidden",children:[
+              e.jsxs("div",{style:{background:"linear-gradient(135deg, #0369a1 0%, #0284c7 50%, #0ea5e9 100%)",backgroundColor:"#0284c7"},className:"relative text-white p-8 sm:p-10 lg:p-12 flex flex-col justify-center overflow-hidden",children:[
                 e.jsx("div",{className:"absolute -top-20 -right-20 w-48 h-48 rounded-full border border-white/10"}),
                 e.jsx("div",{className:"absolute -bottom-20 -left-20 w-48 h-48 rounded-full border border-white/10"}),
                 e.jsxs("div",{className:"relative z-10 flex items-center gap-2 mb-5",children:[

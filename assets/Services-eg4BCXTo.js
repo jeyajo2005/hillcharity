@@ -105,8 +105,7 @@ import{c as h,j as n,H as r,r as p,m as l,L as g,A as b}from"./vendor.js";import
           pb-20
           lg:pt-36
           lg:pb-28
-          bg-forest-950
-          overflow-hidden
+          overflow-hidden",style:{background:"linear-gradient(180deg, #0369a1 0%, #0284c7 50%, #0ea5e9 100%)",backgroundColor:"#0284c7"},"data-sky":"true
         `,"aria-labelledby":"services-hero-heading",children:[n.jsx("div",{className:"absolute inset-0 opacity-5 pointer-events-none",children:n.jsx("div",{className:"w-full h-full",style:{backgroundImage:"radial-gradient(circle at 1px 1px, white 1px, transparent 0)",backgroundSize:"40px 40px"}})}),n.jsx("div",{className:`
             absolute
             top-0

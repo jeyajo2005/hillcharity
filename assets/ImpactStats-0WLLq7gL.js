@@ -199,7 +199,7 @@ const x=({value:i,suffix:a,label:t,sublabel:o,active:r,delay:l})=>{
 
 const E=()=>{
   const i=c.useRef(null),a=g(i,{once:!0,margin:"-100px"});
-  return e.jsxs("section",{ref:i,style:{backgroundColor:"#172554",background:"linear-gradient(135deg, #090e1a 0%, #172554 45%, #1e3a8a 100%)"},className:"relative py-12 sm:py-16 bg-[#172554] text-white overflow-hidden","aria-labelledby":"impact-heading",children:[
+  return e.jsxs("section",{ref:i,style:{backgroundColor:"#0284c7",background:"linear-gradient(135deg, #0369a1 0%, #0284c7 45%, #0ea5e9 100%)"},className:"relative py-12 sm:py-16 bg-[#0284c7] text-white overflow-hidden","aria-labelledby":"impact-heading",children:[
     e.jsx("div",{className:"absolute inset-0 opacity-5",children:e.jsx("div",{className:"w-full h-full",style:{backgroundImage:"radial-gradient(circle at 1px 1px, white 1px, transparent 0)",backgroundSize:"48px 48px"}})}),
     e.jsx("div",{className:"absolute top-0 left-1/4 w-96 h-96 bg-forest-500/10 rounded-full blur-3xl"}),
     e.jsx("div",{className:"absolute bottom-0 right-1/4 w-96 h-96 bg-amber-500/8 rounded-full blur-3xl"}),

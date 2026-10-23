@@ -53,8 +53,8 @@ const Gallery = () => {
       // Hero Header
       e.jsx("section", {
         style: {
-          background: "linear-gradient(180deg, #090e1a 0%, #172554 45%, #1e3a8a 100%)",
-          backgroundColor: "#172554"
+          background: "linear-gradient(180deg, #0369a1 0%, #0284c7 45%, #0ea5e9 100%)",
+          backgroundColor: "#0284c7"
         },
         className: "relative text-white py-10 sm:py-14 overflow-hidden shadow-md",
         children: e.jsxs("div", {
@@ -136,9 +136,9 @@ const Gallery = () => {
                       setVisibleCount(24);
                     },
                     style: {
-                      backgroundColor: isSelected ? "#2563eb" : "#ffffff",
-                      color: isSelected ? "#ffffff" : "#0f172a",
-                      borderColor: isSelected ? "#2563eb" : "#cbd5e1"
+                      backgroundColor: isSelected ? "#0ea5e9" : "#ffffff",
+                      color: isSelected ? "#ffffff" : "#0369a1",
+                      borderColor: isSelected ? "#0ea5e9" : "#bae6fd"
                     },
                     className: "px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wide uppercase transition-all duration-200 border shadow-sm " +
                       (isSelected ? "scale-105 shadow-md" : "hover:bg-blue-50")
@@ -193,7 +193,7 @@ const Gallery = () => {
                 className: "text-center mt-8",
                 children: e.jsxs("button", {
                   onClick: () => setVisibleCount((prev) => prev + 24),
-                  className: "px-8 py-3.5 rounded-full font-bold text-sm tracking-wider uppercase text-white bg-gradient-to-r from-[#2563EB] to-[#1D4ED8] hover:from-[#1D4ED8] hover:to-[#1E40AF] shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300",
+                  className: "px-8 py-3.5 rounded-full font-bold text-sm tracking-wider uppercase text-white bg-gradient-to-r from-[#0284c7] to-[#0ea5e9] hover:from-[#1D4ED8] hover:to-[#1E40AF] shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300",
                   children: [
                     "Load More Photos (" + (filtered.length - visibleCount) + " remaining)"
                   ]
@@ -287,8 +287,8 @@ const Gallery = () => {
 
       e.jsx("section", {
         style: {
-          background: "linear-gradient(135deg, #1E3A8A 0%, #172554 100%)",
-          backgroundColor: "#172554"
+          background: "linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%)",
+          backgroundColor: "#0284c7"
         },
         className: "text-white py-8 sm:py-10 border-t border-blue-400/20 mt-8",
         children: e.jsx("div", {

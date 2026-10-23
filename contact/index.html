@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../assets/index-DQ1mV4_X.css">
-    <script defer src="../assets/bundle.js?v=1792749043"></script>
+    <script defer src="../assets/bundle.js?v=1792750393"></script>
     <style>
       /* ============================================================
          CRITICAL FIX: ULTRA-CRISP HIGH-CONTRAST TYPOGRAPHY & LETTER COLORS
@@ -30,7 +30,15 @@
         font-weight: 500 !important;
       }
 
-      /* Headings: Deep, bold, punchy on light surfaces */
+            /* Pure Sky Blue Palette - Clean, Modern & High Contrast */
+      :root {
+        --color-sky-primary: #0284c7;
+        --color-sky-vibrant: #0ea5e9;
+        --color-sky-light: #38bdf8;
+        --color-sky-subtle: #e0f2fe;
+      }
+
+      /* Headings */
       h1, h2, h3, h4, h5, h6 {
         font-weight: 800;
         letter-spacing: -0.02em;
@@ -39,20 +47,21 @@
         font-weight: 800;
         letter-spacing: -0.02em;
       }
-      /* Pure crystal-clear white on all dark banners, statistics, and dark panels */
+
+      /* Text on dark/sky-blue containers is pure white */
       .text-white,
       .text-white .font-display,
       .font-counter,
       .font-counter *,
-      .bg-forest-950,
-      .bg-forest-950 *,
-      .bg-forest-950 p,
-      .bg-forest-950 .font-display,
-      .bg-forest-950 div,
-      .shadow-card .bg-forest-950,
-      .shadow-card .bg-forest-950 *,
-      .shadow-card .bg-forest-950 p,
-      .shadow-card .bg-forest-950 div,
+      [class*="bg-forest-950"],
+      [class*="bg-forest-950"] *,
+      [class*="bg-forest-950"] p,
+      [class*="bg-forest-950"] .font-display,
+      [class*="bg-forest-950"] div,
+      .shadow-card [class*="bg-forest-950"],
+      .shadow-card [class*="bg-forest-950"] *,
+      .shadow-card [class*="bg-forest-950"] p,
+      .shadow-card [class*="bg-forest-950"] div,
       section[aria-labelledby="impact-heading"],
       section[aria-labelledby="impact-heading"] h2,
       section[aria-labelledby="impact-heading"] p,
@@ -64,103 +73,98 @@
       section.text-white p, header.text-white h1, header.text-white h2 {
         color: #ffffff !important;
       }
-      /* Protect amber / gold accents from being overridden */
-      .text-amber-400,
-      [class*="text-amber"],
-      section[aria-labelledby="impact-heading"] .text-amber-400,
-      section[aria-labelledby="impact-heading"] [class*="text-amber"],
-      .bg-forest-950 .text-amber-400,
-      .bg-forest-950 [class*="text-amber"] {
-        color: #fbbf24 !important;
-      }
-      /* Protect light green accents */
-      .text-forest-300,
-      [class*="text-forest-300"],
-      .bg-forest-950 .text-forest-300 {
-        color: #86efac !important;
-      }
 
-      /* Fix washed-out gray text classes across entire application */
-      .text-charcoal-400 {
-        color: #1e293b !important; /* Was #8b94b0 (too faint!), now rich dark slate */
-        font-weight: 600 !important;
-      }
-      .text-charcoal-500 {
-        color: #0f172a !important; /* Was #6b7596 (too faint!), now deep readable dark charcoal */
-        font-weight: 500 !important;
-        line-height: 1.7 !important;
-      }
-      .text-charcoal-600 {
-        color: #020617 !important; /* Pitch black */
-        font-weight: 600 !important;
-      }
-      .text-charcoal-700, .text-charcoal-800, .text-charcoal-900 {
-        color: #020617 !important;
-        font-weight: 800 !important;
-      }
-
-      /* Fix all paragraphs across the site to be dark and crisp */
-      p {
-        color: #1e293b;
-        font-weight: 500;
-        font-size: 15px;
-        line-height: 1.65;
-      }
-
-      /* Fix faint white opacity text on dark banners */
-      .text-white\/40, .text-white\/50, .text-white\/60, .text-white\/65 {
-        color: #f8fafc !important; /* Was 40%-65% transparent, now 100% visible */
-        font-weight: 500 !important;
-      }
-      .text-white\/70, .text-white\/80, .text-white\/85 {
-        color: #ffffff !important;
-        font-weight: 600 !important;
-      }
-      .text-blue-100, .text-blue-200 {
-        color: #f1f5f9 !important;
-        font-weight: 500 !important;
-      }
-      .text-slate-300, .text-slate-400 {
-        color: #f8fafc !important;
-        font-weight: 500 !important;
-      }
-
-      /* Make all labels, tags, badges super vibrant and visible */
+      /* Vibrant Sky Blue Label Tags */
       .label-tag {
-        color: #1d4ed8 !important; /* Rich royal blue */
+        color: #0284c7 !important;
         font-weight: 800 !important;
         letter-spacing: 0.15em !important;
       }
       .label-tag:before {
-        background-color: #1d4ed8 !important;
+        background-color: #0ea5e9 !important;
         height: 2px !important;
       }
 
-      /* Vibrant gradient green/blue text */
+      /* Sky Blue Gradient text */
       .text-gradient-green {
-        background: linear-gradient(135deg, #1d4ed8 0%, #047857 100%) !important;
+        background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 50%, #38bdf8 100%) !important;
         -webkit-background-clip: text !important;
         -webkit-text-fill-color: transparent !important;
         font-weight: 900 !important;
       }
 
-      /* Navigation Bar Links: Super clear, dark, bold */
+      /* Navigation Bar Links: Crisp dark, hover Sky Blue */
       nav a, header a {
         color: #0f172a !important;
         font-weight: 700 !important;
         font-size: 14px !important;
       }
       nav a:hover, header a:hover {
-        color: #1d4ed8 !important;
+        color: #0284c7 !important;
       }
 
-      /* Card descriptions: dark and easily readable */
-      article p, .shadow-card p:not(.bg-forest-950 p):not([class*="text-white"]) {
-        color: #1e293b !important;
-        font-weight: 500 !important;
+      /* Sky Blue Accent elements */
+      .text-forest-600, .text-forest-700, .text-forest-800 {
+        color: #0284c7 !important;
+      }
+      .bg-forest-600 {
+        background-color: #0284c7 !important;
+      }
+      .bg-forest-50 {
+        background-color: #f0f9ff !important;
+      }
+      .hover\:bg-forest-700:hover {
+        background-color: #0369a1 !important;
+      }
+      .border-forest-600 {
+        border-color: #0284c7 !important;
       }
 
-      /* High-contrast crisp image rendering */
+      /* Sky Blue Buttons */
+      .btn-gold-donate {
+        background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%) !important;
+        color: #ffffff !important;
+        font-weight: 800 !important;
+        border: none !important;
+        box-shadow: 0 4px 18px rgba(14, 165, 233, 0.45) !important;
+      }
+      .btn-gold-donate:hover {
+        background: linear-gradient(135deg, #7dd3fc 0%, #0ea5e9 100%) !important;
+        color: #ffffff !important;
+        box-shadow: 0 6px 24px rgba(14, 165, 233, 0.65) !important;
+      }
+
+      /* Sky Blue Ambient Footer */
+      .footer-ambient {
+        background: linear-gradient(135deg, #0369a1 0%, #0284c7 45%, #0ea5e9 100%) !important;
+        border-top: 1px solid rgba(56, 189, 248, 0.4) !important;
+        box-shadow: 0 -15px 40px rgba(14, 165, 233, 0.25) !important;
+      }
+      .footer-ambient::before {
+        content: "" !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        height: 2px !important;
+        background: linear-gradient(90deg, transparent 0%, #38bdf8 50%, transparent 100%) !important;
+        box-shadow: 0 0 15px rgba(56, 189, 248, 0.7) !important;
+      }
+      .footer-pill {
+        background: rgba(255, 255, 255, 0.12) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        color: #f0f9ff !important;
+      }
+      .footer-pill:hover {
+        background: rgba(255, 255, 255, 0.25) !important;
+        color: #ffffff !important;
+      }
+      .footer-social-btn:hover {
+        background: #38bdf8 !important;
+        color: #0369a1 !important;
+      }
+
+      
       img {
         image-rendering: -webkit-optimize-contrast;
       }
