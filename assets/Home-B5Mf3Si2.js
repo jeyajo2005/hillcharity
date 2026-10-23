@@ -72,42 +72,22 @@ const p=c("TrendingUp",[["polyline",{points:"22 7 13.5 15.5 8.5 10.5 2 17",key:"
     onMouseLeave: () => setIsPaused(false),
     children: e.jsx("div", {
       className: "relative w-full max-w-[1440px] mx-auto px-0 sm:px-4 lg:px-6 py-2 sm:py-4",
-      children: e.jsxs("div", {
+      children: e.jsx("div", {
         className: "relative w-full aspect-[1349/520] min-h-[250px] sm:min-h-[420px] md:min-h-[480px] lg:min-h-[520px] max-h-[600px] rounded-none sm:rounded-3xl overflow-hidden shadow-2xl bg-black border-0 sm:border border-slate-800 flex items-center justify-center",
-        children: [
-          e.jsx(t.img, {
-            key: HERO_SLIDES[current],
-            src: HERO_SLIDES[current],
-            alt: "Hill Charity Tuticorin - Authentic Activity",
-            initial: { opacity: 0.3 },
-            animate: { opacity: 1 },
-            transition: { duration: 0.6, ease: "easeOut" },
-            className: "w-full h-full object-cover object-center",
-            loading: "eager",
-            fetchPriority: "high",
-            style: {
-              imageRendering: "-webkit-optimize-contrast"
-            }
-          }),
-
-          // Left navigation arrow button
-          e.jsx("button", {
-            type: "button",
-            onClick: () => setCurrent(prev => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length),
-            className: "absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-slate-950/60 hover:bg-slate-950/90 backdrop-blur-md border border-white/30 text-white flex items-center justify-center text-2xl sm:text-3xl shadow-xl transition-all hover:scale-110 active:scale-95",
-            "aria-label": "Previous slide",
-            children: "‹"
-          }),
-
-          // Right navigation arrow button
-          e.jsx("button", {
-            type: "button",
-            onClick: () => setCurrent(prev => (prev + 1) % HERO_SLIDES.length),
-            className: "absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-slate-950/60 hover:bg-slate-950/90 backdrop-blur-md border border-white/30 text-white flex items-center justify-center text-2xl sm:text-3xl shadow-xl transition-all hover:scale-110 active:scale-95",
-            "aria-label": "Next slide",
-            children: "›"
-          })
-        ]
+        children: e.jsx(t.img, {
+          key: HERO_SLIDES[current],
+          src: HERO_SLIDES[current],
+          alt: "Hill Charity Tuticorin - Authentic Activity",
+          initial: { opacity: 0.3 },
+          animate: { opacity: 1 },
+          transition: { duration: 0.6, ease: "easeOut" },
+          className: "w-full h-full object-cover object-center",
+          loading: "eager",
+          fetchPriority: "high",
+          style: {
+            imageRendering: "-webkit-optimize-contrast"
+          }
+        })
       })
     })
   });

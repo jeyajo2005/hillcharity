@@ -4,6 +4,7 @@ import AboutRoute from "./About-DoJ-XgS1.js";
 import ServicesRoute from "./Services-eg4BCXTo.js";
 import ContactRoute from "./Contact-pTe4Lhbh.js";
 import GalleryRoute from "./Gallery.js";
+import CustomFooter from "./Footer.js";
 
 const oC = HomeRoute;
 const lC = AboutRoute;
@@ -96,7 +97,7 @@ const hC = () => v.jsx(e1, {
         children: [
           v.jsx(qP, {}),
           v.jsx("div", { className: "flex-1", children: v.jsx(fC, {}) }),
-          v.jsx(eC, {})
+          v.jsx(CustomFooter, {})
         ]
       })
     ]
