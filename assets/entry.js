@@ -3,11 +3,13 @@ import HomeRoute from "./Home-B5Mf3Si2.js";
 import AboutRoute from "./About-DoJ-XgS1.js";
 import ServicesRoute from "./Services-eg4BCXTo.js";
 import ContactRoute from "./Contact-pTe4Lhbh.js";
+import GalleryRoute from "./Gallery.js";
 
 const oC = HomeRoute;
 const lC = AboutRoute;
 const aC = ServicesRoute;
 const uC = ContactRoute;
+const gC = GalleryRoute;
 
 const cC = () => v.jsx("div", {
   className: "min-h-screen flex items-center justify-center bg-white",
@@ -55,6 +57,7 @@ const fC = () => {
             v.jsx(wn, { path: "/", element: v.jsx(oC, {}) }),
             v.jsx(wn, { path: "/about", element: v.jsx(lC, {}) }),
             v.jsx(wn, { path: "/services", element: v.jsx(aC, {}) }),
+            v.jsx(wn, { path: "/gallery", element: v.jsx(gC, {}) }),
             v.jsx(wn, { path: "/contact", element: v.jsx(uC, {}) }),
             v.jsx(wn, {
               path: "*",

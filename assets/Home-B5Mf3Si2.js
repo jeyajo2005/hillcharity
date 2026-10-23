@@ -33,7 +33,526 @@ import{c,j as e,m as t,r as o,L as x,A as m,H as h,M as f}from"./vendor.js";impo
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
- */const p=c("TrendingUp",[["polyline",{points:"22 7 13.5 15.5 8.5 10.5 2 17",key:"126l90"}],["polyline",{points:"16 7 22 7 22 13",key:"kwv8wd"}]]),_=()=>e.jsxs("section",{className:"relative w-full overflow-hidden bg-slate-950 pt-16 sm:pt-20","aria-label":"Hero section",children:[e.jsxs("div",{className:"relative w-full aspect-[3/2] max-h-[85vh] overflow-hidden mx-auto flex items-center justify-center",children:[e.jsx(t.img,{src:"./assets/hero-community.png",alt:"Hill Charity community support",initial:{opacity:0,scale:1.01},animate:{opacity:1,scale:1},transition:{duration:.8,ease:"easeOut"},className:"w-full h-full object-cover object-top",loading:"eager",fetchPriority:"high"}),e.jsx("div",{className:"absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/5 pointer-events-none"})]})]}),L=[{number:"01",title:"Hope Children Home",description:"Providing shelter, education, nutritious food, and affectionate care for abandoned and orphaned girl children in Tuticorin.",image:"./assets/p.png",icon:y},{number:"02",title:"Home for the Aged",description:"Rescuing destitute elderly women abandoned by family and left in the streets, providing healthcare, dignity, and a loving home.",image:"./assets/z.png",icon:V},{number:"03",title:"Feed the Hungry",description:"Rescuing excess banquet food and preparing fresh daily meals to ensure no one in our town goes to sleep hungry.",image:"./assets/j.png",icon:A}],U=()=>e.jsx("section",{className:"bg-white py-20 lg:py-28",children:e.jsxs("div",{className:"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",children:[e.jsxs("div",{className:"text-center mb-14 lg:mb-16",children:[e.jsxs("div",{className:"flex items-center justify-center gap-2 mb-5",children:[e.jsx("span",{className:"w-5 h-px bg-forest-600"}),e.jsx("span",{className:"text-xs font-bold tracking-[0.25em] uppercase text-forest-700",children:"Why We Exist"}),e.jsx("span",{className:"w-5 h-px bg-forest-600"})]}),e.jsxs("h2",{className:"font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-charcoal-900 leading-tight",children:["Love is where meaningful",e.jsx("br",{}),e.jsx("span",{className:"text-forest-600",children:"change begins."})]})]}),e.jsx("div",{className:"grid grid-cols-1 md:grid-cols-3 gap-8",children:L.map((a,n)=>{const s=a.icon;return e.jsxs(t.article,{initial:{opacity:0,y:30},whileInView:{opacity:1,y:0},viewport:{once:!0,margin:"-80px"},transition:{duration:.6,delay:n*.1},className:`
+ */
+const HERO_SLIDES = [
+  "./assets/enhanced/slider_2.jpg",
+  "./assets/enhanced/slider_8.jpg",
+  "./assets/enhanced/slider_7.jpg",
+  "./assets/enhanced/slider_9.jpg",
+  "./assets/enhanced/slider_1.jpg"
+];
+
+const HOME_FEATURED_PHOTOS = [
+  { src: "./assets/enhanced/slider_1.jpg", tag: "Children Home", title: "Hope Children Home Girls & Caregivers" },
+  { src: "./assets/enhanced/slider_3.jpg", tag: "Home for Aged", title: "Rescued Elderly Mothers Living in Peace" },
+  { src: "./assets/enhanced/slider_6.jpg", tag: "Feed the Hungry", title: "Hot Meal Distribution in Tuticorin" },
+  { src: "./assets/enhanced/slider_2.jpg", tag: "Education", title: "Study & Development for Young Minds" },
+  { src: "./assets/hill_photos/gallery_g1.jpg", tag: "Ashram Life", title: "Daily Joy & Activities at the Ashram" },
+  { src: "./assets/hill_photos/gallery_g5.jpg", tag: "Care & Support", title: "Nutritional & Medical Supervision" },
+  { src: "./assets/hill_photos/gallery_g10.jpg", tag: "Celebrations", title: "Festival & Birthday Celebrations" },
+  { src: "./assets/hill_photos/gallery_g20.jpg", tag: "Community", title: "Grassroots Community Outreach in Tuticorin" }
+];
+
+const p=c("TrendingUp",[["polyline",{points:"22 7 13.5 15.5 8.5 10.5 2 17",key:"126l90"}],["polyline",{points:"16 7 22 7 22 13",key:"kwv8wd"}]]),_=()=>{
+  const [current, setCurrent] = o.useState(0);
+  const [isPaused, setIsPaused] = o.useState(false);
+
+  o.useEffect(() => {
+    if (isPaused) return;
+    const timer = setInterval(() => {
+      setCurrent(prev => (prev + 1) % HERO_SLIDES.length);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, [isPaused]);
+
+  return e.jsxs(e.Fragment, {
+    children: [
+      // 1. PURE PHOTO-ONLY HERO SLIDER (Zero text overlay, crystal clear, un-dimmed photos)
+      e.jsx("section", {
+        className: "relative w-full bg-slate-950 pt-16 sm:pt-20 select-none overflow-hidden",
+        "aria-label": "Hero Photo Slider",
+        onMouseEnter: () => setIsPaused(true),
+        onMouseLeave: () => setIsPaused(false),
+        children: e.jsx("div", {
+          className: "relative w-full max-w-[1440px] mx-auto px-0 sm:px-4 lg:px-6 py-2 sm:py-4",
+          children: e.jsxs("div", {
+            className: "relative w-full aspect-[1349/520] min-h-[250px] sm:min-h-[420px] md:min-h-[480px] lg:min-h-[520px] max-h-[600px] rounded-none sm:rounded-3xl overflow-hidden shadow-2xl bg-black border-0 sm:border border-slate-800 flex items-center justify-center",
+            children: [
+              e.jsx(t.img, {
+                key: HERO_SLIDES[current],
+                src: HERO_SLIDES[current],
+                alt: "Hill Charity Tuticorin - Authentic Activity",
+                initial: { opacity: 0.3 },
+                animate: { opacity: 1 },
+                transition: { duration: 0.6, ease: "easeOut" },
+                className: "w-full h-full object-cover object-center",
+                loading: "eager",
+                fetchPriority: "high",
+                style: {
+                  imageRendering: "-webkit-optimize-contrast"
+                }
+              }),
+
+              // Left navigation arrow button
+              e.jsx("button", {
+                type: "button",
+                onClick: () => setCurrent(prev => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length),
+                className: "absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-slate-950/60 hover:bg-slate-950/90 backdrop-blur-md border border-white/30 text-white flex items-center justify-center text-2xl sm:text-3xl shadow-xl transition-all hover:scale-110 active:scale-95",
+                "aria-label": "Previous slide",
+                children: "‹"
+              }),
+
+              // Right navigation arrow button
+              e.jsx("button", {
+                type: "button",
+                onClick: () => setCurrent(prev => (prev + 1) % HERO_SLIDES.length),
+                className: "absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-slate-950/60 hover:bg-slate-950/90 backdrop-blur-md border border-white/30 text-white flex items-center justify-center text-2xl sm:text-3xl shadow-xl transition-all hover:scale-110 active:scale-95",
+                "aria-label": "Next slide",
+                children: "›"
+              }),
+
+              // Indicator Dots
+              e.jsx("div", {
+                className: "absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-950/50 backdrop-blur-md border border-white/10",
+                children: HERO_SLIDES.map((s, idx) => e.jsx("button", {
+                  key: idx,
+                  onClick: () => setCurrent(idx),
+                  className: "h-2 sm:h-2.5 rounded-full transition-all duration-300 " + (current === idx ? "w-8 sm:w-10 bg-[#FBBF24] shadow-[0_0_12px_rgba(251,191,36,0.8)]" : "w-2 sm:w-2.5 bg-white/40 hover:bg-white/80"),
+                  "aria-label": "Go to slide " + (idx + 1)
+                }))
+              })
+            ]
+          })
+        })
+      }),
+
+      // 2. ULTRA-ATTRACTIVE TRUST & ACTION BAR (Directly Below Photo-Only Hero)
+      e.jsx("section", {
+        className: "bg-gradient-to-r from-[#172554] via-[#1E40AF] to-[#2563EB] text-white py-6 sm:py-8 border-b border-blue-400/20 shadow-xl",
+        children: e.jsx("div", {
+          className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+          children: e.jsxs("div", {
+            className: "flex flex-col lg:flex-row items-center justify-between gap-6",
+            children: [
+              e.jsxs("div", {
+                className: "flex items-center gap-4 text-center lg:text-left",
+                children: [
+                  e.jsx("div", {
+                    className: "hidden md:flex w-16 h-16 rounded-2xl bg-gradient-to-br from-[#FBBF24] to-[#F59E0B] text-[#1E3A8A] items-center justify-center shrink-0 shadow-[0_0_24px_rgba(251,191,36,0.45)] font-display font-black text-2xl border-2 border-white/30",
+                    children: "HC"
+                  }),
+                  e.jsxs("div", {
+                    children: [
+                      e.jsxs("div", {
+                        className: "inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/15 text-[#FDE68A] text-xs font-bold tracking-widest uppercase mb-1.5",
+                        children: [
+                          e.jsx("span", { className: "w-2 h-2 rounded-full bg-[#FBBF24] animate-pulse" }),
+                          "Regd. Charitable Trust • Tuticorin, Tamil Nadu • Since 2014"
+                        ]
+                      }),
+                      e.jsx("h2", {
+                        className: "font-display font-extrabold text-xl sm:text-2xl lg:text-3xl text-white tracking-tight leading-snug",
+                        children: "Hill Organisation for People’s Education"
+                      }),
+                      e.jsx("p", {
+                        className: "text-blue-100 text-xs sm:text-sm max-w-2xl mt-1 leading-relaxed",
+                        children: "Sheltering abandoned girl children at Hope Children Home, caring for destitute elderly mothers, and feeding the hungry daily with love and complete transparency."
+                      })
+                    ]
+                  })
+                ]
+              }),
+
+              // Quick Actions Buttons
+              e.jsxs("div", {
+                className: "flex flex-wrap items-center justify-center gap-3 shrink-0",
+                children: [
+                  e.jsx(x, {
+                    to: "/gallery",
+                    className: "px-5 py-3 rounded-full font-bold text-xs sm:text-sm tracking-wider uppercase text-white bg-white/15 hover:bg-white/25 border border-white/25 hover:border-white/50 backdrop-blur-md transition-all shadow-sm hover:scale-105 active:scale-95",
+                    children: "📷 135+ Photos"
+                  }),
+                  e.jsx(x, {
+                    to: "/services",
+                    className: "px-5 py-3 rounded-full font-bold text-xs sm:text-sm tracking-wider uppercase text-white bg-white/15 hover:bg-white/25 border border-white/25 hover:border-white/50 backdrop-blur-md transition-all shadow-sm hover:scale-105 active:scale-95",
+                    children: "Our 7 Programs"
+                  }),
+                  e.jsx(x, {
+                    to: "/contact",
+                    className: "px-7 py-3 rounded-full font-extrabold text-xs sm:text-sm tracking-wider uppercase text-[#1E3A8A] bg-gradient-to-r from-[#FBBF24] to-[#F59E0B] hover:from-[#FCD34D] hover:to-[#FBBF24] shadow-[0_4px_24px_rgba(251,191,36,0.55)] hover:scale-105 active:scale-95 transition-all flex items-center gap-2",
+                    children: "DONATE NOW"
+                  })
+                ]
+              })
+            ]
+          })
+        })
+      })
+    ]
+  });
+};
+
+const DONATION_TIERS = [
+  {
+    amount: 500,
+    amountStr: "₹500",
+    title: "10 Wholesome Meals",
+    subtitle: "Feed Destitute Elders & Hungry",
+    desc: "Provides freshly-cooked, nutritious hot meals to 10 abandoned elderly women and street dwellers in Tuticorin.",
+    badge: "Basic Need"
+  },
+  {
+    amount: 1000,
+    amountStr: "₹1,000",
+    title: "1 Girl's Education / Month",
+    subtitle: "Hope Children Home",
+    desc: "Covers tuition fees, school bag, notebooks, stationery, and evening nutrition for a sheltered orphan girl.",
+    badge: "Most Popular",
+    isPopular: true
+  },
+  {
+    amount: 2500,
+    amountStr: "₹2,500",
+    title: "Elder Mother Medical Care",
+    subtitle: "Home for the Aged",
+    desc: "Provides doctor consultation, regular BP/diabetes medicines, hygiene supplies, and 24/7 loving care for 1 destitute mother.",
+    badge: "Lifesaving"
+  },
+  {
+    amount: 5000,
+    amountStr: "₹5,000",
+    title: "Full Day Ashram Feast",
+    subtitle: "Sponsor 100+ Beneficiaries",
+    desc: "Sponsor a complete day of special festive breakfast, lunch, and dinner for 40+ children and 30+ elders in honor of your family event.",
+    badge: "Celebration"
+  }
+];
+
+const QuickImpactSection = () => {
+  const [selectedIdx, setSelectedIdx] = o.useState(1);
+  const [copiedField, setCopiedField] = o.useState(null);
+  const [showBankDetails, setShowBankDetails] = o.useState(false);
+
+  const selectedTier = DONATION_TIERS[selectedIdx];
+
+  const copyToClipboard = (text, field) => {
+    try {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text);
+      }
+    } catch(err) {}
+    setCopiedField(field);
+    setTimeout(() => setCopiedField(null), 2500);
+  };
+
+  const whatsappUrl = "https://wa.me/919944704699?text=" + encodeURIComponent("Hello Hill Charity Tuticorin, I would like to donate " + selectedTier.amountStr + " to support " + selectedTier.title + ".");
+
+  return e.jsx("section", {
+    className: "py-12 sm:py-16 bg-gradient-to-b from-slate-50 via-white to-blue-50/40 relative overflow-hidden border-b border-slate-200/60",
+    children: e.jsxs("div", {
+      className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+      children: [
+        e.jsxs("div", {
+          className: "text-center max-w-3xl mx-auto mb-10 sm:mb-12",
+          children: [
+            e.jsxs("div", {
+              className: "inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100/90 border border-amber-300 text-amber-900 text-xs font-black tracking-widest uppercase mb-3.5 shadow-sm",
+              children: [
+                e.jsx("span", { className: "text-base", children: "💛" }),
+                "100% Direct Impact • 80G Certified Tax Exemption"
+              ]
+            }),
+            e.jsxs("h2", {
+              className: "font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-slate-900 tracking-tight leading-tight",
+              children: [
+                "Your Kindness Creates ",
+                e.jsx("span", {
+                  className: "bg-gradient-to-r from-blue-700 via-indigo-600 to-amber-600 bg-clip-text text-transparent",
+                  children: "Immediate Smiles"
+                })
+              ]
+            }),
+            e.jsx("p", {
+              className: "text-slate-600 text-sm sm:text-base mt-3 leading-relaxed",
+              children: "Every rupee goes directly to providing shelter, education, food, and medicine for Tuticorin's most vulnerable children and elderly mothers. Choose an impact tier below:"
+            })
+          ]
+        }),
+
+        e.jsx("div", {
+          className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8",
+          children: DONATION_TIERS.map((tier, idx) => {
+            const isSelected = selectedIdx === idx;
+            return e.jsxs("div", {
+              key: idx,
+              onClick: () => setSelectedIdx(idx),
+              className: "cursor-pointer relative rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between " + (
+                isSelected
+                  ? "bg-gradient-to-b from-[#1E3A8A] to-[#172554] text-white shadow-[0_12px_36px_rgba(30,58,138,0.35)] scale-[1.03] ring-4 ring-[#FBBF24]/80"
+                  : "bg-white text-slate-900 border border-slate-200/80 hover:border-blue-400 shadow-md hover:shadow-xl hover:-translate-y-1"
+              ),
+              children: [
+                e.jsxs("div", {
+                  className: "flex items-center justify-between gap-2 mb-4",
+                  children: [
+                    e.jsx("span", {
+                      className: "px-2.5 py-1 rounded-full text-[11px] font-black uppercase tracking-wider " + (
+                        tier.isPopular
+                          ? (isSelected ? "bg-[#FBBF24] text-[#1E3A8A]" : "bg-amber-400 text-slate-950")
+                          : (isSelected ? "bg-white/20 text-white" : "bg-slate-100 text-slate-700")
+                      ),
+                      children: tier.badge
+                    }),
+                    e.jsx("span", {
+                      className: "w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold " + (
+                        isSelected ? "bg-[#FBBF24] text-[#1E3A8A]" : "border border-slate-300 text-transparent"
+                      ),
+                      children: isSelected ? "✓" : ""
+                    })
+                  ]
+                }),
+
+                e.jsxs("div", {
+                  className: "mb-3",
+                  children: [
+                    e.jsx("div", {
+                      className: "font-display font-extrabold text-3xl sm:text-4xl " + (isSelected ? "text-[#FDE68A]" : "text-[#1E3A8A]"),
+                      children: tier.amountStr
+                    }),
+                    e.jsx("div", {
+                      className: "font-bold text-base mt-1 " + (isSelected ? "text-white" : "text-slate-900"),
+                      children: tier.title
+                    }),
+                    e.jsx("div", {
+                      className: "text-xs font-medium mt-0.5 " + (isSelected ? "text-blue-200" : "text-slate-500"),
+                      children: tier.subtitle
+                    })
+                  ]
+                }),
+
+                e.jsx("p", {
+                  className: "text-xs leading-relaxed mt-2 pt-3 border-t " + (
+                    isSelected ? "text-blue-100/90 border-white/15" : "text-slate-600 border-slate-100"
+                  ),
+                  children: tier.desc
+                })
+              ]
+            });
+          })
+        }),
+
+        e.jsxs("div", {
+          className: "bg-white rounded-3xl p-6 sm:p-8 border-2 border-blue-200 shadow-xl max-w-4xl mx-auto",
+          children: [
+            e.jsxs("div", {
+              className: "flex flex-col md:flex-row items-center justify-between gap-6 pb-6 border-b border-slate-100",
+              children: [
+                e.jsxs("div", {
+                  className: "text-center md:text-left",
+                  children: [
+                    e.jsxs("div", {
+                      className: "flex items-center justify-center md:justify-start gap-2 text-xs font-bold text-amber-600 uppercase tracking-widest mb-1",
+                      children: [
+                        e.jsx("span", { className: "w-2 h-2 rounded-full bg-amber-500 animate-pulse" }),
+                        "Your Selected Contribution"
+                      ]
+                    }),
+                    e.jsxs("div", {
+                      className: "text-2xl sm:text-3xl font-display font-black text-slate-900",
+                      children: [
+                        selectedTier.amountStr,
+                        " — ",
+                        e.jsx("span", { className: "text-[#1E3A8A]", children: selectedTier.title })
+                      ]
+                    }),
+                    e.jsx("p", {
+                      className: "text-slate-500 text-xs sm:text-sm mt-1",
+                      children: selectedTier.desc
+                    })
+                  ]
+                }),
+
+                e.jsxs("div", {
+                  className: "flex flex-wrap items-center justify-center gap-3 shrink-0",
+                  children: [
+                    e.jsxs("button", {
+                      type: "button",
+                      onClick: () => setShowBankDetails(!showBankDetails),
+                      className: "px-6 py-3.5 rounded-full font-extrabold text-xs sm:text-sm uppercase tracking-wider text-white bg-[#1E3A8A] hover:bg-[#172554] shadow-md hover:scale-105 active:scale-95 transition-all flex items-center gap-2",
+                      children: [
+                        showBankDetails ? "Hide Bank / UPI" : "Show Bank & UPI Details",
+                        e.jsx("span", { children: showBankDetails ? " ▲" : " ▼" })
+                      ]
+                    }),
+                    e.jsx("a", {
+                      href: whatsappUrl,
+                      target: "_blank",
+                      rel: "noopener noreferrer",
+                      className: "px-6 py-3.5 rounded-full font-extrabold text-xs sm:text-sm uppercase tracking-wider text-[#1E3A8A] bg-gradient-to-r from-[#FBBF24] to-[#F59E0B] hover:from-[#FCD34D] hover:to-[#FBBF24] shadow-[0_4px_20px_rgba(251,191,36,0.45)] hover:scale-105 active:scale-95 transition-all flex items-center gap-2",
+                      children: "WhatsApp Founder"
+                    })
+                  ]
+                })
+              ]
+            }),
+
+            showBankDetails && e.jsxs("div", {
+              className: "mt-6 pt-2",
+              children: [
+                e.jsxs("div", {
+                  className: "grid grid-cols-1 md:grid-cols-2 gap-4",
+                  children: [
+                    e.jsxs("div", {
+                      className: "rounded-2xl p-5 bg-gradient-to-br from-blue-50/70 to-slate-50 border border-blue-200",
+                      children: [
+                        e.jsxs("div", {
+                          className: "flex items-center justify-between mb-3",
+                          children: [
+                            e.jsx("span", { className: "text-xs font-black uppercase text-blue-900 tracking-wider", children: "🏦 State Bank of India (SBI)" }),
+                            e.jsx("span", { className: "text-[10px] px-2 py-0.5 rounded bg-blue-100 text-blue-800 font-bold", children: "Current A/C" })
+                          ]
+                        }),
+                        e.jsxs("div", {
+                          className: "space-y-2 text-xs",
+                          children: [
+                            e.jsxs("div", {
+                              children: [
+                                e.jsx("span", { className: "text-slate-500", children: "Account Name: " }),
+                                e.jsx("strong", { className: "text-slate-900 block font-bold", children: "HILL ORGANISATION FOR PEOPLE EDUCATION" })
+                              ]
+                            }),
+                            e.jsxs("div", {
+                              className: "flex items-center justify-between bg-white px-3 py-2 rounded-xl border border-slate-200",
+                              children: [
+                                e.jsxs("div", {
+                                  children: [
+                                    e.jsx("span", { className: "text-slate-400 text-[10px] block", children: "Account Number" }),
+                                    e.jsx("span", { className: "font-mono font-black text-sm text-slate-900 tracking-wider", children: "3426 0992 411" })
+                                  ]
+                                }),
+                                e.jsx("button", {
+                                  type: "button",
+                                  onClick: () => copyToClipboard("34260992411", "acc"),
+                                  className: "px-3 py-1.5 rounded-lg text-xs font-bold bg-blue-50 text-blue-700 hover:bg-blue-100 transition-colors",
+                                  children: copiedField === "acc" ? "✓ Copied" : "Copy"
+                                })
+                              ]
+                            }),
+                            e.jsxs("div", {
+                              className: "flex items-center justify-between bg-white px-3 py-2 rounded-xl border border-slate-200",
+                              children: [
+                                e.jsxs("div", {
+                                  children: [
+                                    e.jsx("span", { className: "text-slate-400 text-[10px] block", children: "IFSC Code (Tuticorin Main)" }),
+                                    e.jsx("span", { className: "font-mono font-black text-sm text-slate-900 tracking-wider", children: "SBIN0000940" })
+                                  ]
+                                }),
+                                e.jsx("button", {
+                                  type: "button",
+                                  onClick: () => copyToClipboard("SBIN0000940", "ifsc"),
+                                  className: "px-3 py-1.5 rounded-lg text-xs font-bold bg-blue-50 text-blue-700 hover:bg-blue-100 transition-colors",
+                                  children: copiedField === "ifsc" ? "✓ Copied" : "Copy"
+                                })
+                              ]
+                            })
+                          ]
+                        })
+                      ]
+                    }),
+
+                    e.jsxs("div", {
+                      className: "rounded-2xl p-5 bg-gradient-to-br from-amber-50/70 to-orange-50/40 border border-amber-200 flex flex-col justify-between",
+                      children: [
+                        e.jsxs("div", {
+                          children: [
+                            e.jsxs("div", {
+                              className: "flex items-center justify-between mb-3",
+                              children: [
+                                e.jsx("span", { className: "text-xs font-black uppercase text-amber-900 tracking-wider", children: "📱 UPI / GPay / PhonePe / Paytm" }),
+                                e.jsx("span", { className: "text-[10px] px-2 py-0.5 rounded bg-amber-100 text-amber-800 font-bold", children: "Instant Transfer" })
+                              ]
+                            }),
+                            e.jsxs("div", {
+                              className: "space-y-2 text-xs",
+                              children: [
+                                e.jsxs("div", {
+                                  className: "flex items-center justify-between bg-white px-3 py-2 rounded-xl border border-amber-200",
+                                  children: [
+                                    e.jsxs("div", {
+                                      children: [
+                                        e.jsx("span", { className: "text-slate-400 text-[10px] block", children: "Official UPI ID" }),
+                                        e.jsx("span", { className: "font-mono font-black text-sm text-amber-900 tracking-wider", children: "9944704699@sbi" })
+                                      ]
+                                    }),
+                                    e.jsx("button", {
+                                      type: "button",
+                                      onClick: () => copyToClipboard("9944704699@sbi", "upi"),
+                                      className: "px-3 py-1.5 rounded-lg text-xs font-bold bg-amber-100 text-amber-800 hover:bg-amber-200 transition-colors",
+                                      children: copiedField === "upi" ? "✓ Copied" : "Copy"
+                                    })
+                                  ]
+                                }),
+                                e.jsxs("div", {
+                                  className: "p-3 rounded-xl bg-amber-100/60 text-amber-900 text-xs leading-relaxed",
+                                  children: [
+                                    e.jsx("strong", { children: "Important Note: " }),
+                                    "After transferring, please share a screenshot to founder ",
+                                    e.jsx("strong", { children: "+91 99447 04699" }),
+                                    " on WhatsApp for your formal 80G tax exemption receipt."
+                                  ]
+                                })
+                              ]
+                            })
+                          ]
+                        }),
+                        e.jsx("div", {
+                          className: "mt-3 text-center text-[11px] text-slate-500",
+                          children: "Registered Trust: BK.IV 123/2018 • Tuticorin, Tamil Nadu"
+                        })
+                      ]
+                    })
+                  ]
+                })
+              ]
+            }),
+
+            e.jsxs("div", {
+              className: "mt-6 pt-5 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs",
+              children: [
+                e.jsxs("div", {
+                  className: "w-full sm:w-2/3",
+                  children: [
+                    e.jsxs("div", {
+                      className: "flex justify-between font-bold text-slate-700 mb-1.5",
+                      children: [
+                        e.jsx("span", { children: "🎯 October 2026 Goal: School Books & Elder Medicine" }),
+                        e.jsx("span", { className: "text-emerald-600 font-black", children: "78% Reached (₹1.56L / ₹2.0L)" })
+                      ]
+                    }),
+                    e.jsx("div", {
+                      className: "w-full h-2.5 bg-slate-100 rounded-full overflow-hidden p-0.5",
+                      children: e.jsx("div", {
+                        className: "h-full bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full",
+                        style: { width: "78%" }
+                      })
+                    })
+                  ]
+                }),
+                e.jsx(x, {
+                  to: "/contact",
+                  className: "text-blue-700 hover:text-blue-900 font-bold flex items-center gap-1 shrink-0 text-xs",
+                  children: ["View Full Trust Accounts & 80G Details", " →"]
+                })
+              ]
+            })
+          ]
+        })
+      ]
+    })
+  });
+};
+
+const L=[{number:"01",title:"Hope Children Home",description:"Providing shelter, education, nutritious food, and affectionate care for abandoned and orphaned girl children in Tuticorin.",image:"./assets/p.png",icon:y},{number:"02",title:"Home for the Aged",description:"Rescuing destitute elderly women abandoned by family and left in the streets, providing healthcare, dignity, and a loving home.",image:"./assets/z.png",icon:V},{number:"03",title:"Feed the Hungry",description:"Rescuing excess banquet food and preparing fresh daily meals to ensure no one in our town goes to sleep hungry.",image:"./assets/j.png",icon:A}],U=()=>e.jsx("section",{className:"bg-white py-20 lg:py-28",children:e.jsxs("div",{className:"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",children:[e.jsxs("div",{className:"text-center mb-14 lg:mb-16",children:[e.jsxs("div",{className:"flex items-center justify-center gap-2 mb-5",children:[e.jsx("span",{className:"w-5 h-px bg-forest-600"}),e.jsx("span",{className:"text-xs font-bold tracking-[0.25em] uppercase text-forest-700",children:"Why We Exist"}),e.jsx("span",{className:"w-5 h-px bg-forest-600"})]}),e.jsxs("h2",{className:"font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-charcoal-900 leading-tight",children:["Love is where meaningful",e.jsx("br",{}),e.jsx("span",{className:"text-forest-600",children:"change begins."})]})]}),e.jsx("div",{className:"grid grid-cols-1 md:grid-cols-3 gap-8",children:L.map((a,n)=>{const s=a.icon;return e.jsxs(t.article,{initial:{opacity:0,y:30},whileInView:{opacity:1,y:0},viewport:{once:!0,margin:"-80px"},transition:{duration:.6,delay:n*.1},className:`
                   group
                   overflow-hidden
                   rounded-[30px]
@@ -192,4 +711,87 @@ import{c,j as e,m as t,r as o,L as x,A as m,H as h,M as f}from"./vendor.js";impo
                   text-sm
                   hover:text-forest-700
                   transition-colors
-                `,children:["See all stories",e.jsx(m,{className:"w-4 h-4"})]})})})]}),e.jsx("div",{className:"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",children:C.map((s,l)=>e.jsx(J,{story:s,index:l},s.id))})]})})},ne=()=>e.jsxs("main",{className:"m-0 p-0",children:[e.jsx(_,{}),e.jsx(U,{}),e.jsx($,{}),e.jsx(B,{}),e.jsx(Y,{}),e.jsx(H,{}),e.jsx(Q,{}),e.jsx(K,{}),e.jsx(k,{})]});export{ne as default};
+                `,children:["See all stories",e.jsx(m,{className:"w-4 h-4"})]})})})]}),e.jsx("div",{className:"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",children:C.map((s,l)=>e.jsx(J,{story:s,index:l},s.id))})]})})},HomeGallery=()=>e.jsxs("section", {
+  className: "py-10 sm:py-14 bg-slate-900 text-white relative overflow-hidden",
+  "aria-labelledby": "home-gallery-heading",
+  children: [
+    e.jsxs("div", {
+      className: "relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+      children: [
+        e.jsxs("div", {
+          className: "flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6",
+          children: [
+            e.jsxs("div", {
+              className: "max-w-2xl",
+              children: [
+                e.jsxs("div", {
+                  className: "inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/20 border border-blue-400/30 text-amber-300 text-xs font-bold tracking-widest uppercase mb-4",
+                  children: [
+                    e.jsx("span", { className: "w-2 h-2 rounded-full bg-amber-400" }),
+                    "Authentic Work in Tuticorin"
+                  ]
+                }),
+                e.jsxs("h2", {
+                  id: "home-gallery-heading",
+                  className: "font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white leading-tight",
+                  children: [
+                    "Moments of Love & Service: ",
+                    e.jsx("span", {
+                      className: "bg-gradient-to-r from-amber-300 to-yellow-400 bg-clip-text text-transparent",
+                      children: "Real Photos"
+                    })
+                  ]
+                }),
+                e.jsx("p", {
+                  className: "text-slate-300 mt-4 text-base leading-relaxed",
+                  children: "Every photo represents a real soul touched by Hill Charity — orphaned children receiving education, elderly mothers living in security, and hungry families fed."
+                })
+              ]
+            }),
+            e.jsx(x, {
+              to: "/gallery",
+              children: e.jsxs("button", {
+                className: "px-7 py-3.5 rounded-full font-bold text-xs sm:text-sm tracking-wider uppercase text-slate-950 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 hover:scale-105 active:scale-95 shadow-[0_4px_20px_rgba(251,191,36,0.35)] transition-all shrink-0",
+                children: ["Explore All 135+ Photos", " →"]
+              })
+            })
+          ]
+        }),
+        e.jsx("div", {
+          className: "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-3",
+          children: HOME_FEATURED_PHOTOS.map((item, idx) => {
+            return e.jsxs(x, {
+              key: idx,
+              to: "/gallery",
+              className: "group relative rounded-xl overflow-hidden aspect-[4/3] bg-slate-800 border border-slate-700/60 shadow-md block cursor-pointer",
+              children: [
+                e.jsx("img", {
+                  src: item.src,
+                  alt: item.title,
+                  loading: "lazy",
+                  className: "w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500",
+                  style: { imageRendering: "-webkit-optimize-contrast" }
+                }),
+                e.jsx("div", {
+                  className: "absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3.5",
+                  children: e.jsxs("div", {
+                    children: [
+                      e.jsx("span", {
+                        className: "inline-block px-2 py-0.5 rounded text-[10px] font-extrabold uppercase bg-amber-400 text-slate-950 mb-1",
+                        children: item.tag
+                      }),
+                      e.jsx("p", {
+                        className: "text-white text-xs font-semibold line-clamp-1",
+                        children: item.title
+                      })
+                    ]
+                  })
+                })
+              ]
+            });
+          })
+        })
+      ]
+    })
+  ]
+}),ne=()=>e.jsxs("main",{className:"m-0 p-0",children:[e.jsx(_,{}),e.jsx(QuickImpactSection,{}),e.jsx(U,{}),e.jsx($,{}),e.jsx(B,{}),e.jsx(Y,{}),e.jsx(H,{}),e.jsx(Q,{}),e.jsx(K,{}),e.jsx(HomeGallery,{}),e.jsx(k,{})]});export{ne as default};
