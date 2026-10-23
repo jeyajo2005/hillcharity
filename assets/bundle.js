@@ -10392,16 +10392,6 @@ Error generating stack: ` + s.message + `
     "./assets/enhanced/slider_9.jpg",
     "./assets/enhanced/slider_1.jpg"
   ];
-  var HOME_FEATURED_PHOTOS = [
-    { src: "./assets/enhanced/slider_1.jpg", tag: "Children Home", title: "Hope Children Home Girls & Caregivers" },
-    { src: "./assets/enhanced/slider_3.jpg", tag: "Home for Aged", title: "Rescued Elderly Mothers Living in Peace" },
-    { src: "./assets/enhanced/slider_6.jpg", tag: "Feed the Hungry", title: "Hot Meal Distribution in Tuticorin" },
-    { src: "./assets/enhanced/slider_2.jpg", tag: "Education", title: "Study & Development for Young Minds" },
-    { src: "./assets/hill_photos/gallery_g1.jpg", tag: "Ashram Life", title: "Daily Joy & Activities at the Ashram" },
-    { src: "./assets/hill_photos/gallery_g5.jpg", tag: "Care & Support", title: "Nutritional & Medical Supervision" },
-    { src: "./assets/hill_photos/gallery_g10.jpg", tag: "Celebrations", title: "Festival & Birthday Celebrations" },
-    { src: "./assets/hill_photos/gallery_g20.jpg", tag: "Community", title: "Grassroots Community Outreach in Tuticorin" }
-  ];
   var p = fe("TrendingUp", [["polyline", { points: "22 7 13.5 15.5 8.5 10.5 2 17", key: "126l90" }], ["polyline", { points: "16 7 22 7 22 13", key: "kwv8wd" }]]);
   var _2 = () => {
     const [current, setCurrent] = w.useState(0);
@@ -10538,91 +10528,7 @@ Error generating stack: ` + s.message + `
                   transition-colors
                 `, children: ["See all stories", v.jsx(DP, { className: "w-4 h-4" })] }) }) })] }), v.jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8", children: T2.map((s, l) => v.jsx(J2, { story: s, index: l }, s.id)) })] }) });
   };
-  var HomeGallery = () => v.jsxs("section", {
-    className: "py-10 sm:py-14 bg-slate-900 text-white relative overflow-hidden",
-    "aria-labelledby": "home-gallery-heading",
-    children: [
-      v.jsxs("div", {
-        className: "relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
-        children: [
-          v.jsxs("div", {
-            className: "flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6",
-            children: [
-              v.jsxs("div", {
-                className: "max-w-2xl",
-                children: [
-                  v.jsxs("div", {
-                    className: "inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/20 border border-blue-400/30 text-amber-300 text-xs font-bold tracking-widest uppercase mb-4",
-                    children: [
-                      v.jsx("span", { className: "w-2 h-2 rounded-full bg-amber-400" }),
-                      "Authentic Work in Tuticorin"
-                    ]
-                  }),
-                  v.jsxs("h2", {
-                    id: "home-gallery-heading",
-                    className: "font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white leading-tight",
-                    children: [
-                      "Moments of Love & Service: ",
-                      v.jsx("span", {
-                        className: "bg-gradient-to-r from-amber-300 to-yellow-400 bg-clip-text text-transparent",
-                        children: "Real Photos"
-                      })
-                    ]
-                  }),
-                  v.jsx("p", {
-                    className: "text-slate-300 mt-4 text-base leading-relaxed",
-                    children: "Every photo represents a real soul touched by Hill Charity \u2014 orphaned children receiving education, elderly mothers living in security, and hungry families fed."
-                  })
-                ]
-              }),
-              v.jsx(lt, {
-                to: "/gallery",
-                children: v.jsxs("button", {
-                  className: "px-7 py-3.5 rounded-full font-bold text-xs sm:text-sm tracking-wider uppercase text-slate-950 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 hover:scale-105 active:scale-95 shadow-[0_4px_20px_rgba(251,191,36,0.35)] transition-all shrink-0",
-                  children: ["Explore All 135+ Photos", " \u2192"]
-                })
-              })
-            ]
-          }),
-          v.jsx("div", {
-            className: "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-3",
-            children: HOME_FEATURED_PHOTOS.map((item, idx) => {
-              return v.jsxs(lt, {
-                key: idx,
-                to: "/gallery",
-                className: "group relative rounded-xl overflow-hidden aspect-[4/3] bg-slate-800 border border-slate-700/60 shadow-md block cursor-pointer",
-                children: [
-                  v.jsx("img", {
-                    src: item.src,
-                    alt: item.title,
-                    loading: "lazy",
-                    className: "w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500",
-                    style: { imageRendering: "-webkit-optimize-contrast" }
-                  }),
-                  v.jsx("div", {
-                    className: "absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3.5",
-                    children: v.jsxs("div", {
-                      children: [
-                        v.jsx("span", {
-                          className: "inline-block px-2 py-0.5 rounded text-[10px] font-extrabold uppercase bg-amber-400 text-slate-950 mb-1",
-                          children: item.tag
-                        }),
-                        v.jsx("p", {
-                          className: "text-white text-xs font-semibold line-clamp-1",
-                          children: item.title
-                        })
-                      ]
-                    })
-                  })
-                ]
-              });
-            })
-          })
-        ]
-      })
-    ]
-  });
-  var ne3 = () => v.jsxs("main", { className: "m-0 p-0", children: [v.jsx(_2, {}), v.jsx(U2, {}), v.jsx($2, {}), v.jsx(Y3, {}), v.jsx(E3, {}), v.jsx(Q2, {}), v.jsx(K2, {}), v.jsx(HomeGallery, {}), v.jsx(Ne2, {})] });
+  var ne3 = () => v.jsxs("main", { className: "m-0 p-0", children: [v.jsx(_2, {}), v.jsx(U2, {}), v.jsx($2, {}), v.jsx(Y3, {}), v.jsx(E3, {}), v.jsx(Q2, {}), v.jsx(K2, {}), v.jsx(Ne2, {})] });
 
   // assets/ScrollReveal-CC7-yOZu.js
   var g2 = ({ children: s, className: i = "", delay: n = 0, duration: r = 0.7, direction: a2 = "up", distance: o = 32, once: p2 = true, scale: x3 = false }) => {

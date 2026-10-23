@@ -42,17 +42,6 @@ const HERO_SLIDES = [
   "./assets/enhanced/slider_1.jpg"
 ];
 
-const HOME_FEATURED_PHOTOS = [
-  { src: "./assets/enhanced/slider_1.jpg", tag: "Children Home", title: "Hope Children Home Girls & Caregivers" },
-  { src: "./assets/enhanced/slider_3.jpg", tag: "Home for Aged", title: "Rescued Elderly Mothers Living in Peace" },
-  { src: "./assets/enhanced/slider_6.jpg", tag: "Feed the Hungry", title: "Hot Meal Distribution in Tuticorin" },
-  { src: "./assets/enhanced/slider_2.jpg", tag: "Education", title: "Study & Development for Young Minds" },
-  { src: "./assets/hill_photos/gallery_g1.jpg", tag: "Ashram Life", title: "Daily Joy & Activities at the Ashram" },
-  { src: "./assets/hill_photos/gallery_g5.jpg", tag: "Care & Support", title: "Nutritional & Medical Supervision" },
-  { src: "./assets/hill_photos/gallery_g10.jpg", tag: "Celebrations", title: "Festival & Birthday Celebrations" },
-  { src: "./assets/hill_photos/gallery_g20.jpg", tag: "Community", title: "Grassroots Community Outreach in Tuticorin" }
-];
-
 const p=c("TrendingUp",[["polyline",{points:"22 7 13.5 15.5 8.5 10.5 2 17",key:"126l90"}],["polyline",{points:"16 7 22 7 22 13",key:"kwv8wd"}]]),_=()=>{
   const [current, setCurrent] = o.useState(0);
   const [isPaused, setIsPaused] = o.useState(false);
@@ -253,87 +242,4 @@ const L=[{number:"01",title:"Hope Children Home",description:"Providing shelter,
                   text-sm
                   hover:text-forest-700
                   transition-colors
-                `,children:["See all stories",e.jsx(m,{className:"w-4 h-4"})]})})})]}),e.jsx("div",{className:"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",children:C.map((s,l)=>e.jsx(J,{story:s,index:l},s.id))})]})})},HomeGallery=()=>e.jsxs("section", {
-  className: "py-10 sm:py-14 bg-slate-900 text-white relative overflow-hidden",
-  "aria-labelledby": "home-gallery-heading",
-  children: [
-    e.jsxs("div", {
-      className: "relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
-      children: [
-        e.jsxs("div", {
-          className: "flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6",
-          children: [
-            e.jsxs("div", {
-              className: "max-w-2xl",
-              children: [
-                e.jsxs("div", {
-                  className: "inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/20 border border-blue-400/30 text-amber-300 text-xs font-bold tracking-widest uppercase mb-4",
-                  children: [
-                    e.jsx("span", { className: "w-2 h-2 rounded-full bg-amber-400" }),
-                    "Authentic Work in Tuticorin"
-                  ]
-                }),
-                e.jsxs("h2", {
-                  id: "home-gallery-heading",
-                  className: "font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white leading-tight",
-                  children: [
-                    "Moments of Love & Service: ",
-                    e.jsx("span", {
-                      className: "bg-gradient-to-r from-amber-300 to-yellow-400 bg-clip-text text-transparent",
-                      children: "Real Photos"
-                    })
-                  ]
-                }),
-                e.jsx("p", {
-                  className: "text-slate-300 mt-4 text-base leading-relaxed",
-                  children: "Every photo represents a real soul touched by Hill Charity — orphaned children receiving education, elderly mothers living in security, and hungry families fed."
-                })
-              ]
-            }),
-            e.jsx(x, {
-              to: "/gallery",
-              children: e.jsxs("button", {
-                className: "px-7 py-3.5 rounded-full font-bold text-xs sm:text-sm tracking-wider uppercase text-slate-950 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 hover:scale-105 active:scale-95 shadow-[0_4px_20px_rgba(251,191,36,0.35)] transition-all shrink-0",
-                children: ["Explore All 135+ Photos", " →"]
-              })
-            })
-          ]
-        }),
-        e.jsx("div", {
-          className: "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-3",
-          children: HOME_FEATURED_PHOTOS.map((item, idx) => {
-            return e.jsxs(x, {
-              key: idx,
-              to: "/gallery",
-              className: "group relative rounded-xl overflow-hidden aspect-[4/3] bg-slate-800 border border-slate-700/60 shadow-md block cursor-pointer",
-              children: [
-                e.jsx("img", {
-                  src: item.src,
-                  alt: item.title,
-                  loading: "lazy",
-                  className: "w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500",
-                  style: { imageRendering: "-webkit-optimize-contrast" }
-                }),
-                e.jsx("div", {
-                  className: "absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3.5",
-                  children: e.jsxs("div", {
-                    children: [
-                      e.jsx("span", {
-                        className: "inline-block px-2 py-0.5 rounded text-[10px] font-extrabold uppercase bg-amber-400 text-slate-950 mb-1",
-                        children: item.tag
-                      }),
-                      e.jsx("p", {
-                        className: "text-white text-xs font-semibold line-clamp-1",
-                        children: item.title
-                      })
-                    ]
-                  })
-                })
-              ]
-            });
-          })
-        })
-      ]
-    })
-  ]
-}),ne=()=>e.jsxs("main",{className:"m-0 p-0",children:[e.jsx(_,{}),e.jsx(U,{}),e.jsx($,{}),e.jsx(Y,{}),e.jsx(H,{}),e.jsx(Q,{}),e.jsx(K,{}),e.jsx(HomeGallery,{}),e.jsx(k,{})]});export{ne as default};
+                `,children:["See all stories",e.jsx(m,{className:"w-4 h-4"})]})})})]}),e.jsx("div",{className:"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",children:C.map((s,l)=>e.jsx(J,{story:s,index:l},s.id))})]})})};const ne=()=>e.jsxs("main",{className:"m-0 p-0",children:[e.jsx(_,{}),e.jsx(U,{}),e.jsx($,{}),e.jsx(Y,{}),e.jsx(H,{}),e.jsx(Q,{}),e.jsx(K,{}),e.jsx(k,{})]});export{ne as default};
