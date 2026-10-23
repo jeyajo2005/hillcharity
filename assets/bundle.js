@@ -10528,7 +10528,7 @@ Error generating stack: ` + s.message + `
                   transition-colors
                 `, children: ["See all stories", v.jsx(DP, { className: "w-4 h-4" })] }) }) })] }), v.jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8", children: T2.map((s, l) => v.jsx(J2, { story: s, index: l }, s.id)) })] }) });
   };
-  var ne3 = () => v.jsxs("main", { className: "m-0 p-0", children: [v.jsx(_2, {}), v.jsx(U2, {}), v.jsx($2, {}), v.jsx(Y3, {}), v.jsx(E3, {}), v.jsx(Q2, {}), v.jsx(K2, {}), v.jsx(Ne2, {})] });
+  var ne3 = () => v.jsxs("main", { className: "m-0 p-0", children: [v.jsx(_2, {}), v.jsx(U2, {}), v.jsx($2, {}), v.jsx(Y3, {}), v.jsx(E3, {}), v.jsx(Q2, {}), v.jsx(K2, {})] });
 
   // assets/ScrollReveal-CC7-yOZu.js
   var g2 = ({ children: s, className: i = "", delay: n = 0, duration: r = 0.7, direction: a2 = "up", distance: o = 32, once: p2 = true, scale: x3 = false }) => {

@@ -242,4 +242,4 @@ const L=[{number:"01",title:"Hope Children Home",description:"Providing shelter,
                   text-sm
                   hover:text-forest-700
                   transition-colors
-                `,children:["See all stories",e.jsx(m,{className:"w-4 h-4"})]})})})]}),e.jsx("div",{className:"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",children:C.map((s,l)=>e.jsx(J,{story:s,index:l},s.id))})]})})};const ne=()=>e.jsxs("main",{className:"m-0 p-0",children:[e.jsx(_,{}),e.jsx(U,{}),e.jsx($,{}),e.jsx(Y,{}),e.jsx(H,{}),e.jsx(Q,{}),e.jsx(K,{}),e.jsx(k,{})]});export{ne as default};
+                `,children:["See all stories",e.jsx(m,{className:"w-4 h-4"})]})})})]}),e.jsx("div",{className:"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",children:C.map((s,l)=>e.jsx(J,{story:s,index:l},s.id))})]})})};const ne=()=>e.jsxs("main",{className:"m-0 p-0",children:[e.jsx(_,{}),e.jsx(U,{}),e.jsx($,{}),e.jsx(Y,{}),e.jsx(H,{}),e.jsx(Q,{}),e.jsx(K,{})]});export{ne as default};
