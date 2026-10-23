@@ -191,9 +191,9 @@ function b(i,a,t){
 const x=({value:i,suffix:a,label:t,sublabel:o,active:r,delay:l})=>{
   const s=b(i,2e3,r);
   return e.jsxs(d.div,{initial:{opacity:0,y:32},animate:r?{opacity:1,y:0}:{},transition:{duration:.7,delay:l,ease:[.25,.46,.45,.94]},className:"text-center px-6",children:[
-    e.jsxs("div",{className:"font-display font-bold text-5xl sm:text-6xl lg:text-7xl text-white font-counter tracking-tight leading-none mb-2",children:[s.toLocaleString(),e.jsx("span",{className:"text-amber-400",children:a})]}),
-    e.jsx("div",{className:"text-white font-semibold text-lg mt-3",children:t}),
-    o&&e.jsx("div",{className:"text-white/50 text-sm mt-1",children:o})
+    e.jsxs("div",{style:{color:"#ffffff"},className:"font-display font-bold text-5xl sm:text-6xl lg:text-7xl text-white font-counter tracking-tight leading-none mb-2",children:[s.toLocaleString(),e.jsx("span",{style:{color:"#fbbf24"},className:"text-amber-400",children:a})]}),
+    e.jsx("div",{style:{color:"#ffffff"},className:"text-white font-semibold text-lg mt-3",children:t}),
+    o&&e.jsx("div",{style:{color:"#f8fafc"},className:"text-white/70 text-sm mt-1",children:o})
   ]})
 };
 
@@ -210,8 +210,8 @@ const E=()=>{
       ]}),
       e.jsx("div",{className:"grid grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-4 divide-x-0 lg:divide-x divide-white/10",children:f.map((t,o)=>e.jsx(x,{value:t.value,suffix:t.suffix,label:t.label,sublabel:t.sublabel,active:a,delay:.2+o*.12},t.label))}),
       e.jsxs(d.div,{initial:{opacity:0},animate:a?{opacity:1}:{},transition:{duration:.7,delay:.9},className:"text-center mt-10 sm:mt-12 space-y-1.5",children:[
-        e.jsx("p",{className:"text-white/80 text-sm sm:text-base italic",children:'"உதவி என்பது ஒரு செயல் மட்டும் அல்ல. ஒரு நம்பிக்கை."'}),
-        e.jsx("p",{className:"text-white/60 text-xs sm:text-sm",children:'"Hill Organisation for People’s Education — Tuticorin, Tamil Nadu"'})
+        e.jsx("p",{style:{color:"#ffffff"},className:"text-white text-sm sm:text-base italic",children:'"உதவி என்பது ஒரு செயல் மட்டும் அல்ல. ஒரு நம்பிக்கை."'}),
+        e.jsx("p",{style:{color:"#f8fafc"},className:"text-white/80 text-xs sm:text-sm",children:'"Hill Organisation for People’s Education — Tuticorin, Tamil Nadu"'})
       ]})
     ]})
   ]})

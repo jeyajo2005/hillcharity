@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../assets/index-DQ1mV4_X.css">
-    <script defer src="../assets/bundle.js?v=1792745553"></script>
+    <script defer src="../assets/bundle.js?v=1792747030"></script>
     <style>
       /* ============================================================
          CRITICAL FIX: ULTRA-CRISP HIGH-CONTRAST TYPOGRAPHY & LETTER COLORS
@@ -30,26 +30,54 @@
         font-weight: 500 !important;
       }
 
-      /* Headings: Deep, bold, punchy, pitch-black */
-      h1, h2, h3, h4, h5, h6,
-      .font-display {
-        color: #090d16 !important;
-        font-weight: 800 !important;
-        letter-spacing: -0.02em !important;
+      /* Headings: Deep, bold, punchy on light surfaces */
+      h1, h2, h3, h4, h5, h6 {
+        font-weight: 800;
+        letter-spacing: -0.02em;
       }
-
-      /* When inside dark sections (Hero, Navy Trust Bar, Dark Gallery), force pure crystal-clear white */
-      .bg-slate-950 h1, .bg-slate-950 h2, .bg-slate-950 h3, .bg-slate-950 h4,
-      .bg-slate-900 h1, .bg-slate-900 h2, .bg-slate-900 h3, .bg-slate-900 h4,
-      .bg-slate-950 p, .bg-slate-900 p,
-      .bg-forest-950 h1, .bg-forest-950 h2, .bg-forest-950 h3,
-      section[class*="from-[#172554]"] h1, section[class*="from-[#172554]"] h2, section[class*="from-[#172554]"] h3,
-      section[class*="from-[#1E3A8A]"] h1, section[class*="from-[#1E3A8A]"] h2, section[class*="from-[#1E3A8A]"] h3,
-      section[class*="from-[#172554]"] p, section[class*="from-[#1E3A8A]"] p,
-      section[class*="from-[#172554]"] span, section[class*="from-[#1E3A8A]"] span:not([class*="bg-amber"]),
+      .font-display {
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+      /* Pure crystal-clear white on all dark banners, statistics, and dark panels */
+      .text-white,
+      .text-white .font-display,
+      .font-counter,
+      .font-counter *,
+      .bg-forest-950,
+      .bg-forest-950 *,
+      .bg-forest-950 p,
+      .bg-forest-950 .font-display,
+      .bg-forest-950 div,
+      .shadow-card .bg-forest-950,
+      .shadow-card .bg-forest-950 *,
+      .shadow-card .bg-forest-950 p,
+      .shadow-card .bg-forest-950 div,
+      section[aria-labelledby="impact-heading"],
+      section[aria-labelledby="impact-heading"] h2,
+      section[aria-labelledby="impact-heading"] p,
+      section[aria-labelledby="impact-heading"] div,
+      section[aria-labelledby="impact-heading"] .font-display,
+      section[aria-labelledby="impact-heading"] .font-counter,
+      section.text-white,
       section.text-white h1, section.text-white h2, section.text-white h3,
       section.text-white p, header.text-white h1, header.text-white h2 {
         color: #ffffff !important;
+      }
+      /* Protect amber / gold accents from being overridden */
+      .text-amber-400,
+      [class*="text-amber"],
+      section[aria-labelledby="impact-heading"] .text-amber-400,
+      section[aria-labelledby="impact-heading"] [class*="text-amber"],
+      .bg-forest-950 .text-amber-400,
+      .bg-forest-950 [class*="text-amber"] {
+        color: #fbbf24 !important;
+      }
+      /* Protect light green accents */
+      .text-forest-300,
+      [class*="text-forest-300"],
+      .bg-forest-950 .text-forest-300 {
+        color: #86efac !important;
       }
 
       /* Fix washed-out gray text classes across entire application */
@@ -127,7 +155,7 @@
       }
 
       /* Card descriptions: dark and easily readable */
-      article p, .shadow-card p {
+      article p, .shadow-card p:not(.bg-forest-950 p):not([class*="text-white"]) {
         color: #1e293b !important;
         font-weight: 500 !important;
       }

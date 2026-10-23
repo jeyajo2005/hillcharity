@@ -37,10 +37,10 @@ const N=()=>{
                   e.jsx("span",{className:"text-amber-400 text-xs font-bold tracking-[0.2em] uppercase",children:"Since 2014"})
                 ]}),
                 e.jsxs("div",{className:"relative z-10",children:[
-                  e.jsx("div",{className:"font-display font-bold text-7xl sm:text-8xl leading-none text-white",children:"10+"}),
-                  e.jsx("div",{className:"mt-2 text-forest-300 text-lg font-semibold tracking-wide",children:"YEARS"}),
+                  e.jsx("div",{style:{color:"#ffffff"},className:"font-display font-bold text-7xl sm:text-8xl leading-none text-white",children:"10+"}),
+                  e.jsx("div",{style:{color:"#86efac"},className:"mt-2 text-forest-300 text-lg font-semibold tracking-wide",children:"YEARS"}),
                   e.jsx("div",{className:"mt-5 h-px w-20 bg-white/20"}),
-                  e.jsx("p",{className:"mt-5 text-white/60 text-sm leading-relaxed",children:"Founded in Tuticorin by Mrs. Brinah Prabhakaran & Mr. Prem Prabhakaran."})
+                  e.jsx("p",{style:{color:"#ffffff"},className:"mt-5 text-white text-sm leading-relaxed",children:"Founded in Tuticorin by Mrs. Brinah Prabhakaran & Mr. Prem Prabhakaran."})
                 ]})
               ]}),
               e.jsxs("div",{className:"p-8 sm:p-10 lg:p-12",children:[

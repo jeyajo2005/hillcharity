@@ -10347,9 +10347,9 @@ Error generating stack: ` + s.message + `
   var x = ({ value: i, suffix: a2, label: t, sublabel: o, active: r, delay: l }) => {
     const s = b2(i, 2e3, r);
     return v.jsxs(Pe.div, { initial: { opacity: 0, y: 32 }, animate: r ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.7, delay: l, ease: [0.25, 0.46, 0.45, 0.94] }, className: "text-center px-6", children: [
-      v.jsxs("div", { className: "font-display font-bold text-5xl sm:text-6xl lg:text-7xl text-white font-counter tracking-tight leading-none mb-2", children: [s.toLocaleString(), v.jsx("span", { className: "text-amber-400", children: a2 })] }),
-      v.jsx("div", { className: "text-white font-semibold text-lg mt-3", children: t }),
-      o && v.jsx("div", { className: "text-white/50 text-sm mt-1", children: o })
+      v.jsxs("div", { style: { color: "#ffffff" }, className: "font-display font-bold text-5xl sm:text-6xl lg:text-7xl text-white font-counter tracking-tight leading-none mb-2", children: [s.toLocaleString(), v.jsx("span", { style: { color: "#fbbf24" }, className: "text-amber-400", children: a2 })] }),
+      v.jsx("div", { style: { color: "#ffffff" }, className: "text-white font-semibold text-lg mt-3", children: t }),
+      o && v.jsx("div", { style: { color: "#f8fafc" }, className: "text-white/70 text-sm mt-1", children: o })
     ] });
   };
   var E3 = () => {
@@ -10365,8 +10365,8 @@ Error generating stack: ` + s.message + `
         ] }),
         v.jsx("div", { className: "grid grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-4 divide-x-0 lg:divide-x divide-white/10", children: f.map((t, o) => v.jsx(x, { value: t.value, suffix: t.suffix, label: t.label, sublabel: t.sublabel, active: a2, delay: 0.2 + o * 0.12 }, t.label)) }),
         v.jsxs(Pe.div, { initial: { opacity: 0 }, animate: a2 ? { opacity: 1 } : {}, transition: { duration: 0.7, delay: 0.9 }, className: "text-center mt-10 sm:mt-12 space-y-1.5", children: [
-          v.jsx("p", { className: "text-white/80 text-sm sm:text-base italic", children: '"\u0B89\u0BA4\u0BB5\u0BBF \u0B8E\u0BA9\u0BCD\u0BAA\u0BA4\u0BC1 \u0B92\u0BB0\u0BC1 \u0B9A\u0BC6\u0BAF\u0BB2\u0BCD \u0BAE\u0B9F\u0BCD\u0B9F\u0BC1\u0BAE\u0BCD \u0B85\u0BB2\u0BCD\u0BB2. \u0B92\u0BB0\u0BC1 \u0BA8\u0BAE\u0BCD\u0BAA\u0BBF\u0B95\u0BCD\u0B95\u0BC8."' }),
-          v.jsx("p", { className: "text-white/60 text-xs sm:text-sm", children: '"Hill Organisation for People\u2019s Education \u2014 Tuticorin, Tamil Nadu"' })
+          v.jsx("p", { style: { color: "#ffffff" }, className: "text-white text-sm sm:text-base italic", children: '"\u0B89\u0BA4\u0BB5\u0BBF \u0B8E\u0BA9\u0BCD\u0BAA\u0BA4\u0BC1 \u0B92\u0BB0\u0BC1 \u0B9A\u0BC6\u0BAF\u0BB2\u0BCD \u0BAE\u0B9F\u0BCD\u0B9F\u0BC1\u0BAE\u0BCD \u0B85\u0BB2\u0BCD\u0BB2. \u0B92\u0BB0\u0BC1 \u0BA8\u0BAE\u0BCD\u0BAA\u0BBF\u0B95\u0BCD\u0B95\u0BC8."' }),
+          v.jsx("p", { style: { color: "#f8fafc" }, className: "text-white/80 text-xs sm:text-sm", children: '"Hill Organisation for People\u2019s Education \u2014 Tuticorin, Tamil Nadu"' })
         ] })
       ] })
     ] });
@@ -10566,10 +10566,10 @@ Error generating stack: ` + s.message + `
                     v.jsx("span", { className: "text-amber-400 text-xs font-bold tracking-[0.2em] uppercase", children: "Since 2014" })
                   ] }),
                   v.jsxs("div", { className: "relative z-10", children: [
-                    v.jsx("div", { className: "font-display font-bold text-7xl sm:text-8xl leading-none text-white", children: "10+" }),
-                    v.jsx("div", { className: "mt-2 text-forest-300 text-lg font-semibold tracking-wide", children: "YEARS" }),
+                    v.jsx("div", { style: { color: "#ffffff" }, className: "font-display font-bold text-7xl sm:text-8xl leading-none text-white", children: "10+" }),
+                    v.jsx("div", { style: { color: "#86efac" }, className: "mt-2 text-forest-300 text-lg font-semibold tracking-wide", children: "YEARS" }),
                     v.jsx("div", { className: "mt-5 h-px w-20 bg-white/20" }),
-                    v.jsx("p", { className: "mt-5 text-white/60 text-sm leading-relaxed", children: "Founded in Tuticorin by Mrs. Brinah Prabhakaran & Mr. Prem Prabhakaran." })
+                    v.jsx("p", { style: { color: "#ffffff" }, className: "mt-5 text-white text-sm leading-relaxed", children: "Founded in Tuticorin by Mrs. Brinah Prabhakaran & Mr. Prem Prabhakaran." })
                   ] })
                 ] }),
                 v.jsxs("div", { className: "p-8 sm:p-10 lg:p-12", children: [
