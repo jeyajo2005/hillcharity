@@ -10985,30 +10985,43 @@ Error generating stack: ` + s.message + `
       children: [
         // Hero Header
         v.jsx("section", {
-          className: "relative bg-gradient-to-b from-[#1E3A8A] to-[#172554] text-white py-8 sm:py-12 overflow-hidden",
+          style: {
+            background: "linear-gradient(180deg, #090e1a 0%, #172554 45%, #1e3a8a 100%)",
+            backgroundColor: "#172554"
+          },
+          className: "relative text-white py-10 sm:py-14 overflow-hidden shadow-md",
           children: v.jsxs("div", {
             className: "relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center",
             children: [
               v.jsx("div", {
-                className: "inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/20 border border-blue-400/30 text-amber-300 text-xs font-bold tracking-widest uppercase mb-3",
+                style: {
+                  backgroundColor: "rgba(37,99,235,0.35)",
+                  color: "#fcd34d",
+                  borderColor: "rgba(147,197,253,0.4)"
+                },
+                className: "inline-flex items-center gap-2 px-4 py-1.5 rounded-full border text-xs font-bold tracking-widest uppercase mb-3",
                 children: "Real Impact in Tuticorin"
               }),
               v.jsxs("h1", {
-                className: "font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-tight mb-3",
+                style: { color: "#ffffff" },
+                className: "font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-tight mb-3 text-white",
                 children: [
                   "Our Journey in ",
                   v.jsx("span", {
-                    className: "bg-gradient-to-r from-amber-300 via-amber-200 to-yellow-400 bg-clip-text text-transparent",
+                    style: { color: "#fbbf24" },
+                    className: "font-extrabold",
                     children: "Real Photos"
                   })
                 ]
               }),
               v.jsx("p", {
-                className: "max-w-3xl mx-auto text-base sm:text-lg text-blue-100/90 leading-relaxed",
+                style: { color: "#f1f5f9" },
+                className: "max-w-3xl mx-auto text-base sm:text-lg leading-relaxed font-medium",
                 children: "Explore authentic moments from Hill Charity (Hill Organisation for People's Education). Since 2014, sheltering abandoned girl children, caring for elderly destitute mothers, and feeding hungry souls with love and dignity."
               }),
               v.jsxs("div", {
-                className: "flex flex-wrap items-center justify-center gap-4 mt-5 text-xs sm:text-sm text-blue-200/80",
+                style: { color: "#e2e8f0" },
+                className: "flex flex-wrap items-center justify-center gap-6 mt-6 text-xs sm:text-sm font-semibold",
                 children: [
                   v.jsxs("span", {
                     className: "flex items-center gap-2",
@@ -11043,7 +11056,7 @@ Error generating stack: ` + s.message + `
             children: [
               // Filter Tabs
               v.jsx("div", {
-                className: "flex flex-wrap items-center justify-center gap-2 mb-6",
+                className: "flex flex-wrap items-center justify-center gap-2.5 mb-8",
                 children: CATEGORIES.map((cat) => {
                   const isSelected = selectedCat === cat;
                   return v.jsx(
@@ -11054,7 +11067,12 @@ Error generating stack: ` + s.message + `
                         setSelectedCat(cat);
                         setVisibleCount(24);
                       },
-                      className: "px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wide uppercase transition-all duration-200 " + (isSelected ? "bg-[#2563EB] text-white shadow-[0_4px_16px_rgba(37,99,235,0.35)] scale-105" : "bg-white text-slate-700 hover:bg-blue-50 border border-slate-200 hover:border-blue-200")
+                      style: {
+                        backgroundColor: isSelected ? "#2563eb" : "#ffffff",
+                        color: isSelected ? "#ffffff" : "#0f172a",
+                        borderColor: isSelected ? "#2563eb" : "#cbd5e1"
+                      },
+                      className: "px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wide uppercase transition-all duration-200 border shadow-sm " + (isSelected ? "scale-105 shadow-md" : "hover:bg-blue-50")
                     },
                     cat
                   );
@@ -11190,7 +11208,11 @@ Error generating stack: ` + s.message + `
           ]
         }),
         v.jsx("section", {
-          className: "bg-gradient-to-r from-[#1E3A8A] to-[#172554] text-white py-8 sm:py-10 border-t border-blue-400/20 mt-8",
+          style: {
+            background: "linear-gradient(135deg, #1E3A8A 0%, #172554 100%)",
+            backgroundColor: "#172554"
+          },
+          className: "text-white py-8 sm:py-10 border-t border-blue-400/20 mt-8",
           children: v.jsx("div", {
             className: "max-w-5xl mx-auto px-4 text-center",
             children: v.jsxs("div", {
