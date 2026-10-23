@@ -167,4 +167,4 @@ import{c as h,j as n,H as r,r as p,m as l,L as g,A as b}from"./vendor.js";import
                       font-medium
                       transition-all
                       duration-200
-                    `,children:[n.jsx(s,{className:"w-4 h-4"}),e.title]},e.id)})})})]})]}),c.map((e,s)=>n.jsx(I,{service:e,index:s},e.id)),n.jsx(N,{}),n.jsx(y,{})]});export{A as default};
+                    `,children:[n.jsx(s,{className:"w-4 h-4"}),e.title]},e.id)})})})]})]}),c.map((e,s)=>n.jsx(I,{service:e,index:s},e.id)),n.jsx(N,{})]});export{A as default};

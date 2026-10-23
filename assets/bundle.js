@@ -10161,12 +10161,6 @@ Error generating stack: ` + s.message + `
     });
   }
   var Re2 = fe("Users", [["path", { d: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2", key: "1yyitq" }], ["circle", { cx: "9", cy: "7", r: "4", key: "nufk8" }], ["path", { d: "M22 21v-2a4 4 0 0 0-3-3.87", key: "kshegd" }], ["path", { d: "M16 3.13a4 4 0 0 1 0 7.75", key: "1da9ce" }]]);
-  var Ne2 = () => {
-    const e = w.useRef(null);
-    w2(e, { once: true, margin: "-80px" });
-    const { scrollYProgress: t } = Oe2({ target: e, offset: ["start end", "end start"] }), s = Ie2(t, [0, 1], ["-10%", "10%"]);
-    return v.jsx("section", { ref: e, className: "relative py-12 md:py-16 lg:py-20 overflow-hidden", "aria-labelledby": "cta-heading", children: v.jsx(Pe.div, { style: { y: s }, className: "absolute inset-0 scale-110 z-0", children: v.jsx("img", { src: "./assets/mom.png", alt: "A mother receiving support", className: "w-full h-full object-cover object-center", loading: "lazy" }) }) });
-  };
 
   // assets/ImpactStats-0WLLq7gL.js
   var k2 = fe("GraduationCap", [["path", { d: "M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z", key: "j76jl0" }], ["path", { d: "M22 10v6", key: "1lu8f3" }], ["path", { d: "M6 12.5V16a6 3 0 0 0 12 0v-3.5", key: "1r8lef" }]]);
@@ -10631,8 +10625,7 @@ Error generating stack: ` + s.message + `
             ] }) }, t.year);
           }) })
         ] })
-      ] }) }),
-      v.jsx(Ne2, {})
+      ] }) })
     ] });
   };
 
@@ -10810,7 +10803,7 @@ Error generating stack: ` + s.message + `
                       transition-all
                       duration-200
                     `, children: [v.jsx(s, { className: "w-4 h-4" }), e.title] }, e.id);
-  }) }) })] })] }), M3.map((e, s) => v.jsx(I4, { service: e, index: s }, e.id)), v.jsx(E3, {}), v.jsx(Ne2, {})] });
+  }) }) })] })] }), M3.map((e, s) => v.jsx(I4, { service: e, index: s }, e.id)), v.jsx(E3, {})] });
 
   // assets/Contact-pTe4Lhbh.js
   var b3 = fe("Send", [["path", { d: "m22 2-7 20-4-9-9-4Z", key: "1q3vgg" }], ["path", { d: "M22 2 11 13", key: "nzbqef" }]]);
