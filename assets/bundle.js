@@ -9836,12 +9836,12 @@ Error generating stack: ` + s.message + `
     w.useEffect(() => (document.body.style.overflow = n ? "hidden" : "", () => {
       document.body.style.overflow = "";
     }), [n]);
-    return v.jsxs(v.Fragment, { children: [v.jsx(Pe.header, { initial: { opacity: 0, y: -16 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.5, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }, className: `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${e ? "bg-white/95 backdrop-blur-md shadow-md py-2" : "bg-white/90 backdrop-blur-sm py-3 sm:py-4"} border-b border-blue-100`, children: v.jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: v.jsxs("div", { className: "flex items-center justify-between h-16 sm:h-20", children: [v.jsxs(lt, { to: "/", className: "flex items-center gap-3 group focus-visible:outline-none rounded-lg", "aria-label": "Hill Trust Ashram Home", children: [v.jsx("img", { src: "./assets/Logo.png", alt: "HILL TRUST ASHRAM", className: "h-14 sm:h-16 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-sm" })] }), v.jsx("nav", { className: "hidden md:flex items-center justify-center", children: v.jsx("div", { className: "spotlight-nav-pill flex items-center gap-1 px-5 py-2 rounded-full bg-white shadow-[0_4px_24px_rgba(37,99,235,0.08)] border border-blue-100", children: Cd.map((g4) => {
+    return v.jsxs(v.Fragment, { children: [v.jsx(Pe.header, { initial: { opacity: 0, y: -16 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.5, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }, className: `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${e ? "bg-white/95 backdrop-blur-md shadow-md py-2" : "bg-white/90 backdrop-blur-sm py-3 sm:py-4"} border-b border-blue-100`, children: v.jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: v.jsxs("div", { className: "flex items-center justify-between h-16 sm:h-20", children: [v.jsxs(lt, { to: "/", className: "flex items-center gap-3 group focus-visible:outline-none rounded-lg", "aria-label": "Hill Trust Ashram Home", children: [v.jsx("img", { src: "./assets/Logo.png", alt: "HILLCHARITY", className: "h-12 sm:h-14 md:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-sm" }), v.jsx("span", { className: "font-display font-black text-xl sm:text-2xl tracking-wider text-[#0284c7] uppercase drop-shadow-xs", children: "HILLCHARITY" })] }), v.jsx("nav", { className: "hidden md:flex items-center justify-center", children: v.jsx("div", { className: "spotlight-nav-pill flex items-center gap-1 px-5 py-2 rounded-full bg-white shadow-[0_4px_24px_rgba(37,99,235,0.08)] border border-blue-100", children: Cd.map((g4) => {
       const y2 = c.pathname === g4.path;
       return v.jsxs(lt, { to: g4.path, className: `relative px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase transition-all duration-200 ${y2 ? "text-[#0ea5e9] font-extrabold" : "text-[#0284c7] hover:text-[#0ea5e9]"}`, children: [g4.label, y2 && v.jsx(Pe.span, { layoutId: "nav-active-pill", className: "absolute -bottom-1 left-2 right-2 h-[3px] rounded-full bg-gradient-to-r from-[#0ea5e9] via-[#60A5FA] to-[#FBBF24] shadow-[0_2px_8px_rgba(37,99,235,0.5)]", transition: { type: "spring", stiffness: 400, damping: 30 } })] }, g4.path);
     }) }) }), v.jsxs("div", { className: "flex items-center gap-3", children: [v.jsx("div", { className: "hidden md:block", children: v.jsxs("button", { type: "button", onClick: () => s(true), style: { backgroundColor: "#c29517", color: "#000000" }, className: "btn-gold-donate flex items-center gap-2 px-6 py-2.5 rounded-full font-extrabold text-xs sm:text-sm tracking-wider uppercase shadow-md hover:scale-105 active:scale-95 transition-all duration-300", children: [v.jsx("svg", { viewBox: "0 0 24 24", className: "w-4 h-4", style: { fill: "#000000" }, children: v.jsx("path", { d: "M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" }) }), "DONATE NOW"] }) }), v.jsx("button", { className: "md:hidden p-2 rounded-xl transition-all duration-300 text-[#0284c7] hover:bg-blue-50", onClick: () => r((g4) => !g4), "aria-label": n ? "Close menu" : "Open menu", "aria-expanded": n, children: v.jsx(ni, { mode: "wait", initial: false, children: n ? v.jsx(Pe.span, { initial: { rotate: -90, opacity: 0 }, animate: { rotate: 0, opacity: 1 }, exit: { rotate: 90, opacity: 0 }, transition: { duration: 0.2 }, style: { display: "block" }, children: v.jsx(ai, { className: "w-6 h-6" }) }, "close") : v.jsx(Pe.span, { initial: { rotate: 90, opacity: 0 }, animate: { rotate: 0, opacity: 1 }, exit: { rotate: -90, opacity: 0 }, transition: { duration: 0.2 }, style: { display: "block" }, children: v.jsx(HP, { className: "w-6 h-6" }) }, "menu") }) })] })] }) }) }), v.jsx(ZP, { isOpen: i, onClose: () => s(false), title: "Donate to Hill Trust Ashram", size: "md", children: v.jsxs("div", { className: "flex flex-col items-center gap-5 text-center", children: [v.jsx("div", { className: "w-16 h-16 rounded-full bg-gradient-to-br from-[#0ea5e9] to-[#FBBF24] text-white flex items-center justify-center shadow-[0_0_30px_rgba(37,99,235,0.35)]", children: v.jsx(Qo, { className: "w-7 h-7 text-white" }) }), v.jsx("p", { className: "text-sm text-slate-600 max-w-sm", children: "Scan the QR code below using any UPI app (GPay, PhonePe, Paytm) or use our bank details to complete your donation." }), v.jsx("div", { className: "rounded-3xl border-2 border-dashed border-[#FBBF24] p-4 bg-blue-50/60", children: v.jsx("img", { src: "https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=upi://pay?pa=9944704699@upi&pn=Hill%20Trust&cu=INR&am=1001", alt: "UPI QR Code", className: "mx-auto w-52 h-52 object-contain" }) }), v.jsxs("div", { className: "w-full grid grid-cols-1 gap-3", children: [v.jsx("button", { type: "button", style: { backgroundColor: "#c29517", color: "#000000" }, className: "w-full py-3 px-6 rounded-full font-extrabold btn-gold-donate justify-center shadow-md transition-all", onClick: () => s(false), children: "I Have Paid" }), v.jsx("button", { type: "button", className: "w-full py-3 px-6 rounded-full font-bold text-[#0ea5e9] border-2 border-[#0ea5e9] hover:bg-blue-50 transition-all", onClick: () => {
       navigator.clipboard.writeText("9944704699@upi");
-    }, children: "Copy UPI ID (9944704699@upi)" })] }), v.jsxs("p", { className: "text-xs text-slate-500", children: ["UPI ID: ", v.jsx("span", { className: "font-bold text-[#0ea5e9]", children: "9944704699@upi" }), v.jsx("br", {}), "Axis Bank A/C: 919010013069384 - IFSC: UTIB0002095"] })] }) }), v.jsx(ni, { children: n && v.jsxs(Pe.div, { initial: { opacity: 0, x: "100%" }, animate: { opacity: 1, x: 0 }, exit: { opacity: 0, x: "100%" }, transition: { duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }, className: "fixed inset-0 z-40 md:hidden", children: [v.jsx(Pe.div, { initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 }, className: "absolute inset-0 bg-[#0369a1]/60 backdrop-blur-sm", onClick: () => r(false) }), v.jsxs("div", { className: "absolute top-0 right-0 h-full w-[300px] bg-[#EFF6FF] shadow-2xl flex flex-col overflow-y-auto", children: [v.jsxs("div", { className: "flex items-center justify-between px-6 py-6 border-b border-blue-200/60 bg-white", children: [v.jsx(lt, { to: "/", className: "flex items-center gap-2", children: v.jsx("img", { src: "./assets/Logo.png", alt: "HILL TRUST ASHRAM", className: "h-12 w-auto object-contain" }) }), v.jsx("button", { onClick: () => r(false), className: "p-2 rounded-xl hover:bg-blue-100 text-[#0284c7]", "aria-label": "Close menu", children: v.jsx(ai, { className: "w-5 h-5" }) })] }), v.jsx("nav", { className: "flex-1 px-4 py-6 space-y-1", children: Cd.map((g4, y2) => {
+    }, children: "Copy UPI ID (9944704699@upi)" })] }), v.jsxs("p", { className: "text-xs text-slate-500", children: ["UPI ID: ", v.jsx("span", { className: "font-bold text-[#0ea5e9]", children: "9944704699@upi" }), v.jsx("br", {}), "Axis Bank A/C: 919010013069384 - IFSC: UTIB0002095"] })] }) }), v.jsx(ni, { children: n && v.jsxs(Pe.div, { initial: { opacity: 0, x: "100%" }, animate: { opacity: 1, x: 0 }, exit: { opacity: 0, x: "100%" }, transition: { duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }, className: "fixed inset-0 z-40 md:hidden", children: [v.jsx(Pe.div, { initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 }, className: "absolute inset-0 bg-[#0369a1]/60 backdrop-blur-sm", onClick: () => r(false) }), v.jsxs("div", { className: "absolute top-0 right-0 h-full w-[300px] bg-[#EFF6FF] shadow-2xl flex flex-col overflow-y-auto", children: [v.jsxs("div", { className: "flex items-center justify-between px-6 py-6 border-b border-blue-200/60 bg-white", children: [v.jsxs(lt, { to: "/", className: "flex items-center gap-2", children: [v.jsx("img", { src: "./assets/Logo.png", alt: "HILLCHARITY", className: "h-10 w-auto object-contain" }), v.jsx("span", { className: "font-display font-black text-lg tracking-wider text-[#0284c7] uppercase", children: "HILLCHARITY" })] }), v.jsx("button", { onClick: () => r(false), className: "p-2 rounded-xl hover:bg-blue-100 text-[#0284c7]", "aria-label": "Close menu", children: v.jsx(ai, { className: "w-5 h-5" }) })] }), v.jsx("nav", { className: "flex-1 px-4 py-6 space-y-1", children: Cd.map((g4, y2) => {
       const x3 = c.pathname === g4.path;
       return v.jsx(Pe.div, { initial: { opacity: 0, x: 20 }, animate: { opacity: 1, x: 0 }, transition: { delay: 0.05 + y2 * 0.06, duration: 0.3 }, children: v.jsxs(lt, { to: g4.path, className: `flex items-center justify-between px-4 py-3.5 rounded-2xl font-bold text-sm tracking-wider uppercase transition-all duration-200 ${x3 ? "bg-white text-[#0ea5e9] shadow-sm" : "text-[#0284c7] hover:bg-white/80 hover:text-[#0ea5e9]"}`, children: [g4.label, x3 && v.jsx("div", { className: "w-2 h-2 rounded-full bg-[#FBBF24]" })] }) }, g4.path);
     }) }), v.jsxs("div", { className: "px-4 pb-8 pt-4 border-t border-blue-200/60 space-y-3 bg-white", children: [v.jsx("button", { type: "button", style: { backgroundColor: "#c29517", color: "#000000" }, className: "w-full py-3.5 px-6 rounded-full font-extrabold text-sm tracking-wider uppercase btn-gold-donate justify-center shadow-lg", onClick: () => s(true), children: "DONATE NOW" }), v.jsx(lt, { to: "/contact", className: "block text-center w-full py-3 px-6 rounded-full font-bold text-sm text-[#0ea5e9] border-2 border-[#0ea5e9]/30 hover:bg-blue-50", children: "Get In Touch" })] })] })] }) })] });
@@ -10536,88 +10536,6 @@ Error generating stack: ` + s.message + `
   var N3 = () => {
     const n = w.useRef(null), s = w2(n, { once: true, margin: "-80px" });
     return v.jsxs("main", { className: "bg-white pt-16 sm:pt-20", children: [
-      v.jsx("section", { id: "who-we-are", className: "who-we-are-section", children: v.jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: v.jsxs("div", { className: "who-we-are-wrap", children: [
-        v.jsxs("div", { className: "who-we-are-col-left", children: [
-          v.jsxs("div", { className: "who-we-are-left-top", children: [
-            v.jsxs("div", { className: "label-tag mb-3", children: [
-              v.jsx("span", { className: "w-6 h-0.5 bg-sky-600 rounded-full" }),
-              v.jsx("span", { style: { color: "#0284c7" }, className: "text-xs font-bold uppercase tracking-wider", children: "Dedicated to Service Since 2014" })
-            ] }),
-            v.jsx("h1", { className: "font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-charcoal-900 tracking-tight uppercase mb-4 leading-tight", children: "WHO WE ARE" }),
-            v.jsx("p", { className: "text-charcoal-700 text-base sm:text-lg leading-relaxed font-normal mb-4", children: "Hill organisation for people's education (Hill) charitable trust is created by Mrs.Brinah Prabhakaran and Mr. Prem Prabhakaran with a vision to support poor, orphan, abandoned children and women throughout tamilnadu, south india." }),
-            v.jsx("p", { className: "text-charcoal-700 text-base sm:text-lg leading-relaxed font-normal mb-5", children: "In 2014 they started running an orphanage and a home for the aged for abandoned girl children and elderly women in tuticorin, providing food, shelter, education medical care with love and affection." })
-          ] }),
-          v.jsxs("div", { className: "who-we-are-left-bottom", children: [
-            v.jsxs("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-3 mb-5 pt-4 border-t border-slate-100", children: [
-              v.jsxs("div", { className: "p-3 rounded-2xl bg-sky-50/70 border border-sky-100 text-center sm:text-left", children: [
-                v.jsx("div", { className: "font-display font-bold text-2xl text-sky-700", children: "2014" }),
-                v.jsx("div", { className: "text-xs text-charcoal-500 font-medium mt-0.5", children: "Year Founded" })
-              ] }),
-              v.jsxs("div", { className: "p-3 rounded-2xl bg-sky-50/70 border border-sky-100 text-center sm:text-left", children: [
-                v.jsx("div", { className: "font-display font-bold text-2xl text-sky-700", children: "Tuticorin" }),
-                v.jsx("div", { className: "text-xs text-charcoal-500 font-medium mt-0.5", children: "Headquarters" })
-              ] }),
-              v.jsxs("div", { className: "p-3 rounded-2xl bg-sky-50/70 border border-sky-100 text-center sm:text-left", children: [
-                v.jsx("div", { className: "font-display font-bold text-2xl text-sky-700", children: "100%" }),
-                v.jsx("div", { className: "text-xs text-charcoal-500 font-medium mt-0.5", children: "Direct Care" })
-              ] })
-            ] }),
-            v.jsxs("div", { className: "flex flex-wrap items-center gap-3", children: [
-              v.jsx("a", {
-                href: "#about-profile",
-                style: { backgroundColor: "#0284c7", color: "#ffffff" },
-                onClick: (ev2) => {
-                  ev2.preventDefault();
-                  const target = document.getElementById("about-profile");
-                  if (target) target.scrollIntoView({ behavior: "smooth" });
-                },
-                className: "btn-read-story inline-flex items-center justify-center px-7 py-3 rounded-full font-bold text-sm shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer",
-                children: "Read Our Full Story"
-              }),
-              v.jsx("a", {
-                href: "#/contact",
-                style: { backgroundColor: "#f1f5f9", color: "#0f172a", border: "1px solid #cbd5e1" },
-                onClick: (ev2) => {
-                  ev2.preventDefault();
-                  window.location.hash = "#/contact";
-                },
-                className: "inline-flex items-center justify-center px-6 py-3 rounded-full font-bold text-sm transition-all duration-300 cursor-pointer hover:bg-slate-200",
-                children: "Contact Us"
-              })
-            ] })
-          ] })
-        ] }),
-        v.jsx("div", { className: "who-we-are-col-right", children: v.jsxs("div", { className: "founder-photo-box", children: [
-          v.jsxs("div", { className: "flex items-center justify-between px-2 pb-2.5", children: [
-            v.jsxs("span", { className: "inline-flex items-center gap-1.5 text-xs font-bold text-sky-800 uppercase tracking-wider", children: [
-              v.jsx("span", { className: "w-2 h-2 rounded-full bg-sky-500" }),
-              "Founders & Managing Trustees"
-            ] }),
-            v.jsx("span", { className: "text-[11px] font-semibold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md", children: "Est. 2014" })
-          ] }),
-          v.jsxs("div", { className: "founder-photo-img-wrap group", children: [
-            v.jsx("img", {
-              src: "./assets/founders.jpg",
-              onError: (ev2) => {
-                if (!ev2.target.dataset.fallback) {
-                  ev2.target.dataset.fallback = "1";
-                  ev2.target.src = "../assets/founders.jpg";
-                }
-              },
-              alt: "Founders Mrs. Brinah Prabhakaran & Mr. Prem Prabhakaran",
-              className: "founder-photo-img"
-            }),
-            v.jsxs("div", { className: "founder-photo-caption", children: [
-              v.jsx("h3", { className: "font-display font-bold text-lg text-white leading-snug", children: "Mrs. Brinah Prabhakaran & Mr. Prem Prabhakaran" }),
-              v.jsx("p", { className: "text-xs text-sky-200 font-medium mt-1 tracking-wide", children: "Founders of Hill Organisation for People's Education" })
-            ] })
-          ] }),
-          v.jsxs("div", { className: "mt-3 px-3 py-2 bg-sky-50/70 rounded-xl border border-sky-100/70 flex items-center justify-center gap-2 text-center", children: [
-            v.jsx("svg", { className: "w-4 h-4 text-sky-600 shrink-0", fill: "currentColor", viewBox: "0 0 20 20", children: v.jsx("path", { fillRule: "evenodd", d: "M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z", clipRule: "evenodd" }) }),
-            v.jsx("span", { className: "text-xs font-semibold text-sky-900", children: "Serving Tuticorin with Love & Affection Since 2014" })
-          ] })
-        ] }) })
-      ] }) }) }),
       v.jsxs("section", { id: "about-profile", ref: n, className: "relative overflow-hidden bg-cream-50 py-12 lg:py-16", "aria-labelledby": "journey-heading", children: [
         v.jsx("div", { className: "absolute -top-32 -right-32 w-80 h-80 rounded-full bg-forest-100/40 blur-3xl pointer-events-none" }),
         v.jsx("div", { className: "absolute -bottom-32 -left-32 w-80 h-80 rounded-full bg-amber-100/40 blur-3xl pointer-events-none" }),
@@ -11037,67 +10955,64 @@ Error generating stack: ` + s.message + `
       return () => window.removeEventListener("keydown", handleKey);
     }, [modalIndex, filtered.length]);
     return v.jsxs("main", {
-      className: "bg-slate-50 min-h-screen pt-20",
+      className: "bg-[#F8FAFC] min-h-screen pt-20",
       children: [
-        // Hero Header
+        // Hero Header - Editorial Exhibition Style
         v.jsx("section", {
           style: {
-            background: "linear-gradient(180deg, #0369a1 0%, #0284c7 45%, #0ea5e9 100%)",
+            background: "linear-gradient(180deg, #0284c7 0%, #0369a1 100%)",
             backgroundColor: "#0284c7"
           },
-          className: "relative text-white py-10 sm:py-14 overflow-hidden shadow-md",
+          className: "relative text-white py-12 sm:py-16 overflow-hidden shadow-lg",
           children: v.jsxs("div", {
             className: "relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center",
             children: [
-              v.jsx("div", {
-                style: {
-                  backgroundColor: "rgba(37,99,235,0.35)",
-                  color: "#fcd34d",
-                  borderColor: "rgba(147,197,253,0.4)"
-                },
-                className: "inline-flex items-center gap-2 px-4 py-1.5 rounded-full border text-xs font-bold tracking-widest uppercase mb-3",
-                children: "Real Impact in Tuticorin"
+              v.jsxs("div", {
+                className: "inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-bold tracking-[0.2em] uppercase mb-4 text-sky-200",
+                children: [
+                  v.jsx("span", { className: "w-2 h-2 rounded-full bg-amber-400 animate-pulse" }),
+                  "Visual Archive \u2022 Est. 2014 Tuticorin"
+                ]
               }),
               v.jsxs("h1", {
-                style: { color: "#ffffff" },
-                className: "font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-tight mb-3 text-white",
+                className: "font-display font-black text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-tight mb-4 text-white uppercase",
                 children: [
-                  "Our Journey in ",
+                  "Moments of ",
                   v.jsx("span", {
-                    style: { color: "#fbbf24" },
-                    className: "font-extrabold",
-                    children: "Real Photos"
+                    className: "text-[#FDE047] drop-shadow-sm",
+                    children: "Hope & Dignity"
                   })
                 ]
               }),
+              v.jsx("div", {
+                className: "w-20 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent mx-auto mb-4 rounded-full"
+              }),
               v.jsx("p", {
-                style: { color: "#f1f5f9" },
-                className: "max-w-3xl mx-auto text-base sm:text-lg leading-relaxed font-medium",
-                children: "Explore authentic moments from Hill Charity (Hill Organisation for People's Education). Since 2014, sheltering abandoned girl children, caring for elderly destitute mothers, and feeding hungry souls with love and dignity."
+                className: "max-w-2xl mx-auto text-base sm:text-lg leading-relaxed text-sky-50 font-normal",
+                children: "Every picture tells a story of rescued girl children nurtured into scholars, elderly mothers cherished with dignity, and hungry families served daily hot meals."
               }),
               v.jsxs("div", {
-                style: { color: "#e2e8f0" },
-                className: "flex flex-wrap items-center justify-center gap-6 mt-6 text-xs sm:text-sm font-semibold",
+                className: "flex flex-wrap items-center justify-center gap-4 sm:gap-8 mt-6 pt-6 border-t border-white/15 text-xs sm:text-sm font-semibold text-sky-100",
                 children: [
-                  v.jsxs("span", {
-                    className: "flex items-center gap-2",
+                  v.jsxs("div", {
+                    className: "flex items-center gap-2 bg-white/10 px-3.5 py-1.5 rounded-full backdrop-blur-sm",
                     children: [
-                      v.jsx("span", { className: "w-2.5 h-2.5 rounded-full bg-amber-400" }),
-                      GALLERY_ITEMS.length + "+ Authentic Photos"
+                      v.jsx("span", { className: "w-2 h-2 rounded-full bg-amber-400" }),
+                      GALLERY_ITEMS.length + "+ Verified Photos"
                     ]
                   }),
-                  v.jsxs("span", {
-                    className: "flex items-center gap-2",
+                  v.jsxs("div", {
+                    className: "flex items-center gap-2 bg-white/10 px-3.5 py-1.5 rounded-full backdrop-blur-sm",
                     children: [
-                      v.jsx("span", { className: "w-2.5 h-2.5 rounded-full bg-emerald-400" }),
-                      "7 Core Service Initiatives"
+                      v.jsx("span", { className: "w-2 h-2 rounded-full bg-emerald-400" }),
+                      "7 Active Initiatives"
                     ]
                   }),
-                  v.jsxs("span", {
-                    className: "flex items-center gap-2",
+                  v.jsxs("div", {
+                    className: "flex items-center gap-2 bg-white/10 px-3.5 py-1.5 rounded-full backdrop-blur-sm",
                     children: [
-                      v.jsx("span", { className: "w-2.5 h-2.5 rounded-full bg-sky-400" }),
-                      "Tuticorin, South India"
+                      v.jsx("span", { className: "w-2 h-2 rounded-full bg-sky-300" }),
+                      "Tuticorin, Tamil Nadu"
                     ]
                   })
                 ]
@@ -11105,17 +11020,17 @@ Error generating stack: ` + s.message + `
             ]
           })
         }),
-        // Gallery Controls & Grid
+        // Gallery Controls & Editorial Grid
         v.jsx("section", {
-          className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8",
+          className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12",
           children: v.jsxs("div", {
             children: [
-              // Filter Tabs
+              // Filter Tabs - Pinterest Minimal Pill Bar
               v.jsx("div", {
-                className: "flex flex-wrap items-center justify-center gap-2.5 mb-8",
+                className: "flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10",
                 children: CATEGORIES.map((cat) => {
                   const isSelected = selectedCat === cat;
-                  return v.jsx(
+                  return v.jsxs(
                     "button",
                     {
                       key: cat,
@@ -11124,48 +11039,111 @@ Error generating stack: ` + s.message + `
                         setVisibleCount(24);
                       },
                       style: {
-                        backgroundColor: isSelected ? "#0ea5e9" : "#ffffff",
-                        color: isSelected ? "#ffffff" : "#0369a1",
-                        borderColor: isSelected ? "#0ea5e9" : "#bae6fd"
+                        backgroundColor: isSelected ? "#0284c7" : "#ffffff",
+                        color: isSelected ? "#ffffff" : "#334155",
+                        borderColor: isSelected ? "#0284c7" : "#e2e8f0"
                       },
-                      className: "px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wide uppercase transition-all duration-200 border shadow-sm " + (isSelected ? "scale-105 shadow-md" : "hover:bg-blue-50")
+                      className: "inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold tracking-wide uppercase transition-all duration-300 border shadow-sm cursor-pointer " + (isSelected ? "shadow-md scale-105" : "hover:border-sky-300 hover:text-sky-600 hover:bg-sky-50/50")
                     },
-                    cat
+                    [
+                      v.jsx("span", {
+                        key: "dot",
+                        className: "w-1.5 h-1.5 rounded-full " + (isSelected ? "bg-amber-300" : "bg-slate-300")
+                      }),
+                      cat
+                    ]
                   );
                 })
               }),
-              // Photos Grid
+              // Editorial Collage Cards Grid (Image 3 inspired)
               v.jsx("div", {
-                className: "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2.5 sm:gap-3",
+                className: "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-6",
                 children: displayed.map((item, idx) => {
+                  const isFeatured = idx % 8 === 0;
                   return v.jsxs(
                     "div",
                     {
                       key: item.src + idx,
                       onClick: () => setModalIndex(idx),
-                      className: "group relative bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 cursor-pointer aspect-[4/3]",
+                      className: "group bg-white p-3 sm:p-3.5 rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between cursor-pointer " + (isFeatured ? "md:col-span-2" : ""),
                       children: [
-                        v.jsx("img", {
-                          src: item.src,
-                          alt: item.title,
-                          loading: "lazy",
-                          className: "w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                        }),
-                        v.jsx("div", {
-                          className: "absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4",
-                          children: v.jsxs("div", {
-                            className: "transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300",
-                            children: [
-                              v.jsx("span", {
-                                className: "inline-block px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-400 text-slate-900 mb-1.5",
-                                children: item.category
-                              }),
-                              v.jsx("p", {
-                                className: "text-white text-xs font-semibold line-clamp-2",
-                                children: item.title
+                        // Photo Container with floating pill badges
+                        v.jsxs("div", {
+                          className: "relative rounded-xl overflow-hidden bg-slate-100 aspect-[4/3] w-full",
+                          children: [
+                            v.jsx("img", {
+                              src: item.src,
+                              alt: item.title,
+                              loading: "lazy",
+                              className: "w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                            }),
+                            // Floating Category Tag
+                            v.jsx("div", {
+                              className: "absolute top-3 left-3 z-10",
+                              children: v.jsxs("span", {
+                                className: "inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-[10px] font-extrabold uppercase tracking-wider text-slate-800 shadow-sm border border-white/60",
+                                children: [
+                                  v.jsx("span", { className: "w-1.5 h-1.5 rounded-full bg-sky-500" }),
+                                  item.category
+                                ]
                               })
-                            ]
-                          })
+                            }),
+                            // Floating Photo Number
+                            v.jsx("div", {
+                              className: "absolute top-3 right-3 z-10",
+                              children: v.jsx("span", {
+                                className: "inline-flex px-2 py-0.5 rounded-md bg-black/60 backdrop-blur-sm text-[10px] font-mono text-white/90",
+                                children: "#" + String(idx + 1).padStart(2, "0")
+                              })
+                            }),
+                            // Hover Eye Icon Overlay
+                            v.jsx("div", {
+                              className: "absolute inset-0 bg-sky-900/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center",
+                              children: v.jsxs("div", {
+                                className: "w-11 h-11 rounded-full bg-white/95 text-sky-700 flex items-center justify-center shadow-lg transform scale-90 group-hover:scale-100 transition-transform duration-300",
+                                children: [
+                                  v.jsx("svg", {
+                                    viewBox: "0 0 24 24",
+                                    fill: "none",
+                                    stroke: "currentColor",
+                                    strokeWidth: "2.5",
+                                    strokeLinecap: "round",
+                                    strokeLinejoin: "round",
+                                    className: "w-5 h-5",
+                                    children: [
+                                      v.jsx("circle", { cx: "11", cy: "11", r: "8" }),
+                                      v.jsx("line", { x1: "21", y1: "21", x2: "16.65", y2: "16.65" }),
+                                      v.jsx("line", { x1: "11", y1: "8", x2: "11", y2: "14" }),
+                                      v.jsx("line", { x1: "8", y1: "11", x2: "14", y2: "11" })
+                                    ]
+                                  })
+                                ]
+                              })
+                            })
+                          ]
+                        }),
+                        // Editorial Card Footer
+                        v.jsxs("div", {
+                          className: "pt-3 px-1 flex items-center justify-between gap-2",
+                          children: [
+                            v.jsxs("div", {
+                              className: "min-w-0 flex-1",
+                              children: [
+                                v.jsx("p", {
+                                  className: "text-[11px] font-bold text-sky-600 uppercase tracking-wider mb-0.5",
+                                  children: item.category
+                                }),
+                                v.jsx("h3", {
+                                  className: "font-semibold text-xs sm:text-sm text-slate-800 line-clamp-1 group-hover:text-sky-600 transition-colors",
+                                  children: item.title
+                                })
+                              ]
+                            }),
+                            v.jsx("span", {
+                              className: "shrink-0 text-slate-400 group-hover:text-sky-600 group-hover:translate-x-0.5 transition-all text-xs font-bold",
+                              children: "\u2192"
+                            })
+                          ]
                         })
                       ]
                     }
@@ -11174,10 +11152,10 @@ Error generating stack: ` + s.message + `
               }),
               // Load more button
               visibleCount < filtered.length && v.jsx("div", {
-                className: "text-center mt-8",
+                className: "text-center mt-12",
                 children: v.jsxs("button", {
                   onClick: () => setVisibleCount((prev) => prev + 24),
-                  className: "px-8 py-3.5 rounded-full font-bold text-sm tracking-wider uppercase text-white bg-gradient-to-r from-[#0284c7] to-[#0ea5e9] hover:from-[#1D4ED8] hover:to-[#1E40AF] shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300",
+                  className: "px-9 py-3.5 rounded-full font-bold text-sm tracking-wider uppercase text-white bg-gradient-to-r from-[#0284c7] to-[#0ea5e9] hover:from-[#0369a1] hover:to-[#0284c7] shadow-md hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer",
                   children: [
                     "Load More Photos (" + (filtered.length - visibleCount) + " remaining)"
                   ]
@@ -11194,7 +11172,7 @@ Error generating stack: ` + s.message + `
             // Close Button
             v.jsx("button", {
               onClick: () => setModalIndex(null),
-              className: "absolute top-4 right-4 z-10 w-11 h-11 rounded-full bg-white/20 hover:bg-white/40 text-white flex items-center justify-center text-xl transition-all",
+              className: "absolute top-4 right-4 z-10 w-11 h-11 rounded-full bg-white/20 hover:bg-white/40 text-white flex items-center justify-center text-xl transition-all cursor-pointer",
               children: "\u2715"
             }),
             // Previous Button
@@ -11203,7 +11181,7 @@ Error generating stack: ` + s.message + `
                 ev2.stopPropagation();
                 setModalIndex((prev) => (prev - 1 + filtered.length) % filtered.length);
               },
-              className: "absolute left-3 sm:left-6 z-10 w-12 h-12 rounded-full bg-white/20 hover:bg-white/40 text-white flex items-center justify-center text-2xl transition-all",
+              className: "absolute left-3 sm:left-6 z-10 w-12 h-12 rounded-full bg-white/20 hover:bg-white/40 text-white flex items-center justify-center text-2xl transition-all cursor-pointer",
               children: "\u2039"
             }),
             // Next Button
@@ -11212,13 +11190,13 @@ Error generating stack: ` + s.message + `
                 ev2.stopPropagation();
                 setModalIndex((prev) => (prev + 1) % filtered.length);
               },
-              className: "absolute right-3 sm:right-6 z-10 w-12 h-12 rounded-full bg-white/20 hover:bg-white/40 text-white flex items-center justify-center text-2xl transition-all",
+              className: "absolute right-3 sm:right-6 z-10 w-12 h-12 rounded-full bg-white/20 hover:bg-white/40 text-white flex items-center justify-center text-2xl transition-all cursor-pointer",
               children: "\u203A"
             }),
             // Modal Body
             v.jsxs("div", {
               onClick: (ev2) => ev2.stopPropagation(),
-              className: "relative max-w-4xl max-h-[90vh] bg-slate-900 rounded-xl overflow-hidden shadow-2xl flex flex-col",
+              className: "relative max-w-4xl max-h-[90vh] bg-slate-900 rounded-2xl overflow-hidden shadow-2xl flex flex-col border border-white/10",
               children: [
                 v.jsx("div", {
                   className: "relative flex-1 flex items-center justify-center bg-black overflow-hidden max-h-[75vh]",
