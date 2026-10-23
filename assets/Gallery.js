@@ -314,7 +314,7 @@ const Gallery = () => {
                 children: [
                   e.jsx(Link, {
                     to: "/contact",
-                    className: "px-6 py-2.5 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wider bg-gradient-to-r from-amber-400 to-amber-500 text-slate-950 hover:scale-105 transition-all shadow-md",
+                    style:{backgroundColor:"#c29517",color:"#000000"},className:"btn-gold-donate px-6 py-2.5 rounded-full font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-md hover:scale-105 transition-all",
                     children: "Donate Now"
                   }),
                   e.jsx(Link, {

@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/index-DQ1mV4_X.css">
-    <script defer src="./assets/bundle.js?v=1792750393"></script>
+    <script defer src="./assets/bundle.js?v=1792751756"></script>
     <style>
       /* ============================================================
          CRITICAL FIX: ULTRA-CRISP HIGH-CONTRAST TYPOGRAPHY & LETTER COLORS
@@ -120,19 +120,36 @@
         border-color: #0284c7 !important;
       }
 
-      /* Sky Blue Buttons */
-      .btn-gold-donate {
-        background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%) !important;
-        color: #ffffff !important;
+      
+      /* Golden Donate Button with Black Text - EXACT User Design */
+      .btn-gold-donate, button.btn-gold-donate, a.btn-gold-donate {
+        background: #c29517 !important;
+        background-color: #c29517 !important;
+        color: #000000 !important;
+        font-family: 'Playfair Display', Georgia, serif !important;
         font-weight: 800 !important;
-        border: none !important;
-        box-shadow: 0 4px 18px rgba(14, 165, 233, 0.45) !important;
+        letter-spacing: 0.08em !important;
+        text-transform: uppercase !important;
+        border-radius: 9999px !important;
+        border: 1px solid rgba(0, 0, 0, 0.15) !important;
+        box-shadow: 0 4px 16px rgba(194, 149, 23, 0.45) !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 8px !important;
       }
-      .btn-gold-donate:hover {
-        background: linear-gradient(135deg, #7dd3fc 0%, #0ea5e9 100%) !important;
-        color: #ffffff !important;
-        box-shadow: 0 6px 24px rgba(14, 165, 233, 0.65) !important;
+      .btn-gold-donate:hover, button.btn-gold-donate:hover, a.btn-gold-donate:hover {
+        background: #d4a017 !important;
+        background-color: #d4a017 !important;
+        color: #000000 !important;
+        box-shadow: 0 6px 22px rgba(194, 149, 23, 0.65) !important;
+        transform: translateY(-2px) scale(1.04) !important;
       }
+      .btn-gold-donate svg, button.btn-gold-donate svg, a.btn-gold-donate svg {
+        fill: #000000 !important;
+        color: #000000 !important;
+      }
+
 
       /* Sky Blue Ambient Footer */
       .footer-ambient {
