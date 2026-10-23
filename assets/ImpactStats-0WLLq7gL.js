@@ -199,19 +199,19 @@ const x=({value:i,suffix:a,label:t,sublabel:o,active:r,delay:l})=>{
 
 const E=()=>{
   const i=c.useRef(null),a=g(i,{once:!0,margin:"-100px"});
-  return e.jsxs("section",{ref:i,className:"relative py-24 lg:py-32 bg-forest-950 overflow-hidden","aria-labelledby":"impact-heading",children:[
+  return e.jsxs("section",{ref:i,style:{backgroundColor:"#172554",background:"linear-gradient(135deg, #090e1a 0%, #172554 45%, #1e3a8a 100%)"},className:"relative py-12 sm:py-16 bg-[#172554] text-white overflow-hidden","aria-labelledby":"impact-heading",children:[
     e.jsx("div",{className:"absolute inset-0 opacity-5",children:e.jsx("div",{className:"w-full h-full",style:{backgroundImage:"radial-gradient(circle at 1px 1px, white 1px, transparent 0)",backgroundSize:"48px 48px"}})}),
     e.jsx("div",{className:"absolute top-0 left-1/4 w-96 h-96 bg-forest-500/10 rounded-full blur-3xl"}),
     e.jsx("div",{className:"absolute bottom-0 right-1/4 w-96 h-96 bg-amber-500/8 rounded-full blur-3xl"}),
     e.jsxs("div",{className:"relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",children:[
-      e.jsxs(d.div,{initial:{opacity:0,y:24},animate:a?{opacity:1,y:0}:{},transition:{duration:.7},className:"text-center mb-20",children:[
-        e.jsxs("div",{className:"inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] uppercase text-amber-400 mb-4",children:[e.jsx("div",{className:"w-5 h-px bg-amber-400"}),"Hill Charity Impact",e.jsx("div",{className:"w-5 h-px bg-amber-400"})]}),
-        e.jsxs("h2",{id:"impact-heading",className:"font-display font-bold text-4xl sm:text-5xl text-white leading-tight",children:["Serving Tuticorin with"," ",e.jsx("span",{className:"text-amber-400",children:"Love & Hope."})]})
+      e.jsxs(d.div,{initial:{opacity:0,y:24},animate:a?{opacity:1,y:0}:{},transition:{duration:.7},className:"text-center mb-10 sm:mb-12",children:[
+        e.jsxs("div",{className:"inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] uppercase text-amber-400 mb-3",children:[e.jsx("div",{className:"w-5 h-px bg-amber-400"}),"Hill Charity Impact",e.jsx("div",{className:"w-5 h-px bg-amber-400"})]}),
+        e.jsxs("h2",{id:"impact-heading",className:"font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white leading-tight",children:["Serving Tuticorin with"," ",e.jsx("span",{className:"text-amber-400",children:"Love & Hope."})]})
       ]}),
-      e.jsx("div",{className:"grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-4 divide-x-0 lg:divide-x divide-white/10",children:f.map((t,o)=>e.jsx(x,{value:t.value,suffix:t.suffix,label:t.label,sublabel:t.sublabel,active:a,delay:.2+o*.12},t.label))}),
-      e.jsxs(d.div,{initial:{opacity:0},animate:a?{opacity:1}:{},transition:{duration:.7,delay:.9},className:"text-center mt-20 space-y-1.5",children:[
-        e.jsx("p",{className:"text-white/60 text-base italic",children:'"உதவி என்பது ஒரு செயல் மட்டும் அல்ல. ஒரு நம்பிக்கை."'}),
-        e.jsx("p",{className:"text-white/40 text-sm",children:'"Hill Organisation for People’s Education — Tuticorin, Tamil Nadu"'})
+      e.jsx("div",{className:"grid grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-4 divide-x-0 lg:divide-x divide-white/10",children:f.map((t,o)=>e.jsx(x,{value:t.value,suffix:t.suffix,label:t.label,sublabel:t.sublabel,active:a,delay:.2+o*.12},t.label))}),
+      e.jsxs(d.div,{initial:{opacity:0},animate:a?{opacity:1}:{},transition:{duration:.7,delay:.9},className:"text-center mt-10 sm:mt-12 space-y-1.5",children:[
+        e.jsx("p",{className:"text-white/80 text-sm sm:text-base italic",children:'"உதவி என்பது ஒரு செயல் மட்டும் அல்ல. ஒரு நம்பிக்கை."'}),
+        e.jsx("p",{className:"text-white/60 text-xs sm:text-sm",children:'"Hill Organisation for People’s Education — Tuticorin, Tamil Nadu"'})
       ]})
     ]})
   ]})

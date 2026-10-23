@@ -360,7 +360,7 @@
         return o.now() - l;
       };
     }
-    var a2 = [], u2 = [], c = 1, f2 = null, d3 = 3, g5 = false, y2 = false, x3 = false, P3 = typeof setTimeout == "function" ? setTimeout : null, p2 = typeof clearTimeout == "function" ? clearTimeout : null, h = typeof setImmediate < "u" ? setImmediate : null;
+    var a2 = [], u2 = [], c = 1, f2 = null, d3 = 3, g4 = false, y2 = false, x3 = false, P3 = typeof setTimeout == "function" ? setTimeout : null, p2 = typeof clearTimeout == "function" ? clearTimeout : null, h = typeof setImmediate < "u" ? setImmediate : null;
     typeof navigator < "u" && navigator.scheduling !== void 0 && navigator.scheduling.isInputPending !== void 0 && navigator.scheduling.isInputPending.bind(navigator.scheduling);
     function m(N5) {
       for (var L2 = n(u2); L2 !== null; ) {
@@ -378,7 +378,7 @@
       }
     }
     function C3(N5, L2) {
-      y2 = false, x3 && (x3 = false, p2(k4), k4 = -1), g5 = true;
+      y2 = false, x3 && (x3 = false, p2(k4), k4 = -1), g4 = true;
       var D2 = d3;
       try {
         for (m(L2), f2 = n(a2); f2 !== null && (!(f2.expirationTime > L2) || N5 && !re2()); ) {
@@ -397,7 +397,7 @@
         }
         return wi;
       } finally {
-        f2 = null, d3 = D2, g5 = false;
+        f2 = null, d3 = D2, g4 = false;
       }
     }
     var T3 = false, j3 = null, k4 = -1, V2 = 5, A5 = -1;
@@ -439,7 +439,7 @@
     e.unstable_IdlePriority = 5, e.unstable_ImmediatePriority = 1, e.unstable_LowPriority = 4, e.unstable_NormalPriority = 3, e.unstable_Profiling = null, e.unstable_UserBlockingPriority = 2, e.unstable_cancelCallback = function(N5) {
       N5.callback = null;
     }, e.unstable_continueExecution = function() {
-      y2 || g5 || (y2 = true, xi(C3));
+      y2 || g4 || (y2 = true, xi(C3));
     }, e.unstable_forceFrameRate = function(N5) {
       0 > N5 || 125 < N5 ? console.error("forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported") : V2 = 0 < N5 ? Math.floor(1e3 / N5) : 5;
     }, e.unstable_getCurrentPriorityLevel = function() {
@@ -501,7 +501,7 @@
         default:
           ie2 = 5e3;
       }
-      return ie2 = D2 + ie2, N5 = { id: c++, callback: L2, priorityLevel: N5, startTime: D2, expirationTime: ie2, sortIndex: -1 }, D2 > X2 ? (N5.sortIndex = D2, t(u2, N5), n(a2) === null && N5 === n(u2) && (x3 ? (p2(k4), k4 = -1) : x3 = true, ee(S3, D2 - X2))) : (N5.sortIndex = ie2, t(a2, N5), y2 || g5 || (y2 = true, xi(C3))), N5;
+      return ie2 = D2 + ie2, N5 = { id: c++, callback: L2, priorityLevel: N5, startTime: D2, expirationTime: ie2, sortIndex: -1 }, D2 > X2 ? (N5.sortIndex = D2, t(u2, N5), n(a2) === null && N5 === n(u2) && (x3 ? (p2(k4), k4 = -1) : x3 = true, ee(S3, D2 - X2))) : (N5.sortIndex = ie2, t(a2, N5), y2 || g4 || (y2 = true, xi(C3))), N5;
     }, e.unstable_shouldYield = re2, e.unstable_wrapCallback = function(N5) {
       var L2 = d3;
       return function() {
@@ -2078,23 +2078,23 @@
       e: {
         var d3 = Rh.get(e);
         if (d3 !== void 0) {
-          var g5 = Ea, y2 = e;
+          var g4 = Ea, y2 = e;
           switch (e) {
             case "keypress":
               if (Gi(n) === 0) break e;
             case "keydown":
             case "keyup":
-              g5 = Bv;
+              g4 = Bv;
               break;
             case "focusin":
-              y2 = "focus", g5 = go;
+              y2 = "focus", g4 = go;
               break;
             case "focusout":
-              y2 = "blur", g5 = go;
+              y2 = "blur", g4 = go;
               break;
             case "beforeblur":
             case "afterblur":
-              g5 = go;
+              g4 = go;
               break;
             case "click":
               if (n.button === 2) break e;
@@ -2106,7 +2106,7 @@
             case "mouseout":
             case "mouseover":
             case "contextmenu":
-              g5 = rc;
+              g4 = rc;
               break;
             case "drag":
             case "dragend":
@@ -2116,32 +2116,32 @@
             case "dragover":
             case "dragstart":
             case "drop":
-              g5 = Nv;
+              g4 = Nv;
               break;
             case "touchcancel":
             case "touchend":
             case "touchmove":
             case "touchstart":
-              g5 = Wv;
+              g4 = Wv;
               break;
             case Eh:
             case Th:
             case jh:
-              g5 = Av;
+              g4 = Av;
               break;
             case Nh:
-              g5 = Hv;
+              g4 = Hv;
               break;
             case "scroll":
-              g5 = Tv;
+              g4 = Tv;
               break;
             case "wheel":
-              g5 = Gv;
+              g4 = Gv;
               break;
             case "copy":
             case "cut":
             case "paste":
-              g5 = Dv;
+              g4 = Dv;
               break;
             case "gotpointercapture":
             case "lostpointercapture":
@@ -2151,7 +2151,7 @@
             case "pointerout":
             case "pointerover":
             case "pointerup":
-              g5 = sc;
+              g4 = sc;
           }
           var x3 = (t & 4) !== 0, P3 = !x3 && e === "scroll", p2 = x3 ? d3 !== null ? d3 + "Capture" : null : d3;
           x3 = [];
@@ -2161,15 +2161,15 @@
             if (m.tag === 5 && S3 !== null && (m = S3, p2 !== null && (S3 = zr(h, p2), S3 != null && x3.push(Kr(h, S3, m)))), P3) break;
             h = h.return;
           }
-          0 < x3.length && (d3 = new g5(d3, y2, null, n, c), f2.push({ event: d3, listeners: x3 }));
+          0 < x3.length && (d3 = new g4(d3, y2, null, n, c), f2.push({ event: d3, listeners: x3 }));
         }
       }
       if (!(t & 7)) {
         e: {
-          if (d3 = e === "mouseover" || e === "pointerover", g5 = e === "mouseout" || e === "pointerout", d3 && n !== ul && (y2 = n.relatedTarget || n.fromElement) && (en(y2) || y2[pt])) break e;
-          if ((g5 || d3) && (d3 = c.window === c ? c : (d3 = c.ownerDocument) ? d3.defaultView || d3.parentWindow : window, g5 ? (y2 = n.relatedTarget || n.toElement, g5 = u2, y2 = y2 ? en(y2) : null, y2 !== null && (P3 = pn(y2), y2 !== P3 || y2.tag !== 5 && y2.tag !== 6) && (y2 = null)) : (g5 = null, y2 = u2), g5 !== y2)) {
-            if (x3 = rc, S3 = "onMouseLeave", p2 = "onMouseEnter", h = "mouse", (e === "pointerout" || e === "pointerover") && (x3 = sc, S3 = "onPointerLeave", p2 = "onPointerEnter", h = "pointer"), P3 = g5 == null ? d3 : Tn(g5), m = y2 == null ? d3 : Tn(y2), d3 = new x3(S3, h + "leave", g5, n, c), d3.target = P3, d3.relatedTarget = m, S3 = null, en(c) === u2 && (x3 = new x3(p2, h + "enter", y2, n, c), x3.target = m, x3.relatedTarget = P3, S3 = x3), P3 = S3, g5 && y2) t: {
-              for (x3 = g5, p2 = y2, h = 0, m = x3; m; m = xn(m)) h++;
+          if (d3 = e === "mouseover" || e === "pointerover", g4 = e === "mouseout" || e === "pointerout", d3 && n !== ul && (y2 = n.relatedTarget || n.fromElement) && (en(y2) || y2[pt])) break e;
+          if ((g4 || d3) && (d3 = c.window === c ? c : (d3 = c.ownerDocument) ? d3.defaultView || d3.parentWindow : window, g4 ? (y2 = n.relatedTarget || n.toElement, g4 = u2, y2 = y2 ? en(y2) : null, y2 !== null && (P3 = pn(y2), y2 !== P3 || y2.tag !== 5 && y2.tag !== 6) && (y2 = null)) : (g4 = null, y2 = u2), g4 !== y2)) {
+            if (x3 = rc, S3 = "onMouseLeave", p2 = "onMouseEnter", h = "mouse", (e === "pointerout" || e === "pointerover") && (x3 = sc, S3 = "onPointerLeave", p2 = "onPointerEnter", h = "pointer"), P3 = g4 == null ? d3 : Tn(g4), m = y2 == null ? d3 : Tn(y2), d3 = new x3(S3, h + "leave", g4, n, c), d3.target = P3, d3.relatedTarget = m, S3 = null, en(c) === u2 && (x3 = new x3(p2, h + "enter", y2, n, c), x3.target = m, x3.relatedTarget = P3, S3 = x3), P3 = S3, g4 && y2) t: {
+              for (x3 = g4, p2 = y2, h = 0, m = x3; m; m = xn(m)) h++;
               for (m = 0, S3 = p2; S3; S3 = xn(S3)) m++;
               for (; 0 < h - m; ) x3 = xn(x3), h--;
               for (; 0 < m - h; ) p2 = xn(p2), m--;
@@ -2180,17 +2180,17 @@
               x3 = null;
             }
             else x3 = null;
-            g5 !== null && gc(f2, d3, g5, x3, false), y2 !== null && P3 !== null && gc(f2, P3, y2, x3, true);
+            g4 !== null && gc(f2, d3, g4, x3, false), y2 !== null && P3 !== null && gc(f2, P3, y2, x3, true);
           }
         }
         e: {
-          if (d3 = u2 ? Tn(u2) : window, g5 = d3.nodeName && d3.nodeName.toLowerCase(), g5 === "select" || g5 === "input" && d3.type === "file") var C3 = ey;
+          if (d3 = u2 ? Tn(u2) : window, g4 = d3.nodeName && d3.nodeName.toLowerCase(), g4 === "select" || g4 === "input" && d3.type === "file") var C3 = ey;
           else if (ac(d3)) if (wh) C3 = iy;
           else {
             C3 = ny;
             var T3 = ty;
           }
-          else (g5 = d3.nodeName) && g5.toLowerCase() === "input" && (d3.type === "checkbox" || d3.type === "radio") && (C3 = ry);
+          else (g4 = d3.nodeName) && g4.toLowerCase() === "input" && (d3.type === "checkbox" || d3.type === "radio") && (C3 = ry);
           if (C3 && (C3 = C3(e, u2))) {
             xh(f2, C3, n, c);
             break e;
@@ -2655,7 +2655,7 @@
       }
       return null;
     }
-    function g5(p2, h, m, S3, C3) {
+    function g4(p2, h, m, S3, C3) {
       if (typeof S3 == "string" && S3 !== "" || typeof S3 == "number") return p2 = p2.get(m) || null, l(h, p2, "" + S3, C3);
       if (typeof S3 == "object" && S3 !== null) {
         switch (S3.$$typeof) {
@@ -2665,7 +2665,7 @@
             return p2 = p2.get(S3.key === null ? m : S3.key) || null, u2(h, p2, S3, C3);
           case Pt:
             var T3 = S3._init;
-            return g5(p2, h, m, T3(S3._payload), C3);
+            return g4(p2, h, m, T3(S3._payload), C3);
         }
         if (yr(S3) || lr(S3)) return p2 = p2.get(m) || null, c(h, p2, S3, C3, null);
         Vi(h, S3);
@@ -2687,7 +2687,7 @@
         for (; k4 < m.length; k4++) j3 = f2(p2, m[k4], S3), j3 !== null && (h = s(j3, h, k4), T3 === null ? C3 = j3 : T3.sibling = j3, T3 = j3);
         return $ && Yt(p2, k4), C3;
       }
-      for (j3 = r(p2, j3); k4 < m.length; k4++) V2 = g5(j3, p2, k4, m[k4], S3), V2 !== null && (e && V2.alternate !== null && j3.delete(V2.key === null ? k4 : V2.key), h = s(V2, h, k4), T3 === null ? C3 = V2 : T3.sibling = V2, T3 = V2);
+      for (j3 = r(p2, j3); k4 < m.length; k4++) V2 = g4(j3, p2, k4, m[k4], S3), V2 !== null && (e && V2.alternate !== null && j3.delete(V2.key === null ? k4 : V2.key), h = s(V2, h, k4), T3 === null ? C3 = V2 : T3.sibling = V2, T3 = V2);
       return e && j3.forEach(function(re2) {
         return t(p2, re2);
       }), $ && Yt(p2, k4), C3;
@@ -2710,7 +2710,7 @@
         for (; !A5.done; k4++, A5 = m.next()) A5 = f2(p2, A5.value, S3), A5 !== null && (h = s(A5, h, k4), T3 === null ? C3 = A5 : T3.sibling = A5, T3 = A5);
         return $ && Yt(p2, k4), C3;
       }
-      for (j3 = r(p2, j3); !A5.done; k4++, A5 = m.next()) A5 = g5(j3, p2, k4, A5.value, S3), A5 !== null && (e && A5.alternate !== null && j3.delete(A5.key === null ? k4 : A5.key), h = s(A5, h, k4), T3 === null ? C3 = A5 : T3.sibling = A5, T3 = A5);
+      for (j3 = r(p2, j3); !A5.done; k4++, A5 = m.next()) A5 = g4(j3, p2, k4, A5.value, S3), A5 !== null && (e && A5.alternate !== null && j3.delete(A5.key === null ? k4 : A5.key), h = s(A5, h, k4), T3 === null ? C3 = A5 : T3.sibling = A5, T3 = A5);
       return e && j3.forEach(function(xt) {
         return t(p2, xt);
       }), $ && Yt(p2, k4), C3;
@@ -2867,15 +2867,15 @@
       var f2 = i.baseState;
       o = 0, c = u2 = a2 = null, l = s;
       do {
-        var d3 = l.lane, g5 = l.eventTime;
+        var d3 = l.lane, g4 = l.eventTime;
         if ((r & d3) === d3) {
-          c !== null && (c = c.next = { eventTime: g5, lane: 0, tag: l.tag, payload: l.payload, callback: l.callback, next: null });
+          c !== null && (c = c.next = { eventTime: g4, lane: 0, tag: l.tag, payload: l.payload, callback: l.callback, next: null });
           e: {
             var y2 = e, x3 = l;
-            switch (d3 = t, g5 = n, x3.tag) {
+            switch (d3 = t, g4 = n, x3.tag) {
               case 1:
                 if (y2 = x3.payload, typeof y2 == "function") {
-                  f2 = y2.call(g5, f2, d3);
+                  f2 = y2.call(g4, f2, d3);
                   break e;
                 }
                 f2 = y2;
@@ -2883,7 +2883,7 @@
               case 3:
                 y2.flags = y2.flags & -65537 | 128;
               case 0:
-                if (y2 = x3.payload, d3 = typeof y2 == "function" ? y2.call(g5, f2, d3) : y2, d3 == null) break e;
+                if (y2 = x3.payload, d3 = typeof y2 == "function" ? y2.call(g4, f2, d3) : y2, d3 == null) break e;
                 f2 = K({}, f2, d3);
                 break e;
               case 2:
@@ -2891,7 +2891,7 @@
             }
           }
           l.callback !== null && l.lane !== 0 && (e.flags |= 64, d3 = i.effects, d3 === null ? i.effects = [l] : d3.push(l));
-        } else g5 = { eventTime: g5, lane: d3, tag: l.tag, payload: l.payload, callback: l.callback, next: null }, c === null ? (u2 = c = g5, a2 = f2) : c = c.next = g5, o |= d3;
+        } else g4 = { eventTime: g4, lane: d3, tag: l.tag, payload: l.payload, callback: l.callback, next: null }, c === null ? (u2 = c = g4, a2 = f2) : c = c.next = g4, o |= d3;
         if (l = l.next, l === null) {
           if (l = i.shared.pending, l === null) break;
           d3 = l, l = d3.next, d3.next = null, i.lastBaseUpdate = d3, i.shared.pending = null;
@@ -3470,10 +3470,10 @@ Error generating stack: ` + s.message + `
       o.state = d3, xs(t, r, o, i), a2 = t.memoizedState, l !== r || d3 !== a2 || Ee.current || Ct ? (typeof c == "function" && (jl(t, n, c, r), a2 = t.memoizedState), (l = Ct || Rc(t, n, l, r, d3, a2, u2)) ? (f2 || typeof o.UNSAFE_componentWillMount != "function" && typeof o.componentWillMount != "function" || (typeof o.componentWillMount == "function" && o.componentWillMount(), typeof o.UNSAFE_componentWillMount == "function" && o.UNSAFE_componentWillMount()), typeof o.componentDidMount == "function" && (t.flags |= 4194308)) : (typeof o.componentDidMount == "function" && (t.flags |= 4194308), t.memoizedProps = r, t.memoizedState = a2), o.props = r, o.state = a2, o.context = u2, r = l) : (typeof o.componentDidMount == "function" && (t.flags |= 4194308), r = false);
     } else {
       o = t.stateNode, Bh(e, t), l = t.memoizedProps, u2 = t.type === t.elementType ? l : Ke(t.type, l), o.props = u2, f2 = t.pendingProps, d3 = o.context, a2 = n.contextType, typeof a2 == "object" && a2 !== null ? a2 = $e(a2) : (a2 = Te(n) ? an : ve.current, a2 = Hn(t, a2));
-      var g5 = n.getDerivedStateFromProps;
-      (c = typeof g5 == "function" || typeof o.getSnapshotBeforeUpdate == "function") || typeof o.UNSAFE_componentWillReceiveProps != "function" && typeof o.componentWillReceiveProps != "function" || (l !== f2 || d3 !== a2) && Mc(t, o, r, a2), Ct = false, d3 = t.memoizedState, o.state = d3, xs(t, r, o, i);
+      var g4 = n.getDerivedStateFromProps;
+      (c = typeof g4 == "function" || typeof o.getSnapshotBeforeUpdate == "function") || typeof o.UNSAFE_componentWillReceiveProps != "function" && typeof o.componentWillReceiveProps != "function" || (l !== f2 || d3 !== a2) && Mc(t, o, r, a2), Ct = false, d3 = t.memoizedState, o.state = d3, xs(t, r, o, i);
       var y2 = t.memoizedState;
-      l !== f2 || d3 !== y2 || Ee.current || Ct ? (typeof g5 == "function" && (jl(t, n, g5, r), y2 = t.memoizedState), (u2 = Ct || Rc(t, n, u2, r, d3, y2, a2) || false) ? (c || typeof o.UNSAFE_componentWillUpdate != "function" && typeof o.componentWillUpdate != "function" || (typeof o.componentWillUpdate == "function" && o.componentWillUpdate(r, y2, a2), typeof o.UNSAFE_componentWillUpdate == "function" && o.UNSAFE_componentWillUpdate(r, y2, a2)), typeof o.componentDidUpdate == "function" && (t.flags |= 4), typeof o.getSnapshotBeforeUpdate == "function" && (t.flags |= 1024)) : (typeof o.componentDidUpdate != "function" || l === e.memoizedProps && d3 === e.memoizedState || (t.flags |= 4), typeof o.getSnapshotBeforeUpdate != "function" || l === e.memoizedProps && d3 === e.memoizedState || (t.flags |= 1024), t.memoizedProps = r, t.memoizedState = y2), o.props = r, o.state = y2, o.context = a2, r = u2) : (typeof o.componentDidUpdate != "function" || l === e.memoizedProps && d3 === e.memoizedState || (t.flags |= 4), typeof o.getSnapshotBeforeUpdate != "function" || l === e.memoizedProps && d3 === e.memoizedState || (t.flags |= 1024), r = false);
+      l !== f2 || d3 !== y2 || Ee.current || Ct ? (typeof g4 == "function" && (jl(t, n, g4, r), y2 = t.memoizedState), (u2 = Ct || Rc(t, n, u2, r, d3, y2, a2) || false) ? (c || typeof o.UNSAFE_componentWillUpdate != "function" && typeof o.componentWillUpdate != "function" || (typeof o.componentWillUpdate == "function" && o.componentWillUpdate(r, y2, a2), typeof o.UNSAFE_componentWillUpdate == "function" && o.UNSAFE_componentWillUpdate(r, y2, a2)), typeof o.componentDidUpdate == "function" && (t.flags |= 4), typeof o.getSnapshotBeforeUpdate == "function" && (t.flags |= 1024)) : (typeof o.componentDidUpdate != "function" || l === e.memoizedProps && d3 === e.memoizedState || (t.flags |= 4), typeof o.getSnapshotBeforeUpdate != "function" || l === e.memoizedProps && d3 === e.memoizedState || (t.flags |= 1024), t.memoizedProps = r, t.memoizedState = y2), o.props = r, o.state = y2, o.context = a2, r = u2) : (typeof o.componentDidUpdate != "function" || l === e.memoizedProps && d3 === e.memoizedState || (t.flags |= 4), typeof o.getSnapshotBeforeUpdate != "function" || l === e.memoizedProps && d3 === e.memoizedState || (t.flags |= 1024), r = false);
     }
     return Al(e, t, n, r, s, i);
   }
@@ -4044,13 +4044,13 @@ Error generating stack: ` + s.message + `
           }
           var o = 0, l = -1, a2 = -1, u2 = 0, c = 0, f2 = e, d3 = null;
           t: for (; ; ) {
-            for (var g5; f2 !== n || i !== 0 && f2.nodeType !== 3 || (l = o + i), f2 !== s || r !== 0 && f2.nodeType !== 3 || (a2 = o + r), f2.nodeType === 3 && (o += f2.nodeValue.length), (g5 = f2.firstChild) !== null; ) d3 = f2, f2 = g5;
+            for (var g4; f2 !== n || i !== 0 && f2.nodeType !== 3 || (l = o + i), f2 !== s || r !== 0 && f2.nodeType !== 3 || (a2 = o + r), f2.nodeType === 3 && (o += f2.nodeValue.length), (g4 = f2.firstChild) !== null; ) d3 = f2, f2 = g4;
             for (; ; ) {
               if (f2 === e) break t;
-              if (d3 === n && ++u2 === i && (l = o), d3 === s && ++c === r && (a2 = o), (g5 = f2.nextSibling) !== null) break;
+              if (d3 === n && ++u2 === i && (l = o), d3 === s && ++c === r && (a2 = o), (g4 = f2.nextSibling) !== null) break;
               f2 = d3, d3 = f2.parentNode;
             }
-            f2 = g5;
+            f2 = g4;
           }
           n = l === -1 || a2 === -1 ? null : { start: l, end: a2 };
         } else n = null;
@@ -4311,8 +4311,8 @@ Error generating stack: ` + s.message + `
               case "select":
                 var d3 = i._wrapperState.wasMultiple;
                 i._wrapperState.wasMultiple = !!s.multiple;
-                var g5 = s.value;
-                g5 != null ? Fn(i, !!s.multiple, g5, false) : d3 !== !!s.multiple && (s.defaultValue != null ? Fn(i, !!s.multiple, s.defaultValue, true) : Fn(i, !!s.multiple, s.multiple ? [] : "", false));
+                var g4 = s.value;
+                g4 != null ? Fn(i, !!s.multiple, g4, false) : d3 !== !!s.multiple && (s.defaultValue != null ? Fn(i, !!s.multiple, s.defaultValue, true) : Fn(i, !!s.multiple, s.multiple ? [] : "", false));
             }
             i[Gr] = s;
           } catch (x3) {
@@ -4348,7 +4348,7 @@ Error generating stack: ` + s.message + `
         if (c = n !== null && n.memoizedState !== null, e.mode & 1 ? (me = (u2 = me) || c, be(t, e), me = u2) : be(t, e), qe(e), r & 8192) {
           if (u2 = e.memoizedState !== null, (e.stateNode.isHidden = u2) && !c && e.mode & 1) for (R = e, c = e.child; c !== null; ) {
             for (f2 = R = c; R !== null; ) {
-              switch (d3 = R, g5 = d3.child, d3.tag) {
+              switch (d3 = R, g4 = d3.child, d3.tag) {
                 case 0:
                 case 11:
                 case 14:
@@ -4376,7 +4376,7 @@ Error generating stack: ` + s.message + `
                     continue;
                   }
               }
-              g5 !== null ? (g5.return = d3, R = g5) : Wc(f2);
+              g4 !== null ? (g4.return = d3, R = g4) : Wc(f2);
             }
             c = c.sibling;
           }
@@ -4926,9 +4926,9 @@ Error generating stack: ` + s.message + `
               var d3 = c.alternate;
               d3 ? (c.updateQueue = d3.updateQueue, c.memoizedState = d3.memoizedState, c.lanes = d3.lanes) : (c.updateQueue = null, c.memoizedState = null);
             }
-            var g5 = Lc(o);
-            if (g5 !== null) {
-              g5.flags &= -257, Dc(g5, o, l, s, t), g5.mode & 1 && Ac(s, u2, t), t = g5, a2 = u2;
+            var g4 = Lc(o);
+            if (g4 !== null) {
+              g4.flags &= -257, Dc(g4, o, l, s, t), g4.mode & 1 && Ac(s, u2, t), t = g4, a2 = u2;
               var y2 = t.updateQueue;
               if (y2 === null) {
                 var x3 = /* @__PURE__ */ new Set();
@@ -5097,16 +5097,16 @@ Error generating stack: ` + s.message + `
                     if (f2 !== null) f2.return = c, R = f2;
                     else for (; R !== null; ) {
                       c = R;
-                      var d3 = c.sibling, g5 = c.return;
+                      var d3 = c.sibling, g4 = c.return;
                       if (xp(c), c === u2) {
                         R = null;
                         break;
                       }
                       if (d3 !== null) {
-                        d3.return = g5, R = d3;
+                        d3.return = g4, R = d3;
                         break;
                       }
-                      R = g5;
+                      R = g4;
                     }
                   }
                 }
@@ -5824,7 +5824,7 @@ Error generating stack: ` + s.message + `
       }
       s && a2 && a2({ action: l, location: x3.location, delta: 1 });
     }
-    function g5(P3, p2) {
+    function g4(P3, p2) {
       l = Nt.Replace;
       let h = Wl(x3.location, P3, p2);
       u2 = c();
@@ -5849,7 +5849,7 @@ Error generating stack: ` + s.message + `
     }, createURL: y2, encodeLocation(P3) {
       let p2 = y2(P3);
       return { pathname: p2.pathname, search: p2.search, hash: p2.hash };
-    }, push: d3, replace: g5, go(P3) {
+    }, push: d3, replace: g4, go(P3) {
       return o.go(P3);
     } };
     return x3;
@@ -5924,13 +5924,13 @@ Error generating stack: ` + s.message + `
     if (!i) return null;
     let s = i[0], o = s.replace(/(.)\/+$/, "$1"), l = i.slice(1);
     return { params: r.reduce((u2, c, f2) => {
-      let { paramName: d3, isOptional: g5 } = c;
+      let { paramName: d3, isOptional: g4 } = c;
       if (d3 === "*") {
         let x3 = l[f2] || "";
         o = s.slice(0, s.length - x3.length).replace(/(.)\/+$/, "$1");
       }
       const y2 = l[f2];
-      return g5 && !y2 ? u2[d3] = void 0 : u2[d3] = (y2 || "").replace(/%2F/g, "/"), u2;
+      return g4 && !y2 ? u2[d3] = void 0 : u2[d3] = (y2 || "").replace(/%2F/g, "/"), u2;
     }, {}), pathname: s, pathnameBase: o, pattern: e };
   }
   function v0(e, t, n) {
@@ -6088,12 +6088,12 @@ Error generating stack: ` + s.message + `
       let P3 = typeof t == "string" ? rr(t) : t;
       a2 === "/" || (f2 = P3.pathname) != null && f2.startsWith(a2) || J(false), c = P3;
     } else c = u2;
-    let d3 = c.pathname || "/", g5 = d3;
+    let d3 = c.pathname || "/", g4 = d3;
     if (a2 !== "/") {
       let P3 = a2.replace(/^\//, "").split("/");
-      g5 = "/" + d3.replace(/^\//, "").split("/").slice(P3.length).join("/");
+      g4 = "/" + d3.replace(/^\//, "").split("/").slice(P3.length).join("/");
     }
-    let y2 = i0(e, { pathname: g5 }), x3 = F0(y2 && y2.map((P3) => Object.assign({}, P3, { params: Object.assign({}, l, P3.params), pathname: Ot([a2, i.encodeLocation ? i.encodeLocation(P3.pathname).pathname : P3.pathname]), pathnameBase: P3.pathnameBase === "/" ? a2 : Ot([a2, i.encodeLocation ? i.encodeLocation(P3.pathnameBase).pathname : P3.pathnameBase]) })), s, n, r);
+    let y2 = i0(e, { pathname: g4 }), x3 = F0(y2 && y2.map((P3) => Object.assign({}, P3, { params: Object.assign({}, l, P3.params), pathname: Ot([a2, i.encodeLocation ? i.encodeLocation(P3.pathname).pathname : P3.pathname]), pathnameBase: P3.pathnameBase === "/" ? a2 : Ot([a2, i.encodeLocation ? i.encodeLocation(P3.pathnameBase).pathname : P3.pathnameBase]) })), s, n, r);
     return t && x3 ? w.createElement(Js.Provider, { value: { location: ti({ pathname: "/", search: "", hash: "", state: null, key: "default" }, c), navigationType: Nt.Pop } }, x3) : x3;
   }
   function V0() {
@@ -6140,7 +6140,7 @@ Error generating stack: ` + s.message + `
     if (n && r && r.v7_partialHydration) for (let c = 0; c < o.length; c++) {
       let f2 = o[c];
       if ((f2.route.HydrateFallback || f2.route.hydrateFallbackElement) && (u2 = c), f2.route.id) {
-        let { loaderData: d3, errors: g5 } = n, y2 = f2.route.loader && d3[f2.route.id] === void 0 && (!g5 || g5[f2.route.id] === void 0);
+        let { loaderData: d3, errors: g4 } = n, y2 = f2.route.loader && d3[f2.route.id] === void 0 && (!g4 || g4[f2.route.id] === void 0);
         if (f2.route.lazy || y2) {
           a2 = true, u2 >= 0 ? o = o.slice(0, u2 + 1) : o = [o[0]];
           break;
@@ -6148,13 +6148,13 @@ Error generating stack: ` + s.message + `
       }
     }
     return o.reduceRight((c, f2, d3) => {
-      let g5, y2 = false, x3 = null, P3 = null;
-      n && (g5 = l && f2.route.id ? l[f2.route.id] : void 0, x3 = f2.route.errorElement || _0, a2 && (u2 < 0 && d3 === 0 ? (b0("route-fallback"), y2 = true, P3 = null) : u2 === d3 && (y2 = true, P3 = f2.route.hydrateFallbackElement || null)));
+      let g4, y2 = false, x3 = null, P3 = null;
+      n && (g4 = l && f2.route.id ? l[f2.route.id] : void 0, x3 = f2.route.errorElement || _0, a2 && (u2 < 0 && d3 === 0 ? (b0("route-fallback"), y2 = true, P3 = null) : u2 === d3 && (y2 = true, P3 = f2.route.hydrateFallbackElement || null)));
       let p2 = t.concat(o.slice(0, d3 + 1)), h = () => {
         let m;
-        return g5 ? m = x3 : y2 ? m = P3 : f2.route.Component ? m = w.createElement(f2.route.Component, null) : f2.route.element ? m = f2.route.element : m = c, w.createElement(O0, { match: f2, routeContext: { outlet: c, matches: p2, isDataRoute: n != null }, children: m });
+        return g4 ? m = x3 : y2 ? m = P3 : f2.route.Component ? m = w.createElement(f2.route.Component, null) : f2.route.element ? m = f2.route.element : m = c, w.createElement(O0, { match: f2, routeContext: { outlet: c, matches: p2, isDataRoute: n != null }, children: m });
       };
-      return n && (f2.route.ErrorBoundary || f2.route.errorElement || d3 === 0) ? w.createElement(I0, { location: n.location, revalidation: n.revalidation, component: x3, error: g5, children: h(), routeContext: { outlet: null, matches: p2, isDataRoute: true } }) : h();
+      return n && (f2.route.ErrorBoundary || f2.route.errorElement || d3 === 0) ? w.createElement(I0, { location: n.location, revalidation: n.revalidation, component: x3, error: g4, children: h(), routeContext: { outlet: null, matches: p2, isDataRoute: true } }) : h();
     }, null);
   }
   var Hp = (function(e) {
@@ -6207,10 +6207,10 @@ Error generating stack: ` + s.message + `
     pi() && J(false);
     let a2 = t.replace(/^\/*/, "/"), u2 = w.useMemo(() => ({ basename: a2, navigator: s, static: o, future: ti({ v7_relativeSplatPath: false }, l) }), [a2, l, s, o]);
     typeof r == "string" && (r = rr(r));
-    let { pathname: c = "/", search: f2 = "", hash: d3 = "", state: g5 = null, key: y2 = "default" } = r, x3 = w.useMemo(() => {
+    let { pathname: c = "/", search: f2 = "", hash: d3 = "", state: g4 = null, key: y2 = "default" } = r, x3 = w.useMemo(() => {
       let P3 = iu(c, a2);
-      return P3 == null ? null : { location: { pathname: P3, search: f2, hash: d3, state: g5, key: y2 }, navigationType: i };
-    }, [a2, c, f2, d3, g5, y2, i]);
+      return P3 == null ? null : { location: { pathname: P3, search: f2, hash: d3, state: g4, key: y2 }, navigationType: i };
+    }, [a2, c, f2, d3, g4, y2, i]);
     return x3 == null ? null : w.createElement(mn.Provider, { value: u2 }, w.createElement(Js.Provider, { children: n, value: x3 }));
   }
   function G0(e) {
@@ -6277,9 +6277,9 @@ Error generating stack: ` + s.message + `
   var t1 = typeof window < "u" && typeof window.document < "u" && typeof window.document.createElement < "u";
   var n1 = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i;
   var lt = w.forwardRef(function(t, n) {
-    let { onClick: r, relative: i, reloadDocument: s, replace: o, state: l, target: a2, to: u2, preventScrollReset: c, viewTransition: f2 } = t, d3 = Q0(t, Z0), { basename: g5 } = w.useContext(mn), y2, x3 = false;
+    let { onClick: r, relative: i, reloadDocument: s, replace: o, state: l, target: a2, to: u2, preventScrollReset: c, viewTransition: f2 } = t, d3 = Q0(t, Z0), { basename: g4 } = w.useContext(mn), y2, x3 = false;
     if (typeof u2 == "string" && n1.test(u2) && (y2 = u2, t1)) try {
-      let m = new URL(window.location.href), S3 = u2.startsWith("//") ? new URL(m.protocol + u2) : new URL(u2), C3 = iu(S3.pathname, g5);
+      let m = new URL(window.location.href), S3 = u2.startsWith("//") ? new URL(m.protocol + u2) : new URL(u2), C3 = iu(S3.pathname, g4);
       S3.origin === m.origin && C3 != null ? u2 = C3 + S3.search + S3.hash : x3 = true;
     } catch {
     }
@@ -6384,12 +6384,12 @@ Error generating stack: ` + s.message + `
   var uu = typeof window < "u";
   var Xp = uu ? w.useLayoutEffect : w.useEffect;
   var ni = ({ children: e, custom: t, initial: n = true, onExitComplete: r, presenceAffectsLayout: i = true, mode: s = "sync", propagate: o = false }) => {
-    const [l, a2] = Qp(o), u2 = w.useMemo(() => lf(e), [e]), c = o && !l ? [] : u2.map(zi), f2 = w.useRef(true), d3 = w.useRef(u2), g5 = lu(() => /* @__PURE__ */ new Map()), [y2, x3] = w.useState(u2), [P3, p2] = w.useState(u2);
+    const [l, a2] = Qp(o), u2 = w.useMemo(() => lf(e), [e]), c = o && !l ? [] : u2.map(zi), f2 = w.useRef(true), d3 = w.useRef(u2), g4 = lu(() => /* @__PURE__ */ new Map()), [y2, x3] = w.useState(u2), [P3, p2] = w.useState(u2);
     Xp(() => {
       f2.current = false, d3.current = u2;
       for (let S3 = 0; S3 < P3.length; S3++) {
         const C3 = zi(P3[S3]);
-        c.includes(C3) ? g5.delete(C3) : g5.get(C3) !== true && g5.set(C3, false);
+        c.includes(C3) ? g4.delete(C3) : g4.get(C3) !== true && g4.set(C3, false);
       }
     }, [P3, c.length, c.join("-")]);
     const h = [];
@@ -6405,10 +6405,10 @@ Error generating stack: ` + s.message + `
     const { forceRender: m } = w.useContext(ou);
     return v.jsx(v.Fragment, { children: P3.map((S3) => {
       const C3 = zi(S3), T3 = o && !l ? false : u2 === P3 || c.includes(C3), j3 = () => {
-        if (g5.has(C3)) g5.set(C3, true);
+        if (g4.has(C3)) g4.set(C3, true);
         else return;
         let k4 = true;
-        g5.forEach((V2) => {
+        g4.forEach((V2) => {
           V2 || (k4 = false);
         }), k4 && (m == null || m(), p2(d3.current), o && (a2 == null || a2()), r && r());
       };
@@ -6437,8 +6437,8 @@ Error generating stack: ` + s.message + `
       s.has(u2) && (a2.schedule(u2), e()), u2(o);
     }
     const a2 = { schedule: (u2, c = false, f2 = false) => {
-      const g5 = f2 && r ? t : n;
-      return c && s.add(u2), g5.has(u2) || g5.add(u2), u2;
+      const g4 = f2 && r ? t : n;
+      return c && s.add(u2), g4.has(u2) || g4.add(u2), u2;
     }, cancel: (u2) => {
       n.delete(u2), s.delete(u2);
     }, process: (u2) => {
@@ -6454,11 +6454,11 @@ Error generating stack: ` + s.message + `
   var c1 = 40;
   function Zp(e, t) {
     let n = false, r = true;
-    const i = { delta: 0, timestamp: 0, isProcessing: false }, s = () => n = true, o = Bi.reduce((p2, h) => (p2[h] = u1(s), p2), {}), { read: l, resolveKeyframes: a2, update: u2, preRender: c, render: f2, postRender: d3 } = o, g5 = () => {
+    const i = { delta: 0, timestamp: 0, isProcessing: false }, s = () => n = true, o = Bi.reduce((p2, h) => (p2[h] = u1(s), p2), {}), { read: l, resolveKeyframes: a2, update: u2, preRender: c, render: f2, postRender: d3 } = o, g4 = () => {
       const p2 = performance.now();
-      n = false, i.delta = r ? 1e3 / 60 : Math.max(Math.min(p2 - i.timestamp, c1), 1), i.timestamp = p2, i.isProcessing = true, l.process(i), a2.process(i), u2.process(i), c.process(i), f2.process(i), d3.process(i), i.isProcessing = false, n && t && (r = false, e(g5));
+      n = false, i.delta = r ? 1e3 / 60 : Math.max(Math.min(p2 - i.timestamp, c1), 1), i.timestamp = p2, i.isProcessing = true, l.process(i), a2.process(i), u2.process(i), c.process(i), f2.process(i), d3.process(i), i.isProcessing = false, n && t && (r = false, e(g4));
     }, y2 = () => {
-      n = true, r = true, i.isProcessing || e(g5);
+      n = true, r = true, i.isProcessing || e(g4);
     };
     return { schedule: Bi.reduce((p2, h) => {
       const m = o[h];
@@ -6544,8 +6544,8 @@ Error generating stack: ` + s.message + `
     var s, o;
     const { visualElement: l } = w.useContext(to), a2 = w.useContext(qp), u2 = w.useContext(eo), c = w.useContext(au).reducedMotion, f2 = w.useRef(null);
     r = r || a2.renderer, !f2.current && r && (f2.current = r(e, { visualState: t, parent: l, props: n, presenceContext: u2, blockInitialAnimation: u2 ? u2.initial === false : false, reducedMotionConfig: c }));
-    const d3 = f2.current, g5 = w.useContext(nm);
-    d3 && !d3.projection && i && (d3.type === "html" || d3.type === "svg") && P1(f2.current, n, i, g5);
+    const d3 = f2.current, g4 = w.useContext(nm);
+    d3 && !d3.projection && i && (d3.type === "html" || d3.type === "svg") && P1(f2.current, n, i, g4);
     const y2 = w.useRef(false);
     w.useInsertionEffect(() => {
       d3 && y2.current && d3.update(n, u2);
@@ -6572,13 +6572,13 @@ Error generating stack: ` + s.message + `
     e && f1(e);
     function l(u2, c) {
       let f2;
-      const d3 = { ...w.useContext(au), ...u2, layoutId: k1(u2) }, { isStatic: g5 } = d3, y2 = v1(u2), x3 = r(u2, g5);
-      if (!g5 && uu) {
+      const d3 = { ...w.useContext(au), ...u2, layoutId: k1(u2) }, { isStatic: g4 } = d3, y2 = v1(u2), x3 = r(u2, g4);
+      if (!g4 && uu) {
         E1();
         const P3 = T1(d3);
         f2 = P3.MeasureLayout, y2.visualElement = S1(i, x3, d3, t, P3.ProjectionNode);
       }
-      return v.jsxs(to.Provider, { value: y2, children: [f2 && y2.visualElement ? v.jsx(f2, { visualElement: y2.visualElement, ...d3 }) : null, n(i, u2, x1(x3, y2.visualElement, c), x3, g5, y2.visualElement)] });
+      return v.jsxs(to.Provider, { value: y2, children: [f2 && y2.visualElement ? v.jsx(f2, { visualElement: y2.visualElement, ...d3 }) : null, n(i, u2, x1(x3, y2.visualElement, c), x3, g4, y2.visualElement)] });
     }
     l.displayName = `motion.${typeof i == "string" ? i : `create(${(o = (s = i.displayName) !== null && s !== void 0 ? s : i.name) !== null && o !== void 0 ? o : ""})`}`;
     const a2 = w.forwardRef(l);
@@ -6645,8 +6645,8 @@ Error generating stack: ` + s.message + `
     const f2 = c ? l : o;
     if (f2 && typeof f2 != "boolean" && !no(f2)) {
       const d3 = Array.isArray(f2) ? f2 : [f2];
-      for (let g5 = 0; g5 < d3.length; g5++) {
-        const y2 = gu(e, d3[g5]);
+      for (let g4 = 0; g4 < d3.length; g4++) {
+        const y2 = gu(e, d3[g4]);
         if (y2) {
           const { transitionEnd: x3, transition: P3, ...p2 } = y2;
           for (const h in p2) {
@@ -6749,8 +6749,8 @@ Error generating stack: ` + s.message + `
       return;
     }
     e.attrs = e.style, e.style = {};
-    const { attrs: d3, style: g5, dimensions: y2 } = e;
-    d3.transform && (y2 && (g5.transform = d3.transform), delete d3.transform), y2 && (i !== void 0 || s !== void 0 || g5.transform) && (g5.transformOrigin = b1(y2, i !== void 0 ? i : 0.5, s !== void 0 ? s : 0.5)), t !== void 0 && (d3.x = t), n !== void 0 && (d3.y = n), r !== void 0 && (d3.scale = r), o !== void 0 && W1(d3, o, l, a2, false);
+    const { attrs: d3, style: g4, dimensions: y2 } = e;
+    d3.transform && (y2 && (g4.transform = d3.transform), delete d3.transform), y2 && (i !== void 0 || s !== void 0 || g4.transform) && (g4.transformOrigin = b1(y2, i !== void 0 ? i : 0.5, s !== void 0 ? s : 0.5)), t !== void 0 && (d3.x = t), n !== void 0 && (d3.y = n), r !== void 0 && (d3.scale = r), o !== void 0 && W1(d3, o, l, a2, false);
   }
   var Su = () => ({ style: {}, transform: {}, transformOrigin: {}, vars: {} });
   var am = () => ({ ...Su(), attrs: {} });
@@ -7055,12 +7055,12 @@ Error generating stack: ` + s.message + `
       const a2 = l.currentTarget;
       if (!yf(l) || Pr.has(a2)) return;
       Pr.add(a2);
-      const u2 = t(l), c = (g5, y2) => {
-        window.removeEventListener("pointerup", f2), window.removeEventListener("pointercancel", d3), !(!yf(g5) || !Pr.has(a2)) && (Pr.delete(a2), typeof u2 == "function" && u2(g5, { success: y2 }));
-      }, f2 = (g5) => {
-        c(g5, n.useGlobalTarget || Pm(a2, g5.target));
-      }, d3 = (g5) => {
-        c(g5, false);
+      const u2 = t(l), c = (g4, y2) => {
+        window.removeEventListener("pointerup", f2), window.removeEventListener("pointercancel", d3), !(!yf(g4) || !Pr.has(a2)) && (Pr.delete(a2), typeof u2 == "function" && u2(g4, { success: y2 }));
+      }, f2 = (g4) => {
+        c(g4, n.useGlobalTarget || Pm(a2, g4.target));
+      }, d3 = (g4) => {
+        c(g4, false);
       };
       window.addEventListener("pointerup", f2, i), window.addEventListener("pointercancel", d3, i);
     };
@@ -7633,11 +7633,11 @@ Error generating stack: ` + s.message + `
   function lw({ duration: e = G.duration, bounce: t = G.bounce, velocity: n = G.velocity, mass: r = G.mass }) {
     let i, s, o = 1 - t;
     o = vt(G.minDamping, G.maxDamping, o), e = vt(G.minDuration, G.maxDuration, dt(e)), o < 1 ? (i = (u2) => {
-      const c = u2 * o, f2 = c * e, d3 = c - n, g5 = ta(u2, o), y2 = Math.exp(-f2);
-      return Bo - d3 / g5 * y2;
+      const c = u2 * o, f2 = c * e, d3 = c - n, g4 = ta(u2, o), y2 = Math.exp(-f2);
+      return Bo - d3 / g4 * y2;
     }, s = (u2) => {
-      const f2 = u2 * o * e, d3 = f2 * n + n, g5 = Math.pow(o, 2) * Math.pow(u2, 2) * e, y2 = Math.exp(-f2), x3 = ta(Math.pow(u2, 2), o);
-      return (-i(u2) + Bo > 0 ? -1 : 1) * ((d3 - g5) * y2) / x3;
+      const f2 = u2 * o * e, d3 = f2 * n + n, g4 = Math.pow(o, 2) * Math.pow(u2, 2) * e, y2 = Math.exp(-f2), x3 = ta(Math.pow(u2, 2), o);
+      return (-i(u2) + Bo > 0 ? -1 : 1) * ((d3 - g4) * y2) / x3;
     }) : (i = (u2) => {
       const c = Math.exp(-u2 * e), f2 = (u2 - n) * e + 1;
       return -Bo + c * f2;
@@ -7680,7 +7680,7 @@ Error generating stack: ` + s.message + `
   function qm(e = G.visualDuration, t = G.bounce) {
     const n = typeof e != "object" ? { visualDuration: e, keyframes: [0, 1], bounce: t } : e;
     let { restSpeed: r, restDelta: i } = n;
-    const s = n.keyframes[0], o = n.keyframes[n.keyframes.length - 1], l = { done: false, value: s }, { stiffness: a2, damping: u2, mass: c, duration: f2, velocity: d3, isResolvedFromDuration: g5 } = dw({ ...n, velocity: -dt(n.velocity || 0) }), y2 = d3 || 0, x3 = u2 / (2 * Math.sqrt(a2 * c)), P3 = o - s, p2 = dt(Math.sqrt(a2 / c)), h = Math.abs(P3) < 5;
+    const s = n.keyframes[0], o = n.keyframes[n.keyframes.length - 1], l = { done: false, value: s }, { stiffness: a2, damping: u2, mass: c, duration: f2, velocity: d3, isResolvedFromDuration: g4 } = dw({ ...n, velocity: -dt(n.velocity || 0) }), y2 = d3 || 0, x3 = u2 / (2 * Math.sqrt(a2 * c)), P3 = o - s, p2 = dt(Math.sqrt(a2 / c)), h = Math.abs(P3) < 5;
     r || (r = h ? G.restSpeed.granular : G.restSpeed.default), i || (i = h ? G.restDelta.granular : G.restDelta.default);
     let m;
     if (x3 < 1) {
@@ -7697,9 +7697,9 @@ Error generating stack: ` + s.message + `
         return o - j3 * ((y2 + x3 * p2 * P3) * Math.sinh(k4) + C3 * P3 * Math.cosh(k4)) / C3;
       };
     }
-    const S3 = { calculatedDuration: g5 && f2 || null, next: (C3) => {
+    const S3 = { calculatedDuration: g4 && f2 || null, next: (C3) => {
       const T3 = m(C3);
-      if (g5) l.done = C3 >= f2;
+      if (g4) l.done = C3 >= f2;
       else {
         let j3 = 0;
         x3 < 1 && (j3 = C3 === 0 ? ft(y2) : Zm(m, C3, T3));
@@ -7714,7 +7714,7 @@ Error generating stack: ` + s.message + `
     return S3;
   }
   function Mf({ keyframes: e, velocity: t = 0, power: n = 0.8, timeConstant: r = 325, bounceDamping: i = 10, bounceStiffness: s = 500, modifyTarget: o, min: l, max: a2, restDelta: u2 = 0.5, restSpeed: c }) {
-    const f2 = e[0], d3 = { done: false, value: f2 }, g5 = (k4) => l !== void 0 && k4 < l || a2 !== void 0 && k4 > a2, y2 = (k4) => l === void 0 ? a2 : a2 === void 0 || Math.abs(l - k4) < Math.abs(a2 - k4) ? l : a2;
+    const f2 = e[0], d3 = { done: false, value: f2 }, g4 = (k4) => l !== void 0 && k4 < l || a2 !== void 0 && k4 > a2, y2 = (k4) => l === void 0 ? a2 : a2 === void 0 || Math.abs(l - k4) < Math.abs(a2 - k4) ? l : a2;
     let x3 = n * t;
     const P3 = f2 + x3, p2 = o === void 0 ? P3 : o(P3);
     p2 !== P3 && (x3 = p2 - f2);
@@ -7724,7 +7724,7 @@ Error generating stack: ` + s.message + `
     };
     let C3, T3;
     const j3 = (k4) => {
-      g5(d3.value) && (C3 = k4, T3 = qm({ keyframes: [d3.value, y2(d3.value)], velocity: Zm(m, k4, d3.value), damping: i, stiffness: s, restDelta: u2, restSpeed: c }));
+      g4(d3.value) && (C3 = k4, T3 = qm({ keyframes: [d3.value, y2(d3.value)], velocity: Zm(m, k4, d3.value), damping: i, stiffness: s, restDelta: u2, restSpeed: c }));
     };
     return j3(0), { calculatedDuration: null, next: (k4) => {
       let V2 = false;
@@ -7818,8 +7818,8 @@ Error generating stack: ` + s.message + `
       l !== Ds && typeof t[0] != "number" && (a2 = vi(Ew, Ym(t[0], t[1])), t = [0, 100]);
       const c = l({ ...this.options, keyframes: t });
       s === "mirror" && (u2 = l({ ...this.options, keyframes: [...t].reverse(), velocity: -o })), c.calculatedDuration === null && (c.calculatedDuration = gm(c));
-      const { calculatedDuration: f2 } = c, d3 = f2 + i, g5 = d3 * (r + 1) - i;
-      return { generator: c, mirroredGenerator: u2, mapPercentToKeyframes: a2, calculatedDuration: f2, resolvedDuration: d3, totalDuration: g5 };
+      const { calculatedDuration: f2 } = c, d3 = f2 + i, g4 = d3 * (r + 1) - i;
+      return { generator: c, mirroredGenerator: u2, mapPercentToKeyframes: a2, calculatedDuration: f2, resolvedDuration: d3, totalDuration: g4 };
     }
     onPostResolved() {
       const { autoplay: t = true } = this.options;
@@ -7833,15 +7833,15 @@ Error generating stack: ` + s.message + `
       }
       const { finalKeyframe: i, generator: s, mirroredGenerator: o, mapPercentToKeyframes: l, keyframes: a2, calculatedDuration: u2, totalDuration: c, resolvedDuration: f2 } = r;
       if (this.startTime === null) return s.next(0);
-      const { delay: d3, repeat: g5, repeatType: y2, repeatDelay: x3, onUpdate: P3 } = this.options;
+      const { delay: d3, repeat: g4, repeatType: y2, repeatDelay: x3, onUpdate: P3 } = this.options;
       this.speed > 0 ? this.startTime = Math.min(this.startTime, t) : this.speed < 0 && (this.startTime = Math.min(t - c / this.speed, this.startTime)), n ? this.currentTime = t : this.holdTime !== null ? this.currentTime = this.holdTime : this.currentTime = Math.round(t - this.startTime) * this.speed;
       const p2 = this.currentTime - d3 * (this.speed >= 0 ? 1 : -1), h = this.speed >= 0 ? p2 < 0 : p2 > c;
       this.currentTime = Math.max(p2, 0), this.state === "finished" && this.holdTime === null && (this.currentTime = c);
       let m = this.currentTime, S3 = s;
-      if (g5) {
+      if (g4) {
         const k4 = Math.min(this.currentTime, c) / f2;
         let V2 = Math.floor(k4), A5 = k4 % 1;
-        !A5 && k4 >= 1 && (A5 = 1), A5 === 1 && V2--, V2 = Math.min(V2, g5 + 1), !!(V2 % 2) && (y2 === "reverse" ? (A5 = 1 - A5, x3 && (A5 -= x3 / f2)) : y2 === "mirror" && (S3 = o)), m = vt(0, 1, A5) * f2;
+        !A5 && k4 >= 1 && (A5 = 1), A5 === 1 && V2--, V2 = Math.min(V2, g4 + 1), !!(V2 % 2) && (y2 === "reverse" ? (A5 = 1 - A5, x3 && (A5 -= x3 / f2)) : y2 === "mirror" && (S3 = o)), m = vt(0, 1, A5) * f2;
       }
       const C3 = h ? { done: false, value: a2[0] } : S3.next(m);
       l && (C3.value = l(C3.value));
@@ -7942,7 +7942,7 @@ Error generating stack: ` + s.message + `
       let { duration: r = 300, times: i, ease: s, type: o, motionValue: l, name: a2, startTime: u2 } = this.options;
       if (!l.owner || !l.owner.current) return false;
       if (typeof s == "string" && As() && Lw(s) && (s = eg[s]), Mw(this.options)) {
-        const { onComplete: f2, onUpdate: d3, motionValue: g5, element: y2, ...x3 } = this.options, P3 = Aw(t, x3);
+        const { onComplete: f2, onUpdate: d3, motionValue: g4, element: y2, ...x3 } = this.options, P3 = Aw(t, x3);
         t = P3.keyframes, t.length === 1 && (t[1] = t[0]), r = P3.duration, i = P3.times, s = P3.ease, o = "keyframes";
       }
       const c = jw(l.owner.current, a2, t, { ...this.options, duration: r, times: i, ease: s });
@@ -8024,7 +8024,7 @@ Error generating stack: ` + s.message + `
       const { animation: n, keyframes: r, duration: i, type: s, ease: o, times: l } = t;
       if (n.playState === "idle" || n.playState === "finished") return;
       if (this.time) {
-        const { motionValue: u2, onUpdate: c, onComplete: f2, element: d3, ...g5 } = this.options, y2 = new Fu({ ...g5, keyframes: r, duration: i, type: s, ease: o, times: l, isGenerator: true }), x3 = ft(this.time);
+        const { motionValue: u2, onUpdate: c, onComplete: f2, element: d3, ...g4 } = this.options, y2 = new Fu({ ...g4, keyframes: r, duration: i, type: s, ease: o, times: l, isGenerator: true }), x3 = ft(this.time);
         u2.setWithVelocity(y2.sample(x3 - Vs).value, y2.sample(x3).value, Vs);
       }
       const { onStop: a2 } = this.options;
@@ -8082,8 +8082,8 @@ Error generating stack: ` + s.message + `
     r && (o = r);
     const u2 = [], c = i && e.animationState && e.animationState.getState()[i];
     for (const f2 in a2) {
-      const d3 = e.getValue(f2, (s = e.latestValues[f2]) !== null && s !== void 0 ? s : null), g5 = a2[f2];
-      if (g5 === void 0 || c && zw(c, f2)) continue;
+      const d3 = e.getValue(f2, (s = e.latestValues[f2]) !== null && s !== void 0 ? s : null), g4 = a2[f2];
+      if (g4 === void 0 || c && zw(c, f2)) continue;
       const y2 = { delay: n, ...ku(o || {}, f2) };
       let x3 = false;
       if (window.MotionHandoffAnimation) {
@@ -8093,7 +8093,7 @@ Error generating stack: ` + s.message + `
           h !== null && (y2.startTime = h, x3 = true);
         }
       }
-      Xl(e, f2), d3.start(zu(f2, d3, g5, e.shouldReduceMotion && Cm.has(f2) ? { type: false } : y2, e, x3));
+      Xl(e, f2), d3.start(zu(f2, d3, g4, e.shouldReduceMotion && Cm.has(f2) ? { type: false } : y2, e, x3));
       const P3 = d3.animation;
       P3 && u2.push(P3);
     }
@@ -8166,7 +8166,7 @@ Error generating stack: ` + s.message + `
       var f2;
       const d3 = io(e, c, a2 === "exit" ? (f2 = e.presenceContext) === null || f2 === void 0 ? void 0 : f2.custom : void 0);
       if (d3) {
-        const { transition: g5, transitionEnd: y2, ...x3 } = d3;
+        const { transition: g4, transitionEnd: y2, ...x3 } = d3;
         u2 = { ...u2, ...x3, ...y2 };
       }
       return u2;
@@ -8176,12 +8176,12 @@ Error generating stack: ` + s.message + `
     }
     function o(a2) {
       const { props: u2 } = e, c = ng(e.parent) || {}, f2 = [], d3 = /* @__PURE__ */ new Set();
-      let g5 = {}, y2 = 1 / 0;
+      let g4 = {}, y2 = 1 / 0;
       for (let P3 = 0; P3 < Hw; P3++) {
         const p2 = bw[P3], h = n[p2], m = u2[p2] !== void 0 ? u2[p2] : c[p2], S3 = ri(m), C3 = p2 === a2 ? h.isActive : null;
         C3 === false && (y2 = P3);
         let T3 = m === c[p2] && m !== u2[p2] && S3;
-        if (T3 && r && e.manuallyAnimateOnMount && (T3 = false), h.protectedKeys = { ...g5 }, !h.isActive && C3 === null || !m && !h.prevProp || no(m) || typeof m == "boolean") continue;
+        if (T3 && r && e.manuallyAnimateOnMount && (T3 = false), h.protectedKeys = { ...g4 }, !h.isActive && C3 === null || !m && !h.prevProp || no(m) || typeof m == "boolean") continue;
         const j3 = Qw(h.prevProp, m);
         let k4 = j3 || p2 === a2 && h.isActive && !T3 && S3 || P3 > y2 && S3, V2 = false;
         const A5 = Array.isArray(m) ? m : [m];
@@ -8194,11 +8194,11 @@ Error generating stack: ` + s.message + `
         };
         for (const ee in Kt) {
           const N5 = re2[ee], L2 = xt[ee];
-          if (g5.hasOwnProperty(ee)) continue;
+          if (g4.hasOwnProperty(ee)) continue;
           let D2 = false;
           Kl(N5) && Kl(L2) ? D2 = !mm(N5, L2) : D2 = N5 !== L2, D2 ? N5 != null ? or(ee) : d3.add(ee) : N5 !== void 0 && d3.has(ee) ? or(ee) : h.protectedKeys[ee] = true;
         }
-        h.prevProp = m, h.prevResolvedValues = re2, h.isActive && (g5 = { ...g5, ...re2 }), r && e.blockInitialAnimation && (k4 = false), k4 && (!(T3 && j3) || V2) && f2.push(...A5.map((ee) => ({ animation: ee, options: { type: p2 } })));
+        h.prevProp = m, h.prevResolvedValues = re2, h.isActive && (g4 = { ...g4, ...re2 }), r && e.blockInitialAnimation && (k4 = false), k4 && (!(T3 && j3) || V2) && f2.push(...A5.map((ee) => ({ animation: ee, options: { type: p2 } })));
       }
       if (d3.size) {
         const P3 = {};
@@ -8214,8 +8214,8 @@ Error generating stack: ` + s.message + `
       var c;
       if (n[a2].isActive === u2) return Promise.resolve();
       (c = e.variantChildren) === null || c === void 0 || c.forEach((d3) => {
-        var g5;
-        return (g5 = d3.animationState) === null || g5 === void 0 ? void 0 : g5.setActive(a2, u2);
+        var g4;
+        return (g4 = d3.animationState) === null || g4 === void 0 ? void 0 : g4.setActive(a2, u2);
       }), n[a2].isActive = u2;
       const f2 = o(a2);
       for (const d3 in n) n[d3].protectedKeys = {};
@@ -8300,8 +8300,8 @@ Error generating stack: ` + s.message + `
     constructor(t, n, { transformPagePoint: r, contextWindow: i, dragSnapToOrigin: s = false } = {}) {
       if (this.startEvent = null, this.lastMoveEvent = null, this.lastMoveEventInfo = null, this.handlers = {}, this.contextWindow = window, this.updatePoint = () => {
         if (!(this.lastMoveEvent && this.lastMoveEventInfo)) return;
-        const f2 = $o(this.lastMoveEventInfo, this.history), d3 = this.startEvent !== null, g5 = eS(f2.offset, { x: 0, y: 0 }) >= 3;
-        if (!d3 && !g5) return;
+        const f2 = $o(this.lastMoveEventInfo, this.history), d3 = this.startEvent !== null, g4 = eS(f2.offset, { x: 0, y: 0 }) >= 3;
+        if (!d3 && !g4) return;
         const { point: y2 } = f2, { timestamp: x3 } = ae;
         this.history.push({ ...y2, timestamp: x3 });
         const { onStart: P3, onMove: p2 } = this.handlers;
@@ -8310,10 +8310,10 @@ Error generating stack: ` + s.message + `
         this.lastMoveEvent = f2, this.lastMoveEventInfo = Uo(d3, this.transformPagePoint), U.update(this.updatePoint, true);
       }, this.handlePointerUp = (f2, d3) => {
         this.end();
-        const { onEnd: g5, onSessionEnd: y2, resumeAnimation: x3 } = this.handlers;
+        const { onEnd: g4, onSessionEnd: y2, resumeAnimation: x3 } = this.handlers;
         if (this.dragSnapToOrigin && x3 && x3(), !(this.lastMoveEvent && this.lastMoveEventInfo)) return;
         const P3 = $o(f2.type === "pointercancel" ? this.lastMoveEventInfo : Uo(d3, this.transformPagePoint), this.history);
-        this.startEvent && g5 && g5(f2, P3), y2 && y2(f2, P3);
+        this.startEvent && g4 && g4(f2, P3), y2 && y2(f2, P3);
       }, !ju(t)) return;
       this.dragSnapToOrigin = s, this.handlers = n, this.transformPagePoint = r, this.contextWindow = i || window;
       const o = yi(t), l = Uo(o, this.transformPagePoint), { point: a2 } = l, { timestamp: u2 } = ae;
@@ -8509,8 +8509,8 @@ Error generating stack: ` + s.message + `
         const { dragSnapToOrigin: f2 } = this.getProps();
         f2 ? this.pauseAnimation() : this.stopAnimation(), n && this.snapToCursor(yi(c).point);
       }, s = (c, f2) => {
-        const { drag: d3, dragPropagation: g5, onDragStart: y2 } = this.getProps();
-        if (d3 && !g5 && (this.openDragLock && this.openDragLock(), this.openDragLock = dx(d3), !this.openDragLock)) return;
+        const { drag: d3, dragPropagation: g4, onDragStart: y2 } = this.getProps();
+        if (d3 && !g4 && (this.openDragLock && this.openDragLock(), this.openDragLock = dx(d3), !this.openDragLock)) return;
         this.isDragging = true, this.currentDirection = null, this.resolveConstraints(), this.visualElement.projection && (this.visualElement.projection.isAnimationBlocked = true, this.visualElement.projection.target = void 0), Oe((P3) => {
           let p2 = this.getAxisMotionValue(P3).get() || 0;
           if (rt.test(p2)) {
@@ -8525,10 +8525,10 @@ Error generating stack: ` + s.message + `
         const { animationState: x3 } = this.visualElement;
         x3 && x3.setActive("whileDrag", true);
       }, o = (c, f2) => {
-        const { dragPropagation: d3, dragDirectionLock: g5, onDirectionLock: y2, onDrag: x3 } = this.getProps();
+        const { dragPropagation: d3, dragDirectionLock: g4, onDirectionLock: y2, onDrag: x3 } = this.getProps();
         if (!d3 && !this.openDragLock) return;
         const { offset: P3 } = f2;
-        if (g5 && this.currentDirection === null) {
+        if (g4 && this.currentDirection === null) {
           this.currentDirection = SS(P3), this.currentDirection !== null && y2 && y2(this.currentDirection);
           return;
         }
@@ -8586,7 +8586,7 @@ Error generating stack: ` + s.message + `
         if (!$i(c, n, this.currentDirection)) return;
         let f2 = a2 && a2[c] || {};
         o && (f2 = { min: 0, max: 0 });
-        const d3 = i ? 200 : 1e6, g5 = i ? 40 : 1e7, y2 = { type: "inertia", velocity: r ? t[c] : 0, bounceStiffness: d3, bounceDamping: g5, timeConstant: 750, restDelta: 1, restSpeed: 10, ...s, ...f2 };
+        const d3 = i ? 200 : 1e6, g4 = i ? 40 : 1e7, y2 = { type: "inertia", velocity: r ? t[c] : 0, bounceStiffness: d3, bounceDamping: g4, timeConstant: 750, restDelta: 1, restSpeed: 10, ...s, ...f2 };
         return this.startAxisValueAnimation(c, y2);
       });
       return Promise.all(u2).then(l);
@@ -8923,8 +8923,8 @@ Error generating stack: ` + s.message + `
     let r = "";
     const i = e.x.translate / t.x, s = e.y.translate / t.y, o = (n == null ? void 0 : n.z) || 0;
     if ((i || s || o) && (r = `translate3d(${i}px, ${s}px, ${o}px) `), (t.x !== 1 || t.y !== 1) && (r += `scale(${1 / t.x}, ${1 / t.y}) `), n) {
-      const { transformPerspective: u2, rotate: c, rotateX: f2, rotateY: d3, skewX: g5, skewY: y2 } = n;
-      u2 && (r = `perspective(${u2}px) ${r}`), c && (r += `rotate(${c}deg) `), f2 && (r += `rotateX(${f2}deg) `), d3 && (r += `rotateY(${d3}deg) `), g5 && (r += `skewX(${g5}deg) `), y2 && (r += `skewY(${y2}deg) `);
+      const { transformPerspective: u2, rotate: c, rotateX: f2, rotateY: d3, skewX: g4, skewY: y2 } = n;
+      u2 && (r = `perspective(${u2}px) ${r}`), c && (r += `rotate(${c}deg) `), f2 && (r += `rotateX(${f2}deg) `), d3 && (r += `rotateY(${d3}deg) `), g4 && (r += `skewX(${g4}deg) `), y2 && (r += `skewY(${y2}deg) `);
     }
     const l = e.x.scale * t.x, a2 = e.y.scale * t.y;
     return (l !== 1 || a2 !== 1) && (r += `scale(${l}, ${a2})`), r || "none";
@@ -8983,12 +8983,12 @@ Error generating stack: ` + s.message + `
             this.root.updateBlockedByResize = true, f2 && f2(), f2 = AS(d3, 250), rs.hasAnimatedSinceResize && (rs.hasAnimatedSinceResize = false, this.nodes.forEach(hd));
           });
         }
-        a2 && this.root.registerSharedNode(a2, this), this.options.animate !== false && c && (a2 || u2) && this.addEventListener("didUpdate", ({ delta: f2, hasLayoutChanged: d3, hasRelativeTargetChanged: g5, layout: y2 }) => {
+        a2 && this.root.registerSharedNode(a2, this), this.options.animate !== false && c && (a2 || u2) && this.addEventListener("didUpdate", ({ delta: f2, hasLayoutChanged: d3, hasRelativeTargetChanged: g4, layout: y2 }) => {
           if (this.isTreeAnimationBlocked()) {
             this.target = void 0, this.relativeTarget = void 0;
             return;
           }
-          const x3 = this.options.transition || c.getDefaultTransition() || rP, { onLayoutAnimationStart: P3, onLayoutAnimationComplete: p2 } = c.getProps(), h = !this.targetLayout || !gg(this.targetLayout, y2) || g5, m = !d3 && g5;
+          const x3 = this.options.transition || c.getDefaultTransition() || rP, { onLayoutAnimationStart: P3, onLayoutAnimationComplete: p2 } = c.getProps(), h = !this.targetLayout || !gg(this.targetLayout, y2) || g4, m = !d3 && g4;
           if (this.options.layoutRoot || this.resumeFrom && this.resumeFrom.instance || m || d3 && (h || !this.currentAnimation)) {
             this.resumeFrom && (this.resumingFrom = this.resumeFrom, this.resumingFrom.resumingFrom = void 0), this.setAnimationOrigin(f2, m);
             const S3 = { ...ku(x3, "layout"), onPlay: P3, onComplete: p2 };
@@ -9151,14 +9151,14 @@ Error generating stack: ` + s.message + `
         const { layout: f2, layoutId: d3 } = this.options;
         if (!(!this.layout || !(f2 || d3))) {
           if (this.resolvedRelativeTargetAt = ae.timestamp, !this.targetDelta && !this.relativeTarget) {
-            const g5 = this.getClosestProjectingParent();
-            g5 && g5.layout && this.animationProgress !== 1 ? (this.relativeParent = g5, this.forceRelativeParentToResolveTarget(), this.relativeTarget = Y(), this.relativeTargetOrigin = Y(), Ir(this.relativeTargetOrigin, this.layout.layoutBox, g5.layout.layoutBox), Ie(this.relativeTarget, this.relativeTargetOrigin)) : this.relativeParent = this.relativeTarget = void 0;
+            const g4 = this.getClosestProjectingParent();
+            g4 && g4.layout && this.animationProgress !== 1 ? (this.relativeParent = g4, this.forceRelativeParentToResolveTarget(), this.relativeTarget = Y(), this.relativeTargetOrigin = Y(), Ir(this.relativeTargetOrigin, this.layout.layoutBox, g4.layout.layoutBox), Ie(this.relativeTarget, this.relativeTargetOrigin)) : this.relativeParent = this.relativeTarget = void 0;
           }
           if (!(!this.relativeTarget && !this.targetDelta)) {
             if (this.target || (this.target = Y(), this.targetWithTransforms = Y()), this.relativeTarget && this.relativeTargetOrigin && this.relativeParent && this.relativeParent.target ? (this.forceRelativeParentToResolveTarget(), aS(this.target, this.relativeTarget, this.relativeParent.target)) : this.targetDelta ? (this.resumingFrom ? this.target = this.applyTransform(this.layout.layoutBox) : Ie(this.target, this.layout.layoutBox), ug(this.target, this.targetDelta)) : Ie(this.target, this.layout.layoutBox), this.attemptToResolveRelativeTarget) {
               this.attemptToResolveRelativeTarget = false;
-              const g5 = this.getClosestProjectingParent();
-              g5 && !!g5.resumingFrom == !!this.resumingFrom && !g5.options.layoutScroll && g5.target && this.animationProgress !== 1 ? (this.relativeParent = g5, this.forceRelativeParentToResolveTarget(), this.relativeTarget = Y(), this.relativeTargetOrigin = Y(), Ir(this.relativeTargetOrigin, this.target, g5.target), Ie(this.relativeTarget, this.relativeTargetOrigin)) : this.relativeParent = this.relativeTarget = void 0;
+              const g4 = this.getClosestProjectingParent();
+              g4 && !!g4.resumingFrom == !!this.resumingFrom && !g4.options.layoutScroll && g4.target && this.animationProgress !== 1 ? (this.relativeParent = g4, this.forceRelativeParentToResolveTarget(), this.relativeTarget = Y(), this.relativeTargetOrigin = Y(), Ir(this.relativeTargetOrigin, this.target, g4.target), Ie(this.relativeTarget, this.relativeTargetOrigin)) : this.relativeParent = this.relativeTarget = void 0;
             }
             Cr && Jt.resolvedTargetDeltas++;
           }
@@ -9178,14 +9178,14 @@ Error generating stack: ` + s.message + `
         const { layout: c, layoutId: f2 } = this.options;
         if (this.isTreeAnimating = !!(this.parent && this.parent.isTreeAnimating || this.currentAnimation || this.pendingAnimation), this.isTreeAnimating || (this.targetDelta = this.relativeTarget = void 0), !this.layout || !(c || f2)) return;
         Ie(this.layoutCorrected, this.layout.layoutBox);
-        const d3 = this.treeScale.x, g5 = this.treeScale.y;
+        const d3 = this.treeScale.x, g4 = this.treeScale.y;
         vS(this.layoutCorrected, this.treeScale, this.path, a2), l.layout && !l.target && (this.treeScale.x !== 1 || this.treeScale.y !== 1) && (l.target = l.layout.layoutBox, l.targetWithTransforms = Y());
         const { target: y2 } = l;
         if (!y2) {
           this.prevProjectionDelta && (this.createProjectionDeltas(), this.scheduleRender());
           return;
         }
-        !this.projectionDelta || !this.prevProjectionDelta ? this.createProjectionDeltas() : (nd(this.prevProjectionDelta.x, this.projectionDelta.x), nd(this.prevProjectionDelta.y, this.projectionDelta.y)), _r(this.projectionDelta, this.layoutCorrected, y2, this.latestValues), (this.treeScale.x !== d3 || this.treeScale.y !== g5 || !cd(this.projectionDelta.x, this.prevProjectionDelta.x) || !cd(this.projectionDelta.y, this.prevProjectionDelta.y)) && (this.hasProjected = true, this.scheduleRender(), this.notifyListeners("projectionUpdate", y2)), Cr && Jt.recalculatedProjection++;
+        !this.projectionDelta || !this.prevProjectionDelta ? this.createProjectionDeltas() : (nd(this.prevProjectionDelta.x, this.projectionDelta.x), nd(this.prevProjectionDelta.y, this.projectionDelta.y)), _r(this.projectionDelta, this.layoutCorrected, y2, this.latestValues), (this.treeScale.x !== d3 || this.treeScale.y !== g4 || !cd(this.projectionDelta.x, this.prevProjectionDelta.x) || !cd(this.projectionDelta.y, this.prevProjectionDelta.y)) && (this.hasProjected = true, this.scheduleRender(), this.notifyListeners("projectionUpdate", y2)), Cr && Jt.recalculatedProjection++;
       }
       hide() {
         this.isVisible = false;
@@ -9207,7 +9207,7 @@ Error generating stack: ` + s.message + `
       setAnimationOrigin(o, l = false) {
         const a2 = this.snapshot, u2 = a2 ? a2.latestValues : {}, c = { ...this.latestValues }, f2 = _n();
         (!this.relativeParent || !this.relativeParent.options.layoutRoot) && (this.relativeTarget = this.relativeTargetOrigin = void 0), this.attemptToResolveRelativeTarget = !l;
-        const d3 = Y(), g5 = a2 ? a2.source : void 0, y2 = this.layout ? this.layout.source : void 0, x3 = g5 !== y2, P3 = this.getStack(), p2 = !P3 || P3.members.length <= 1, h = !!(x3 && !p2 && this.options.crossfade === true && !this.path.some(nP));
+        const d3 = Y(), g4 = a2 ? a2.source : void 0, y2 = this.layout ? this.layout.source : void 0, x3 = g4 !== y2, P3 = this.getStack(), p2 = !P3 || P3.members.length <= 1, h = !!(x3 && !p2 && this.options.crossfade === true && !this.path.some(nP));
         this.animationProgress = 0;
         let m;
         this.mixTargetDelta = (S3) => {
@@ -9303,8 +9303,8 @@ Error generating stack: ` + s.message + `
         }
         const d3 = f2.animationValues || f2.latestValues;
         this.applyTransformsToTarget(), u2.transform = US(this.projectionDeltaWithTransform, this.treeScale, d3), c && (u2.transform = c(d3, u2.transform));
-        const { x: g5, y: y2 } = this.projectionDelta;
-        u2.transformOrigin = `${g5.origin * 100}% ${y2.origin * 100}% 0`, f2.animationValues ? u2.opacity = f2 === this ? (a2 = (l = d3.opacity) !== null && l !== void 0 ? l : this.latestValues.opacity) !== null && a2 !== void 0 ? a2 : 1 : this.preserveOpacity ? this.latestValues.opacity : d3.opacityExit : u2.opacity = f2 === this ? d3.opacity !== void 0 ? d3.opacity : "" : d3.opacityExit !== void 0 ? d3.opacityExit : 0;
+        const { x: g4, y: y2 } = this.projectionDelta;
+        u2.transformOrigin = `${g4.origin * 100}% ${y2.origin * 100}% 0`, f2.animationValues ? u2.opacity = f2 === this ? (a2 = (l = d3.opacity) !== null && l !== void 0 ? l : this.latestValues.opacity) !== null && a2 !== void 0 ? a2 : 1 : this.preserveOpacity ? this.latestValues.opacity : d3.opacityExit : u2.opacity = f2 === this ? d3.opacity !== void 0 ? d3.opacity : "" : d3.opacityExit !== void 0 ? d3.opacityExit : 0;
         for (const x3 in Ms) {
           if (d3[x3] === void 0) continue;
           const { correct: P3, applyTo: p2 } = Ms[x3], h = u2.transform === "none" ? d3[x3] : P3(d3[x3], f2);
@@ -9335,11 +9335,11 @@ Error generating stack: ` + s.message + `
     if (e.isLead() && e.layout && n && e.hasListeners("didUpdate")) {
       const { layoutBox: r, measuredBox: i } = e.layout, { animationType: s } = e.options, o = n.source !== e.layout.source;
       s === "size" ? Oe((f2) => {
-        const d3 = o ? n.measuredBox[f2] : n.layoutBox[f2], g5 = De(d3);
-        d3.min = r[f2].min, d3.max = d3.min + g5;
+        const d3 = o ? n.measuredBox[f2] : n.layoutBox[f2], g4 = De(d3);
+        d3.min = r[f2].min, d3.max = d3.min + g4;
       }) : xg(s, n.layoutBox, r) && Oe((f2) => {
-        const d3 = o ? n.measuredBox[f2] : n.layoutBox[f2], g5 = De(r[f2]);
-        d3.max = d3.min + g5, e.relativeTarget && !e.currentAnimation && (e.isProjectionDirty = true, e.relativeTarget[f2].max = e.relativeTarget[f2].min + g5);
+        const d3 = o ? n.measuredBox[f2] : n.layoutBox[f2], g4 = De(r[f2]);
+        d3.max = d3.min + g4, e.relativeTarget && !e.currentAnimation && (e.isProjectionDirty = true, e.relativeTarget[f2].max = e.relativeTarget[f2].min + g4);
       });
       const l = _n();
       _r(l, r, n.layoutBox);
@@ -9350,12 +9350,12 @@ Error generating stack: ` + s.message + `
       if (!e.resumeFrom) {
         const f2 = e.getClosestProjectingParent();
         if (f2 && !f2.resumeFrom) {
-          const { snapshot: d3, layout: g5 } = f2;
-          if (d3 && g5) {
+          const { snapshot: d3, layout: g4 } = f2;
+          if (d3 && g4) {
             const y2 = Y();
             Ir(y2, n.layoutBox, d3.layoutBox);
             const x3 = Y();
-            Ir(x3, r, g5.layoutBox), gg(y2, x3) || (c = true), f2.options.layoutRoot && (e.relativeTarget = x3, e.relativeTargetOrigin = y2, e.relativeParent = f2);
+            Ir(x3, r, g4.layoutBox), gg(y2, x3) || (c = true), f2.options.layoutRoot && (e.relativeTarget = x3, e.relativeTargetOrigin = y2, e.relativeParent = f2);
           }
         }
       }
@@ -9579,15 +9579,15 @@ Error generating stack: ` + s.message + `
       this.current = null, this.children = /* @__PURE__ */ new Set(), this.isVariantNode = false, this.isControllingVariants = false, this.shouldReduceMotion = null, this.values = /* @__PURE__ */ new Map(), this.KeyframeResolver = Iu, this.features = {}, this.valueSubscriptions = /* @__PURE__ */ new Map(), this.prevMotionValues = {}, this.events = {}, this.propEventSubscriptions = {}, this.notifyUpdate = () => this.notify("Update", this.latestValues), this.render = () => {
         this.current && (this.triggerBuild(), this.renderInstance(this.current, this.renderState, this.props.style, this.projection));
       }, this.renderScheduledAt = 0, this.scheduleRender = () => {
-        const g5 = it.now();
-        this.renderScheduledAt < g5 && (this.renderScheduledAt = g5, U.render(this.render, false, true));
+        const g4 = it.now();
+        this.renderScheduledAt < g4 && (this.renderScheduledAt = g4, U.render(this.render, false, true));
       };
       const { latestValues: a2, renderState: u2, onUpdate: c } = o;
       this.onUpdate = c, this.latestValues = a2, this.baseTarget = { ...a2 }, this.initialValues = n.initial ? { ...a2 } : {}, this.renderState = u2, this.parent = t, this.props = n, this.presenceContext = r, this.depth = t ? t.depth + 1 : 0, this.reducedMotionConfig = i, this.options = l, this.blockInitialAnimation = !!s, this.isControllingVariants = ro(n), this.isVariantNode = em(n), this.isVariantNode && (this.variantChildren = /* @__PURE__ */ new Set()), this.manuallyAnimateOnMount = !!(t && t.current);
       const { willChange: f2, ...d3 } = this.scrapeMotionValuesFromProps(n, {}, this);
-      for (const g5 in d3) {
-        const y2 = d3[g5];
-        a2[g5] !== void 0 && ge(y2) && y2.set(a2[g5], false);
+      for (const g4 in d3) {
+        const y2 = d3[g4];
+        a2[g4] !== void 0 && ge(y2) && y2.set(a2[g4], false);
       }
     }
     mount(t) {
@@ -9827,8 +9827,8 @@ Error generating stack: ` + s.message + `
   var qP = () => {
     const [e, t] = w.useState(false), [n, r] = w.useState(false), [i, s] = w.useState(false), c = vn();
     w.useEffect(() => {
-      const g5 = () => t(window.scrollY > 40);
-      return window.addEventListener("scroll", g5, { passive: true }), () => window.removeEventListener("scroll", g5);
+      const g4 = () => t(window.scrollY > 40);
+      return window.addEventListener("scroll", g4, { passive: true }), () => window.removeEventListener("scroll", g4);
     }, []);
     w.useEffect(() => {
       r(false);
@@ -9836,14 +9836,14 @@ Error generating stack: ` + s.message + `
     w.useEffect(() => (document.body.style.overflow = n ? "hidden" : "", () => {
       document.body.style.overflow = "";
     }), [n]);
-    return v.jsxs(v.Fragment, { children: [v.jsx(Pe.header, { initial: { opacity: 0, y: -16 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.5, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }, className: `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${e ? "bg-white/95 backdrop-blur-md shadow-md py-2" : "bg-white/90 backdrop-blur-sm py-3 sm:py-4"} border-b border-blue-100`, children: v.jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: v.jsxs("div", { className: "flex items-center justify-between h-16 sm:h-20", children: [v.jsxs(lt, { to: "/", className: "flex items-center gap-3 group focus-visible:outline-none rounded-lg", "aria-label": "Hill Trust Ashram Home", children: [v.jsx("img", { src: "./assets/Logo.png", alt: "HILL TRUST ASHRAM", className: "h-14 sm:h-16 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-sm" })] }), v.jsx("nav", { className: "hidden md:flex items-center justify-center", children: v.jsx("div", { className: "spotlight-nav-pill flex items-center gap-1 px-5 py-2 rounded-full bg-white shadow-[0_4px_24px_rgba(37,99,235,0.08)] border border-blue-100", children: Cd.map((g5) => {
-      const y2 = c.pathname === g5.path;
-      return v.jsxs(lt, { to: g5.path, className: `relative px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase transition-all duration-200 ${y2 ? "text-[#2563EB] font-extrabold" : "text-[#1E3A8A] hover:text-[#2563EB]"}`, children: [g5.label, y2 && v.jsx(Pe.span, { layoutId: "nav-active-pill", className: "absolute -bottom-1 left-2 right-2 h-[3px] rounded-full bg-gradient-to-r from-[#2563EB] via-[#60A5FA] to-[#FBBF24] shadow-[0_2px_8px_rgba(37,99,235,0.5)]", transition: { type: "spring", stiffness: 400, damping: 30 } })] }, g5.path);
-    }) }) }), v.jsxs("div", { className: "flex items-center gap-3", children: [v.jsx("div", { className: "hidden md:block", children: v.jsxs("button", { type: "button", onClick: () => s(true), className: "btn-gold-donate flex items-center gap-2 px-6 py-2.5 rounded-full font-extrabold text-xs sm:text-sm tracking-wider uppercase text-[#1E3A8A] shadow-[0_4px_16px_rgba(251,191,36,0.45)] bg-gradient-to-r from-[#FBBF24] to-[#F59E0B] hover:from-[#FCD34D] hover:to-[#FBBF24] hover:scale-105 active:scale-95 transition-all duration-300", children: [v.jsx("svg", { viewBox: "0 0 24 24", className: "w-4 h-4 fill-current", children: v.jsx("path", { d: "M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" }) }), "DONATE NOW"] }) }), v.jsx("button", { className: "md:hidden p-2 rounded-xl transition-all duration-300 text-[#1E3A8A] hover:bg-blue-50", onClick: () => r((g5) => !g5), "aria-label": n ? "Close menu" : "Open menu", "aria-expanded": n, children: v.jsx(ni, { mode: "wait", initial: false, children: n ? v.jsx(Pe.span, { initial: { rotate: -90, opacity: 0 }, animate: { rotate: 0, opacity: 1 }, exit: { rotate: 90, opacity: 0 }, transition: { duration: 0.2 }, style: { display: "block" }, children: v.jsx(ai, { className: "w-6 h-6" }) }, "close") : v.jsx(Pe.span, { initial: { rotate: 90, opacity: 0 }, animate: { rotate: 0, opacity: 1 }, exit: { rotate: -90, opacity: 0 }, transition: { duration: 0.2 }, style: { display: "block" }, children: v.jsx(HP, { className: "w-6 h-6" }) }, "menu") }) })] })] }) }) }), v.jsx(ZP, { isOpen: i, onClose: () => s(false), title: "Donate to Hill Trust Ashram", size: "md", children: v.jsxs("div", { className: "flex flex-col items-center gap-5 text-center", children: [v.jsx("div", { className: "w-16 h-16 rounded-full bg-gradient-to-br from-[#2563EB] to-[#FBBF24] text-white flex items-center justify-center shadow-[0_0_30px_rgba(37,99,235,0.35)]", children: v.jsx(Qo, { className: "w-7 h-7 text-white" }) }), v.jsx("p", { className: "text-sm text-slate-600 max-w-sm", children: "Scan the QR code below using any UPI app (GPay, PhonePe, Paytm) or use our bank details to complete your donation." }), v.jsx("div", { className: "rounded-3xl border-2 border-dashed border-[#FBBF24] p-4 bg-blue-50/60", children: v.jsx("img", { src: "https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=upi://pay?pa=9944704699@upi&pn=Hill%20Trust&cu=INR&am=1001", alt: "UPI QR Code", className: "mx-auto w-52 h-52 object-contain" }) }), v.jsxs("div", { className: "w-full grid grid-cols-1 gap-3", children: [v.jsx("button", { type: "button", className: "w-full py-3 px-6 rounded-full font-bold text-[#1E3A8A] bg-gradient-to-r from-[#FBBF24] to-[#F59E0B] hover:from-[#FCD34D] hover:to-[#FBBF24] shadow-md transition-all", onClick: () => s(false), children: "I Have Paid" }), v.jsx("button", { type: "button", className: "w-full py-3 px-6 rounded-full font-bold text-[#2563EB] border-2 border-[#2563EB] hover:bg-blue-50 transition-all", onClick: () => {
+    return v.jsxs(v.Fragment, { children: [v.jsx(Pe.header, { initial: { opacity: 0, y: -16 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.5, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }, className: `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${e ? "bg-white/95 backdrop-blur-md shadow-md py-2" : "bg-white/90 backdrop-blur-sm py-3 sm:py-4"} border-b border-blue-100`, children: v.jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: v.jsxs("div", { className: "flex items-center justify-between h-16 sm:h-20", children: [v.jsxs(lt, { to: "/", className: "flex items-center gap-3 group focus-visible:outline-none rounded-lg", "aria-label": "Hill Trust Ashram Home", children: [v.jsx("img", { src: "./assets/Logo.png", alt: "HILL TRUST ASHRAM", className: "h-14 sm:h-16 md:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-sm" })] }), v.jsx("nav", { className: "hidden md:flex items-center justify-center", children: v.jsx("div", { className: "spotlight-nav-pill flex items-center gap-1 px-5 py-2 rounded-full bg-white shadow-[0_4px_24px_rgba(37,99,235,0.08)] border border-blue-100", children: Cd.map((g4) => {
+      const y2 = c.pathname === g4.path;
+      return v.jsxs(lt, { to: g4.path, className: `relative px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase transition-all duration-200 ${y2 ? "text-[#2563EB] font-extrabold" : "text-[#1E3A8A] hover:text-[#2563EB]"}`, children: [g4.label, y2 && v.jsx(Pe.span, { layoutId: "nav-active-pill", className: "absolute -bottom-1 left-2 right-2 h-[3px] rounded-full bg-gradient-to-r from-[#2563EB] via-[#60A5FA] to-[#FBBF24] shadow-[0_2px_8px_rgba(37,99,235,0.5)]", transition: { type: "spring", stiffness: 400, damping: 30 } })] }, g4.path);
+    }) }) }), v.jsxs("div", { className: "flex items-center gap-3", children: [v.jsx("div", { className: "hidden md:block", children: v.jsxs("button", { type: "button", onClick: () => s(true), className: "btn-gold-donate flex items-center gap-2 px-6 py-2.5 rounded-full font-extrabold text-xs sm:text-sm tracking-wider uppercase text-[#1E3A8A] shadow-[0_4px_16px_rgba(251,191,36,0.45)] bg-gradient-to-r from-[#FBBF24] to-[#F59E0B] hover:from-[#FCD34D] hover:to-[#FBBF24] hover:scale-105 active:scale-95 transition-all duration-300", children: [v.jsx("svg", { viewBox: "0 0 24 24", className: "w-4 h-4 fill-current", children: v.jsx("path", { d: "M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" }) }), "DONATE NOW"] }) }), v.jsx("button", { className: "md:hidden p-2 rounded-xl transition-all duration-300 text-[#1E3A8A] hover:bg-blue-50", onClick: () => r((g4) => !g4), "aria-label": n ? "Close menu" : "Open menu", "aria-expanded": n, children: v.jsx(ni, { mode: "wait", initial: false, children: n ? v.jsx(Pe.span, { initial: { rotate: -90, opacity: 0 }, animate: { rotate: 0, opacity: 1 }, exit: { rotate: 90, opacity: 0 }, transition: { duration: 0.2 }, style: { display: "block" }, children: v.jsx(ai, { className: "w-6 h-6" }) }, "close") : v.jsx(Pe.span, { initial: { rotate: 90, opacity: 0 }, animate: { rotate: 0, opacity: 1 }, exit: { rotate: -90, opacity: 0 }, transition: { duration: 0.2 }, style: { display: "block" }, children: v.jsx(HP, { className: "w-6 h-6" }) }, "menu") }) })] })] }) }) }), v.jsx(ZP, { isOpen: i, onClose: () => s(false), title: "Donate to Hill Trust Ashram", size: "md", children: v.jsxs("div", { className: "flex flex-col items-center gap-5 text-center", children: [v.jsx("div", { className: "w-16 h-16 rounded-full bg-gradient-to-br from-[#2563EB] to-[#FBBF24] text-white flex items-center justify-center shadow-[0_0_30px_rgba(37,99,235,0.35)]", children: v.jsx(Qo, { className: "w-7 h-7 text-white" }) }), v.jsx("p", { className: "text-sm text-slate-600 max-w-sm", children: "Scan the QR code below using any UPI app (GPay, PhonePe, Paytm) or use our bank details to complete your donation." }), v.jsx("div", { className: "rounded-3xl border-2 border-dashed border-[#FBBF24] p-4 bg-blue-50/60", children: v.jsx("img", { src: "https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=upi://pay?pa=9944704699@upi&pn=Hill%20Trust&cu=INR&am=1001", alt: "UPI QR Code", className: "mx-auto w-52 h-52 object-contain" }) }), v.jsxs("div", { className: "w-full grid grid-cols-1 gap-3", children: [v.jsx("button", { type: "button", className: "w-full py-3 px-6 rounded-full font-bold text-[#1E3A8A] bg-gradient-to-r from-[#FBBF24] to-[#F59E0B] hover:from-[#FCD34D] hover:to-[#FBBF24] shadow-md transition-all", onClick: () => s(false), children: "I Have Paid" }), v.jsx("button", { type: "button", className: "w-full py-3 px-6 rounded-full font-bold text-[#2563EB] border-2 border-[#2563EB] hover:bg-blue-50 transition-all", onClick: () => {
       navigator.clipboard.writeText("9944704699@upi");
-    }, children: "Copy UPI ID (9944704699@upi)" })] }), v.jsxs("p", { className: "text-xs text-slate-500", children: ["UPI ID: ", v.jsx("span", { className: "font-bold text-[#2563EB]", children: "9944704699@upi" }), v.jsx("br", {}), "Axis Bank A/C: 919010013069384 - IFSC: UTIB0002095"] })] }) }), v.jsx(ni, { children: n && v.jsxs(Pe.div, { initial: { opacity: 0, x: "100%" }, animate: { opacity: 1, x: 0 }, exit: { opacity: 0, x: "100%" }, transition: { duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }, className: "fixed inset-0 z-40 md:hidden", children: [v.jsx(Pe.div, { initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 }, className: "absolute inset-0 bg-[#172554]/60 backdrop-blur-sm", onClick: () => r(false) }), v.jsxs("div", { className: "absolute top-0 right-0 h-full w-[300px] bg-[#EFF6FF] shadow-2xl flex flex-col overflow-y-auto", children: [v.jsxs("div", { className: "flex items-center justify-between px-6 py-6 border-b border-blue-200/60 bg-white", children: [v.jsx(lt, { to: "/", className: "flex items-center gap-2", children: v.jsx("img", { src: "./assets/Logo.png", alt: "HILL TRUST ASHRAM", className: "h-12 w-auto object-contain" }) }), v.jsx("button", { onClick: () => r(false), className: "p-2 rounded-xl hover:bg-blue-100 text-[#1E3A8A]", "aria-label": "Close menu", children: v.jsx(ai, { className: "w-5 h-5" }) })] }), v.jsx("nav", { className: "flex-1 px-4 py-6 space-y-1", children: Cd.map((g5, y2) => {
-      const x3 = c.pathname === g5.path;
-      return v.jsx(Pe.div, { initial: { opacity: 0, x: 20 }, animate: { opacity: 1, x: 0 }, transition: { delay: 0.05 + y2 * 0.06, duration: 0.3 }, children: v.jsxs(lt, { to: g5.path, className: `flex items-center justify-between px-4 py-3.5 rounded-2xl font-bold text-sm tracking-wider uppercase transition-all duration-200 ${x3 ? "bg-white text-[#2563EB] shadow-sm" : "text-[#1E3A8A] hover:bg-white/80 hover:text-[#2563EB]"}`, children: [g5.label, x3 && v.jsx("div", { className: "w-2 h-2 rounded-full bg-[#FBBF24]" })] }) }, g5.path);
+    }, children: "Copy UPI ID (9944704699@upi)" })] }), v.jsxs("p", { className: "text-xs text-slate-500", children: ["UPI ID: ", v.jsx("span", { className: "font-bold text-[#2563EB]", children: "9944704699@upi" }), v.jsx("br", {}), "Axis Bank A/C: 919010013069384 - IFSC: UTIB0002095"] })] }) }), v.jsx(ni, { children: n && v.jsxs(Pe.div, { initial: { opacity: 0, x: "100%" }, animate: { opacity: 1, x: 0 }, exit: { opacity: 0, x: "100%" }, transition: { duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }, className: "fixed inset-0 z-40 md:hidden", children: [v.jsx(Pe.div, { initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 }, className: "absolute inset-0 bg-[#172554]/60 backdrop-blur-sm", onClick: () => r(false) }), v.jsxs("div", { className: "absolute top-0 right-0 h-full w-[300px] bg-[#EFF6FF] shadow-2xl flex flex-col overflow-y-auto", children: [v.jsxs("div", { className: "flex items-center justify-between px-6 py-6 border-b border-blue-200/60 bg-white", children: [v.jsx(lt, { to: "/", className: "flex items-center gap-2", children: v.jsx("img", { src: "./assets/Logo.png", alt: "HILL TRUST ASHRAM", className: "h-12 w-auto object-contain" }) }), v.jsx("button", { onClick: () => r(false), className: "p-2 rounded-xl hover:bg-blue-100 text-[#1E3A8A]", "aria-label": "Close menu", children: v.jsx(ai, { className: "w-5 h-5" }) })] }), v.jsx("nav", { className: "flex-1 px-4 py-6 space-y-1", children: Cd.map((g4, y2) => {
+      const x3 = c.pathname === g4.path;
+      return v.jsx(Pe.div, { initial: { opacity: 0, x: 20 }, animate: { opacity: 1, x: 0 }, transition: { delay: 0.05 + y2 * 0.06, duration: 0.3 }, children: v.jsxs(lt, { to: g4.path, className: `flex items-center justify-between px-4 py-3.5 rounded-2xl font-bold text-sm tracking-wider uppercase transition-all duration-200 ${x3 ? "bg-white text-[#2563EB] shadow-sm" : "text-[#1E3A8A] hover:bg-white/80 hover:text-[#2563EB]"}`, children: [g4.label, x3 && v.jsx("div", { className: "w-2 h-2 rounded-full bg-[#FBBF24]" })] }) }, g4.path);
     }) }), v.jsxs("div", { className: "px-4 pb-8 pt-4 border-t border-blue-200/60 space-y-3 bg-white", children: [v.jsx("button", { type: "button", className: "w-full py-3.5 px-6 rounded-full font-bold text-sm tracking-wider uppercase text-[#1E3A8A] shadow-lg bg-gradient-to-r from-[#FBBF24] to-[#F59E0B]", onClick: () => s(true), children: "DONATE NOW" }), v.jsx(lt, { to: "/contact", className: "block text-center w-full py-3 px-6 rounded-full font-bold text-sm text-[#2563EB] border-2 border-[#2563EB]/30 hover:bg-blue-50", children: "Get In Touch" })] })] })] }) })] });
   };
   var Xo = { organization: [{ label: "About Us", path: "/about" }, { label: "Photo Gallery", path: "/gallery" }, { label: "Our Mission", path: "/about#mission" }, { label: "Our Values", path: "/about#values" }, { label: "Impact Report", path: "/about#impact" }], services: [{ label: "Food Support", path: "/services#food" }, { label: "Education", path: "/services#education" }, { label: "Elderly Care", path: "/services#elderly" }, { label: "Emergency Relief", path: "/services#emergency" }], getInvolved: [{ label: "Volunteer", path: "/contact" }, { label: "Donate", path: "/contact" }, { label: "Become a Sponsor", path: "/contact" }, { label: "Partner With Us", path: "/contact" }] };
@@ -10165,7 +10165,7 @@ Error generating stack: ` + s.message + `
     const e = w.useRef(null);
     w2(e, { once: true, margin: "-80px" });
     const { scrollYProgress: t } = Oe2({ target: e, offset: ["start end", "end start"] }), s = Ie2(t, [0, 1], ["-10%", "10%"]);
-    return v.jsx("section", { ref: e, className: "relative py-20 md:py-32 lg:py-48 overflow-hidden", "aria-labelledby": "cta-heading", children: v.jsx(Pe.div, { style: { y: s }, className: "absolute inset-0 scale-110 z-0", children: v.jsx("img", { src: "./assets/mom.png", alt: "A mother receiving support", className: "w-full h-full object-cover object-center", loading: "lazy" }) }) });
+    return v.jsx("section", { ref: e, className: "relative py-12 md:py-16 lg:py-20 overflow-hidden", "aria-labelledby": "cta-heading", children: v.jsx(Pe.div, { style: { y: s }, className: "absolute inset-0 scale-110 z-0", children: v.jsx("img", { src: "./assets/mom.png", alt: "A mother receiving support", className: "w-full h-full object-cover object-center", loading: "lazy" }) }) });
   };
 
   // assets/ImpactStats-0WLLq7gL.js
@@ -10360,19 +10360,19 @@ Error generating stack: ` + s.message + `
   };
   var E3 = () => {
     const i = w.useRef(null), a2 = w2(i, { once: true, margin: "-100px" });
-    return v.jsxs("section", { ref: i, className: "relative py-24 lg:py-32 bg-forest-950 overflow-hidden", "aria-labelledby": "impact-heading", children: [
+    return v.jsxs("section", { ref: i, style: { backgroundColor: "#172554", background: "linear-gradient(135deg, #090e1a 0%, #172554 45%, #1e3a8a 100%)" }, className: "relative py-12 sm:py-16 bg-[#172554] text-white overflow-hidden", "aria-labelledby": "impact-heading", children: [
       v.jsx("div", { className: "absolute inset-0 opacity-5", children: v.jsx("div", { className: "w-full h-full", style: { backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "48px 48px" } }) }),
       v.jsx("div", { className: "absolute top-0 left-1/4 w-96 h-96 bg-forest-500/10 rounded-full blur-3xl" }),
       v.jsx("div", { className: "absolute bottom-0 right-1/4 w-96 h-96 bg-amber-500/8 rounded-full blur-3xl" }),
       v.jsxs("div", { className: "relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
-        v.jsxs(Pe.div, { initial: { opacity: 0, y: 24 }, animate: a2 ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.7 }, className: "text-center mb-20", children: [
-          v.jsxs("div", { className: "inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] uppercase text-amber-400 mb-4", children: [v.jsx("div", { className: "w-5 h-px bg-amber-400" }), "Hill Charity Impact", v.jsx("div", { className: "w-5 h-px bg-amber-400" })] }),
-          v.jsxs("h2", { id: "impact-heading", className: "font-display font-bold text-4xl sm:text-5xl text-white leading-tight", children: ["Serving Tuticorin with", " ", v.jsx("span", { className: "text-amber-400", children: "Love & Hope." })] })
+        v.jsxs(Pe.div, { initial: { opacity: 0, y: 24 }, animate: a2 ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.7 }, className: "text-center mb-10 sm:mb-12", children: [
+          v.jsxs("div", { className: "inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] uppercase text-amber-400 mb-3", children: [v.jsx("div", { className: "w-5 h-px bg-amber-400" }), "Hill Charity Impact", v.jsx("div", { className: "w-5 h-px bg-amber-400" })] }),
+          v.jsxs("h2", { id: "impact-heading", className: "font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-white leading-tight", children: ["Serving Tuticorin with", " ", v.jsx("span", { className: "text-amber-400", children: "Love & Hope." })] })
         ] }),
-        v.jsx("div", { className: "grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-4 divide-x-0 lg:divide-x divide-white/10", children: f.map((t, o) => v.jsx(x, { value: t.value, suffix: t.suffix, label: t.label, sublabel: t.sublabel, active: a2, delay: 0.2 + o * 0.12 }, t.label)) }),
-        v.jsxs(Pe.div, { initial: { opacity: 0 }, animate: a2 ? { opacity: 1 } : {}, transition: { duration: 0.7, delay: 0.9 }, className: "text-center mt-20 space-y-1.5", children: [
-          v.jsx("p", { className: "text-white/60 text-base italic", children: '"\u0B89\u0BA4\u0BB5\u0BBF \u0B8E\u0BA9\u0BCD\u0BAA\u0BA4\u0BC1 \u0B92\u0BB0\u0BC1 \u0B9A\u0BC6\u0BAF\u0BB2\u0BCD \u0BAE\u0B9F\u0BCD\u0B9F\u0BC1\u0BAE\u0BCD \u0B85\u0BB2\u0BCD\u0BB2. \u0B92\u0BB0\u0BC1 \u0BA8\u0BAE\u0BCD\u0BAA\u0BBF\u0B95\u0BCD\u0B95\u0BC8."' }),
-          v.jsx("p", { className: "text-white/40 text-sm", children: '"Hill Organisation for People\u2019s Education \u2014 Tuticorin, Tamil Nadu"' })
+        v.jsx("div", { className: "grid grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-4 divide-x-0 lg:divide-x divide-white/10", children: f.map((t, o) => v.jsx(x, { value: t.value, suffix: t.suffix, label: t.label, sublabel: t.sublabel, active: a2, delay: 0.2 + o * 0.12 }, t.label)) }),
+        v.jsxs(Pe.div, { initial: { opacity: 0 }, animate: a2 ? { opacity: 1 } : {}, transition: { duration: 0.7, delay: 0.9 }, className: "text-center mt-10 sm:mt-12 space-y-1.5", children: [
+          v.jsx("p", { className: "text-white/80 text-sm sm:text-base italic", children: '"\u0B89\u0BA4\u0BB5\u0BBF \u0B8E\u0BA9\u0BCD\u0BAA\u0BA4\u0BC1 \u0B92\u0BB0\u0BC1 \u0B9A\u0BC6\u0BAF\u0BB2\u0BCD \u0BAE\u0B9F\u0BCD\u0B9F\u0BC1\u0BAE\u0BCD \u0B85\u0BB2\u0BCD\u0BB2. \u0B92\u0BB0\u0BC1 \u0BA8\u0BAE\u0BCD\u0BAA\u0BBF\u0B95\u0BCD\u0B95\u0BC8."' }),
+          v.jsx("p", { className: "text-white/60 text-xs sm:text-sm", children: '"Hill Organisation for People\u2019s Education \u2014 Tuticorin, Tamil Nadu"' })
         ] })
       ] })
     ] });
@@ -10472,7 +10472,11 @@ Error generating stack: ` + s.message + `
         }),
         // 2. ULTRA-ATTRACTIVE TRUST & ACTION BAR (Directly Below Photo-Only Hero)
         v.jsx("section", {
-          className: "bg-gradient-to-r from-[#172554] via-[#1E40AF] to-[#2563EB] text-white py-6 sm:py-8 border-b border-blue-400/20 shadow-xl",
+          style: {
+            backgroundColor: "#172554",
+            background: "linear-gradient(135deg, #090e1a 0%, #172554 45%, #1e3a8a 100%)"
+          },
+          className: "text-white py-5 sm:py-6 border-b border-blue-400/20 shadow-xl",
           children: v.jsx("div", {
             className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
             children: v.jsxs("div", {
@@ -10535,7 +10539,7 @@ Error generating stack: ` + s.message + `
     });
   };
   var L = [{ number: "01", title: "Hope Children Home", description: "Providing shelter, education, nutritious food, and affectionate care for abandoned and orphaned girl children in Tuticorin.", image: "./assets/p.png", icon: a }, { number: "02", title: "Home for the Aged", description: "Rescuing destitute elderly women abandoned by family and left in the streets, providing healthcare, dignity, and a loving home.", image: "./assets/z.png", icon: V }, { number: "03", title: "Feed the Hungry", description: "Rescuing excess banquet food and preparing fresh daily meals to ensure no one in our town goes to sleep hungry.", image: "./assets/j.png", icon: A3 }];
-  var U2 = () => v.jsx("section", { className: "bg-white py-20 lg:py-28", children: v.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [v.jsxs("div", { className: "text-center mb-14 lg:mb-16", children: [v.jsxs("div", { className: "flex items-center justify-center gap-2 mb-5", children: [v.jsx("span", { className: "w-5 h-px bg-forest-600" }), v.jsx("span", { className: "text-xs font-bold tracking-[0.25em] uppercase text-forest-700", children: "Why We Exist" }), v.jsx("span", { className: "w-5 h-px bg-forest-600" })] }), v.jsxs("h2", { className: "font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-charcoal-900 leading-tight", children: ["Love is where meaningful", v.jsx("br", {}), v.jsx("span", { className: "text-forest-600", children: "change begins." })] })] }), v.jsx("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-8", children: L.map((a2, n) => {
+  var U2 = () => v.jsx("section", { className: "bg-white py-10 sm:py-14", children: v.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [v.jsxs("div", { className: "text-center mb-8 sm:mb-10", children: [v.jsxs("div", { className: "flex items-center justify-center gap-2 mb-4", children: [v.jsx("span", { className: "w-5 h-px bg-forest-600" }), v.jsx("span", { className: "text-xs font-bold tracking-[0.25em] uppercase text-forest-700", children: "Why We Exist" }), v.jsx("span", { className: "w-5 h-px bg-forest-600" })] }), v.jsxs("h2", { className: "font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-charcoal-900 leading-tight", children: ["Love is where meaningful", v.jsx("br", {}), v.jsx("span", { className: "text-forest-600", children: "change begins." })] })] }), v.jsx("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-8", children: L.map((a2, n) => {
     const s = a2.icon;
     return v.jsxs(Pe.article, { initial: { opacity: 0, y: 30 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true, margin: "-80px" }, transition: { duration: 0.6, delay: n * 0.1 }, className: `
                   group
@@ -10590,109 +10594,7 @@ Error generating stack: ` + s.message + `
   }) })] }) });
   var $2 = () => {
     const a2 = w.useRef(null), n = w.useRef(null), s = w2(a2, { once: true, margin: "-100px" }), { scrollYProgress: l } = Oe2({ target: n, offset: ["start end", "end start"] }), i = Ie2(l, [0, 1], ["-8%", "8%"]);
-    return v.jsx("section", { ref: a2, className: "py-0 bg-cream-50 overflow-hidden", "aria-labelledby": "story-heading", children: v.jsx("div", { className: "max-w-7xl mx-auto", children: v.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-2 min-h-[600px]", children: [v.jsxs("div", { ref: n, className: "relative overflow-hidden min-h-[400px] lg:min-h-full", children: [v.jsx(Pe.div, { initial: { scaleX: 1 }, animate: s ? { scaleX: 0 } : { scaleX: 1 }, transition: { duration: 0.9, delay: 0.2, ease: [0.76, 0, 0.24, 1] }, style: { originX: 0 }, className: "absolute inset-0 z-10 bg-charcoal-900" }), v.jsx(Pe.div, { style: { y: i }, className: "absolute inset-0 scale-110", children: v.jsx("img", { src: "./assets/community-story.png", alt: "Volunteers helping people in the community", className: "w-full h-full object-cover object-center", loading: "lazy" }) }), v.jsx("div", { className: "absolute inset-0 bg-gradient-to-r from-transparent to-cream-50/30 z-20 hidden lg:block" }), v.jsx(Pe.div, { initial: { opacity: 0, y: 16 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.6, delay: 1.1 }, className: "absolute bottom-6 left-6 z-30 max-w-xs", children: v.jsxs("div", { className: "bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-premium border border-white/50", children: [v.jsx("p", { className: "text-forest-700 font-medium text-sm italic leading-relaxed", children: '"\u0B89\u0BA4\u0BB5\u0BBF \u0B8E\u0BA9\u0BCD\u0BAA\u0BA4\u0BC1 \u0B92\u0BB0\u0BC1 \u0B9A\u0BC6\u0BAF\u0BB2\u0BCD \u0BAE\u0B9F\u0BCD\u0B9F\u0BC1\u0BAE\u0BCD \u0B85\u0BB2\u0BCD\u0BB2. \u0B92\u0BB0\u0BC1 \u0BA8\u0BAE\u0BCD\u0BAA\u0BBF\u0B95\u0BCD\u0B95\u0BC8."' }), v.jsx("p", { className: "text-charcoal-400 text-xs mt-1.5", children: '"Support is not just an act. It is hope."' })] }) })] }), v.jsx("div", { className: "flex items-center px-8 sm:px-12 lg:px-16 py-16 lg:py-20 bg-cream-50", children: v.jsxs("div", { className: "max-w-lg", children: [v.jsx(Pe.div, { initial: { opacity: 0, x: 20 }, animate: s ? { opacity: 1, x: 0 } : {}, transition: { duration: 0.5, delay: 0.4 }, className: "label-tag mb-6", children: "Real People. Real Impact." }), v.jsxs(Pe.h2, { id: "story-heading", initial: { opacity: 0, y: 24 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.7, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }, className: "font-display font-bold text-4xl sm:text-5xl text-charcoal-900 leading-tight mb-6", children: ["Support is more than giving.", v.jsx("br", {}), v.jsx("span", { className: "text-forest-600", children: "It is showing someone they are not alone." })] }), v.jsx(Pe.p, { initial: { opacity: 0, y: 16 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.6, delay: 0.62 }, className: "text-charcoal-500 leading-relaxed text-base mb-8", children: "Hill Organisation for People's Education was established in 2014 by Mrs. Brinah Prabhakaran and Mr. Prem Prabhakaran in Tuticorin, running Hope Children Home for abandoned girls and a home for destitute elderly mothers with love and affection." }), v.jsx(Pe.div, { initial: { opacity: 0, y: 16 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.6, delay: 0.72 }, className: "flex gap-8 mb-10 py-6 border-y border-charcoal-100", children: [{ value: "10+", label: "Years in Tuticorin" }, { value: "7", label: "Core Programs" }, { value: "100%", label: "Direct Transparency" }].map((r) => v.jsxs("div", { children: [v.jsx("div", { className: "font-display font-bold text-3xl text-charcoal-900", children: r.value }), v.jsx("div", { className: "text-charcoal-400 text-xs font-medium mt-0.5", children: r.label })] }, r.label)) }), v.jsx(Pe.div, { initial: { opacity: 0, y: 12 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.5, delay: 0.82 }, children: v.jsx(lt, { to: "/services", children: v.jsxs(Pe.button, { whileHover: { scale: 1.02, x: 4 }, whileTap: { scale: 0.97 }, className: "group flex items-center gap-3 text-forest-600 font-bold text-sm hover:text-forest-700 transition-colors", children: ["Explore Our 7 Programs", v.jsx("div", { className: "w-8 h-8 rounded-full bg-forest-100 group-hover:bg-forest-200 flex items-center justify-center transition-all duration-300 group-hover:translate-x-1", children: v.jsx(DP, { className: "w-4 h-4" }) })] }) }) })] }) })] }) }) });
-  };
-  var g2 = [{ number: "01", icon: zP, title: "Understand the Need", description: "We listen to communities and understand what people actually need before taking action." }, { number: "02", icon: d, title: "Take Meaningful Action", description: "We connect supporters, volunteers and local communities to deliver practical, timely support." }, { number: "03", icon: p, title: "Create Lasting Impact", description: "Every initiative is tracked, measured and improved so support creates sustainable change." }];
-  var B3 = () => {
-    const a2 = w.useRef(null), n = w2(a2, { once: true, margin: "-80px" });
-    return v.jsx("section", { ref: a2, className: "bg-white py-16 sm:py-20 lg:py-24", "aria-labelledby": "how-it-works-heading", children: v.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [v.jsxs(Pe.div, { initial: { opacity: 0, y: 25 }, animate: n ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }, className: "text-center mb-12 lg:mb-14", children: [v.jsxs("div", { className: "flex items-center justify-center gap-2 mb-4", children: [v.jsx("span", { className: "w-5 h-px bg-forest-600" }), v.jsx("span", { className: "text-xs font-bold tracking-[0.25em] uppercase text-forest-700", children: "How It Works" }), v.jsx("span", { className: "w-5 h-px bg-forest-600" })] }), v.jsxs("h2", { id: "how-it-works-heading", className: `
-              font-display
-              font-bold
-              text-4xl
-              sm:text-5xl
-              lg:text-5xl
-              text-charcoal-900
-              leading-tight
-            `, children: ["Three steps to", " ", v.jsx("span", { className: "text-gradient-green", children: "lasting change." })] }), v.jsx("p", { className: "mt-5 max-w-2xl mx-auto text-charcoal-500 text-base leading-relaxed", children: "We turn community needs into meaningful action through a simple, transparent and accountable process." })] }), v.jsx("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8", children: g2.map((s, l) => {
-      const i = s.icon;
-      return v.jsxs(Pe.div, { initial: { opacity: 0, y: 30 }, animate: n ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.65, delay: 0.15 + l * 0.12, ease: [0.25, 0.46, 0.45, 0.94] }, className: "group relative", children: [v.jsxs("div", { className: `
-                    relative
-                    h-full
-                    bg-white
-                    rounded-3xl
-                    border
-                    border-charcoal-100
-                    p-7
-                    lg:p-8
-                    shadow-card
-                    hover:shadow-card-hover
-                    hover:-translate-y-1.5
-                    transition-all
-                    duration-500
-                    overflow-hidden
-                  `, children: [v.jsx("div", { className: `
-                      absolute
-                      top-5
-                      right-6
-                      pointer-events-none
-                      select-none
-                    `, children: v.jsx("span", { className: `
-                        font-display
-                        font-bold
-                        text-5xl
-                        text-charcoal-100
-                        group-hover:text-forest-50
-                        transition-colors
-                        duration-500
-                      `, children: s.number }) }), v.jsx("div", { className: `
-                      relative
-                      z-10
-                      w-12
-                      h-12
-                      rounded-2xl
-                      bg-forest-50
-                      text-forest-600
-                      flex
-                      items-center
-                      justify-center
-                      mb-7
-                      group-hover:bg-forest-100
-                      group-hover:scale-110
-                      transition-all
-                      duration-300
-                    `, children: v.jsx(i, { className: "w-5 h-5" }) }), v.jsx("h3", { className: `
-                      relative
-                      z-10
-                      font-display
-                      font-bold
-                      text-xl
-                      text-charcoal-900
-                      mb-3
-                    `, children: s.title }), v.jsx("p", { className: `
-                      relative
-                      z-10
-                      text-charcoal-500
-                      text-sm
-                      leading-relaxed
-                    `, children: s.description }), v.jsx("div", { className: `
-                      absolute
-                      bottom-0
-                      left-0
-                      h-1
-                      w-0
-                      bg-forest-500
-                      group-hover:w-full
-                      transition-all
-                      duration-500
-                    ` })] }), l < g2.length - 1 && v.jsx("div", { className: `
-                      hidden
-                      md:flex
-                      absolute
-                      top-1/2
-                      -right-5
-                      -translate-y-1/2
-                      z-20
-                      w-10
-                      h-10
-                      rounded-full
-                      bg-white
-                      border
-                      border-charcoal-100
-                      shadow-sm
-                      items-center
-                      justify-center
-                    `, children: v.jsx(DP, { className: "w-4 h-4 text-forest-600" }) })] }, s.number);
-    }) })] }) });
+    return v.jsx("section", { ref: a2, className: "py-0 bg-cream-50 overflow-hidden", "aria-labelledby": "story-heading", children: v.jsx("div", { className: "max-w-7xl mx-auto", children: v.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-2 min-h-[460px]", children: [v.jsxs("div", { ref: n, className: "relative overflow-hidden min-h-[360px] lg:min-h-full", children: [v.jsx(Pe.div, { initial: { scaleX: 1 }, animate: s ? { scaleX: 0 } : { scaleX: 1 }, transition: { duration: 0.9, delay: 0.2, ease: [0.76, 0, 0.24, 1] }, style: { originX: 0 }, className: "absolute inset-0 z-10 bg-charcoal-900" }), v.jsx(Pe.div, { style: { y: i }, className: "absolute inset-0 scale-110", children: v.jsx("img", { src: "./assets/community-story.png", alt: "Volunteers helping people in the community", className: "w-full h-full object-cover object-center", loading: "lazy" }) }), v.jsx("div", { className: "absolute inset-0 bg-gradient-to-r from-transparent to-cream-50/30 z-20 hidden lg:block" }), v.jsx(Pe.div, { initial: { opacity: 0, y: 16 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.6, delay: 1.1 }, className: "absolute bottom-6 left-6 z-30 max-w-xs", children: v.jsxs("div", { className: "bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-premium border border-white/50", children: [v.jsx("p", { className: "text-forest-700 font-medium text-sm italic leading-relaxed", children: '"\u0B89\u0BA4\u0BB5\u0BBF \u0B8E\u0BA9\u0BCD\u0BAA\u0BA4\u0BC1 \u0B92\u0BB0\u0BC1 \u0B9A\u0BC6\u0BAF\u0BB2\u0BCD \u0BAE\u0B9F\u0BCD\u0B9F\u0BC1\u0BAE\u0BCD \u0B85\u0BB2\u0BCD\u0BB2. \u0B92\u0BB0\u0BC1 \u0BA8\u0BAE\u0BCD\u0BAA\u0BBF\u0B95\u0BCD\u0B95\u0BC8."' }), v.jsx("p", { className: "text-charcoal-400 text-xs mt-1.5", children: '"Support is not just an act. It is hope."' })] }) })] }), v.jsx("div", { className: "flex items-center px-8 sm:px-12 lg:px-16 py-10 sm:py-14 bg-cream-50", children: v.jsxs("div", { className: "max-w-lg", children: [v.jsx(Pe.div, { initial: { opacity: 0, x: 20 }, animate: s ? { opacity: 1, x: 0 } : {}, transition: { duration: 0.5, delay: 0.4 }, className: "label-tag mb-5", children: "Real People. Real Impact." }), v.jsxs(Pe.h2, { id: "story-heading", initial: { opacity: 0, y: 24 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.7, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }, className: "font-display font-bold text-3xl sm:text-4xl text-charcoal-900 leading-tight mb-5", children: ["Support is more than giving.", v.jsx("br", {}), v.jsx("span", { className: "text-forest-600", children: "It is showing someone they are not alone." })] }), v.jsx(Pe.p, { initial: { opacity: 0, y: 16 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.6, delay: 0.62 }, className: "text-charcoal-500 leading-relaxed text-sm sm:text-base mb-6", children: "Hill Organisation for People's Education was established in 2014 by Mrs. Brinah Prabhakaran and Mr. Prem Prabhakaran in Tuticorin, running Hope Children Home for abandoned girls and a home for destitute elderly mothers with love and affection." }), v.jsx(Pe.div, { initial: { opacity: 0, y: 16 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.6, delay: 0.72 }, className: "flex gap-8 mb-8 py-5 border-y border-charcoal-100", children: [{ value: "10+", label: "Years in Tuticorin" }, { value: "7", label: "Core Programs" }, { value: "100%", label: "Direct Transparency" }].map((r) => v.jsxs("div", { children: [v.jsx("div", { className: "font-display font-bold text-2xl sm:text-3xl text-charcoal-900", children: r.value }), v.jsx("div", { className: "text-charcoal-400 text-xs font-medium mt-0.5", children: r.label })] }, r.label)) }), v.jsx(Pe.div, { initial: { opacity: 0, y: 12 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.5, delay: 0.82 }, children: v.jsx(lt, { to: "/services", children: v.jsxs(Pe.button, { whileHover: { scale: 1.02, x: 4 }, whileTap: { scale: 0.97 }, className: "group flex items-center gap-3 text-forest-600 font-bold text-sm hover:text-forest-700 transition-colors", children: ["Explore Our 7 Programs", v.jsx("div", { className: "w-8 h-8 rounded-full bg-forest-100 group-hover:bg-forest-200 flex items-center justify-center transition-all duration-300 group-hover:translate-x-1", children: v.jsx(DP, { className: "w-4 h-4" }) })] }) }) })] }) })] }) }) });
   };
   var F3 = { Soup: j2, GraduationCap: k2, Heart: zP, Stethoscope: N2, ShieldAlert: S2, Users: Re2 };
   var X = ({ service: a2, index: n = 0 }) => {
@@ -10701,14 +10603,14 @@ Error generating stack: ` + s.message + `
   };
   var Y3 = () => {
     const a2 = w.useRef(null), n = w2(a2, { once: true, margin: "-80px" });
-    return v.jsx("section", { ref: a2, className: "py-12 sm:py-16 lg:py-24 bg-charcoal-50", "aria-labelledby": "services-heading", children: v.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [v.jsxs("div", { className: "flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-8 sm:mb-12 lg:mb-16", children: [v.jsxs(Pe.div, { initial: { opacity: 0, y: 24 }, animate: n ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.7 }, className: "max-w-xl", children: [v.jsx("div", { className: "label-tag mb-4", children: "What We Do" }), v.jsxs("h2", { id: "services-heading", className: "font-display font-bold text-4xl sm:text-5xl text-charcoal-900 leading-tight", children: ["Where your support can", " ", v.jsx("span", { className: "text-gradient-green", children: "make a difference." })] })] }), v.jsx(Pe.div, { initial: { opacity: 0, y: 16 }, animate: n ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.6, delay: 0.2 }, children: v.jsx(lt, { to: "/services", children: v.jsxs(Pe.button, { whileHover: { scale: 1.02 }, whileTap: { scale: 0.97 }, className: "flex items-center gap-2 px-6 py-3 border-2 border-forest-600 text-forest-600 hover:bg-forest-600 hover:text-white font-semibold rounded-full transition-all duration-300 text-sm", children: ["View All Services", v.jsx(DP, { className: "w-4 h-4" })] }) }) })] }), v.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6", children: M3.map((s, l) => v.jsx(X, { service: s, index: l }, s.id)) })] }) });
+    return v.jsx("section", { ref: a2, className: "py-10 sm:py-14 bg-charcoal-50", "aria-labelledby": "services-heading", children: v.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [v.jsxs("div", { className: "flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-6 sm:mb-8", children: [v.jsxs(Pe.div, { initial: { opacity: 0, y: 24 }, animate: n ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.7 }, className: "max-w-xl", children: [v.jsx("div", { className: "label-tag mb-4", children: "What We Do" }), v.jsxs("h2", { id: "services-heading", className: "font-display font-bold text-4xl sm:text-5xl text-charcoal-900 leading-tight", children: ["Where your support can", " ", v.jsx("span", { className: "text-gradient-green", children: "make a difference." })] })] }), v.jsx(Pe.div, { initial: { opacity: 0, y: 16 }, animate: n ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.6, delay: 0.2 }, children: v.jsx(lt, { to: "/services", children: v.jsxs(Pe.button, { whileHover: { scale: 1.02 }, whileTap: { scale: 0.97 }, className: "flex items-center gap-2 px-6 py-3 border-2 border-forest-600 text-forest-600 hover:bg-forest-600 hover:text-white font-semibold rounded-full transition-all duration-300 text-sm", children: ["View All Services", v.jsx(DP, { className: "w-4 h-4" })] }) }) })] }), v.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6", children: M3.map((s, l) => v.jsx(X, { service: s, index: l }, s.id)) })] }) });
   };
   var q2 = { TrendingUp: p, Sparkles: O2, BarChart3: P2, Handshake: W3 };
   var G2 = ["Create meaningful social impact", "Support local communities", "Build authentic community connections", "Create measurable impact", "Strengthen social responsibility", "Support sustainable initiatives"];
   var D = [...C2, ...C2];
   var Q2 = () => {
     const a2 = w.useRef(null), n = w.useRef(null), s = w2(a2, { once: true, margin: "-80px" }), l = w2(n, { once: true, margin: "-80px" });
-    return v.jsxs(v.Fragment, { children: [v.jsxs("section", { ref: a2, className: "pt-12 pb-16 lg:pt-16 lg:pb-20 bg-white", "aria-labelledby": "sponsor-heading", children: [v.jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: v.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center", children: [v.jsxs("div", { children: [v.jsxs(Pe.div, { initial: { opacity: 0, y: 24 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }, children: [v.jsx("div", { className: "label-tag mb-5", children: "Sponsor With Us" }), v.jsxs("h2", { id: "sponsor-heading", className: "font-display font-bold text-4xl sm:text-5xl text-charcoal-900 leading-tight mb-5", children: ["Be part of", " ", v.jsx("span", { className: "text-gradient-green", children: "something bigger." })] }), v.jsx("p", { className: "text-charcoal-500 text-base leading-relaxed mb-7 max-w-lg", children: "Your organisation can help turn meaningful support into measurable community impact. Together we build something that outlasts any single donation." })] }), v.jsx(Pe.ul, { initial: { opacity: 0, y: 16 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.6, delay: 0.2 }, className: "grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8", "aria-label": "Sponsor benefits", children: G2.map((i) => v.jsxs("li", { className: "flex items-center gap-2.5 text-sm text-charcoal-600", children: [v.jsx("span", { className: "w-5 h-5 rounded-full bg-forest-100 flex items-center justify-center shrink-0", children: v.jsx("span", { className: "w-1.5 h-1.5 rounded-full bg-forest-600" }) }), i] }, i)) }), v.jsxs(Pe.div, { initial: { opacity: 0, y: 12 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.5, delay: 0.35 }, className: "flex flex-wrap gap-4", children: [v.jsx(lt, { to: "/contact", children: v.jsxs(Pe.button, { type: "button", whileHover: { scale: 1.02 }, whileTap: { scale: 0.97 }, className: "flex items-center gap-2 px-7 py-4 bg-forest-600 hover:bg-forest-700 text-white font-bold rounded-full shadow-md transition-all duration-300 text-sm", children: ["Become a Sponsor", v.jsx(DP, { className: "w-4 h-4" })] }) }), v.jsx(lt, { to: "/contact", children: v.jsx(Pe.button, { type: "button", whileHover: { scale: 1.02 }, whileTap: { scale: 0.97 }, className: "flex items-center gap-2 px-7 py-4 border-2 border-charcoal-200 text-charcoal-700 hover:border-forest-400 hover:text-forest-600 font-semibold rounded-full transition-all duration-300 text-sm", children: "Talk to Our Team" }) })] })] }), v.jsx(Pe.div, { initial: { opacity: 0, scale: 0.96 }, animate: s ? { opacity: 1, scale: 1 } : {}, transition: { duration: 0.8, delay: 0.3 }, className: "relative", children: v.jsxs("div", { className: "relative rounded-3xl bg-forest-950 p-8 lg:p-10 text-white overflow-hidden", children: [v.jsx("div", { className: "absolute top-0 right-0 w-64 h-64 bg-forest-500/15 rounded-full blur-3xl pointer-events-none" }), v.jsx("div", { className: "absolute bottom-0 left-0 w-48 h-48 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" }), v.jsxs("div", { className: "relative z-10", children: [v.jsx("p", { className: "text-forest-400 text-xs tracking-[0.2em] uppercase font-semibold mb-2", children: "Our Partners Trust" }), v.jsxs("h3", { className: "font-display font-bold text-3xl mb-6 leading-tight", children: ["Real organisations.", v.jsx("br", {}), "Real community impact."] }), v.jsx("div", { className: "space-y-4", children: [{ label: "Impact Transparency", value: 100 }, { label: "Community Reach", value: 87 }, { label: "Partner Satisfaction", value: 96 }].map((i, r) => v.jsxs("div", { children: [v.jsxs("div", { className: "flex justify-between text-sm mb-1.5", children: [v.jsx("span", { className: "text-white/70", children: i.label }), v.jsxs("span", { className: "text-white font-semibold", children: [i.value, "%"] })] }), v.jsx("div", { className: "h-1.5 bg-white/10 rounded-full overflow-hidden", children: v.jsx(Pe.div, { initial: { width: 0 }, animate: s ? { width: `${i.value}%` } : {}, transition: { duration: 1.2, delay: 0.6 + r * 0.15, ease: "easeOut" }, className: "h-full bg-gradient-to-r from-forest-400 to-amber-400 rounded-full" }) })] }, i.label)) }), v.jsxs("div", { className: "mt-8 pt-6 border-t border-white/10", children: [v.jsx("p", { className: "text-white/50 text-xs italic", children: '"Partnering with Hill Charity gave us real visibility into community impact."' }), v.jsx("p", { className: "text-white/30 text-xs mt-2", children: "\u2014 Partner Organisation, 2024" })] })] })] }) })] }) }), v.jsxs("div", { className: "mt-14 overflow-hidden", children: [v.jsx(Pe.div, { initial: { opacity: 0 }, animate: s ? { opacity: 1 } : {}, transition: { duration: 0.6, delay: 0.5 }, className: "text-center mb-6", children: v.jsx("p", { className: "text-xs font-semibold tracking-[0.2em] uppercase text-charcoal-400", children: "Trusted by organisations committed to social good" }) }), v.jsx("div", { className: "flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]", children: v.jsx("div", { className: "animate-marquee flex gap-8 items-center shrink-0", children: D.map((i, r) => v.jsxs("div", { className: "shrink-0 flex flex-col items-center justify-center px-8 py-5 bg-white border border-charcoal-100 rounded-2xl min-w-[180px] hover:border-forest-200 hover:shadow-card transition-all duration-300", children: [v.jsx("div", { className: "font-display font-bold text-charcoal-700 text-sm text-center", children: i.name }), v.jsx("div", { className: "text-charcoal-400 text-[10px] mt-1 text-center", children: i.tagline })] }, `${i.id}-${r}`)) }) })] })] }), v.jsx("section", { ref: n, className: "pt-10 pb-16 lg:pt-14 lg:pb-20 bg-cream-50", "aria-labelledby": "why-heading", children: v.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [v.jsxs(Pe.div, { initial: { opacity: 0, y: 24 }, animate: l ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.7 }, className: "text-center mb-10", children: [v.jsx("div", { className: "label-tag justify-center mb-4", children: "For Sponsors & Partners" }), v.jsxs("h2", { id: "why-heading", className: "font-display font-bold text-4xl sm:text-5xl text-charcoal-900 leading-tight", children: ["Why organisations choose", " ", v.jsx("span", { className: "text-gradient-green", children: "to partner with us." })] })] }), v.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6", children: A2.map((i, r) => {
+    return v.jsxs(v.Fragment, { children: [v.jsxs("section", { ref: a2, className: "py-10 sm:py-14 bg-white", "aria-labelledby": "sponsor-heading", children: [v.jsx("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: v.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center", children: [v.jsxs("div", { children: [v.jsxs(Pe.div, { initial: { opacity: 0, y: 24 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }, children: [v.jsx("div", { className: "label-tag mb-5", children: "Sponsor With Us" }), v.jsxs("h2", { id: "sponsor-heading", className: "font-display font-bold text-4xl sm:text-5xl text-charcoal-900 leading-tight mb-5", children: ["Be part of", " ", v.jsx("span", { className: "text-gradient-green", children: "something bigger." })] }), v.jsx("p", { className: "text-charcoal-500 text-base leading-relaxed mb-7 max-w-lg", children: "Your organisation can help turn meaningful support into measurable community impact. Together we build something that outlasts any single donation." })] }), v.jsx(Pe.ul, { initial: { opacity: 0, y: 16 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.6, delay: 0.2 }, className: "grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8", "aria-label": "Sponsor benefits", children: G2.map((i) => v.jsxs("li", { className: "flex items-center gap-2.5 text-sm text-charcoal-600", children: [v.jsx("span", { className: "w-5 h-5 rounded-full bg-forest-100 flex items-center justify-center shrink-0", children: v.jsx("span", { className: "w-1.5 h-1.5 rounded-full bg-forest-600" }) }), i] }, i)) }), v.jsxs(Pe.div, { initial: { opacity: 0, y: 12 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.5, delay: 0.35 }, className: "flex flex-wrap gap-4", children: [v.jsx(lt, { to: "/contact", children: v.jsxs(Pe.button, { type: "button", whileHover: { scale: 1.02 }, whileTap: { scale: 0.97 }, className: "flex items-center gap-2 px-7 py-4 bg-forest-600 hover:bg-forest-700 text-white font-bold rounded-full shadow-md transition-all duration-300 text-sm", children: ["Become a Sponsor", v.jsx(DP, { className: "w-4 h-4" })] }) }), v.jsx(lt, { to: "/contact", children: v.jsx(Pe.button, { type: "button", whileHover: { scale: 1.02 }, whileTap: { scale: 0.97 }, className: "flex items-center gap-2 px-7 py-4 border-2 border-charcoal-200 text-charcoal-700 hover:border-forest-400 hover:text-forest-600 font-semibold rounded-full transition-all duration-300 text-sm", children: "Talk to Our Team" }) })] })] }), v.jsx(Pe.div, { initial: { opacity: 0, scale: 0.96 }, animate: s ? { opacity: 1, scale: 1 } : {}, transition: { duration: 0.8, delay: 0.3 }, className: "relative", children: v.jsxs("div", { className: "relative rounded-3xl bg-forest-950 p-8 lg:p-10 text-white overflow-hidden", children: [v.jsx("div", { className: "absolute top-0 right-0 w-64 h-64 bg-forest-500/15 rounded-full blur-3xl pointer-events-none" }), v.jsx("div", { className: "absolute bottom-0 left-0 w-48 h-48 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" }), v.jsxs("div", { className: "relative z-10", children: [v.jsx("p", { className: "text-forest-400 text-xs tracking-[0.2em] uppercase font-semibold mb-2", children: "Our Partners Trust" }), v.jsxs("h3", { className: "font-display font-bold text-3xl mb-6 leading-tight", children: ["Real organisations.", v.jsx("br", {}), "Real community impact."] }), v.jsx("div", { className: "space-y-4", children: [{ label: "Impact Transparency", value: 100 }, { label: "Community Reach", value: 87 }, { label: "Partner Satisfaction", value: 96 }].map((i, r) => v.jsxs("div", { children: [v.jsxs("div", { className: "flex justify-between text-sm mb-1.5", children: [v.jsx("span", { className: "text-white/70", children: i.label }), v.jsxs("span", { className: "text-white font-semibold", children: [i.value, "%"] })] }), v.jsx("div", { className: "h-1.5 bg-white/10 rounded-full overflow-hidden", children: v.jsx(Pe.div, { initial: { width: 0 }, animate: s ? { width: `${i.value}%` } : {}, transition: { duration: 1.2, delay: 0.6 + r * 0.15, ease: "easeOut" }, className: "h-full bg-gradient-to-r from-forest-400 to-amber-400 rounded-full" }) })] }, i.label)) }), v.jsxs("div", { className: "mt-8 pt-6 border-t border-white/10", children: [v.jsx("p", { className: "text-white/50 text-xs italic", children: '"Partnering with Hill Charity gave us real visibility into community impact."' }), v.jsx("p", { className: "text-white/30 text-xs mt-2", children: "\u2014 Partner Organisation, 2024" })] })] })] }) })] }) }), v.jsxs("div", { className: "mt-8 overflow-hidden", children: [v.jsx(Pe.div, { initial: { opacity: 0 }, animate: s ? { opacity: 1 } : {}, transition: { duration: 0.6, delay: 0.5 }, className: "text-center mb-6", children: v.jsx("p", { className: "text-xs font-semibold tracking-[0.2em] uppercase text-charcoal-400", children: "Trusted by organisations committed to social good" }) }), v.jsx("div", { className: "flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]", children: v.jsx("div", { className: "animate-marquee flex gap-8 items-center shrink-0", children: D.map((i, r) => v.jsxs("div", { className: "shrink-0 flex flex-col items-center justify-center px-8 py-5 bg-white border border-charcoal-100 rounded-2xl min-w-[180px] hover:border-forest-200 hover:shadow-card transition-all duration-300", children: [v.jsx("div", { className: "font-display font-bold text-charcoal-700 text-sm text-center", children: i.name }), v.jsx("div", { className: "text-charcoal-400 text-[10px] mt-1 text-center", children: i.tagline })] }, `${i.id}-${r}`)) }) })] })] }), v.jsx("section", { ref: n, className: "py-10 sm:py-14 bg-cream-50", "aria-labelledby": "why-heading", children: v.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [v.jsxs(Pe.div, { initial: { opacity: 0, y: 24 }, animate: l ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.7 }, className: "text-center mb-10", children: [v.jsx("div", { className: "label-tag justify-center mb-4", children: "For Sponsors & Partners" }), v.jsxs("h2", { id: "why-heading", className: "font-display font-bold text-4xl sm:text-5xl text-charcoal-900 leading-tight", children: ["Why organisations choose", " ", v.jsx("span", { className: "text-gradient-green", children: "to partner with us." })] })] }), v.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6", children: A2.map((i, r) => {
       const b4 = q2[i.icon] ?? p;
       return v.jsxs(Pe.div, { initial: { opacity: 0, y: 28 }, animate: l ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.65, delay: 0.1 + r * 0.1 }, className: "group bg-white rounded-3xl p-7 border border-charcoal-100 shadow-card hover:shadow-card-hover hover:-translate-y-1.5 transition-all duration-500", children: [v.jsx("div", { className: "w-12 h-12 rounded-2xl bg-forest-50 group-hover:bg-forest-100 text-forest-600 flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110", children: v.jsx(b4, { className: "w-5 h-5" }) }), v.jsx("h3", { className: "font-display font-bold text-lg text-charcoal-900 mb-2", children: i.title }), v.jsx("p", { className: "text-charcoal-500 text-sm leading-relaxed", children: i.description })] }, i.title);
     }) })] }) })] });
@@ -10716,7 +10618,7 @@ Error generating stack: ` + s.message + `
   var J2 = ({ story: a2, index: n = 0 }) => v.jsxs(Pe.article, { initial: { opacity: 0, y: 32 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true, margin: "-60px" }, transition: { duration: 0.7, delay: n * 0.12, ease: [0.25, 0.46, 0.45, 0.94] }, className: "group bg-white transition-all duration-500 hover:-translate-y-2 cursor-default", "aria-label": `Story: ${a2.title}`, children: [v.jsxs("div", { className: "relative aspect-[4/3] min-h-[280px] sm:min-h-[300px]", children: [v.jsx(Pe.img, { src: a2.image, alt: a2.title, className: "w-full h-full object-cover object-top sm:object-center transition-transform duration-700 group-hover:scale-105", loading: "lazy" }), v.jsx("div", { className: "absolute top-4 left-4 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-sm text-forest-700 text-xs font-bold tracking-wide border border-white/50", children: a2.category }), v.jsx("div", { className: "absolute inset-0 bg-gradient-to-t from-charcoal-950/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" })] }), v.jsxs("div", { className: "p-7", children: [v.jsxs("div", { className: "flex items-center gap-1.5 text-charcoal-400 text-xs mb-3", children: [v.jsx(bP, { className: "w-3.5 h-3.5" }), a2.location] }), v.jsx("h3", { className: "font-display font-bold text-xl text-charcoal-900 mb-3 leading-tight group-hover:text-forest-800 transition-colors duration-300", children: a2.title }), v.jsx("p", { className: "text-charcoal-500 text-sm leading-relaxed mb-5 line-clamp-3", children: a2.excerpt }), v.jsxs("div", { className: "bg-forest-50 rounded-2xl px-4 py-3 mb-5 border border-forest-100", children: [v.jsx("div", { className: "text-forest-500 text-[10px] font-bold tracking-[0.15em] uppercase mb-1", children: "Impact" }), v.jsx("p", { className: "text-forest-800 text-sm font-medium leading-snug", children: a2.impact })] }), v.jsxs("div", { className: "flex items-center justify-between", children: [v.jsx("span", { className: "text-charcoal-400 text-xs font-medium", children: a2.name }), v.jsxs("div", { className: "flex items-center gap-1.5 text-forest-600 font-semibold text-sm group-hover:gap-2 transition-all duration-300", children: ["Read Story", v.jsx("div", { className: "w-7 h-7 rounded-full bg-forest-50 group-hover:bg-forest-100 flex items-center justify-center transition-all duration-300 group-hover:rotate-12", children: v.jsx(E4, { className: "w-3.5 h-3.5" }) })] })] })] })] });
   var K2 = () => {
     const a2 = w.useRef(null), n = w2(a2, { once: true, margin: "-80px" });
-    return v.jsx("section", { ref: a2, className: "py-24 lg:py-32 bg-white", "aria-labelledby": "stories-heading", children: v.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [v.jsxs("div", { className: "flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16", children: [v.jsxs(Pe.div, { initial: { opacity: 0, y: 24 }, animate: n ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }, transition: { duration: 0.7 }, children: [v.jsx("div", { className: "label-tag mb-4", children: "Stories" }), v.jsxs("h2", { id: "stories-heading", className: `
+    return v.jsx("section", { ref: a2, className: "py-10 sm:py-14 bg-white", "aria-labelledby": "stories-heading", children: v.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [v.jsxs("div", { className: "flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-8", children: [v.jsxs(Pe.div, { initial: { opacity: 0, y: 24 }, animate: n ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }, transition: { duration: 0.7 }, children: [v.jsx("div", { className: "label-tag mb-4", children: "Stories" }), v.jsxs("h2", { id: "stories-heading", className: `
                 font-display
                 font-bold
                 text-4xl
@@ -10818,16 +10720,16 @@ Error generating stack: ` + s.message + `
       })
     ]
   });
-  var ne3 = () => v.jsxs("main", { className: "m-0 p-0", children: [v.jsx(_2, {}), v.jsx(U2, {}), v.jsx($2, {}), v.jsx(B3, {}), v.jsx(Y3, {}), v.jsx(E3, {}), v.jsx(Q2, {}), v.jsx(K2, {}), v.jsx(HomeGallery, {}), v.jsx(Ne2, {})] });
+  var ne3 = () => v.jsxs("main", { className: "m-0 p-0", children: [v.jsx(_2, {}), v.jsx(U2, {}), v.jsx($2, {}), v.jsx(Y3, {}), v.jsx(E3, {}), v.jsx(Q2, {}), v.jsx(K2, {}), v.jsx(HomeGallery, {}), v.jsx(Ne2, {})] });
 
   // assets/ScrollReveal-CC7-yOZu.js
-  var g3 = ({ children: s, className: i = "", delay: n = 0, duration: r = 0.7, direction: a2 = "up", distance: o = 32, once: p2 = true, scale: x3 = false }) => {
+  var g2 = ({ children: s, className: i = "", delay: n = 0, duration: r = 0.7, direction: a2 = "up", distance: o = 32, once: p2 = true, scale: x3 = false }) => {
     const t = w.useRef(null), c = w2(t, { once: p2, margin: "-80px" }), e = { opacity: 0, ...{ up: { y: o, x: 0 }, down: { y: -o, x: 0 }, left: { x: o, y: 0 }, right: { x: -o, y: 0 }, none: { x: 0, y: 0 } }[a2], scale: x3 ? 0.95 : 1 }, l = c ? { opacity: 1, x: 0, y: 0, scale: 1 } : e;
     return v.jsx(Pe.div, { ref: t, initial: e, animate: l, transition: { duration: r, delay: n, ease: [0.25, 0.46, 0.45, 0.94] }, className: i, children: s });
   };
 
   // assets/About-DoJ-XgS1.js
-  var g4 = [
+  var g3 = [
     { title: "Unconditional Love & Care", description: "Providing shelter, wholesome food, quality education, and medical care with maternal love and affection.", icon: a },
     { title: "Dignity for Every Soul", description: "Rescuing abandoned girl children and elderly mothers so they live with honor, safety, and respect.", icon: zP },
     { title: "100% Transparent Trust", description: "Every donation directly reaches the children, seniors, and hungry people with complete accountability.", icon: Re2 }
@@ -10888,14 +10790,14 @@ Error generating stack: ` + s.message + `
         ] })
       ] }),
       v.jsx("section", { className: "py-20 lg:py-28 bg-white", "aria-labelledby": "values-heading", children: v.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
-        v.jsx(g3, { children: v.jsxs("div", { className: "text-center", children: [
+        v.jsx(g2, { children: v.jsxs("div", { className: "text-center", children: [
           v.jsxs("div", { className: "label-tag justify-center mb-4", children: [v.jsx("span", { className: "w-5 h-px bg-forest-600" }), "Our Guiding Principles"] }),
           v.jsxs("h2", { id: "values-heading", className: "font-display font-bold text-4xl sm:text-5xl text-charcoal-900 leading-tight", children: ["Why Hill Charity", " ", v.jsx("span", { className: "text-gradient-green", children: "was created." })] }),
           v.jsx("p", { className: "mt-4 text-charcoal-500", children: "Founded with a pure commitment to serve the most vulnerable in our community." })
         ] }) }),
-        v.jsx("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-6 mt-14", children: g4.map((t, a2) => {
+        v.jsx("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-6 mt-14", children: g3.map((t, a2) => {
           const l = t.icon;
-          return v.jsx(g3, { delay: a2 * 0.1, children: v.jsxs("div", { className: "group relative h-full bg-white rounded-3xl border border-charcoal-100 p-7 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-500 overflow-hidden", children: [
+          return v.jsx(g2, { delay: a2 * 0.1, children: v.jsxs("div", { className: "group relative h-full bg-white rounded-3xl border border-charcoal-100 p-7 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-500 overflow-hidden", children: [
             v.jsx("div", { className: "w-12 h-12 rounded-2xl bg-forest-50 text-forest-600 flex items-center justify-center mb-5 group-hover:bg-forest-100 transition-colors", children: v.jsx(l, { className: "w-5 h-5" }) }),
             v.jsx("h3", { className: "font-display font-bold text-xl text-charcoal-900 mb-3", children: t.title }),
             v.jsx("p", { className: "text-charcoal-500 text-sm leading-relaxed", children: t.description })
@@ -10903,7 +10805,7 @@ Error generating stack: ` + s.message + `
         }) })
       ] }) }),
       v.jsx("section", { className: "py-20 lg:py-28 bg-cream-50", children: v.jsxs("div", { className: "max-w-6xl mx-auto px-4 sm:px-6 lg:px-8", children: [
-        v.jsx(g3, { children: v.jsxs("div", { className: "text-center mb-14", children: [
+        v.jsx(g2, { children: v.jsxs("div", { className: "text-center mb-14", children: [
           v.jsxs("div", { className: "label-tag justify-center mb-4", children: [v.jsx("span", { className: "w-5 h-px bg-forest-600" }), "Milestones"] }),
           v.jsxs("h2", { className: "font-display font-bold text-4xl sm:text-5xl text-charcoal-900", children: ["Our Journey of", " ", v.jsx("span", { className: "text-gradient-green", children: "Service & Compassion." })] })
         ] }) }),
@@ -10911,7 +10813,7 @@ Error generating stack: ` + s.message + `
           v.jsx("div", { className: "hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-forest-200" }),
           v.jsx("div", { className: "space-y-8 md:space-y-0", children: u.map((t, a2) => {
             const l = a2 % 2 === 0;
-            return v.jsx(g3, { delay: a2 * 0.1, children: v.jsxs("div", { className: "relative md:grid md:grid-cols-2 md:gap-12 mb-10 last:mb-0", children: [
+            return v.jsx(g2, { delay: a2 * 0.1, children: v.jsxs("div", { className: "relative md:grid md:grid-cols-2 md:gap-12 mb-10 last:mb-0", children: [
               v.jsx("div", { className: l ? "md:text-right" : "md:col-start-2", children: v.jsxs("div", { className: "bg-white rounded-3xl border border-charcoal-100 p-7 shadow-card", children: [
                 v.jsx("div", { className: "text-forest-600 font-display font-bold text-2xl mb-2", children: t.year }),
                 v.jsx("h3", { className: "font-display font-bold text-xl text-charcoal-900 mb-2", children: t.title }),
@@ -11055,7 +10957,7 @@ Error generating stack: ` + s.message + `
             bg-amber-500/8
             rounded-full
             blur-3xl
-          ` }), v.jsxs("div", { className: "relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [v.jsx(g3, { children: v.jsxs("div", { className: `
+          ` }), v.jsxs("div", { className: "relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [v.jsx(g2, { children: v.jsxs("div", { className: `
                 inline-flex
                 items-center
                 gap-2
@@ -11065,7 +10967,7 @@ Error generating stack: ` + s.message + `
                 tracking-[0.25em]
                 uppercase
                 mb-6
-              `, children: [v.jsx("div", { className: "w-5 h-px bg-amber-400" }), "Our Programs"] }) }), v.jsx(g3, { delay: 0.1, children: v.jsxs("h1", { id: "services-hero-heading", className: `
+              `, children: [v.jsx("div", { className: "w-5 h-px bg-amber-400" }), "Our Programs"] }) }), v.jsx(g2, { delay: 0.1, children: v.jsxs("h1", { id: "services-hero-heading", className: `
                 font-display
                 font-bold
                 text-5xl
@@ -11075,12 +10977,12 @@ Error generating stack: ` + s.message + `
                 leading-tight
                 max-w-3xl
                 mb-6
-              `, children: ["Seven core programs for", " ", v.jsx("span", { className: "text-amber-400", children: "lasting change." })] }) }), v.jsx(g3, { delay: 0.2, children: v.jsx("p", { className: `
+              `, children: ["Seven core programs for", " ", v.jsx("span", { className: "text-amber-400", children: "lasting change." })] }) }), v.jsx(g2, { delay: 0.2, children: v.jsx("p", { className: `
                 text-white/70
                 text-xl
                 leading-relaxed
                 max-w-2xl
-              `, children: "Hill Organisation for People's Education runs 7 dedicated initiatives across Tuticorin and Tamil Nadu \u2014 providing food, shelter, education, and medical care with love and affection." }) }), v.jsx(g3, { delay: 0.3, children: v.jsx("div", { className: "flex flex-wrap gap-3 mt-10", children: M3.map((e) => {
+              `, children: "Hill Organisation for People's Education runs 7 dedicated initiatives across Tuticorin and Tamil Nadu \u2014 providing food, shelter, education, and medical care with love and affection." }) }), v.jsx(g2, { delay: 0.3, children: v.jsx("div", { className: "flex flex-wrap gap-3 mt-10", children: M3.map((e) => {
     const s = x2[e.icon] ?? zP;
     return v.jsxs("a", { href: `#${e.id}`, className: `
                       flex
@@ -11118,7 +11020,7 @@ Error generating stack: ` + s.message + `
         className: "pt-16 pb-12 lg:pt-20 lg:pb-16",
         "aria-labelledby": "contact-heading",
         children: v.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [
-          v.jsx(g3, { children: v.jsxs("div", { className: "text-center mb-12", children: [
+          v.jsx(g2, { children: v.jsxs("div", { className: "text-center mb-12", children: [
             v.jsxs("div", { className: "label-tag justify-center mb-4", children: [v.jsx("span", { className: "w-5 h-px bg-forest-600" }), "Hill Charity \u2014 Tuticorin"] }),
             v.jsxs("h1", { id: "contact-heading", className: "font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-charcoal-900 leading-tight", children: ["Get in Touch with", " ", v.jsx("span", { className: "text-gradient-green", children: "Hill Charity." })] }),
             v.jsx("p", { className: "mt-4 text-charcoal-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto", children: "Hill Organisation for People's Education is based in Tuticorin, Tamil Nadu. Reach out to us for donations, volunteering, or sponsorships." })
@@ -11237,7 +11139,7 @@ Error generating stack: ` + s.message + `
         className: "py-16 bg-white border-t border-charcoal-100",
         children: v.jsx("div", {
           className: "max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center",
-          children: v.jsxs(g3, { children: [
+          children: v.jsxs(g2, { children: [
             v.jsxs("div", { className: "label-tag justify-center mb-4", children: [v.jsx("span", { className: "w-5 h-px bg-forest-600" }), "Hill Charity Trust"] }),
             v.jsxs("h2", { className: "font-display font-bold text-3xl sm:text-4xl text-charcoal-900", children: ["Give a little &", " ", v.jsx("span", { className: "text-gradient-green", children: "change a lot." })] }),
             v.jsx("p", { className: "mt-4 text-charcoal-500 max-w-xl mx-auto leading-relaxed", children: "Visit our ashram in Tuticorin, meet the children and mothers, and see the impact of your compassion first-hand." })
