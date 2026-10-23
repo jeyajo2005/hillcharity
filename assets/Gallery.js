@@ -283,51 +283,7 @@ const Gallery = () => {
               ]
             })
           ]
-        }),
-
-      e.jsx("section", {
-        style: {
-          background: "linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%)",
-          backgroundColor: "#0284c7"
-        },
-        className: "text-white py-8 sm:py-10 border-t border-blue-400/20 mt-8",
-        children: e.jsx("div", {
-          className: "max-w-5xl mx-auto px-4 text-center",
-          children: e.jsxs("div", {
-            className: "flex flex-col sm:flex-row items-center justify-between gap-4",
-            children: [
-              e.jsxs("div", {
-                className: "text-center sm:text-left",
-                children: [
-                  e.jsx("h3", {
-                    className: "font-display font-bold text-lg sm:text-xl text-white",
-                    children: "Want to bring smiles to these children and elderly mothers?"
-                  }),
-                  e.jsx("p", {
-                    className: "text-blue-200 text-xs sm:text-sm mt-0.5",
-                    children: "Your support provides daily nutrition, healthcare, and education in Tuticorin."
-                  })
-                ]
-              }),
-              e.jsxs("div", {
-                className: "flex items-center gap-3 shrink-0",
-                children: [
-                  e.jsx(Link, {
-                    to: "/contact",
-                    style:{backgroundColor:"#c29517",color:"#000000"},className:"btn-gold-donate px-6 py-2.5 rounded-full font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-md hover:scale-105 transition-all",
-                    children: "Donate Now"
-                  }),
-                  e.jsx(Link, {
-                    to: "/contact",
-                    className: "px-5 py-2.5 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wider bg-white/10 hover:bg-white/20 border border-white/20 text-white transition-all",
-                    children: "Contact Ashram"
-                  })
-                ]
-              })
-            ]
-          })
         })
-      })
     ]
   });
 };

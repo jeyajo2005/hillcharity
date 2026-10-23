@@ -385,4 +385,47 @@ body {
   }
 }
 
+/* ============================================================
+   CIRCULAR WHATSAPP FLOATING BUTTON (CLEAN ICON ONLY)
+   ============================================================ */
+#floating-whatsapp {
+  width: 58px !important;
+  height: 58px !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.55) !important;
+  text-decoration: none !important;
+  background-color: #25D366 !important;
+  border: 2.5px solid #ffffff !important;
+  overflow: hidden !important;
+  z-index: 9999 !important;
+}
+
+#floating-whatsapp:hover {
+  background-color: #20bd5a !important;
+  box-shadow: 0 12px 35px rgba(37, 211, 102, 0.75) !important;
+  transform: scale(1.1) !important;
+}
+
+#floating-whatsapp img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+#floating-whatsapp span {
+  display: none !important;
+}
+
+/* Footer layout polish */
+.footer-ambient {
+  padding-top: 2.5rem !important;
+  padding-bottom: 2rem !important;
+}
+
+
 
