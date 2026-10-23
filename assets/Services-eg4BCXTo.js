@@ -3,31 +3,17 @@ import{c as h,j as n,H as r,r as p,m as l,L as g,A as b}from"./vendor.js";import
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
- */const k=h("Check",[["path",{d:"M20 6 9 17l-5-5",key:"1gmf2c"}]]),x={Soup:w,GraduationCap:j,Heart:r,Stethoscope:f,ShieldAlert:u,Users:v},I=({service:e,index:s})=>{const i=p.useRef(null),o=S(i,{once:!0,margin:"-80px"}),a=s%2===0,m=x[e.icon]??r;return n.jsx("section",{ref:i,id:e.id,className:`py-20 lg:py-28 ${a?"bg-white":"bg-cream-50"}`,"aria-labelledby":`service-${e.id}-heading`,children:n.jsx("div",{className:"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",children:n.jsxs("div",{className:`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center ${a?"":"lg:flex-row-reverse"}`,children:[n.jsxs(l.div,{initial:{opacity:0,x:a?-24:24},animate:o?{opacity:1,x:0}:{},transition:{duration:.8,ease:[.25,.46,.45,.94]},className:`relative ${a?"":"lg:order-2"}`,children:[n.jsx("div",{className:`
+ */const k=h("Check",[["path",{d:"M20 6 9 17l-5-5",key:"1gmf2c"}]]),x={Soup:w,GraduationCap:j,Heart:r,Stethoscope:f,ShieldAlert:u,Users:v},I=({service:e,index:s})=>{const i=p.useRef(null),o=S(i,{once:!0,margin:"-80px"}),a=s%2===0,m=x[e.icon]??r;return n.jsx("section",{ref:i,id:e.id,className:`service-item-section py-12 lg:py-16 ${a?"bg-white":"bg-cream-50"}`,"aria-labelledby":`service-${e.id}-heading`,children:n.jsx("div",{className:"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",children:n.jsxs("div",{className:`service-item-grid grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 lg:items-stretch ${a?"":"lg:flex-row-reverse"}`,children:[n.jsxs(l.div,{initial:{opacity:0,x:a?-24:24},animate:o?{opacity:1,x:0}:{},transition:{duration:.8,ease:[.25,.46,.45,.94]},className:`service-photo-col relative flex flex-col h-full min-h-[360px] lg:min-h-full ${a?"":"lg:order-2"}`,children:[n.jsx("div",{className:`
                 absolute
                 -inset-5
                 rounded-[3rem]
                 bg-forest-100/40
                 blur-3xl
                 pointer-events-none
-              `}),n.jsxs("div",{className:`
-                relative
-                aspect-[4/3]
-                min-h-[300px]
-                sm:min-h-[360px]
-                lg:min-h-[420px]
-                overflow-hidden
-                rounded-[2rem]
-                bg-white
-                ring-1
-                ring-forest-100/70
-                shadow-[0_0_35px_rgba(34,197,94,0.12)]
-                transition-all
-                duration-500
-                hover:shadow-[0_0_45px_rgba(34,197,94,0.18)]
-              `,children:[n.jsx("img",{src:e.image,alt:e.title,className:`
+              `}),n.jsxs("div",{className:`service-photo-wrap relative flex-1 w-full h-full min-h-[360px] lg:min-h-full overflow-hidden rounded-[2rem] bg-white ring-1 ring-forest-100/70 shadow-[0_0_35px_rgba(34,197,94,0.12)] transition-all duration-500 hover:shadow-[0_0_45px_rgba(34,197,94,0.18)] flex`,children:[n.jsx("img",{src:e.image,alt:e.title,className:`
                   w-full
                   h-full
+                  flex-1
                   object-cover
                   transition-transform
                   duration-700
@@ -46,21 +32,21 @@ import{c as h,j as n,H as r,r as p,m as l,L as g,A as b}from"./vendor.js";import
                   items-center
                   justify-center
                   text-forest-600
-                `,children:n.jsx(m,{className:"w-6 h-6"})})]})]}),n.jsxs(l.div,{initial:{opacity:0,x:a?24:-24},animate:o?{opacity:1,x:0}:{},transition:{duration:.8,delay:.1,ease:[.25,.46,.45,.94]},className:a?"":"lg:order-1",children:[n.jsx("div",{className:"label-tag mb-5",children:"Service Program"}),n.jsx("h2",{id:`service-${e.id}-heading`,className:`
+                `,children:n.jsx(m,{className:"w-6 h-6"})})]})]}),n.jsxs(l.div,{initial:{opacity:0,x:a?24:-24},animate:o?{opacity:1,x:0}:{},transition:{duration:.8,delay:.1,ease:[.25,.46,.45,.94]},className:`service-text-col flex flex-col justify-between h-full pt-0 ${a?"":"lg:order-1"}`,children:[n.jsxs("div",{children:[n.jsx("div",{className:"label-tag mb-3",children:"Service Program"}),n.jsx("h2",{id:`service-${e.id}-heading`,className:`
                 font-display
                 font-bold
                 text-3xl
                 sm:text-4xl
                 text-charcoal-900
                 leading-tight
-                mb-4
-              `,children:e.title}),n.jsx("p",{className:"text-charcoal-500 leading-relaxed mb-8",children:e.description}),n.jsxs("div",{className:"mb-6",children:[n.jsx("h3",{className:`
+                mb-3
+              `,children:e.title}),n.jsx("p",{className:"text-charcoal-500 leading-relaxed mb-6 text-sm sm:text-base",children:e.description}),n.jsxs("div",{className:"mb-6",children:[n.jsx("h3",{className:`
                   text-sm
                   font-bold
                   text-charcoal-700
                   tracking-wide
                   uppercase
-                  mb-4
+                  mb-3
                 `,children:"What We Provide"}),n.jsx("ul",{className:"space-y-2.5","aria-label":`What ${e.title} provides`,children:e.provides.map(d=>n.jsxs("li",{className:"flex items-start gap-2.5",children:[n.jsx("div",{className:`
                         w-5
                         h-5
@@ -71,26 +57,26 @@ import{c as h,j as n,H as r,r as p,m as l,L as g,A as b}from"./vendor.js";import
                         justify-center
                         shrink-0
                         mt-0.5
-                      `,children:n.jsx(k,{className:"w-3 h-3 text-forest-600"})}),n.jsx("span",{className:"text-charcoal-600 text-sm",children:d})]},d))})]}),n.jsxs("div",{className:`
+                      `,children:n.jsx(k,{className:"w-3 h-3 text-forest-600"})}),n.jsx("span",{className:"text-charcoal-600 text-sm",children:d})]},d))})]}),]}),n.jsxs("div",{className:"pt-2",children:[n.jsxs("div",{className:`
                 bg-amber-50
                 border
                 border-amber-100
                 rounded-2xl
-                p-5
-                mb-8
+                p-4 sm:p-5
+                mb-6
               `,children:[n.jsx("h3",{className:`
                   text-sm
                   font-bold
                   text-amber-800
                   tracking-wide
                   uppercase
-                  mb-2
+                  mb-1.5
                 `,children:"How You Can Help"}),n.jsx("p",{className:"text-amber-700 text-sm leading-relaxed",children:e.howToHelp})]}),n.jsx(g,{to:"/contact",children:n.jsxs(l.button,{whileHover:{scale:1.02},whileTap:{scale:.97},className:`
-                  flex
+                  inline-flex
                   items-center
                   gap-2
                   px-7
-                  py-4
+                  py-3.5
                   bg-forest-600
                   hover:bg-forest-700
                   text-white
@@ -99,14 +85,8 @@ import{c as h,j as n,H as r,r as p,m as l,L as g,A as b}from"./vendor.js";import
                   transition-all
                   duration-300
                   text-sm
-                `,children:["Support This Program",n.jsx(b,{className:"w-4 h-4"})]})})]})]})})})},A=()=>n.jsxs("main",{children:[n.jsxs("section",{className:`
-          relative
-          pt-24
-          pb-20
-          lg:pt-36
-          lg:pb-28
-          overflow-hidden",style:{background:"linear-gradient(180deg, #0369a1 0%, #0284c7 50%, #0ea5e9 100%)",backgroundColor:"#0284c7"},"data-sky":"true
-        `,"aria-labelledby":"services-hero-heading",children:[n.jsx("div",{className:"absolute inset-0 opacity-5 pointer-events-none",children:n.jsx("div",{className:"w-full h-full",style:{backgroundImage:"radial-gradient(circle at 1px 1px, white 1px, transparent 0)",backgroundSize:"40px 40px"}})}),n.jsx("div",{className:`
+                  shadow-md
+                `,children:["Support This Program",n.jsx(b,{className:"w-4 h-4"})]})})]})]})]})})})},A=()=>n.jsxs("main",{children:[n.jsxs("section",{className:"relative pt-24 pb-16 lg:pt-32 lg:pb-20 overflow-hidden bg-[#0284c7]",style:{background:"linear-gradient(180deg, #0369a1 0%, #0284c7 50%, #0ea5e9 100%)",backgroundColor:"#0284c7"},"data-sky":"true","aria-labelledby":"services-hero-heading",children:[n.jsx("div",{className:"absolute inset-0 opacity-5 pointer-events-none",children:n.jsx("div",{className:"w-full h-full",style:{backgroundImage:"radial-gradient(circle at 1px 1px, white 1px, transparent 0)",backgroundSize:"40px 40px"}})}),n.jsx("div",{className:`
             absolute
             top-0
             right-0

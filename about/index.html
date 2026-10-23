@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../assets/index-DQ1mV4_X.css">
-    <script defer src="../assets/bundle.js?v=1792754400"></script>
+    <script defer src="../assets/bundle.js?v=1792756800"></script>
     <style>
       /* ============================================================
          CRITICAL FIX: ULTRA-CRISP HIGH-CONTRAST TYPOGRAPHY & LETTER COLORS
@@ -151,7 +151,7 @@
       }
 
 
-      /* Sky Blue Ambient Footer */
+      /* Sky Blue Ambient Footer with Soft White Text (#F1F5F9) */
       .footer-ambient {
         background: linear-gradient(135deg, #0369a1 0%, #0284c7 45%, #0ea5e9 100%) !important;
         border-top: 1px solid rgba(56, 189, 248, 0.4) !important;
@@ -167,18 +167,51 @@
         background: linear-gradient(90deg, transparent 0%, #38bdf8 50%, transparent 100%) !important;
         box-shadow: 0 0 15px rgba(56, 189, 248, 0.7) !important;
       }
+      .footer-ambient,
+      .footer-ambient p,
+      .footer-ambient span,
+      .footer-ambient a,
+      .footer-ambient li,
+      .footer-ambient div,
+      .footer-ambient .text-charcoal-300,
+      .footer-ambient .text-charcoal-400 {
+        color: #f1f5f9 !important;
+      }
+      .footer-ambient h2,
+      .footer-ambient h3,
+      .footer-ambient h4,
+      .footer-ambient .font-display,
+      .footer-ambient strong,
+      .footer-ambient b {
+        color: #ffffff !important;
+      }
+      .footer-ambient a {
+        color: #f1f5f9 !important;
+      }
+      .footer-ambient a:hover {
+        color: #ffffff !important;
+        text-decoration: underline !important;
+      }
       .footer-pill {
         background: rgba(255, 255, 255, 0.12) !important;
-        border: 1px solid rgba(255, 255, 255, 0.2) !important;
-        color: #f0f9ff !important;
+        border: 1px solid rgba(255, 255, 255, 0.25) !important;
+        color: #f8fafc !important;
       }
       .footer-pill:hover {
-        background: rgba(255, 255, 255, 0.25) !important;
+        background: rgba(255, 255, 255, 0.22) !important;
         color: #ffffff !important;
+        border-color: rgba(255, 255, 255, 0.45) !important;
+      }
+      .footer-ambient .text-forest-400 {
+        color: #e0f2fe !important;
+      }
+      .footer-social-btn {
+        color: #ffffff !important;
+        border-color: rgba(255, 255, 255, 0.3) !important;
       }
       .footer-social-btn:hover {
         background: #38bdf8 !important;
-        color: #0369a1 !important;
+        color: #ffffff !important;
       }
 
       
@@ -211,24 +244,51 @@
         font-weight: 800 !important;
       }
 
-      /* WHO WE ARE (LEFT) & PHOTO BOX (RIGHT) */
+      /* ============================================================
+         TIGHTEN WEBSITE GAPS (COMPACT & BALANCED SECTION PADDING)
+         ============================================================ */
+      .py-20 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+      }
+      @media (min-width: 1024px) {
+        .lg\:py-28 {
+          padding-top: 4rem !important;
+          padding-bottom: 4rem !important;
+        }
+      }
+      .mb-14 {
+        margin-bottom: 2rem !important;
+      }
+      .mb-20 {
+        margin-bottom: 2.5rem !important;
+      }
+
+      /* ============================================================
+         WHO WE ARE: PHOTO STRAIGHT TA TEXT START AGANUM, PHOTO MUDIUM POTHUM TEXT FINISHED AGANUM
+         ============================================================ */
       .who-we-are-section {
-        padding-top: 4.5rem;
-        padding-bottom: 4rem;
-        background-color: #ffffff;
-        border-bottom: 1px solid #f1f5f9;
+        padding-top: 3.5rem !important;
+        padding-bottom: 3rem !important;
+        background-color: #ffffff !important;
+        border-bottom: 1px solid #f1f5f9 !important;
       }
       .who-we-are-wrap {
         display: flex !important;
         flex-direction: column !important;
-        gap: 2.5rem !important;
+        gap: 2rem !important;
         align-items: center !important;
         width: 100% !important;
+        max-width: 80rem !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
       }
       @media (min-width: 1024px) {
         .who-we-are-wrap {
           flex-direction: row !important;
-          align-items: center !important;
+          align-items: stretch !important; /* BOTH COLUMNS EQUAL HEIGHT */
           justify-content: space-between !important;
           gap: 3.5rem !important;
         }
@@ -236,11 +296,47 @@
           flex: 1 1 56% !important;
           max-width: 58% !important;
           text-align: left !important;
+          display: flex !important;
+          flex-direction: column !important;
+          justify-content: space-between !important; /* Top starts at 0, bottom ends with photo */
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+        .who-we-are-left-top {
+          margin-top: 0 !important;
+          padding-top: 0 !important;
+        }
+        .who-we-are-left-top > *:first-child {
+          margin-top: 0 !important;
         }
         .who-we-are-col-right {
           flex: 0 0 42% !important;
           max-width: 440px !important;
           width: 100% !important;
+          display: flex !important;
+          flex-direction: column !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+        .founder-photo-box {
+          height: 100% !important; /* Matches left column height exactly */
+          display: flex !important;
+          flex-direction: column !important;
+          justify-content: space-between !important;
+          box-sizing: border-box !important;
+          margin: 0 !important;
+        }
+        .founder-photo-img-wrap {
+          flex: 1 1 auto !important;
+          display: flex !important;
+          min-height: 360px !important;
+          height: 100% !important;
+        }
+        .founder-photo-img {
+          width: 100% !important;
+          height: 100% !important;
+          object-fit: cover !important;
+          object-position: top !important;
         }
       }
       .founder-photo-box {
@@ -264,22 +360,6 @@
         background-color: #0f172a !important;
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
       }
-      .founder-photo-img {
-        width: 100% !important;
-        height: 420px !important;
-        object-fit: cover !important;
-        object-position: top !important;
-        display: block !important;
-        transition: transform 0.5s ease !important;
-      }
-      @media (min-width: 640px) {
-        .founder-photo-img {
-          height: 480px !important;
-        }
-      }
-      .founder-photo-box:hover .founder-photo-img {
-        transform: scale(1.03) !important;
-      }
       .founder-photo-caption {
         position: absolute !important;
         bottom: 0 !important;
@@ -289,6 +369,57 @@
         padding: 1.25rem 1rem 1rem !important;
         text-align: center !important;
         color: #ffffff !important;
+      }
+      .btn-read-story {
+        background-color: #0284c7 !important;
+        color: #ffffff !important;
+      }
+      .btn-read-story:hover {
+        background-color: #0369a1 !important;
+        color: #ffffff !important;
+      }
+
+      /* ============================================================
+         SERVICES PROGRAM ROWS: EXACT EQUAL HEIGHT PHOTO & TEXT
+         Photo starts straight at top of text, and finishes flush at bottom of text
+         ============================================================ */
+      @media (min-width: 1024px) {
+        .service-item-grid {
+          display: grid !important;
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+          align-items: stretch !important;
+        }
+        .service-photo-col {
+          display: flex !important;
+          flex-direction: column !important;
+          height: 100% !important;
+          min-height: 100% !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+        .service-photo-wrap {
+          flex: 1 1 auto !important;
+          height: 100% !important;
+          min-height: 100% !important;
+          display: flex !important;
+        }
+        .service-photo-wrap img {
+          width: 100% !important;
+          height: 100% !important;
+          object-fit: cover !important;
+        }
+        .service-text-col {
+          display: flex !important;
+          flex-direction: column !important;
+          justify-content: space-between !important;
+          height: 100% !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+        .service-text-col > *:first-child {
+          margin-top: 0 !important;
+          padding-top: 0 !important;
+        }
       }
 </style>
   </head>
