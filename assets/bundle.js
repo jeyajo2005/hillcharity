@@ -323,8 +323,8 @@
       var D2 = N5.length;
       N5.push(L2);
       e: for (; 0 < D2; ) {
-        var X2 = D2 - 1 >>> 1, ie2 = N5[X2];
-        if (0 < i(ie2, L2)) N5[X2] = L2, N5[D2] = ie2, D2 = X2;
+        var X = D2 - 1 >>> 1, ie2 = N5[X];
+        if (0 < i(ie2, L2)) N5[X] = L2, N5[D2] = ie2, D2 = X;
         else break e;
       }
     }
@@ -336,10 +336,10 @@
       var L2 = N5[0], D2 = N5.pop();
       if (D2 !== L2) {
         N5[0] = D2;
-        e: for (var X2 = 0, ie2 = N5.length, wi = ie2 >>> 1; X2 < wi; ) {
-          var Gt = 2 * (X2 + 1) - 1, oo = N5[Gt], Qt = Gt + 1, Si = N5[Qt];
-          if (0 > i(oo, D2)) Qt < ie2 && 0 > i(Si, oo) ? (N5[X2] = Si, N5[Qt] = D2, X2 = Qt) : (N5[X2] = oo, N5[Gt] = D2, X2 = Gt);
-          else if (Qt < ie2 && 0 > i(Si, D2)) N5[X2] = Si, N5[Qt] = D2, X2 = Qt;
+        e: for (var X = 0, ie2 = N5.length, wi = ie2 >>> 1; X < wi; ) {
+          var Gt = 2 * (X + 1) - 1, oo = N5[Gt], Qt = Gt + 1, Si = N5[Qt];
+          if (0 > i(oo, D2)) Qt < ie2 && 0 > i(Si, oo) ? (N5[X] = Si, N5[Qt] = D2, X = Qt) : (N5[X] = oo, N5[Gt] = D2, X = Gt);
+          else if (Qt < ie2 && 0 > i(Si, D2)) N5[X] = Si, N5[Qt] = D2, X = Qt;
           else break e;
         }
       }
@@ -382,10 +382,10 @@
       var D2 = d3;
       try {
         for (m(L2), f2 = n(a2); f2 !== null && (!(f2.expirationTime > L2) || N5 && !re2()); ) {
-          var X2 = f2.callback;
-          if (typeof X2 == "function") {
+          var X = f2.callback;
+          if (typeof X == "function") {
             f2.callback = null, d3 = f2.priorityLevel;
-            var ie2 = X2(f2.expirationTime <= L2);
+            var ie2 = X(f2.expirationTime <= L2);
             L2 = e.unstable_now(), typeof ie2 == "function" ? f2.callback = ie2 : f2 === n(a2) && r(a2), m(L2);
           } else r(a2);
           f2 = n(a2);
@@ -484,8 +484,8 @@
         d3 = D2;
       }
     }, e.unstable_scheduleCallback = function(N5, L2, D2) {
-      var X2 = e.unstable_now();
-      switch (typeof D2 == "object" && D2 !== null ? (D2 = D2.delay, D2 = typeof D2 == "number" && 0 < D2 ? X2 + D2 : X2) : D2 = X2, N5) {
+      var X = e.unstable_now();
+      switch (typeof D2 == "object" && D2 !== null ? (D2 = D2.delay, D2 = typeof D2 == "number" && 0 < D2 ? X + D2 : X) : D2 = X, N5) {
         case 1:
           var ie2 = -1;
           break;
@@ -501,7 +501,7 @@
         default:
           ie2 = 5e3;
       }
-      return ie2 = D2 + ie2, N5 = { id: c++, callback: L2, priorityLevel: N5, startTime: D2, expirationTime: ie2, sortIndex: -1 }, D2 > X2 ? (N5.sortIndex = D2, t(u2, N5), n(a2) === null && N5 === n(u2) && (x3 ? (p2(k4), k4 = -1) : x3 = true, ee(S3, D2 - X2))) : (N5.sortIndex = ie2, t(a2, N5), y2 || g4 || (y2 = true, xi(C3))), N5;
+      return ie2 = D2 + ie2, N5 = { id: c++, callback: L2, priorityLevel: N5, startTime: D2, expirationTime: ie2, sortIndex: -1 }, D2 > X ? (N5.sortIndex = D2, t(u2, N5), n(a2) === null && N5 === n(u2) && (x3 ? (p2(k4), k4 = -1) : x3 = true, ee(S3, D2 - X))) : (N5.sortIndex = ie2, t(a2, N5), y2 || g4 || (y2 = true, xi(C3))), N5;
     }, e.unstable_shouldYield = re2, e.unstable_wrapCallback = function(N5) {
       var L2 = d3;
       return function() {
@@ -10482,15 +10482,6 @@ Error generating stack: ` + s.message + `
     const a2 = w.useRef(null), n = w.useRef(null), s = w2(a2, { once: true, margin: "-100px" }), { scrollYProgress: l } = Oe2({ target: n, offset: ["start end", "end start"] }), i = Ie2(l, [0, 1], ["-8%", "8%"]);
     return v.jsx("section", { ref: a2, className: "py-0 bg-cream-50 overflow-hidden", "aria-labelledby": "story-heading", children: v.jsx("div", { className: "max-w-7xl mx-auto", children: v.jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-2 min-h-[600px]", children: [v.jsxs("div", { ref: n, className: "relative overflow-hidden min-h-[400px] lg:min-h-full", children: [v.jsx(Pe.div, { initial: { scaleX: 1 }, animate: s ? { scaleX: 0 } : { scaleX: 1 }, transition: { duration: 0.9, delay: 0.2, ease: [0.76, 0, 0.24, 1] }, style: { originX: 0 }, className: "absolute inset-0 z-10 bg-charcoal-900" }), v.jsx(Pe.div, { style: { y: i }, className: "absolute inset-0 scale-110", children: v.jsx("img", { src: "./assets/community-story.png", alt: "Volunteers helping people in the community", className: "w-full h-full object-cover object-center", loading: "lazy" }) }), v.jsx("div", { className: "absolute inset-0 bg-gradient-to-r from-transparent to-cream-50/30 z-20 hidden lg:block" }), v.jsx(Pe.div, { initial: { opacity: 0, y: 16 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.6, delay: 1.1 }, className: "absolute bottom-6 left-6 z-30 max-w-xs", children: v.jsxs("div", { className: "bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-premium border border-white/50", children: [v.jsx("p", { className: "text-forest-700 font-medium text-sm italic leading-relaxed", children: '"\u0B89\u0BA4\u0BB5\u0BBF \u0B8E\u0BA9\u0BCD\u0BAA\u0BA4\u0BC1 \u0B92\u0BB0\u0BC1 \u0B9A\u0BC6\u0BAF\u0BB2\u0BCD \u0BAE\u0B9F\u0BCD\u0B9F\u0BC1\u0BAE\u0BCD \u0B85\u0BB2\u0BCD\u0BB2. \u0B92\u0BB0\u0BC1 \u0BA8\u0BAE\u0BCD\u0BAA\u0BBF\u0B95\u0BCD\u0B95\u0BC8."' }), v.jsx("p", { className: "text-charcoal-400 text-xs mt-1.5", children: '"Support is not just an act. It is hope."' })] }) })] }), v.jsx("div", { className: "flex items-center px-8 sm:px-12 lg:px-16 py-16 lg:py-20 bg-cream-50", children: v.jsxs("div", { className: "max-w-lg", children: [v.jsx(Pe.div, { initial: { opacity: 0, x: 20 }, animate: s ? { opacity: 1, x: 0 } : {}, transition: { duration: 0.5, delay: 0.4 }, className: "label-tag mb-6", children: "Real People. Real Impact." }), v.jsxs(Pe.h2, { id: "story-heading", initial: { opacity: 0, y: 24 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.7, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }, className: "font-display font-bold text-4xl sm:text-5xl text-charcoal-900 leading-tight mb-6", children: ["Support is more than giving.", v.jsx("br", {}), v.jsx("span", { className: "text-forest-600", children: "It is showing someone they are not alone." })] }), v.jsx(Pe.p, { initial: { opacity: 0, y: 16 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.6, delay: 0.62 }, className: "text-charcoal-500 leading-relaxed text-base mb-8", children: "Hill Organisation for People's Education was established in 2014 by Mrs. Brinah Prabhakaran and Mr. Prem Prabhakaran in Tuticorin, running Hope Children Home for abandoned girls and a home for destitute elderly mothers with love and affection." }), v.jsx(Pe.div, { initial: { opacity: 0, y: 16 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.6, delay: 0.72 }, className: "flex gap-8 mb-10 py-6 border-y border-charcoal-100", children: [{ value: "10+", label: "Years in Tuticorin" }, { value: "7", label: "Core Programs" }, { value: "100%", label: "Direct Transparency" }].map((r) => v.jsxs("div", { children: [v.jsx("div", { className: "font-display font-bold text-3xl text-charcoal-900", children: r.value }), v.jsx("div", { className: "text-charcoal-400 text-xs font-medium mt-0.5", children: r.label })] }, r.label)) }), v.jsx(Pe.div, { initial: { opacity: 0, y: 12 }, animate: s ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.5, delay: 0.82 }, children: v.jsx(lt, { to: "/services", children: v.jsxs(Pe.button, { whileHover: { scale: 1.02, x: 4 }, whileTap: { scale: 0.97 }, className: "group flex items-center gap-3 text-forest-600 font-bold text-sm hover:text-forest-700 transition-colors", children: ["Explore Our 7 Programs", v.jsx("div", { className: "w-8 h-8 rounded-full bg-forest-100 group-hover:bg-forest-200 flex items-center justify-center transition-all duration-300 group-hover:translate-x-1", children: v.jsx(DP, { className: "w-4 h-4" }) })] }) }) })] }) })] }) }) });
   };
-  var F3 = { Soup: j2, GraduationCap: k2, Heart: zP, Stethoscope: N2, ShieldAlert: S2, Users: Re2 };
-  var X = ({ service: a2, index: n = 0 }) => {
-    const s = F3[a2.icon] ?? zP;
-    return v.jsxs(Pe.article, { initial: { opacity: 0, y: 28 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true, margin: "-60px" }, transition: { duration: 0.65, delay: n % 3 * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }, className: "group relative bg-white border border-charcoal-100 rounded-3xl p-7 shadow-card hover:shadow-card-hover transition-all duration-500 hover:-translate-y-2 overflow-hidden cursor-default", "aria-label": `Service: ${a2.title}`, children: [v.jsx("div", { className: `absolute inset-0 rounded-3xl bg-gradient-to-br ${a2.color} opacity-0 group-hover:opacity-100 transition-opacity duration-500` }), v.jsxs("div", { className: "relative z-10", children: [v.jsx("div", { className: "w-14 h-14 rounded-2xl bg-forest-50 group-hover:bg-forest-100 text-forest-600 flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3", children: v.jsx(s, { className: "w-6 h-6" }) }), v.jsx("h3", { className: "font-display font-bold text-xl text-charcoal-900 mb-3 group-hover:text-forest-800 transition-colors duration-300", children: a2.title }), v.jsx("p", { className: "text-charcoal-500 text-sm leading-relaxed mb-6 line-clamp-3", children: a2.description }), v.jsxs("div", { className: "flex items-center gap-2 text-forest-600 text-sm font-semibold group-hover:gap-3 transition-all duration-300", children: [v.jsx("span", { children: "Learn more" }), v.jsx(DP, { className: "w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" })] })] }), v.jsx("div", { className: "absolute top-5 right-5 w-2 h-2 rounded-full bg-forest-200 group-hover:bg-forest-400 transition-colors duration-300" })] });
-  };
-  var Y3 = () => {
-    const a2 = w.useRef(null), n = w2(a2, { once: true, margin: "-80px" });
-    return v.jsx("section", { ref: a2, className: "py-12 sm:py-16 lg:py-24 bg-charcoal-50", "aria-labelledby": "services-heading", children: v.jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8", children: [v.jsxs("div", { className: "flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-8 sm:mb-12 lg:mb-16", children: [v.jsxs(Pe.div, { initial: { opacity: 0, y: 24 }, animate: n ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.7 }, className: "max-w-xl", children: [v.jsx("div", { className: "label-tag mb-4", children: "What We Do" }), v.jsxs("h2", { id: "services-heading", className: "font-display font-bold text-4xl sm:text-5xl text-charcoal-900 leading-tight", children: ["Where your support can", " ", v.jsx("span", { className: "text-gradient-green", children: "make a difference." })] })] }), v.jsx(Pe.div, { initial: { opacity: 0, y: 16 }, animate: n ? { opacity: 1, y: 0 } : {}, transition: { duration: 0.6, delay: 0.2 }, children: v.jsx(lt, { to: "/services", children: v.jsxs(Pe.button, { whileHover: { scale: 1.02 }, whileTap: { scale: 0.97 }, className: "flex items-center gap-2 px-6 py-3 border-2 border-forest-600 text-forest-600 hover:bg-forest-600 hover:text-white font-semibold rounded-full transition-all duration-300 text-sm", children: ["View All Services", v.jsx(DP, { className: "w-4 h-4" })] }) }) })] }), v.jsx("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6", children: M3.map((s, l) => v.jsx(X, { service: s, index: l }, s.id)) })] }) });
-  };
   var q2 = { TrendingUp: p, Sparkles: O2, BarChart3: P2, Handshake: W3 };
   var G2 = ["Create meaningful social impact", "Support local communities", "Build authentic community connections", "Create measurable impact", "Strengthen social responsibility", "Support sustainable initiatives"];
   var D = [...C2, ...C2];
@@ -10522,7 +10513,7 @@ Error generating stack: ` + s.message + `
                   transition-colors
                 `, children: ["See all stories", v.jsx(DP, { className: "w-4 h-4" })] }) }) })] }), v.jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8", children: T2.map((s, l) => v.jsx(J2, { story: s, index: l }, s.id)) })] }) });
   };
-  var ne3 = () => v.jsxs("main", { className: "m-0 p-0", children: [v.jsx(_2, {}), v.jsx(U2, {}), v.jsx($2, {}), v.jsx(Y3, {}), v.jsx(E3, {}), v.jsx(Q2, {}), v.jsx(K2, {})] });
+  var ne3 = () => v.jsxs("main", { className: "m-0 p-0", children: [v.jsx(_2, {}), v.jsx(U2, {}), v.jsx($2, {}), v.jsx(Q2, {}), v.jsx(K2, {})] });
 
   // assets/ScrollReveal-CC7-yOZu.js
   var g2 = ({ children: s, className: i = "", delay: n = 0, duration: r = 0.7, direction: a2 = "up", distance: o = 32, once: p2 = true, scale: x3 = false }) => {
